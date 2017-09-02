@@ -19,6 +19,7 @@ export class NavBar extends React.Component {
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
+                    <NavItem eventKey={1}>Add New Company</NavItem>
                     <NavDropdown eventKey={2} title="Companies by Status" id="display-by-status">
                         <MenuItem eventKey={2.1}>Display Companies Under Review</MenuItem>
                         <MenuItem eventKey={2.2}>Display Pending Companies</MenuItem>

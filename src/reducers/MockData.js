@@ -1,3 +1,5 @@
+import { sortFunction } from './utils'
+
 export const mockData = [
     { companyName: 'Target Company A',
       companyProfile: {
@@ -409,3 +411,5 @@ export const mockData = [
       status: 'approved'
     }
 ];
+
+export const sortedMockData = sortFunction(mockData, 'companyName')

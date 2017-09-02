@@ -1,0 +1,41 @@
+.sidebar {
+    position: absolute;
+    float: left;
+    width: 250px;
+    height: 100%;
+}
+
+.sidebar-left {
+    border-right: 1px solid black;
+    margin-right: 10px;
+}
+
+.search-result-item {
+  list-style: none;
+}
+.search-result-item:hover {
+  cursor: pointer;
+  background-color: #b3ecff;
+}
+
+.search-results-container {
+    display: inline-block;
+
+    width: 100%;
+}
+
+.pending {
+  color: #0000e6;
+}
+
+.approved {
+  color: 	 #00b300;
+}
+
+.declined {
+  color: #ff0000;
+}
+
+.researching {
+  color: #ff9900;
+}
