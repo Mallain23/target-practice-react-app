@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { Button, Glyphicon } from 'react-bootstrap'
 
-import { updateSearchTerm } from '../actions'
+import { updateSearchResults } from '../actions'
 import './Sidebar.css'
 
 export class SearchForm extends React.Component {
@@ -16,7 +16,7 @@ export class SearchForm extends React.Component {
         e.preventDefault()
         const searchTerm = e.target.value
 
-        this.props.dispatch(updateSearchTerm(searchTerm))
+        this.props.dispatch(updateSearchResults(searchTerm))
     }
 
     render() {
@@ -35,8 +35,6 @@ export class SearchForm extends React.Component {
     };
 };
 
-const mapStateToProps = state => ({
-  searchTerm: state.searchTerm
-});
 
-export default connect(mapStateToProps)(SearchForm)
+
+export default connect()(SearchForm)

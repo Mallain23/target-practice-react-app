@@ -6,6 +6,7 @@ import NavBar from './components/Navigation/NavBar';
 import SideBarContainer from './components/SideBar/SideBarContainer';
 import Page from './components/Page/Page';
 import CompanyPage from './components/CompanyPage/CompanyPage'
+import CompanyDataModalContainer from './components/CompanyDataModal/CompanyDataModalContainer'
 
 import './App.css';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
           <div>
               <NavBar />
               <SideBarContainer />
+              <CompanyDataModalContainer />
               <Route exact path='/' component={Page} />
               <Route exact path='/company/:companyName' component={Page}/>
           </div>

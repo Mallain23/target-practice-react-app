@@ -10,7 +10,7 @@ export class Page extends React.Component {
 
     render() {
         const { companySelected } = this.props
-  
+
         const pageComponent = this.props.match.params.companyName ?  <CompanyPage /> : <OverviewPage />
 
         return (
@@ -22,7 +22,7 @@ export class Page extends React.Component {
 };
 
 const mapStateToProps = state => ({
-    companySelected: state.companySelected
+    companySelected: state.app.companySelected
 })
 
 export default connect(mapStateToProps)(Page)

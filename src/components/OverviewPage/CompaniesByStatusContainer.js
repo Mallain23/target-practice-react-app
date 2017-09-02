@@ -1,12 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { sortCompaniesByStatus } from '../actions'
 
 export class CompaniesByStatusContainer extends React.Component {
     constructor(props) {
         super(props)
 
         this.handleClick = this.handleClick.bind(this)
+    }
+    componentWillUpdate() {
+      console.log('here')
+      this.props.dispatch(sortCompaniesByStatus())
     }
 
     handleClick(e) {
@@ -16,7 +21,7 @@ export class CompaniesByStatusContainer extends React.Component {
     render() {
         const { status, companies, companyStatus } = this.props
 
-        const companiesToDisplay = status=== 'companies' ? companies :  companyStatus[status]
+        const companiesToDisplay = status === 'companies' ? companies :  companyStatus[status]
         const formattedCompanies = companiesToDisplay.map(({companyName}, index) => {
             return (
                 <li key={index}>
@@ -34,8 +39,8 @@ export class CompaniesByStatusContainer extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const { pending, approved, declined, researching } = state.companyStatus;
-    const { companies, companyStatus } = state
+    const { pending, approved, declined, researching } = state.app.companyStatus;
+    const { companies, companyStatus } = state.app
     return {
         companies,
         companyStatus,

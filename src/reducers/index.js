@@ -1,14 +1,18 @@
 import { mockData, companyArray } from './MockData'
 import { TOGGLE_COMPANY_SELECTED,
-         UPDATE_SEARCH_TERM,
-         SAVE_SORTED_COMPANY_DATA_TO_STATE,
-         VIEW_COMPANIES_BY_STATUS } from '../components/actions'
-import { sortFunction } from './utils'
+         UPDATE_SEARCH_RESULTS_SUCCESS,
+         SORT_COMPANIES_SUCCESS,
+         SORT_COMPANIES_BY_STATUS_SUCCESS,
+         VIEW_COMPANIES_BY_STATUS,
+         CLOSE_MODAL,
+         OPEN_MODAL,
+         ADD_COMPANY_TO_DATABASE} from '../components/actions'
+
 
 const initialState = {
     companies: mockData,
+    key: 0,
     companySelected: false,
-    searchTerm: '',
     searchResults: mockData,
     companyStatus: {
         approved: [],
@@ -19,26 +23,29 @@ const initialState = {
     viewCompaniesByStatus: {
         view: false,
         statusType: null
-    }
+    },
+    showModal: false
 };
 
 export default function reducer(state = initialState, action) {
-    if (action.type === UPDATE_SEARCH_TERM) {
-          const { searchTerm } = action
-          const { companies } = state
+    if (action.type === UPDATE_SEARCH_RESULTS_SUCCESS) {
 
-          const searchResults = companies.filter( ({companyName }) =>
-              companyName.toLowerCase().includes(searchTerm.toLowerCase()));
-
-         const sortedResults = sortFunction(searchResults, 'companyName')
+          const { searchResults } = action
 
           return Object.assign({}, state, {
-              searchTerm,
-              searchResults: sortedResults
+              searchResults
           });
     }
 
-    else if (action.type === SAVE_SORTED_COMPANY_DATA_TO_STATE) {
+    else if (action.type === SORT_COMPANIES_SUCCESS) {
+        const { sortedCompanies: searchResults } = action
+            return Object.assign({}, state, {
+                searchResults,
+                key: state.key + 1
+            });
+    }
+
+    else if (action.type === SORT_COMPANIES_BY_STATUS_SUCCESS) {
         const { companyStatus } = action
 
         return Object.assign({}, state, {
@@ -50,6 +57,27 @@ export default function reducer(state = initialState, action) {
         const { viewCompaniesByStatus } = action
         return Object.assign({}, state, {
             viewCompaniesByStatus
+        });
+    }
+
+    else if (action.type === CLOSE_MODAL) {
+        return Object.assign({}, state, {
+            showModal: false
+        });
+    }
+
+    else if (action.type === OPEN_MODAL) {
+      return Object.assign({}, state, {
+          showModal: true
+      });
+    }
+
+    else if (action.type === ADD_COMPANY_TO_DATABASE) {
+        const { companyData: company } = action
+        console.log(company)
+        return Object.assign({}, state, {
+            companies: [...state.companies, company ],
+            searchResults: [...state.companies, company]
         });
     }
 

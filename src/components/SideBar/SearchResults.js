@@ -15,7 +15,7 @@ export class SearchResults extends React.Component {
                      className={`search-result-item ${status}`} >
                      <strong>{companyName}</strong>
                  </li>
-           )
+           );
         });
 
         return (
@@ -30,10 +30,11 @@ export class SearchResults extends React.Component {
 
 const mapStateToProps = state => {
 
-    const { searchResults, searchTerm } = state
+    const { searchResults, key } = state.app
+
     return {
         searchResults,
-        searchTerm
+        updateKey: key
     };
 };
 
