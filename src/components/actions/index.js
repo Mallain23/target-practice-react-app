@@ -1,10 +1,20 @@
-import { filterCompanyByStatus , statusObject, sortFunction, formatDataForEntry } from './utils'
+import { SubmissionError, focus} from 'redux-form';
 
-// export const TOGGLE_COMPANY_SELECTED = 'TOGGLE_COMPANY_SELECTED'
-// export const toggleCompanySelected = () => ({
-//     type: TOGGLE_COMPANY_SELECTED
-// });
+import { filterCompanyByStatus,
+         statusObject,
+         sortFunction,
+         formatDataForEntry,
+          formatTypeOfReportText } from './utils'
 
+export const SHOW_EXTENDED_NAV = 'SHOW_EXTENDED_NAV'
+export const showExtendedNav = () => ({
+    type: SHOW_EXTENDED_NAV
+});
+
+export const HIDE_EXTENDED_NAV = 'HIDE_EXTENDED_NAV'
+export const hideExtendedNav = () => ({
+    type: HIDE_EXTENDED_NAV
+});
 
 export const UPDATE_SEARCH_RESULTS = 'UPDATE_SEARCH_RESULTS '
 export const updateSearchResults = searchTerm => (dispatch, getState) => {
@@ -52,10 +62,10 @@ export const sortCompaniesSuccess = sortedCompanies => ({
 export const sortCompaniesByStatus = () => (dispatch, getState) => {
     const { companies } = getState().app
     const statusKeys = Object.keys(statusObject)
-    console.log(companies)
+
     let sortedCompanyObject = {}
 
-    const arrayOfCompaniesSortedByStatus = statusKeys.map(status =>
+     let arrayOfCompaniesSortedByStatus = statusKeys.map(status =>
         sortedCompanyObject[status] = filterCompanyByStatus(companies, status));
 
     dispatch(sortCompaniesByStatusSuccess(sortedCompanyObject));
@@ -77,14 +87,59 @@ export const openModal = () => ({
     type: OPEN_MODAL
 });
 
+
 export const formatDataForDatabaseEntry = company => (dispatch, getState) => {
     const { companyName } = company
-    const companyData = formatDataForEntry(companyName)
-    dispatch(addCompanyToDatabase(companyData))
-}
+    const  companies = getState().companies
+
+    const companyData = formatDataForEntry(companyName);
+    dispatch(addCompanyToDatabase(companyData));
+};
 
 export const ADD_COMPANY_TO_DATABASE = 'ADD_COMPANY_TO_DATABASE'
 export const addCompanyToDatabase = companyData => ({
     type: ADD_COMPANY_TO_DATABASE,
     companyData
+});
+
+
+export const fetchCompanyData = _companyName => (dispatch, getState) => {
+    const selectedCompanyData = getState().app.companies.find(({ companyName }) =>
+        companyName === _companyName)
+
+    dispatch(fetchCompanyDataSuccess(selectedCompanyData))
+};
+
+export const FETCH_COMPANY_DATA_SUCCESS = 'FETCH_COMPANY_DATA_SUCCESS'
+export const fetchCompanyDataSuccess = companyData => ({
+    type: FETCH_COMPANY_DATA_SUCCESS,
+    companyData
 })
+
+export const removeCompanyFromDatabase = companyName => (dispatch, getState) => {
+    const companies = getState().app.companies
+    const remainingCompanies = companies.filter(company  => company.companyName !== companyName)
+
+    dispatch(removeCompanyFromDatabaseSuccess(remainingCompanies))
+};
+
+export const REMOVE_COMPANY_FROM_DATABASE_SUCCESS = 'REMOVE_COMPANY_FROM_DATABASE_SUCCESS'
+export const removeCompanyFromDatabaseSuccess = remainingCompanies => ({
+    type: REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
+    remainingCompanies
+})
+
+export const getFinacnialReport = (title, _typeOfReport) => (dispatch, getState) => {
+    let typeOfReport = formatTypeOfReportText(_typeOfReport)
+
+    const report = getState().app.selectedCompany.financialMatters[typeOfReport].find(report => report.title === title)
+    console.log(report)
+
+    dispatch(getFinacnialReportSuccess(report))
+};
+
+export const GET_FINANCIAL_REPORT_SUCCESS = 'GET_FINANCIAL_REPORT_SUCCESS'
+export const getFinacnialReportSuccess = report => ({
+    type: GET_FINANCIAL_REPORT_SUCCESS,
+    report
+});

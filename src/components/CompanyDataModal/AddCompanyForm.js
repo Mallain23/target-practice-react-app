@@ -17,6 +17,10 @@ export class AddCompanyForm extends React.Component {
     };
 
     onSubmit(company) {
+        const { companies } = this.props
+        if (companies.some(({ companyName }) => companyName === company.companyName)) {
+          return alert("A Company with the same name already exists in the database!")
+        }
 
         this.props.dispatch(formatDataForDatabaseEntry(company))
         this.props.dispatch(closeModal())
@@ -25,7 +29,6 @@ export class AddCompanyForm extends React.Component {
     handleClose() {
           this.props.dispatch(closeModal())
     };
-
 
     render() {
 

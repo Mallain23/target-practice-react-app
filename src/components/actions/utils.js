@@ -28,6 +28,17 @@ export const statusObject = {
     declined: 'declined',
     researching: 'researching'
 }
+export const formatTypeOfReportText = _typeOfReport  => {
+    if (_typeOfReport === 'Annual') {
+        return 'financialStatementsAnnual'
+    }
+
+    else if (_typeOfReport === 'Quarterly') {
+        return  'financialStatementsQuarterly'
+    }
+
+    return 'financialStatementsMonthly'
+};
 
 export const formatDataForEntry = companyName => ({
     companyName,
@@ -60,9 +71,9 @@ export const formatDataForEntry = companyName => ({
         liabilities: ['No Information Provided'],
         totalLiabilities: 'No Information Provided',
         summaryOnDebtOwed: 'No Information Provided',
-        financialStatementsAnnual: {status: 'No Information Provided'},
-        financialStatementsQuarterly: {status: 'No Information Provided'},
-        financialStatementsMonthly: {status: 'No Information Provided'},
+        financialStatementsAnnual: [],
+        financialStatementsQuarterly: [],
+        financialStatementsMonthly: [],
         financesAudited: {
             isAudited: 'No Information Provided',
             whoAudits: 'No Information Provided',

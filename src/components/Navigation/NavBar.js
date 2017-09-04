@@ -30,8 +30,8 @@ export class NavBar extends React.Component {
     };
 
     render() {
-        const { companySelected } = this.props
-        const extendedNavButtons = companySelected ? <ExtendedNav /> : ''
+        const { showExtendedNav } = this.props
+        const extendedNavButtons = showExtendedNav ? <ExtendedNav /> : ''
 
         return (
             <Navbar>
@@ -64,7 +64,7 @@ export class NavBar extends React.Component {
 };
 
 const mapStateToProps = state => ({
-    companySelected: state.app.companySelected
+    showExtendedNav: state.app.showExtendedNav
 })
 
 export default connect(mapStateToProps)(NavBar)

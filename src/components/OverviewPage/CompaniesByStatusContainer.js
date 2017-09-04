@@ -4,19 +4,6 @@ import { Link } from 'react-router-dom'
 import { sortCompaniesByStatus } from '../actions'
 
 export class CompaniesByStatusContainer extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.handleClick = this.handleClick.bind(this)
-    }
-    componentWillUpdate() {
-      console.log('here')
-      this.props.dispatch(sortCompaniesByStatus())
-    }
-
-    handleClick(e) {
-    console.log(e)
-    }
 
     render() {
         const { status, companies, companyStatus } = this.props

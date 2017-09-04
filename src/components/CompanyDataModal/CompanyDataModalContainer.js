@@ -11,18 +11,18 @@ export class CompanyDataModalContainer extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClose = this.handleClose.bind(this)
 
     };
-    handleClick() {
-          this.setState({open: true})
-    }
 
+    handleClose() {
+          this.props.dispatch(closeModal())
+    };
 
     render() {
         const { showModal } = this.props
         return (
-            <div className="static-modal">
+            <div className="Add-Company-Modal">
                 <Modal show={showModal}
                        onHide={this.handleClose}
                        container={this}
@@ -32,7 +32,7 @@ export class CompanyDataModalContainer extends React.Component {
                         <Modal.Title id="contained-modal-title">Add New Company</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <AddCompanyForm showModal={showModal}/>
+                        <AddCompanyForm {...this.props} showModal={showModal}/>
                     </Modal.Body>
                     <Modal.Footer>
                   </Modal.Footer>
@@ -43,7 +43,8 @@ export class CompanyDataModalContainer extends React.Component {
 };
 
 const mapStateToProps = state => ({
-    showModal: state.app.showModal
+    showModal: state.app.showModal,
+    companies: state.app.companies
 })
 
 export default connect(mapStateToProps)(CompanyDataModalContainer)

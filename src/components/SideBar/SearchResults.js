@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import './Sidebar.css'
 
@@ -10,11 +11,12 @@ export class SearchResults extends React.Component {
 
         const formatedSearchResults = searchResults.map(({ companyName, status }, index) => {
             return (
-                <li  key={index}
-                     onClick={this.handleClick}
-                     className={`search-result-item ${status}`} >
-                     <strong>{companyName}</strong>
-                 </li>
+                <li className='company-list' key={index}>
+                    <Link to={`/company/${companyName}`}
+                          className={`search-result-item ${status}`}>
+                          <strong>{companyName}</strong>
+                    </Link>
+                </li>
            );
         });
 

@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Grid, Col, Row } from 'react-bootstrap'
 
 import CompanyStatusButtons from './CompanyStatusButtons'
 import CompaniesByStatusContainer from './CompaniesByStatusContainer'
 
 import { OVERVIEW__PAGE_HEADER, statusHeaders } from './OverviewPageConstants'
-import { sortCompaniesByStatus, sortCompanies } from '../actions'
+import { sortCompaniesByStatus, sortCompanies, hideExtendedNav } from '../actions'
 
 import './Overview.css'
 
@@ -13,15 +14,21 @@ export class OverviewPage extends React.Component {
 
     componentWillMount() {
         //ask andrew how I should handle this
-        this.props.dispatch(sortCompaniesByStatus())
+
+        this.props.dispatch(sortCompaniesByStatus());
+        this.props.dispatch(sortCompanies('companyName'));
+        this.props.dispatch(hideExtendedNav());
     };
 
     componentWillReceiveProps(nextProps, nextState) {
         if (nextProps.companies.length !== this.props.companies.length) {
-          this.props.dispatch(sortCompaniesByStatus())
-          this.props.dispatch(sortCompanies('companyName'))
-    }
-}
+
+            this.props.dispatch(sortCompaniesByStatus());
+            this.props.dispatch(sortCompanies('companyName'));
+        }
+
+    };
+
     render() {
         const { companies, pending, approved, declined, researching  } = this.props;
         const { view, statusType } = this.props.viewCompaniesByStatus;
@@ -29,9 +36,14 @@ export class OverviewPage extends React.Component {
         const statusResults = view ? <CompaniesByStatusContainer status={statusType} /> : '';
 
         return(
-            <div className="overview-page container">
-                <div className='header'>
-                    <h1>{OVERVIEW__PAGE_HEADER}</h1>
+            <Grid className="overview-page container">
+                <Row>
+                    <Col xs={12}>
+                        <h1>{OVERVIEW__PAGE_HEADER}</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12}>
                         <ul className='company-status-statistics'>
                             <li><CompanyStatusButtons className='status-headers'
                                                   text={statusHeaders.total}
@@ -53,18 +65,23 @@ export class OverviewPage extends React.Component {
                                                   text={statusHeaders.declined}
                                                   number={declined.length}
                                                   status='declined'/></li>
-                    </ul>
-                    <div className='list-of-company-by-status-box'>
-                        {statusResults}
-                    </div>
-                </div>
-            </div>
+                        </ul>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12}>
+                        <div className='list-of-company-by-status-box'>
+                            {statusResults}
+                        </div>
+                    </Col>
+                </Row>
+            </Grid>
         );
-    };
+    };å
 };
 
 const mapStateToProps = state => {
-    const  { companies, viewCompaniesByStatus } = state.app
+    const  { companies, viewCompaniesByStatus, error } = state.app
     const { pending, approved, declined, researching } = state.app.companyStatus
 
     return {
@@ -73,7 +90,8 @@ const mapStateToProps = state => {
         approved,
         declined,
         researching,
-        viewCompaniesByStatus
+        viewCompaniesByStatus,
+        error
     }
 };
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Grid, Col, Row } from 'react-bootstrap'
 
 import OverviewPage from '../OverviewPage/OverviewPage'
 import CompanyPage from '../CompanyPage/CompanyPage'
@@ -11,12 +12,20 @@ export class Page extends React.Component {
     render() {
         const { companySelected } = this.props
 
-        const pageComponent = this.props.match.params.companyName ?  <CompanyPage /> : <OverviewPage />
+        const pageComponent = this.props.match.params.companyName ?  <CompanyPage {...this.props}/> : <OverviewPage />
 
         return (
-            <div className='page-container'>
-              {pageComponent}
-           </div>
+          <Grid>
+              <Row>
+                  <Col xs={4}>
+                  </Col>
+                  <Col xs={8}>
+                      <div className='page-container'>
+                        {pageComponent}
+                      </div>
+                  </Col>
+              </Row>
+           </Grid>
         );
     };
 };

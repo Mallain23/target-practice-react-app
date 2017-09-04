@@ -10,12 +10,14 @@
     margin-right: 10px;
 }
 
-.search-result-item {
+.company-list {
   list-style: none;
 }
+
 .search-result-item:hover {
   cursor: pointer;
   background-color: #b3ecff;
+  text-decoration: none;
 }
 
 .search-results-container {

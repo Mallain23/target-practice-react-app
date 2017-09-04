@@ -7,7 +7,6 @@ export const mockData = [
           location: {
               headQaurters: '123, Example Street, Atlanta, GA',
               principlePlaceOfBusiness: '456, Another Example, Denver, CO',
-              otherStates: ['AZ', 'MA', 'NY'],
               numberOfOffices: '17'
           },
           numberOfEmployees: '500',
@@ -28,58 +27,65 @@ export const mockData = [
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
-              nameOfAsset: 'stock wth xyz',
-              valueOfAsset: '500000.00'
+              name: 'stock wth xyz',
+              value: '500000.00'
               },
               {
-              nameOfAsset: 'parcel of land at abc',
-              valueOfAsset: '600000000.00'
+              name: 'parcel of land at abc',
+              value: '600000000.00'
               },
               {
-              nameOfAsset: 'building located at def',
-              valueOfAsset: '12000000.00'
+              name: 'building located at def',
+              value: '12000000.00'
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
-              { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00'
+              { name: 'Salaries payable',
+                value: '20000.00'
              }
           ],
           totalLiabilities: 'function to calc',
           summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-          financialStatementsAnnual: {
-              Year2017: '2017 Financial Report',
-              Year2016: '2016 Financial Report',
-              Year2015: '2015 Financial Report',
-              Year2014: '2014 Financial Report'
-          },
-          financialStatementsQuarterly: {
-              Year2017Q1: '2017 Financial Report',
-              Year2017Q2: '2017 Financial Report',
-              Year2017Q3: '2017 Financial Report',
-              Year2016Q1: '2016 Financial Report',
-              Year2016Q2: '2016 Financial Report',
-              Year2016Q3: '2016 Financial Report',
-              Year2016Q4: '2016 Financial Report',
-              Year2015Q1: '2016 Financial Report',
-              Year2015Q2: '2016 Financial Report',
-              Year2015Q3: '2016 Financial Report',
-              Year2015Q4: '2016 Financial Report',
-          },
-          financialStatementsMonthly: {
-              Year2017M1: 'Mock Financial report',
-              Year2017M2: 'Mock Financial report',
-              Year2017M3: 'Mock Financial report',
-              Year2017M4: 'Mock Financial report',
-              Year2017M5: 'Mock Financial report',
-              Year2017M6: 'Mock Financial report',
-              Year2017M7: 'Mock Financial report',
-              Year2017M8: 'Mock Financial report',
-              Year2016M1: 'Mock Financial report',
-              Year2016M2: 'Mock Financial report',
-              Year2016M3: 'Mock Financial report',
-              Year2016M4: 'Mock Financial report',
-          },
+          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                       {title:'2016 Financial Report', Report: 'Mock Report'},
+                                       {title:'2015 Financial Report', Report: 'Mock Report'},
+                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+
+          ],
+          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+          ],
+          financialStatementsMonthly: [
+            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          ],
           financesAudited: {
               isAudited: true,
               whoAudits: 'example',
@@ -141,7 +147,6 @@ export const mockData = [
           location: {
               headQaurters: '123, Example Street, New York, NY',
               principlePlaceOfBusiness: '123, Example Street, New York, NY',
-              otherStates: ['AZ', 'CA', 'CO', 'CT', 'DE', 'GA', 'IL', 'MA', 'NJ', 'NM', 'OH'],
               numberOfOffices: '500'
           },
           numberOfEmployees: '10000000',
@@ -162,63 +167,70 @@ export const mockData = [
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [
-              { nameOfAsset: 'stock wth abc',
-                valueOfAsset: '5800000.00'
+              { name: 'stock wth abc',
+                value: '5800000.00'
               },
-               { nameOfAsset: 'office equipment',
-                 valueOfAsset: '600000000.00'
+               { name: 'office equipment',
+                 value: '600000000.00'
               },
-              { nameOfAsset: 'building located at def',
-                valueOfAsset: '12000000.00'
+              { name: 'building located at def',
+                value: '12000000.00'
               }
           ],
         totalValueOfAllAssets: '40000',
         liabilities: [
-            { nameOfLiability: 'salaries payable',
-              valueOfLiability: '1000000.00'
+            { name: 'salaries payable',
+              value: '1000000.00'
             },
-            { nameOfLiability: 'judgment owed to x corp',
-              valueOfLiability: '1000000000.00'
+            { name: 'judgment owed to x corp',
+              value: '1000000000.00'
             },
-            { nameOfLiability: 'accounts payable',
-              valueOfLiability: '30004000.00'
+            { name: 'accounts payable',
+              value: '30004000.00'
             },
         ],
         totalLiabilities: 'function to calc',
         summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-        financialStatementsAnnual: {
-            Year2017: '2017 Financial Report',
-            Year2016: '2016 Financial Report',
-            Year2015: '2015 Financial Report',
-            Year2014: '2014 Financial Report'
-        },
-        financialStatementsQuarterly: {
-            Year2017Q1: '2017 Financial Report',
-            Year2017Q2: '2017 Financial Report',
-            Year2017Q3: '2017 Financial Report',
-            Year2016Q1: '2016 Financial Report',
-            Year2016Q2: '2016 Financial Report',
-            Year2016Q3: '2016 Financial Report',
-            Year2016Q4: '2016 Financial Report',
-            Year2015Q1: '2016 Financial Report',
-            Year2015Q2: '2016 Financial Report',
-            Year2015Q3: '2016 Financial Report',
-            Year2015Q4: '2016 Financial Report'
-        },
-        financialStatementsMonthly: {
-            Year2017M1: 'Mock Financial report',
-            Year2017M2: 'Mock Financial report',
-            Year2017M3: 'Mock Financial report',
-            Year2017M4: 'Mock Financial report',
-            Year2017M5: 'Mock Financial report',
-            Year2017M6: 'Mock Financial report',
-            Year2017M7: 'Mock Financial report',
-            Year2017M8: 'Mock Financial report',
-            Year2016M1: 'Mock Financial report',
-            Year2016M2: 'Mock Financial report',
-            Year2016M3: 'Mock Financial report',
-            Year2016M4: 'Mock Financial report'
-        },
+        financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                     {title:'2016 Financial Report', Report: 'Mock Report'},
+                                     {title:'2015 Financial Report', Report: 'Mock Report'},
+                                     {title:'2014 Financial Report', Report: 'Mock Report'}
+
+        ],
+        financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                        {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                        {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                        {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                        {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                        {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                        {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                        {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                        {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                        {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                        {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+        ],
+        financialStatementsMonthly: [
+          {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+        ],
         financesAudited: {
             isAudited: true,
             whoAudits: 'example',
@@ -280,7 +292,6 @@ export const mockData = [
           location: {
               headQaurters: '1000, Awesome Lane, Atlanta, GA',
               principlePlaceOfBusiness: '200 Cool Street, Boston, MA',
-              otherStates: ['AZ', 'CA', 'CO', 'CT', 'DE', 'NJ', 'NM', 'OH'],
               numberOfOffices: '50'
           },
           numberOfEmployees: '100000',
@@ -301,60 +312,67 @@ export const mockData = [
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [
-              { nameOfAsset: 'bonds',
-                valueOfAsset: '4000000.00'
+              { name: 'bonds with ABC',
+                value: '4000000.00'
               },
-              { nameOfAsset: 'office equipment',
-                valueOfAsset: '600000000.00'
+              { name: 'office equipment',
+                value: '600000000.00'
               },
-              { nameOfAsset: 'cash deposits',
-                valueOfAsset: '1200000000.00'
+              { name: 'cash deposits',
+                value: '1200000000.00'
               }
           ],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
-              { nameOfLiability: 'salaries payable',
-                valueOfLiability: '500000.00'
+              { name: 'salaries payable',
+                value: '500000.00'
               },
-              { nameOfLiability: 'accounts payable',
-                valueOfLiability: '30000.00'
+              { name: 'accounts payable',
+                value: '30000.00'
               },
            ],
         totalLiabilities: 'function to calc',
         summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-        financialStatementsAnnual: {
-            Year2017: '2017 Financial Report',
-            Year2016: '2016 Financial Report',
-            Year2015: '2015 Financial Report',
-            Year2014: '2014 Financial Report'
-        },
-        financialStatementsQuarterly: {
-            Year2017Q1: '2017 Financial Report',
-            Year2017Q2: '2017 Financial Report',
-            Year2017Q3: '2017 Financial Report',
-            Year2016Q1: '2016 Financial Report',
-            Year2016Q2: '2016 Financial Report',
-            Year2016Q3: '2016 Financial Report',
-            Year2016Q4: '2016 Financial Report',
-            Year2015Q1: '2016 Financial Report',
-            Year2015Q2: '2016 Financial Report',
-            Year2015Q3: '2016 Financial Report',
-            Year2015Q4: '2016 Financial Report',
-        },
-        financialStatementsMonthly: {
-            Year2017M1: 'Mock Financial report',
-            Year2017M2: 'Mock Financial report',
-            Year2017M3: 'Mock Financial report',
-            Year2017M4: 'Mock Financial report',
-            Year2017M5: 'Mock Financial report',
-            Year2017M6: 'Mock Financial report',
-            Year2017M7: 'Mock Financial report',
-            Year2017M8: 'Mock Financial report',
-            Year2016M1: 'Mock Financial report',
-            Year2016M2: 'Mock Financial report',
-            Year2016M3: 'Mock Financial report',
-            Year2016M4: 'Mock Financial report',
-        },
+        financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                     {title:'2016 Financial Report', Report: 'Mock Report'},
+                                     {title:'2015 Financial Report', Report: 'Mock Report'},
+                                     {title:'2014 Financial Report', Report: 'Mock Report'}
+
+        ],
+        financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                        {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                        {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                        {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                        {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                        {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                        {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                        {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                        {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                        {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                        {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+        ],
+        financialStatementsMonthly: [
+          {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+          {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+        ],
         financesAudited: {
             isAudited: true,
             whoAudits: 'example',
@@ -416,7 +434,6 @@ export const mockData = [
           location: {
               headQaurters: '123, Example Street, Atlanta, GA',
               principlePlaceOfBusiness: '456, Another Example, Denver, CO',
-              otherStates: ['AZ', 'MA', 'NY'],
               numberOfOffices: '17'
           },
           numberOfEmployees: '500',
@@ -437,58 +454,65 @@ export const mockData = [
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
-              nameOfAsset: 'stock wth xyz',
-              valueOfAsset: '500000.00'
+              name: 'stock wth xyz',
+              value: '500000.00'
               },
               {
-              nameOfAsset: 'parcel of land at abc',
-              valueOfAsset: '600000000.00'
+              name: 'parcel of land at abc',
+              value: '600000000.00'
               },
               {
-              nameOfAsset: 'building located at def',
-              valueOfAsset: '12000000.00'
+              name: 'building located at def',
+              value: '12000000.00'
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
-              { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00'
+              { name: 'Salaries payable',
+                value: '20000.00'
              }
           ],
           totalLiabilities: 'function to calc',
           summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-          financialStatementsAnnual: {
-              Year2017: '2017 Financial Report',
-              Year2016: '2016 Financial Report',
-              Year2015: '2015 Financial Report',
-              Year2014: '2014 Financial Report'
-          },
-          financialStatementsQuarterly: {
-              Year2017Q1: '2017 Financial Report',
-              Year2017Q2: '2017 Financial Report',
-              Year2017Q3: '2017 Financial Report',
-              Year2016Q1: '2016 Financial Report',
-              Year2016Q2: '2016 Financial Report',
-              Year2016Q3: '2016 Financial Report',
-              Year2016Q4: '2016 Financial Report',
-              Year2015Q1: '2016 Financial Report',
-              Year2015Q2: '2016 Financial Report',
-              Year2015Q3: '2016 Financial Report',
-              Year2015Q4: '2016 Financial Report',
-          },
-          financialStatementsMonthly: {
-              Year2017M1: 'Mock Financial report',
-              Year2017M2: 'Mock Financial report',
-              Year2017M3: 'Mock Financial report',
-              Year2017M4: 'Mock Financial report',
-              Year2017M5: 'Mock Financial report',
-              Year2017M6: 'Mock Financial report',
-              Year2017M7: 'Mock Financial report',
-              Year2017M8: 'Mock Financial report',
-              Year2016M1: 'Mock Financial report',
-              Year2016M2: 'Mock Financial report',
-              Year2016M3: 'Mock Financial report',
-              Year2016M4: 'Mock Financial report',
-          },
+          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                       {title:'2016 Financial Report', Report: 'Mock Report'},
+                                       {title:'2015 Financial Report', Report: 'Mock Report'},
+                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+
+          ],
+          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+          ],
+          financialStatementsMonthly: [
+            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          ],
           financesAudited: {
               isAudited: true,
               whoAudits: 'example',
@@ -550,7 +574,6 @@ export const mockData = [
           location: {
               headQaurters: '123, Example Street, Atlanta, GA',
               principlePlaceOfBusiness: '456, Another Example, Denver, CO',
-              otherStates: ['AZ', 'MA', 'NY'],
               numberOfOffices: '17'
           },
           numberOfEmployees: '500',
@@ -571,58 +594,65 @@ export const mockData = [
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
-              nameOfAsset: 'stock wth xyz',
-              valueOfAsset: '500000.00'
+              name: 'stock wth xyz',
+              value: '500000.00'
               },
               {
-              nameOfAsset: 'parcel of land at abc',
-              valueOfAsset: '600000000.00'
+              name: 'parcel of land at abc',
+              value: '600000000.00'
               },
               {
-              nameOfAsset: 'building located at def',
-              valueOfAsset: '12000000.00'
+              name: 'building located at def',
+              value: '12000000.00'
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
-              { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00'
+              { name: 'Salaries payable',
+                value: '20000.00'
              }
           ],
           totalLiabilities: 'function to calc',
           summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-          financialStatementsAnnual: {
-              Year2017: '2017 Financial Report',
-              Year2016: '2016 Financial Report',
-              Year2015: '2015 Financial Report',
-              Year2014: '2014 Financial Report'
-          },
-          financialStatementsQuarterly: {
-              Year2017Q1: '2017 Financial Report',
-              Year2017Q2: '2017 Financial Report',
-              Year2017Q3: '2017 Financial Report',
-              Year2016Q1: '2016 Financial Report',
-              Year2016Q2: '2016 Financial Report',
-              Year2016Q3: '2016 Financial Report',
-              Year2016Q4: '2016 Financial Report',
-              Year2015Q1: '2016 Financial Report',
-              Year2015Q2: '2016 Financial Report',
-              Year2015Q3: '2016 Financial Report',
-              Year2015Q4: '2016 Financial Report',
-          },
-          financialStatementsMonthly: {
-              Year2017M1: 'Mock Financial report',
-              Year2017M2: 'Mock Financial report',
-              Year2017M3: 'Mock Financial report',
-              Year2017M4: 'Mock Financial report',
-              Year2017M5: 'Mock Financial report',
-              Year2017M6: 'Mock Financial report',
-              Year2017M7: 'Mock Financial report',
-              Year2017M8: 'Mock Financial report',
-              Year2016M1: 'Mock Financial report',
-              Year2016M2: 'Mock Financial report',
-              Year2016M3: 'Mock Financial report',
-              Year2016M4: 'Mock Financial report',
-          },
+          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                       {title:'2016 Financial Report', Report: 'Mock Report'},
+                                       {title:'2015 Financial Report', Report: 'Mock Report'},
+                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+
+          ],
+          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+          ],
+          financialStatementsMonthly: [
+            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          ],
           financesAudited: {
               isAudited: true,
               whoAudits: 'example',
@@ -684,7 +714,6 @@ export const mockData = [
           location: {
               headQaurters: '123, Example Street, Atlanta, GA',
               principlePlaceOfBusiness: '456, Another Example, Denver, CO',
-              otherStates: ['AZ', 'MA', 'NY'],
               numberOfOffices: '17'
           },
           numberOfEmployees: '500',
@@ -705,16 +734,16 @@ export const mockData = [
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
-              nameOfAsset: 'stock wth xyz',
-              valueOfAsset: '500000.00'
+              name: 'stock wth xyz',
+              value: '500000.00'
               },
               {
-              nameOfAsset: 'parcel of land at abc',
-              valueOfAsset: '600000000.00'
+              name: 'parcel of land at abc',
+              value: '600000000.00'
               },
               {
-              nameOfAsset: 'building located at def',
-              valueOfAsset: '12000000.00'
+              name: 'building located at def',
+              value: '12000000.00'
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
@@ -724,39 +753,46 @@ export const mockData = [
           ],
           totalLiabilities: 'function to calc',
           summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-          financialStatementsAnnual: {
-              Year2017: '2017 Financial Report',
-              Year2016: '2016 Financial Report',
-              Year2015: '2015 Financial Report',
-              Year2014: '2014 Financial Report'
-          },
-          financialStatementsQuarterly: {
-              Year2017Q1: '2017 Financial Report',
-              Year2017Q2: '2017 Financial Report',
-              Year2017Q3: '2017 Financial Report',
-              Year2016Q1: '2016 Financial Report',
-              Year2016Q2: '2016 Financial Report',
-              Year2016Q3: '2016 Financial Report',
-              Year2016Q4: '2016 Financial Report',
-              Year2015Q1: '2016 Financial Report',
-              Year2015Q2: '2016 Financial Report',
-              Year2015Q3: '2016 Financial Report',
-              Year2015Q4: '2016 Financial Report',
-          },
-          financialStatementsMonthly: {
-              Year2017M1: 'Mock Financial report',
-              Year2017M2: 'Mock Financial report',
-              Year2017M3: 'Mock Financial report',
-              Year2017M4: 'Mock Financial report',
-              Year2017M5: 'Mock Financial report',
-              Year2017M6: 'Mock Financial report',
-              Year2017M7: 'Mock Financial report',
-              Year2017M8: 'Mock Financial report',
-              Year2016M1: 'Mock Financial report',
-              Year2016M2: 'Mock Financial report',
-              Year2016M3: 'Mock Financial report',
-              Year2016M4: 'Mock Financial report',
-          },
+          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                       {title:'2016 Financial Report', Report: 'Mock Report'},
+                                       {title:'2015 Financial Report', Report: 'Mock Report'},
+                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+
+          ],
+          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+          ],
+          financialStatementsMonthly: [
+            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          ],
           financesAudited: {
               isAudited: true,
               whoAudits: 'example',
@@ -818,7 +854,6 @@ export const mockData = [
           location: {
               headQaurters: '123, Example Street, Atlanta, GA',
               principlePlaceOfBusiness: '456, Another Example, Denver, CO',
-              otherStates: ['AZ', 'MA', 'NY'],
               numberOfOffices: '17'
           },
           numberOfEmployees: '500',
@@ -839,58 +874,65 @@ export const mockData = [
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
-              nameOfAsset: 'stock wth xyz',
-              valueOfAsset: '500000.00'
+              name: 'stock wth xyz',
+              value: '500000.00'
               },
               {
-              nameOfAsset: 'parcel of land at abc',
-              valueOfAsset: '600000000.00'
+              name: 'parcel of land at abc',
+              value: '600000000.00'
               },
               {
-              nameOfAsset: 'building located at def',
-              valueOfAsset: '12000000.00'
+              name: 'building located at def',
+              value: '12000000.00'
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
-              { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00'
+              { name: 'Salaries payable',
+                value: '20000.00'
              }
           ],
           totalLiabilities: 'function to calc',
           summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-          financialStatementsAnnual: {
-              Year2017: '2017 Financial Report',
-              Year2016: '2016 Financial Report',
-              Year2015: '2015 Financial Report',
-              Year2014: '2014 Financial Report'
-          },
-          financialStatementsQuarterly: {
-              Year2017Q1: '2017 Financial Report',
-              Year2017Q2: '2017 Financial Report',
-              Year2017Q3: '2017 Financial Report',
-              Year2016Q1: '2016 Financial Report',
-              Year2016Q2: '2016 Financial Report',
-              Year2016Q3: '2016 Financial Report',
-              Year2016Q4: '2016 Financial Report',
-              Year2015Q1: '2016 Financial Report',
-              Year2015Q2: '2016 Financial Report',
-              Year2015Q3: '2016 Financial Report',
-              Year2015Q4: '2016 Financial Report',
-          },
-          financialStatementsMonthly: {
-              Year2017M1: 'Mock Financial report',
-              Year2017M2: 'Mock Financial report',
-              Year2017M3: 'Mock Financial report',
-              Year2017M4: 'Mock Financial report',
-              Year2017M5: 'Mock Financial report',
-              Year2017M6: 'Mock Financial report',
-              Year2017M7: 'Mock Financial report',
-              Year2017M8: 'Mock Financial report',
-              Year2016M1: 'Mock Financial report',
-              Year2016M2: 'Mock Financial report',
-              Year2016M3: 'Mock Financial report',
-              Year2016M4: 'Mock Financial report',
-          },
+          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                       {title:'2016 Financial Report', Report: 'Mock Report'},
+                                       {title:'2015 Financial Report', Report: 'Mock Report'},
+                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+
+          ],
+          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+          ],
+          financialStatementsMonthly: [
+            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          ],
           financesAudited: {
               isAudited: true,
               whoAudits: 'example',
@@ -945,14 +987,14 @@ export const mockData = [
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '8',
       status: 'approved'
-    },
-    { companyName: 'Machine Monsterz',
+  },
+    {
+      companyName: 'Machine Monsterz',
       companyProfile: {
           yearFounded: '1987',
           location: {
               headQaurters: '123, Example Street, Atlanta, GA',
               principlePlaceOfBusiness: '456, Another Example, Denver, CO',
-              otherStates: ['AZ', 'MA', 'NY'],
               numberOfOffices: '17'
           },
           numberOfEmployees: '500',
@@ -973,16 +1015,16 @@ export const mockData = [
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
-              nameOfAsset: 'stock wth xyz',
-              valueOfAsset: '500000.00'
+              name: 'stock wth xyz',
+              value: '500000.00'
               },
               {
-              nameOfAsset: 'parcel of land at abc',
-              valueOfAsset: '600000000.00'
+              name: 'parcel of land at abc',
+              value: '600000000.00'
               },
               {
-              nameOfAsset: 'building located at def',
-              valueOfAsset: '12000000.00'
+              name: 'building located at def',
+              value: '12000000.00'
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
@@ -992,39 +1034,46 @@ export const mockData = [
           ],
           totalLiabilities: 'function to calc',
           summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-          financialStatementsAnnual: {
-              Year2017: '2017 Financial Report',
-              Year2016: '2016 Financial Report',
-              Year2015: '2015 Financial Report',
-              Year2014: '2014 Financial Report'
-          },
-          financialStatementsQuarterly: {
-              Year2017Q1: '2017 Financial Report',
-              Year2017Q2: '2017 Financial Report',
-              Year2017Q3: '2017 Financial Report',
-              Year2016Q1: '2016 Financial Report',
-              Year2016Q2: '2016 Financial Report',
-              Year2016Q3: '2016 Financial Report',
-              Year2016Q4: '2016 Financial Report',
-              Year2015Q1: '2016 Financial Report',
-              Year2015Q2: '2016 Financial Report',
-              Year2015Q3: '2016 Financial Report',
-              Year2015Q4: '2016 Financial Report',
-          },
-          financialStatementsMonthly: {
-              Year2017M1: 'Mock Financial report',
-              Year2017M2: 'Mock Financial report',
-              Year2017M3: 'Mock Financial report',
-              Year2017M4: 'Mock Financial report',
-              Year2017M5: 'Mock Financial report',
-              Year2017M6: 'Mock Financial report',
-              Year2017M7: 'Mock Financial report',
-              Year2017M8: 'Mock Financial report',
-              Year2016M1: 'Mock Financial report',
-              Year2016M2: 'Mock Financial report',
-              Year2016M3: 'Mock Financial report',
-              Year2016M4: 'Mock Financial report',
-          },
+          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                       {title:'2016 Financial Report', Report: 'Mock Report'},
+                                       {title:'2015 Financial Report', Report: 'Mock Report'},
+                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+
+          ],
+          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+          ],
+          financialStatementsMonthly:[
+            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          ],
           financesAudited: {
               isAudited: true,
               whoAudits: 'example',
@@ -1073,7 +1122,7 @@ export const mockData = [
           otherRegulatory: 'any other regulatory issues, antiTrust laws, trade commsion etc',
           assessment: 'assessment of legal matters',
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
-          rating: '',
+          rating: ''
       },
       ManagementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444'}],
       finalAssessment: 'final assesment after considering all factors',
@@ -1086,7 +1135,6 @@ export const mockData = [
           location: {
               headQaurters: '123, Example Street, Atlanta, GA',
               principlePlaceOfBusiness: '456, Another Example, Denver, CO',
-              otherStates: ['AZ', 'MA', 'NY'],
               numberOfOffices: '17'
           },
           numberOfEmployees: '500',
@@ -1102,21 +1150,21 @@ export const mockData = [
               backgrondInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
-          },
+          }
       },
       financialMatters: {
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
-              nameOfAsset: 'stock wth xyz',
-              valueOfAsset: '500000.00'
+              name: 'stock wth xyz',
+              value: '500000.00'
               },
               {
-              nameOfAsset: 'parcel of land at abc',
-              valueOfAsset: '600000000.00'
+              name: 'parcel of land at abc',
+              value: '600000000.00'
               },
               {
-              nameOfAsset: 'building located at def',
-              valueOfAsset: '12000000.00'
+              name: 'building located at def',
+              value: '12000000.00'
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
@@ -1126,39 +1174,46 @@ export const mockData = [
           ],
           totalLiabilities: 'function to calc',
           summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
-          financialStatementsAnnual: {
-              Year2017: '2017 Financial Report',
-              Year2016: '2016 Financial Report',
-              Year2015: '2015 Financial Report',
-              Year2014: '2014 Financial Report'
-          },
-          financialStatementsQuarterly: {
-              Year2017Q1: '2017 Financial Report',
-              Year2017Q2: '2017 Financial Report',
-              Year2017Q3: '2017 Financial Report',
-              Year2016Q1: '2016 Financial Report',
-              Year2016Q2: '2016 Financial Report',
-              Year2016Q3: '2016 Financial Report',
-              Year2016Q4: '2016 Financial Report',
-              Year2015Q1: '2016 Financial Report',
-              Year2015Q2: '2016 Financial Report',
-              Year2015Q3: '2016 Financial Report',
-              Year2015Q4: '2016 Financial Report',
-          },
-          financialStatementsMonthly: {
-              Year2017M1: 'Mock Financial report',
-              Year2017M2: 'Mock Financial report',
-              Year2017M3: 'Mock Financial report',
-              Year2017M4: 'Mock Financial report',
-              Year2017M5: 'Mock Financial report',
-              Year2017M6: 'Mock Financial report',
-              Year2017M7: 'Mock Financial report',
-              Year2017M8: 'Mock Financial report',
-              Year2016M1: 'Mock Financial report',
-              Year2016M2: 'Mock Financial report',
-              Year2016M3: 'Mock Financial report',
-              Year2016M4: 'Mock Financial report',
-          },
+          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
+                                       {title:'2016 Financial Report', Report: 'Mock Report'},
+                                       {title:'2015 Financial Report', Report: 'Mock Report'},
+                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+
+          ],
+          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
+                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
+          ],
+          financialStatementsMonthly: [
+              {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
+              {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          ],
           financesAudited: {
               isAudited: true,
               whoAudits: 'example',
@@ -1213,7 +1268,7 @@ export const mockData = [
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '2',
       status: 'declined'
-    },
+    }
 ];
 
 export const sortedMockData = sortFunction(mockData, 'companyName')
