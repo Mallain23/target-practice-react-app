@@ -14,13 +14,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To be a leader in the real estate industry by providing enhanced services, relationship and profitability.',
-              vistion: 'To provide quality services that exceeds the expectations of our esteemed customers.',
+              vision: 'To provide quality services that exceeds the expectations of our esteemed customers.',
               missionStatement: 'To build long term relationships with our customers and clients and provide exceptional customer services by pursuing business through innovation and advanced technology.',
               coreValues: 'We believe in treating our customers with respect. We grow through creativity, invention and innovation. We integrate honesty, integrity and business ethics into all aspects of our business functioning',
               goals: 'Regional expansion in the field of property management and develop a strong base of key customers. Increase the assets and investments of the company to support the development of services. To build good reputation in the field of real estate and property management and become a key player in the industry'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: 'What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           },
@@ -155,13 +155,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To be a titan of all industries and take over the world and all markets, control all prices.',
-              vistion: 'To be the largest conglomerate in the world',
+              vision: 'To be the largest conglomerate in the world',
               missionStatement: 'Destroy the little guy',
               coreValues: 'Win at all costs',
               goals: 'Rapid growth and accumulation of wealth'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           }
@@ -301,13 +301,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To provide creative solutions to current problems.',
-              vistion: 'To be the leader in solving the world problems with efficient and cost cutting solutions',
+              vision: 'To be the leader in solving the world problems with efficient and cost cutting solutions',
               missionStatement: 'Change the world for the better',
               coreValues: 'Collaborative environment to foster creative thinking and new ideas',
               goals: 'work with other leading companies to create new ideas and solutions for current problems'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           },
@@ -444,13 +444,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To be a leader in the real estate industry by providing enhanced services, relationship and profitability.',
-              vistion: 'To provide quality services that exceeds the expectations of our esteemed customers.',
+              vision: 'To provide quality services that exceeds the expectations of our esteemed customers.',
               missionStatement: 'To build long term relationships with our customers and clients and provide exceptional customer services by pursuing business through innovation and advanced technology.',
               coreValues: 'We believe in treating our customers with respect. We grow through creativity, invention and innovation. We integrate honesty, integrity and business ethics into all aspects of our business functioning',
               goals: 'Regional expansion in the field of property management and develop a strong base of key customers. Increase the assets and investments of the company to support the development of services. To build good reputation in the field of real estate and property management and become a key player in the industry'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           },
@@ -585,13 +585,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To be a leader in the real estate industry by providing enhanced services, relationship and profitability.',
-              vistion: 'To provide quality services that exceeds the expectations of our esteemed customers.',
+              vision: 'To provide quality services that exceeds the expectations of our esteemed customers.',
               missionStatement: 'To build long term relationships with our customers and clients and provide exceptional customer services by pursuing business through innovation and advanced technology.',
               coreValues: 'We believe in treating our customers with respect. We grow through creativity, invention and innovation. We integrate honesty, integrity and business ethics into all aspects of our business functioning',
               goals: 'Regional expansion in the field of property management and develop a strong base of key customers. Increase the assets and investments of the company to support the development of services. To build good reputation in the field of real estate and property management and become a key player in the industry'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           },
@@ -726,13 +726,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To be a leader in the real estate industry by providing enhanced services, relationship and profitability.',
-              vistion: 'To provide quality services that exceeds the expectations of our esteemed customers.',
+              vision: 'To provide quality services that exceeds the expectations of our esteemed customers.',
               missionStatement: 'To build long term relationships with our customers and clients and provide exceptional customer services by pursuing business through innovation and advanced technology.',
               coreValues: 'We believe in treating our customers with respect. We grow through creativity, invention and innovation. We integrate honesty, integrity and business ethics into all aspects of our business functioning',
               goals: 'Regional expansion in the field of property management and develop a strong base of key customers. Increase the assets and investments of the company to support the development of services. To build good reputation in the field of real estate and property management and become a key player in the industry'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           },
@@ -867,13 +867,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To be a leader in the real estate industry by providing enhanced services, relationship and profitability.',
-              vistion: 'To provide quality services that exceeds the expectations of our esteemed customers.',
+              vision: 'To provide quality services that exceeds the expectations of our esteemed customers.',
               missionStatement: 'To build long term relationships with our customers and clients and provide exceptional customer services by pursuing business through innovation and advanced technology.',
               coreValues: 'We believe in treating our customers with respect. We grow through creativity, invention and innovation. We integrate honesty, integrity and business ethics into all aspects of our business functioning',
               goals: 'Regional expansion in the field of property management and develop a strong base of key customers. Increase the assets and investments of the company to support the development of services. To build good reputation in the field of real estate and property management and become a key player in the industry'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           },
@@ -1009,13 +1009,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To be a leader in the real estate industry by providing enhanced services, relationship and profitability.',
-              vistion: 'To provide quality services that exceeds the expectations of our esteemed customers.',
+              vision: 'To provide quality services that exceeds the expectations of our esteemed customers.',
               missionStatement: 'To build long term relationships with our customers and clients and provide exceptional customer services by pursuing business through innovation and advanced technology.',
               coreValues: 'We believe in treating our customers with respect. We grow through creativity, invention and innovation. We integrate honesty, integrity and business ethics into all aspects of our business functioning',
               goals: 'Regional expansion in the field of property management and develop a strong base of key customers. Increase the assets and investments of the company to support the development of services. To build good reputation in the field of real estate and property management and become a key player in the industry'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           },
@@ -1150,13 +1150,13 @@ export const mockData = [
           generalBusinessActivities: 'Summary of the scope of business and general business activities ie.  been established as a real estate company in North and South America. Our traditional business model is based on the accomplishment of properties in the real estate markets in America. Based on the decision of the company to diversify our properties; we have now established this corporation in Toronto. The revenues of our company are expected to be nearly US$50,000 per month depending on the variables that are factored in with investments in the real estate industry. There is a great need for certified or official bank checks in the future to deal with some real estate transactions. In addition to real estate investments, the company has invested portions of its assets in the purchase and sale of securities such as stocks and bonds as well as Forex trading on global markets.',
           companyStrategy: {
               purpose: 'To be a leader in the real estate industry by providing enhanced services, relationship and profitability.',
-              vistion: 'To provide quality services that exceeds the expectations of our esteemed customers.',
+              vision: 'To provide quality services that exceeds the expectations of our esteemed customers.',
               missionStatement: 'To build long term relationships with our customers and clients and provide exceptional customer services by pursuing business through innovation and advanced technology.',
               coreValues: 'We believe in treating our customers with respect. We grow through creativity, invention and innovation. We integrate honesty, integrity and business ethics into all aspects of our business functioning',
               goals: 'Regional expansion in the field of property management and develop a strong base of key customers. Increase the assets and investments of the company to support the development of services. To build good reputation in the field of real estate and property management and become a key player in the industry'
           },
           industryInformation: {
-              backgrondInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           }

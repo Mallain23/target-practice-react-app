@@ -7,13 +7,14 @@ import Paragraph from '../CompanyPage/Paragraph'
 export class CompanyOverview extends React.Component {
 
     render() {
+
         const { companyName, costOfAcquisition } = this.props.selectedCompany
         const { yearFounded,
                 location,
                 numberOfEmployees,
                 generalBusinessActivities,
-                companyStrategy,
-                industryInformation } = this.props.selectedCompany.companyProfile
+                companyStrategy } = this.props.selectedCompany.companyProfile
+        const { backgroundInformation, presentCondition } = this.props.selectedCompany.companyProfile.industryInformation
 
         return (
               <Row>
@@ -29,8 +30,8 @@ export class CompanyOverview extends React.Component {
                       <Paragraph className='company-data' text={`Company Vision ${companyStrategy.vision}`} />
                       <Paragraph className='company-data' text={`Company Goals: ${companyStrategy.goals}`} />
                       <Paragraph className='company-data' text={`Core Values: ${companyStrategy.coreValues}`} />
-                      <Paragraph className='company-data' text={`Background/History of the Industry: ${industryInformation.background}`} />
-                      <Paragraph className='company-data' text={`Present Industry Conditions: ${industryInformation.background}`} />
+                      <Paragraph className='company-data' text={`Background/History of the Industry: ${backgroundInformation}`} />
+                      <Paragraph className='company-data' text={`Present Industry Conditions: ${presentCondition}`} />
                   </Col>
               </Row>
         );

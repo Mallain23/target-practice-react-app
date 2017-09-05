@@ -133,7 +133,7 @@ export const getFinacnialReport = (title, _typeOfReport) => (dispatch, getState)
     let typeOfReport = formatTypeOfReportText(_typeOfReport)
 
     const report = getState().app.selectedCompany.financialMatters[typeOfReport].find(report => report.title === title)
-    console.log(report)
+
 
     dispatch(getFinacnialReportSuccess(report))
 };
@@ -142,4 +142,10 @@ export const GET_FINANCIAL_REPORT_SUCCESS = 'GET_FINANCIAL_REPORT_SUCCESS'
 export const getFinacnialReportSuccess = report => ({
     type: GET_FINANCIAL_REPORT_SUCCESS,
     report
+});
+
+export const UPDATE_CURRENT_SELECTED_PAGE = 'UPDATE_CURRENT_SELECTED_PAGE '
+export const updateCurrentSelectedPage = page => ({
+    type: UPDATE_CURRENT_SELECTED_PAGE ,
+    page
 });

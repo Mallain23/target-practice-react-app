@@ -33,9 +33,34 @@ export class CompanyPage extends React.Component {
         }
     };
 
+    renderPageContent() {
+          const { selectedPage } = this.props
+
+          if (selectedPage === 'CompanyOverview') {
+              return <CompanyOverview {...this.props} />
+          }
+
+          else if (selectedPage === 'CompanyDirectory') {
+              return <CompanyDirectory {...this.props} />
+          }
+
+          else if (selectedPage === 'FinalAssessmentPage') {
+              return <FinalAssessmentPage {...this.props} />
+          }
+
+          else if (selectedPage === 'FinancialPage') {
+              return <FinancialPage {...this.props} />
+          }
+
+          else if (selectedPage === 'BenefitsPage') {
+              return <BenefitsPage {...this.props} />
+          }
+
+          return <LegalPage {...this.props} />
+    };
+
     render() {
-        const { companyName } = this.props.selectedCompany
-        const { selectedPage } = this.props
+        const { companyName, selectedPage } = this.props
         return (
               <div>
                   <Row className='company-page-container'>
@@ -52,7 +77,7 @@ export class CompanyPage extends React.Component {
                       <Col xs={12}>
                           <CompanyPageButtons {...this.props}/>
                       </Col>
-                      <FinalAssessmentPage {...this.props} />
+                      {this.renderPageContent()}
                   </Row>
               </div>
 

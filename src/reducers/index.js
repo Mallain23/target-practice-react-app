@@ -10,7 +10,8 @@ import { SHOW_EXTENDED_NAV,
          ADD_COMPANY_TO_DATABASE,
          FETCH_COMPANY_DATA_SUCCESS,
          REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
-         GET_FINANCIAL_REPORT_SUCCESS } from '../components/actions'
+         GET_FINANCIAL_REPORT_SUCCESS,
+         UPDATE_CURRENT_SELECTED_PAGE} from '../components/actions'
 
 
 const initialState = {
@@ -106,7 +107,7 @@ export default function reducer(state = initialState, action) {
 
           return Object.assign({}, state, {
               selectedCompany,
-              selectedPage: 'Company Overview Page'
+              selectedPage: 'CompanyOverview'
           });
     }
 
@@ -121,9 +122,16 @@ export default function reducer(state = initialState, action) {
 
     else if (action.type === GET_FINANCIAL_REPORT_SUCCESS) {
         const { report: selectedFinancialReport } = action
-        console.log(selectedFinancialReport)
+
         return Object.assign({}, state, {
             selectedFinancialReport
+        });
+    }
+
+    else if(action.type === UPDATE_CURRENT_SELECTED_PAGE) {
+        const { page: selectedPage } = action
+        return Object.assign({}, state, {
+            selectedPage
         });
     }
 
