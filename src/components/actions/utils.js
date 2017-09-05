@@ -107,7 +107,7 @@ export const formatDataForEntry = companyName => ({
         products: 'No Information Provided',
         people: 'No Information Provided',
         revenueEnhancements: 'No Information Provided',
-        misccellaneous: 'No Information Provided',
+        miscellaneous: 'No Information Provided',
         assesment: 'No Information Provided',
         internalOtherBenefitsRating: 'No Information Provided'
     },

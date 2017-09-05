@@ -17,9 +17,9 @@ export class Page extends React.Component {
         return (
           <Grid>
               <Row>
-                  <Col xs={4}>
+                  <Col xs={3}>
                   </Col>
-                  <Col xs={8}>
+                  <Col xs={9}>
                       <div className='page-container'>
                         {pageComponent}
                       </div>

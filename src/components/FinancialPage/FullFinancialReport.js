@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+
 import { getFinacnialReport } from '../actions'
 
 
@@ -21,13 +22,13 @@ export class FullFinancialReport extends React.Component {
 
         return (
           <Row>
-            <Col xs={12} md={3}>
-            </Col>
-            <Col xs={12} md={9}>
-            <h1>{selectedFinancialReport.title}</h1>
-            <p>{selectedFinancialReport.Report}</p>
-            <Link to={`/company/${selectedCompany.companyName}`}>Back </Link>
-            </Col>
+              <Col xs={12} md={3}>
+              </Col>
+              <Col xs={12} md={9}>
+                  <h1>{selectedFinancialReport.title}</h1>
+                  <p>{selectedFinancialReport.Report}</p>
+                  <Link to={`/company/${selectedCompany.companyName}`}>Back </Link>
+              </Col>
           </Row>
         );
     };

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Grid, Col, Row } from 'react-bootstrap'
 
-import Paragraph from './Paragraph'
+import Paragraph from '../CompanyPage/Paragraph'
 
 export class CompanyOverview extends React.Component {
 

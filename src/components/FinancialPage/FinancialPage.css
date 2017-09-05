@@ -1,0 +1,8 @@
+.financial-report-button {
+    border: none;
+    background-color: transparent;
+}
+
+.financial-report-button:hover {
+  background-color: grey;
+}

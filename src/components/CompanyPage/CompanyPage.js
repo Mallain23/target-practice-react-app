@@ -5,8 +5,9 @@ import { Grid, Col, Row } from 'react-bootstrap'
 import { showExtendedNav, fetchCompanyData } from '../actions'
 
 import CompanyPageButtons from './CompanyPageButtons'
-import CompanyOverview from './CompanyOverview'
-import FinancialPage from './FinancialPage'
+import CompanyOverview from '../CompanyOverview/CompanyOverview'
+import FinancialPage from '../FinancialPage/FinancialPage'
+import BenefitsPage from '../BenefitsPage/BenefitsPage'
 
 export class CompanyPage extends React.Component {
 
@@ -48,7 +49,7 @@ export class CompanyPage extends React.Component {
                       <Col xs={12}>
                           <CompanyPageButtons {...this.props}/>
                       </Col>
-                      <FinancialPage {...this.props}/>
+                      <BenefitsPage {...this.props} />
                   </Row>
               </div>
 

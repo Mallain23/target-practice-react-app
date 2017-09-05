@@ -2,13 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Grid, Col, Row } from 'react-bootstrap'
 
-import Paragraph from './Paragraph'
+import Paragraph from '../CompanyPage/Paragraph'
 import FormattedAL from './FormattedAL'
 import FormattedFinacnialReports from './FormattedFinacnialReports'
 
 export class FinancialPage extends React.Component {
     render() {
-
+        const  { status, companyProjections, areProjectionsReasonable } = this.props.selectedCompany.financialMatters.businessMargins
         const { statementFromCompany,
                 assets,
                 liabilities,
@@ -18,7 +18,6 @@ export class FinancialPage extends React.Component {
                 financialStatementsQuarterly,
                 financialStatementsMonthly,
                 financesAudited,
-                businessMargins,
                 internalAssessmentOfFinances,
                 internalFinancialRating } = this.props.selectedCompany.financialMatters
 
@@ -35,6 +34,9 @@ export class FinancialPage extends React.Component {
                                  arrayOfAL={liabilities}
                                  name='Liabilities' />
                     <Paragraph className='company-data' text={`Total Value of All Liabilities: ${totalLiabilities}`} />
+                    <h3>Financial Reports</h3>
+                    <Paragraph className='company-data' text={`Financial Reports Audited: ${financesAudited.isAudited}`} />
+                    <Paragraph className='company-data' text={`Who audits Finances: ${financesAudited.whoAudits}`} />
                     <FormattedFinacnialReports className='annual-financial-reports'
                                                 arrayOfReports={financialStatementsAnnual}
                                                 name='Annual'
@@ -47,7 +49,13 @@ export class FinancialPage extends React.Component {
                                                 arrayOfReports={financialStatementsMonthly}
                                                 name='Monthly'
                                                 {...this.props} />
-
+                    <h3>Business Margins</h3>
+                    <Paragraph className='company-data' text={`Current Status of Business Margins: ${status}`} />
+                    <Paragraph className='company-data' text={`Company Projections for Business Margins: ${companyProjections}`} />
+                    <Paragraph className='company-data' text={`Are Projections Reasonable: ${areProjectionsReasonable}`} />
+                    <h3>Final Assessment and Rating of Finances</h3>
+                    <Paragraph className='company-data' text={`Internal Assessment: ${internalAssessmentOfFinances}`} />
+                    <Paragraph className='company-data' text={`Rating of Finances: ${internalFinancialRating}`} />
 
                 </Col>
             </Row>

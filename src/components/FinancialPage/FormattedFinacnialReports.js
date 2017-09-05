@@ -1,21 +1,22 @@
 import React from 'react'
 
-import Paragraph from './Paragraph'
+import Paragraph from '../CompanyPage/Paragraph'
+import './FinancialPage.css'
 
 export default class FormattedFinacnialReports extends React.Component {
     constructor (props) {
         super(props)
 
         this.handleClick = this.handleClick.bind(this)
-    }
+    };
     handleClick(e) {
-      e.preventDefault()
-      const title = e.target.value
-      const typeOfReport = this.props.name
+        e.preventDefault()
+        const title = e.target.value
+        const typeOfReport = this.props.name
 
 
-      this.props.history.push(`/finacialreport/${title}/${typeOfReport}`)
-    }
+        this.props.history.push(`/finacialreport/${title}/${typeOfReport}`)
+    };
 
     render() {
 

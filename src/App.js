@@ -7,7 +7,7 @@ import SideBarContainer from './components/SideBar/SideBarContainer';
 import Page from './components/Page/Page';
 import CompanyPage from './components/CompanyPage/CompanyPage'
 import CompanyDataModalContainer from './components/CompanyDataModal/CompanyDataModalContainer'
-import FullFinancialReport from './components/CompanyPage/FullFinancialReport'
+import FullFinancialReport from './components/FinancialPage/FullFinancialReport'
 
 import './App.css';
 

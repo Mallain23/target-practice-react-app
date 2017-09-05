@@ -100,9 +100,9 @@ export const mockData = [
           internalFinancialRating: '8'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '7'
@@ -245,9 +245,9 @@ export const mockData = [
         internalFinancialRating: '5'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName', copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName', details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '3'
@@ -387,9 +387,9 @@ export const mockData = [
         internalFinancialRating: '9'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName', copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName', details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '8'
@@ -527,9 +527,9 @@ export const mockData = [
           internalFinancialRating: '4'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '9'
@@ -667,9 +667,9 @@ export const mockData = [
           internalFinancialRating: '3'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '6'
@@ -807,9 +807,9 @@ export const mockData = [
           internalFinancialRating: '3'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '7'
@@ -947,9 +947,9 @@ export const mockData = [
           internalFinancialRating: '8'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '9'
@@ -1028,8 +1028,8 @@ export const mockData = [
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
-              { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00'
+              { name: 'Salaries payable',
+                value: '20000.00'
              }
           ],
           totalLiabilities: 'function to calc',
@@ -1088,9 +1088,9 @@ export const mockData = [
           internalFinancialRating: '8'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '10'
@@ -1228,9 +1228,9 @@ export const mockData = [
           internalFinancialRating: '1'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', patentDetails: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', trademarkDetails: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  copyrightDetails: 'info on copyrights'}],
+          patents: [{name: 'patentName', details: 'info on patent'}],
+          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
+          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
           litigation: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '2'
