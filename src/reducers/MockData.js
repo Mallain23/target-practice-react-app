@@ -2,6 +2,7 @@ import { sortFunction } from '../components/actions/utils'
 
 export const mockData = [
     { companyName: 'Target Company A',
+      costOfAcquisition: '4,000,000.00',
       companyProfile: {
           yearFounded: '1987',
           location: {
@@ -119,7 +120,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '5'
       },
@@ -136,12 +137,13 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: '8'
       },
-      ManagementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444'}],
+      managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '8',
       status: 'pending'
     },
     { companyName: 'Evil Corp',
+      costOfAcquisition: '433,000,000.00',
       companyProfile: {
           yearFounded: '2014',
           location: {
@@ -264,7 +266,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '5'
       },
@@ -281,12 +283,13 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: '2'
       },
-      managementDirectory: [{name: 'Satan', cell: '666-666-6666', work: '666-666-6666'}],
+      managementDirectory: [{name: 'Satan', cell: '666-666-6666', work: '666-666-6666', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '4',
       status: 'declined'
     },
     { companyName: 'Awesome LLC',
+     costOfAcquisition: '29,000,000.00',
       companyProfile: {
           yearFounded: '2000',
           location: {
@@ -406,7 +409,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '9'
       },
@@ -423,12 +426,13 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: '10'
       },
-      ManagementDirectory: [{name: 'Tim White', cell: '777-666-0000', work: '123-456-7890'}],
+      managementDirectory: [{name: 'Tim White', cell: '777-666-0000', work: '123-456-7890', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '9',
       status: 'approved'
     },
     { companyName: 'Target Company B',
+      costOfAcquisition: '10,000,000.00',
       companyProfile: {
           yearFounded: '1987',
           location: {
@@ -546,7 +550,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '7'
       },
@@ -563,12 +567,13 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: ''
       },
-      ManagementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444'}],
+      managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '5',
       status: 'researching'
     },
     { companyName: 'Tech Co.',
+      costOfAcquisition: '14,000,000.00',
       companyProfile: {
           yearFounded: '1987',
           location: {
@@ -686,7 +691,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '5'
       },
@@ -703,12 +708,13 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: '4'
       },
-      ManagementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444'}],
+      managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '',
       status: 'pending'
     },
     { companyName: 'Great LLC',
+      costOfAcquisition: '1,000,000.00',
       companyProfile: {
           yearFounded: '1987',
           location: {
@@ -826,7 +832,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '2'
       },
@@ -843,12 +849,13 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: '3'
       },
-      ManagementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444'}],
+      managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '5',
       status: 'pending'
     },
     { companyName: 'Social Media Savy',
+      costOfAcquisition: '4,000,000.00',
       companyProfile: {
           yearFounded: '2010',
           location: {
@@ -966,7 +973,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '10'
       },
@@ -983,13 +990,14 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: '10'
       },
-      ManagementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444'}],
+      managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '8',
       status: 'approved'
   },
     {
       companyName: 'Machine Monsterz',
+      costOfAcquisition: '8,000,000.00',
       companyProfile: {
           yearFounded: '1987',
           location: {
@@ -1107,7 +1115,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '5'
       },
@@ -1124,12 +1132,13 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: ''
       },
-      ManagementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444'}],
+      managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '8',
       status: 'researching'
     },
     { companyName: 'Coal Minerz Co.',
+      costOfAcquisition: '300,000.00',
       companyProfile: {
           yearFounded: '1930',
           location: {
@@ -1247,7 +1256,7 @@ export const mockData = [
           products: 'does target provide products we dont have',
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
-          misccellaneous: 'any other benefits',
+          miscellaneous: 'any other benefits',
           assesment: 'internal assessment',
           internalOtherBenefitsRating: '1'
       },
@@ -1264,7 +1273,7 @@ export const mockData = [
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
           rating: '4'
       },
-      ManagementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444'}],
+      managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '2',
       status: 'declined'

@@ -42,6 +42,7 @@ export const formatTypeOfReportText = _typeOfReport  => {
 
 export const formatDataForEntry = companyName => ({
     companyName,
+    costOfAcquisition: 'No Information Provided',
     companyProfile: {
         yearFounded: 'No Information Provided',
         location: {
@@ -124,7 +125,7 @@ export const formatDataForEntry = companyName => ({
         internalIssues: 'No Information Provided',
         rating: 'No Information Provided'
     },
-    ManagementDirectory: ['No Information Provided'],
+    managementDirectory: ['No Information Provided'],
     finalAssessment: 'No Information Provided',
     overallRating: 'No Information Provided',
     status: 'researching'

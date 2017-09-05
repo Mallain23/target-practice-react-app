@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Grid, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
 
 export class CompanyOverview extends React.Component {
 
     render() {
-        const { companyName } = this.props.selectedCompany
+        const { companyName, costOfAcquisition } = this.props.selectedCompany
         const { yearFounded,
                 location,
                 numberOfEmployees,
@@ -19,6 +19,7 @@ export class CompanyOverview extends React.Component {
               <Row>
                   <Col xs={12}>
                       <Paragraph className='company-data' text={`CompanyName: ${companyName}`} />
+                      <Paragraph className='company-data' text={`Cost of Aquisition: ${costOfAcquisition}`} />
                       <Paragraph className='company-data' text={`Year Founded: ${yearFounded}`} />
                       <Paragraph className='company-data' text={`Headquarters: ${location.headQaurters}`} />
                       <Paragraph className='company-data' text={`Principle Place of Business: ${location.principlePlaceOfBusiness}`} />

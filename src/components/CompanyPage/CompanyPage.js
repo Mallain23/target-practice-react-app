@@ -8,6 +8,9 @@ import CompanyPageButtons from './CompanyPageButtons'
 import CompanyOverview from '../CompanyOverview/CompanyOverview'
 import FinancialPage from '../FinancialPage/FinancialPage'
 import BenefitsPage from '../BenefitsPage/BenefitsPage'
+import LegalPage from '../LegalPage/LegalPage'
+import CompanyDirectory from '../CompanyOverview/CompanyDirectory'
+import FinalAssessmentPage from '../CompanyOverview/FinalAssessmentPage'
 
 export class CompanyPage extends React.Component {
 
@@ -49,7 +52,7 @@ export class CompanyPage extends React.Component {
                       <Col xs={12}>
                           <CompanyPageButtons {...this.props}/>
                       </Col>
-                      <BenefitsPage {...this.props} />
+                      <FinalAssessmentPage {...this.props} />
                   </Row>
               </div>
 
