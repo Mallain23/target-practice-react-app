@@ -40,6 +40,39 @@ export const formatTypeOfReportText = _typeOfReport  => {
     return 'financialStatementsMonthly'
 };
 
+export const formatCompanyProfileData= data => {
+     const {
+             yearFounded,
+             generalBusinessActivities,
+             numberOfEmployees,
+             headQaurters,
+             principlePlaceOfBusiness,
+             numberOfOffices,
+             vision,
+             goals,
+             backgroundInformation,
+             presentCondition
+      } = data
+
+    return  { yearFounded,
+        location: {
+            headQaurters,
+            principlePlaceOfBusiness,
+            numberOfOffices
+        },
+        numberOfEmployees,
+        generalBusinessActivities,
+        companyStrategy: {
+            vision,
+            goals
+        },
+        industryInformation: {
+            backgroundInformation,
+            presentCondition
+        }
+    };
+};
+
 export const formatDataForEntry = companyName => ({
     companyName,
     costOfAcquisition: 'No Information Provided',
@@ -48,15 +81,12 @@ export const formatDataForEntry = companyName => ({
         location: {
             headQaurters: 'No Information Provided',
             principlePlaceOfBusiness: 'No Information Provided',
-            otherStates: ['No Information Provided'],
             numberOfOffices: 'No Information Provided'
         },
         numberOfEmployees: 'No Information Provided',
-        generalBusinessActivities: {
-            purpose: 'No Information Provided',
-            vistion: 'No Information Provided',
-            missionStatement: 'No Information Provided',
-            coreValues: 'No Information Provided',
+        generalBusinessActivities: 'No Information Provided',
+        companyStrategy: {
+            vision: 'No Information Provided',
             goals: 'No Information Provided'
         },
         industryInformation: {

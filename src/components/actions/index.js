@@ -4,7 +4,8 @@ import { filterCompanyByStatus,
          statusObject,
          sortFunction,
          formatDataForEntry,
-          formatTypeOfReportText } from './utils'
+          formatTypeOfReportText,
+          formatCompanyProfileData} from './utils'
 
 export const SHOW_EXTENDED_NAV = 'SHOW_EXTENDED_NAV'
 export const showExtendedNav = () => ({
@@ -153,4 +154,29 @@ export const updateCurrentSelectedPage = page => ({
 export const OPEN_EDIT_PAGE_MODAL = 'OPEN_EDIT_PAGE_MODAL'
 export const openEditPageModal = () => ({
   type: OPEN_EDIT_PAGE_MODAL
+});
+
+export const editCompanyOverview = data => (dispatch, getState) => {
+    const { companyName, costOfAcquisition } = data
+    const companyProfile = formatCompanyProfileData(data);
+
+    const selectedCompany = getState().app.selectedCompany
+    const updatedCompanyEntry = Object.assign({}, selectedCompany, {
+          companyProfile: companyProfile,
+          companyName,
+          costOfAcquisition
+    })
+
+    const companies = getState().app.companies
+    const updatedList = companies.filter(({companyName}) =>
+          companyName !== selectedCompany.companyName)
+
+    dispatch(editCompanyOverviewSuccess(updatedCompanyEntry, updatedList))
+};
+
+export const EDIT_COMPANY_OVERVIEW_SUCCESS = 'EDIT_COMPANY_OVERVIEW_SUCCESS'
+export const editCompanyOverviewSuccess = (updatedEntry, updatedList) => ({
+    type: EDIT_COMPANY_OVERVIEW_SUCCESS,
+    updatedEntry,
+    updatedList
 });

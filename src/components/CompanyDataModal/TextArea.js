@@ -3,7 +3,7 @@ import { FormControl, FormGroup, ControlLabel } from 'react-bootstrap'
 
 export default class TextArea extends React.Component {
     componentDidUpdate(prevProps) {
-        
+
     };
 
     render() {
@@ -31,7 +31,7 @@ export default class TextArea extends React.Component {
                     {...this.props.input}
                     placeholder={this.props.placeholder}
                     id={this.props.input.name}
-                    type='textarea'
+                    componentClass='textarea'
 
                     ref={input => (this.input = input)}
                 />

@@ -12,7 +12,8 @@ import { SHOW_EXTENDED_NAV,
          REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
          GET_FINANCIAL_REPORT_SUCCESS,
          UPDATE_CURRENT_SELECTED_PAGE,
-         OPEN_EDIT_PAGE_MODAL} from '../components/actions'
+         OPEN_EDIT_PAGE_MODAL,
+         EDIT_COMPANY_OVERVIEW_SUCCESS } from '../components/actions'
 
 
 const initialState = {
@@ -116,7 +117,7 @@ export default function reducer(state = initialState, action) {
 
           return Object.assign({}, state, {
               selectedCompany,
-              selectedPage: 'CompanyOverview'
+              selectedPage: 'Company Overview'
           });
     }
 
@@ -142,6 +143,16 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             selectedPage
         });
+    }
+    else if (action.type === EDIT_COMPANY_OVERVIEW_SUCCESS) {
+        const { updatedEntry, updatedList } = action
+      
+        return Object.assign({}, state, {
+            selectedCompany: updatedEntry,
+            companies: [...updatedList, updatedEntry],
+            searchResults: [...updatedList, updatedEntry],
+            showEditModal: false
+        })
     }
 
     return state

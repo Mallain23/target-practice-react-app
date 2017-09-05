@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import { closeModal } from '../actions'
 
+import EditCompanyOverviewForm from './EditCompanyOverview'
 // import './Modal.css'
 
 export class EditPageModal extends React.Component {
@@ -19,8 +20,8 @@ export class EditPageModal extends React.Component {
     };
 
     render() {
-        const { showEditModal } = this.props
-        console.log(showEditModal)
+        const { showEditModal, selectedCompany } = this.props
+
         return (
             <div className="Add-Company-Modal">
                 <Modal show={showEditModal}
@@ -32,6 +33,7 @@ export class EditPageModal extends React.Component {
                         <Modal.Title id="edit-page-modal">Edit Company Information</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
+                        <EditCompanyOverviewForm selectedCompany={selectedCompany}/>
                     </Modal.Body>
                     <Modal.Footer>
                   </Modal.Footer>
@@ -41,9 +43,14 @@ export class EditPageModal extends React.Component {
     };
 };
 
-const mapStateToProps = state => ({
-    showEditModal: state.app.showEditModal,
-    companies: state.app.companies
-})
+const mapStateToProps = state => {
+    const { showEditModal, companies, selectedCompany } = state.app
+
+    return {
+        showEditModal,
+        companies,
+        selectedCompany
+    };
+};
 
 export default connect(mapStateToProps)(EditPageModal)

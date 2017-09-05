@@ -15,8 +15,7 @@ export default class Input extends React.Component {
                     placeholder={this.props.placeholder}
                     id={this.props.name}
                     type={this.props.type}
-                    className={this.props.className}
-                    value={this.value}
+                    componentClass={this.props.componentClass}
                     ref={input => (this.input = input)}/>
             </div>
         );
