@@ -146,6 +146,11 @@ export const getFinacnialReportSuccess = report => ({
 
 export const UPDATE_CURRENT_SELECTED_PAGE = 'UPDATE_CURRENT_SELECTED_PAGE '
 export const updateCurrentSelectedPage = page => ({
-    type: UPDATE_CURRENT_SELECTED_PAGE ,
+    type: UPDATE_CURRENT_SELECTED_PAGE,
     page
+});
+
+export const OPEN_EDIT_PAGE_MODAL = 'OPEN_EDIT_PAGE_MODAL'
+export const openEditPageModal = () => ({
+  type: OPEN_EDIT_PAGE_MODAL
 });

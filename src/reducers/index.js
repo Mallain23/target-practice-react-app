@@ -11,7 +11,8 @@ import { SHOW_EXTENDED_NAV,
          FETCH_COMPANY_DATA_SUCCESS,
          REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
          GET_FINANCIAL_REPORT_SUCCESS,
-         UPDATE_CURRENT_SELECTED_PAGE} from '../components/actions'
+         UPDATE_CURRENT_SELECTED_PAGE,
+         OPEN_EDIT_PAGE_MODAL} from '../components/actions'
 
 
 const initialState = {
@@ -32,7 +33,8 @@ const initialState = {
     selectedCompany: {},
     selectedPage: null,
     selectedFinancialReport: null,
-    showModal: false
+    showModal: false,
+    showEditModal: false
 };
 
 export default function reducer(state = initialState, action) {
@@ -70,7 +72,8 @@ export default function reducer(state = initialState, action) {
 
     else if (action.type === CLOSE_MODAL) {
         return Object.assign({}, state, {
-            showModal: false
+            showModal: false,
+            showEditModal: false
         });
     }
 
@@ -78,6 +81,12 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, {
           showModal: true
       });
+    }
+
+    else if (action.type === OPEN_EDIT_PAGE_MODAL) {
+        return Object.assign({}, state, {
+            showEditModal: true
+        });
     }
 
     else if (action.type === ADD_COMPANY_TO_DATABASE) {

@@ -16,6 +16,11 @@ export class CompanyPage extends React.Component {
 
     componentWillMount() {
         const companyName = this.props.match.params.companyName;
+        const selectedCompany = this.props.selectedCompany
+
+        if (selectedCompany.companyName === companyName) {
+          return
+        }
 
         this.props.dispatch(fetchCompanyData(companyName));
     };
@@ -36,23 +41,23 @@ export class CompanyPage extends React.Component {
     renderPageContent() {
           const { selectedPage } = this.props
 
-          if (selectedPage === 'CompanyOverview') {
+          if (selectedPage === 'Company Overview') {
               return <CompanyOverview {...this.props} />
           }
 
-          else if (selectedPage === 'CompanyDirectory') {
+          else if (selectedPage === 'Company Directory') {
               return <CompanyDirectory {...this.props} />
           }
 
-          else if (selectedPage === 'FinalAssessmentPage') {
+          else if (selectedPage === 'Final AssessmentPage') {
               return <FinalAssessmentPage {...this.props} />
           }
 
-          else if (selectedPage === 'FinancialPage') {
+          else if (selectedPage === 'Financial Page') {
               return <FinancialPage {...this.props} />
           }
 
-          else if (selectedPage === 'BenefitsPage') {
+          else if (selectedPage === 'Benefits Page') {
               return <BenefitsPage {...this.props} />
           }
 
@@ -61,6 +66,7 @@ export class CompanyPage extends React.Component {
 
     render() {
         const { companyName, selectedPage } = this.props
+
         return (
               <div>
                   <Row className='company-page-container'>

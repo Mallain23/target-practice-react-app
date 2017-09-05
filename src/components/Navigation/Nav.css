@@ -6,4 +6,5 @@ Navbar {
 .nav-buttons {
   border: none;
   background-color: transparent;
+  display: block;
 }

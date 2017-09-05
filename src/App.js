@@ -8,6 +8,7 @@ import Page from './components/Page/Page';
 import CompanyPage from './components/CompanyPage/CompanyPage'
 import CompanyDataModalContainer from './components/CompanyDataModal/CompanyDataModalContainer'
 import FullFinancialReport from './components/FinancialPage/FullFinancialReport'
+import EditPageModal from './components/EditPageModal/EditPageModal'
 
 import './App.css';
 
@@ -18,6 +19,7 @@ class App extends React.Component {
               <NavBar />
               <SideBarContainer />
               <CompanyDataModalContainer />
+              <EditPageModal />
               <Route exact path='/' component={Page} />
               <Route exact path='/company/:companyName' component={Page}/>
               <Route exact path='/finacialreport/:title/:typeOfReport' component={FullFinancialReport} />

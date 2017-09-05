@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {  Col, Button } from 'react-bootstrap'
 
-import { removeCompanyFromDatabase } from '../actions'
+import { removeCompanyFromDatabase, openEditPageModal } from '../actions'
 
 export class CompanyPageButtons extends React.Component {
     constructor(props) {
@@ -12,8 +12,11 @@ export class CompanyPageButtons extends React.Component {
         this.handleRemoveCompanyClick = this.handleRemoveCompanyClick.bind(this)
     }
 
-    handleEditClick() {
+    handleEditClick(e) {
+        e.preventDefault()
+        const selectedPage = e.target.value
 
+        this.props.dispatch(openEditPageModal(selectedPage))
     }
     handleRemoveCompanyClick() {
 
@@ -23,9 +26,10 @@ export class CompanyPageButtons extends React.Component {
     };
 
     render() {
+        const { selectedPage } = this.props
         return(
             <Col xs={12} md={4}>
-              <Button onClick={this.handleEditClick} > Edit </Button>
+              <Button value={selectedPage} onClick={this.handleEditClick} > Edit </Button>
               <Button onClick={this.handleRemoveCompanyClick} > Delete Company </Button>
             </Col>
         );
@@ -33,10 +37,11 @@ export class CompanyPageButtons extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const { selectedCompany } = state.app
+    const { selectedCompany, selectedPage } = state.app
 
     return {
-        selectedCompany
+        selectedCompany,
+        selectedPage
     };
 };
 
