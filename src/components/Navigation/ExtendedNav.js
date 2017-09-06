@@ -16,7 +16,7 @@ export class ExtendedNav extends React.Component {
     handleClick(e) {
         e.preventDefault(e)
 
-        const selectedPage = (e.target.value)
+        const selectedPage = e.target.value
         this.props.dispatch(updateCurrentSelectedPage(selectedPage))
     };
 

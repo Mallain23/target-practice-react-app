@@ -5,6 +5,9 @@ import { connect } from 'react-redux'
 import { closeModal } from '../actions'
 
 import EditCompanyOverviewForm from './EditCompanyOverview'
+import ManagementDirectoryForm from './ManagementDirectoryForm'
+import FinalAssessmentForm from './FinalAssessmentForm'
+import EditLegalForm from './EditLegalForm'
 // import './Modal.css'
 
 export class EditPageModal extends React.Component {
@@ -18,6 +21,27 @@ export class EditPageModal extends React.Component {
     handleClose() {
           this.props.dispatch(closeModal())
     };
+
+    renderForm() {
+          const { selectedPage } = this.props
+
+          if (selectedPage === 'Company Overview') {
+              return <EditCompanyOverviewForm {...this.props} />
+          }
+
+          else if (selectedPage === 'Company Directory') {
+              return <ManagementDirectoryForm {...this.props} />
+          }
+
+          else if (selectedPage === 'Final Assessment') {
+              return <FinalAssessmentForm {...this.props} />
+          }
+          else if (selectedPage === 'Legal Page') {
+              return <EditLegalForm {...this.props} />
+          }
+
+          return ''
+    }
 
     render() {
         const { showEditModal, selectedCompany } = this.props
@@ -33,7 +57,7 @@ export class EditPageModal extends React.Component {
                         <Modal.Title id="edit-page-modal">Edit Company Information</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <EditCompanyOverviewForm selectedCompany={selectedCompany}/>
+                        {this.renderForm()}
                     </Modal.Body>
                     <Modal.Footer>
                   </Modal.Footer>
@@ -44,12 +68,20 @@ export class EditPageModal extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const { showEditModal, companies, selectedCompany } = state.app
+    const { showEditModal,
+            companies,
+            selectedCompany,
+            selectedPage,
+            editContact,
+            contactToEdit } = state.app
 
     return {
         showEditModal,
         companies,
-        selectedCompany
+        selectedCompany,
+        selectedPage,
+        editContact,
+        contactToEdit
     };
 };
 

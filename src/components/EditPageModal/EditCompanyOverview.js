@@ -1,9 +1,10 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
-import {Link} from 'react-router-dom';
+
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-import { closeModal, editCompanyOverview } from '../actions'
+import { closeModal } from '../actions'
+import { editCompanyOverview } from '../actions/CompanyProfile'
 
 import Input from '../CompanyDataModal/Input'
 

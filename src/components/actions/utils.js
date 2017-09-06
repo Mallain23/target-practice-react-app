@@ -73,6 +73,22 @@ export const formatCompanyProfileData= data => {
     };
 };
 
+export const formatContactDataForDatabaseEntry = (contact, companyName, companyData, contactToUpdate, listOfContacts, companies) => {
+    //first filter out the old contact info, and then add in the new contact = list of updated contacts
+    const managementDirectory = listOfContacts.filter(_contact => _contact !== contactToUpdate).concat(contact)
+    //then add the list of updated contacts to the companies data obj
+    const companyWithUpdatedData = Object.assign({}, companyData, {
+        managementDirectory
+    });
+    //then map through all the companies, if we arent updating the company, return as is, otherwise return the updated info
+    const updatedListOfCompanies = companies.map(companyData => {
+        return companyData.companyName === companyName ? companyWithUpdatedData : companyData
+    });
+
+    return [updatedListOfCompanies, companyWithUpdatedData]
+};
+
+
 export const formatDataForEntry = companyName => ({
     companyName,
     costOfAcquisition: 'No Information Provided',
@@ -158,5 +174,5 @@ export const formatDataForEntry = companyName => ({
     managementDirectory: ['No Information Provided'],
     finalAssessment: 'No Information Provided',
     overallRating: 'No Information Provided',
-    status: 'researching'
+    status: 'Researching'
 })

@@ -140,7 +140,7 @@ export const mockData = [
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '8',
-      status: 'pending'
+      status: 'Pending'
     },
     { companyName: 'Evil Corp',
       costOfAcquisition: '433,000,000.00',
@@ -286,7 +286,7 @@ export const mockData = [
       managementDirectory: [{name: 'Satan', cell: '666-666-6666', work: '666-666-6666', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '4',
-      status: 'declined'
+      status: 'Declined'
     },
     { companyName: 'Awesome LLC',
      costOfAcquisition: '29,000,000.00',
@@ -429,7 +429,7 @@ export const mockData = [
       managementDirectory: [{name: 'Tim White', cell: '777-666-0000', work: '123-456-7890', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '9',
-      status: 'approved'
+      status: 'Approved'
     },
     { companyName: 'Target Company B',
       costOfAcquisition: '10,000,000.00',
@@ -570,7 +570,7 @@ export const mockData = [
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '5',
-      status: 'researching'
+      status: 'Researching'
     },
     { companyName: 'Tech Co.',
       costOfAcquisition: '14,000,000.00',
@@ -711,7 +711,7 @@ export const mockData = [
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '',
-      status: 'pending'
+      status: 'Pending'
     },
     { companyName: 'Great LLC',
       costOfAcquisition: '1,000,000.00',
@@ -852,7 +852,7 @@ export const mockData = [
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '5',
-      status: 'pending'
+      status: 'Pending'
     },
     { companyName: 'Social Media Savy',
       costOfAcquisition: '4,000,000.00',
@@ -993,7 +993,7 @@ export const mockData = [
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '8',
-      status: 'approved'
+      status: 'Approved'
   },
     {
       companyName: 'Machine Monsterz',
@@ -1135,7 +1135,7 @@ export const mockData = [
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '8',
-      status: 'researching'
+      status: 'Researching'
     },
     { companyName: 'Coal Minerz Co.',
       costOfAcquisition: '300,000.00',
@@ -1276,7 +1276,7 @@ export const mockData = [
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assesment after considering all factors',
       overallRating: '2',
-      status: 'declined'
+      status: 'Declined'
     }
 ];
 

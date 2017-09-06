@@ -12,8 +12,11 @@ import { SHOW_EXTENDED_NAV,
          REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
          GET_FINANCIAL_REPORT_SUCCESS,
          UPDATE_CURRENT_SELECTED_PAGE,
-         OPEN_EDIT_PAGE_MODAL,
-         EDIT_COMPANY_OVERVIEW_SUCCESS } from '../components/actions'
+         OPEN_EDIT_PAGE_MODAL} from '../components/actions'
+import { EDIT_COMPANY_OVERVIEW_SUCCESS } from '../components/actions/CompanyProfile'
+import { SET_EDIT_CONTACT_TO_FALSE,
+        SET_EDIT_CONTACT_TO_TRUE,
+        UPDATE_CONTACT_SUCCESS } from '../components/actions/ManagementDirectory'
 
 
 const initialState = {
@@ -35,7 +38,10 @@ const initialState = {
     selectedPage: null,
     selectedFinancialReport: null,
     showModal: false,
-    showEditModal: false
+    showEditModal: false,
+    contactName: null,
+    editContact: false,
+    contactToEdit: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -85,8 +91,10 @@ export default function reducer(state = initialState, action) {
     }
 
     else if (action.type === OPEN_EDIT_PAGE_MODAL) {
+        const { name: contactName} = action
         return Object.assign({}, state, {
-            showEditModal: true
+            showEditModal: true,
+            contactName
         });
     }
 
@@ -145,12 +153,38 @@ export default function reducer(state = initialState, action) {
         });
     }
     else if (action.type === EDIT_COMPANY_OVERVIEW_SUCCESS) {
-        const { updatedEntry, updatedList } = action
-      
+        const { updatedCompany, updatedCompanies } = action
+
         return Object.assign({}, state, {
-            selectedCompany: updatedEntry,
-            companies: [...updatedList, updatedEntry],
-            searchResults: [...updatedList, updatedEntry],
+            selectedCompany: updatedCompany,
+            companies: updatedCompanies,
+            searchResults: updatedCompanies,
+            showEditModal: false
+        })
+    }
+
+    else if (action.type === SET_EDIT_CONTACT_TO_TRUE) {
+        const { contactToEdit } = action
+        return Object.assign({}, state, {
+            editContact: true,
+            contactToEdit
+        })
+    }
+
+    else if (action.type === SET_EDIT_CONTACT_TO_FALSE) {
+        return Object.assign({}, state, {
+            editContact: false,
+            showEditModal: true
+        })
+    }
+
+    else if (action.type === UPDATE_CONTACT_SUCCESS) {
+        const { updatedCompanyData, updatedCompanies } = action
+        console.log(updatedCompanyData, updatedCompanies  )
+        return Object.assign({}, state, {
+            companies: updatedCompanies,
+            searchResults: updatedCompanies,
+            selectedCompany: updatedCompanyData,
             showEditModal: false
         })
     }

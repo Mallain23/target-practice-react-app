@@ -8,7 +8,7 @@ export class SearchResults extends React.Component {
 
     render() {
         const {  searchResults } = this.props
-
+        console.log(searchResults)
         const formatedSearchResults = searchResults.map(({ companyName, status }, index) => {
             return (
                 <li className='company-list' key={index}>

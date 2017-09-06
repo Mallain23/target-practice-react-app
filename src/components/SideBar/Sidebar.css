@@ -26,18 +26,18 @@
     width: 100%;
 }
 
-.pending {
+.Pending {
   color: #0000e6;
 }
 
-.approved {
+.Approved {
   color: 	 #00b300;
 }
 
-.declined {
+.Declined {
   color: #ff0000;
 }
 
-.researching {
+.Researching {
   color: #ff9900;
 }
