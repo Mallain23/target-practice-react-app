@@ -8,6 +8,7 @@ import FormattedFinacnialReports from './FormattedFinacnialReports'
 
 export class FinancialPage extends React.Component {
     render() {
+      
         const  { status, companyProjections, areProjectionsReasonable } = this.props.selectedCompany.financialMatters.businessMargins
         const { statementFromCompany,
                 assets,
@@ -16,7 +17,6 @@ export class FinancialPage extends React.Component {
                 totalLiabilities,
                 financialStatementsAnnual,
                 financialStatementsQuarterly,
-                financialStatementsMonthly,
                 financesAudited,
                 internalAssessmentOfFinances,
                 internalFinancialRating } = this.props.selectedCompany.financialMatters
@@ -25,15 +25,11 @@ export class FinancialPage extends React.Component {
         return (
             <Row>
                 <Col xs={12}>
-                    <Paragraph className='company-data' text={`Company Statement of Current Finances: ${statementFromCompany}`} />
-                    <FormattedAL className='asset-list'
-                                 arrayOfAL={assets}
-                                 name='Assets' />
-                    <Paragraph className='company-data' text={`Total Value of All Assets: ${totalValueOfAllAssets}`} />
-                    <FormattedAL className='liability-list'
-                                 arrayOfAL={liabilities}
-                                 name='Liabilities' />
-                    <Paragraph className='company-data' text={`Total Value of All Liabilities: ${totalLiabilities}`} />
+                    <Paragraph className='company-data' text={`Statement of Current Finances: ${statementFromCompany}`} />
+                    <h3>Business Margins</h3>
+                    <Paragraph className='company-data' text={`Current Status of Business Margins: ${status}`} />
+                    <Paragraph className='company-data' text={`Company Projections for Business Margins: ${companyProjections}`} />
+                    <Paragraph className='company-data' text={`Are Projections Reasonable: ${areProjectionsReasonable}`} />
                     <h3>Financial Reports</h3>
                     <Paragraph className='company-data' text={`Financial Reports Audited: ${financesAudited.isAudited}`} />
                     <Paragraph className='company-data' text={`Who audits Finances: ${financesAudited.whoAudits}`} />
@@ -45,18 +41,17 @@ export class FinancialPage extends React.Component {
                                                 arrayOfReports={financialStatementsQuarterly}
                                                 name='Quarterly'
                                                 {...this.props}  />
-                    <FormattedFinacnialReports className='monthly-financial-reports'
-                                                arrayOfReports={financialStatementsMonthly}
-                                                name='Monthly'
-                                                {...this.props} />
-                    <h3>Business Margins</h3>
-                    <Paragraph className='company-data' text={`Current Status of Business Margins: ${status}`} />
-                    <Paragraph className='company-data' text={`Company Projections for Business Margins: ${companyProjections}`} />
-                    <Paragraph className='company-data' text={`Are Projections Reasonable: ${areProjectionsReasonable}`} />
+                    <FormattedAL className='asset-list'
+                                 arrayOfAL={assets}
+                                 name='Assets' />
+                    <Paragraph className='company-data' text={`Total Value of All Assets: ${totalValueOfAllAssets}`} />
+                    <FormattedAL className='liability-list'
+                                 arrayOfAL={liabilities}
+                                 name='Liabilities' />
+                    <Paragraph className='company-data' text={`Total Value of All Liabilities: ${totalLiabilities}`} />
                     <h3>Final Assessment and Rating of Finances</h3>
                     <Paragraph className='company-data' text={`Internal Assessment: ${internalAssessmentOfFinances}`} />
                     <Paragraph className='company-data' text={`Rating of Finances: ${internalFinancialRating}`} />
-
                 </Col>
             </Row>
 

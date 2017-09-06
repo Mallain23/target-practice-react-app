@@ -4,7 +4,7 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions'
-import { editCompanyOverview } from '../actions/CompanyProfile'
+import { editCompanyOverview } from '../actions/EditTarget'
 
 import Input from '../CompanyDataModal/Input'
 
@@ -28,7 +28,7 @@ export class EditCompanyOverviewForm extends React.Component {
         const { companyName, costOfAcquisition} = selectedCompany
         const { generalBusinessActivities,  numberOfEmployees, yearFounded  } = selectedCompany.companyProfile
         const { headQaurters, principlePlaceOfBusiness, numberOfOffices } = selectedCompany.companyProfile.location
-        const { vision, goals } = selectedCompany.companyProfile.companyStrategy
+        const { vision, goals, coreValues } = selectedCompany.companyProfile.companyStrategy
         const { backgroundInformation, presentCondition } = selectedCompany.companyProfile.industryInformation
 
         const initValues = {
@@ -41,6 +41,7 @@ export class EditCompanyOverviewForm extends React.Component {
             principlePlaceOfBusiness,
             numberOfOffices,
             vision,
+            coreValues,
             goals,
             backgroundInformation,
             presentCondition
@@ -115,6 +116,13 @@ export class EditCompanyOverviewForm extends React.Component {
                     type="textarea"
                     name="vision"
                     placeholder='Enter company vision statement' />
+                <label htmlFor='coreValues'>Core Values</label>
+                 <Field
+                     component={Input}
+                     componentClass='textarea'
+                     type="textarea"
+                     name="coreValues"
+                     placeholder='Enter core values of company' />
                 <label htmlFor='goals'>Company Goals</label>
                 <Field
                     component={Input}

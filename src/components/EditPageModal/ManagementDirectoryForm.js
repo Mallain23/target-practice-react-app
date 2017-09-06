@@ -7,7 +7,7 @@ import Input from '../CompanyDataModal/Input'
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 
 import { closeModal } from '../actions'
- import { editExistingContact, createNewContact } from '../actions/ManagementDirectory'
+ import { editExistingContact, createNewContact } from '../actions/EditTarget'
 
 export class ManagementDirectoryForm extends React.Component {
     constructor(props) {

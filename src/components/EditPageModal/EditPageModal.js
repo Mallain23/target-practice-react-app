@@ -8,6 +8,7 @@ import EditCompanyOverviewForm from './EditCompanyOverview'
 import ManagementDirectoryForm from './ManagementDirectoryForm'
 import FinalAssessmentForm from './FinalAssessmentForm'
 import EditLegalForm from './EditLegalForm'
+import EditFinancialForm from './EditFinancialForm'
 // import './Modal.css'
 
 export class EditPageModal extends React.Component {
@@ -38,6 +39,10 @@ export class EditPageModal extends React.Component {
           }
           else if (selectedPage === 'Legal Page') {
               return <EditLegalForm {...this.props} />
+          }
+
+          else if (selectedPage === 'Financial Page') {
+            return <EditFinancialForm {...this.props} />
           }
 
           return ''

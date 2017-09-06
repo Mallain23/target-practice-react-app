@@ -4,7 +4,7 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
-import { editCompanyAssessment } from '../actions/CompanyProfile'
+import { editCompanyAssessment } from '../actions/EditTarget'
 
 import Input from '../CompanyDataModal/Input'
 import StatusSelect from './StatusSelect'

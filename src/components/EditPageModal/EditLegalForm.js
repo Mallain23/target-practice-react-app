@@ -3,7 +3,7 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions'
-import { editLegalData } from '../actions/CompanyProfile'
+import { editLegalData } from '../actions/EditTarget'
 
 import Input from '../CompanyDataModal/Input'
 
@@ -64,10 +64,7 @@ export class EditLegalForm extends React.Component {
 
     render() {
         return (
-            <form
-                className="edit-legal-form"
-                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-                >
+            <form className="edit-legal-form"  onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="futureLitgiation">Future Litigation</label>
                 <Field component={Input} placeholder='Future Litigation'
                        type="textarea"

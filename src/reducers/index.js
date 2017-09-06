@@ -13,10 +13,8 @@ import { SHOW_EXTENDED_NAV,
          GET_FINANCIAL_REPORT_SUCCESS,
          UPDATE_CURRENT_SELECTED_PAGE,
          OPEN_EDIT_PAGE_MODAL} from '../components/actions'
-import { EDIT_COMPANY_OVERVIEW_SUCCESS } from '../components/actions/CompanyProfile'
-import { SET_EDIT_CONTACT_TO_FALSE,
-        SET_EDIT_CONTACT_TO_TRUE,
-        UPDATE_CONTACT_SUCCESS } from '../components/actions/ManagementDirectory'
+import { SET_EDIT_CONTACT_TO_FALSE, SET_EDIT_CONTACT_TO_TRUE} from '../components/actions/ManagementDirectory'
+import { UPDATE_TARGET_SUCCESS} from '../components/actions/EditTarget'
 
 
 const initialState = {
@@ -152,16 +150,7 @@ export default function reducer(state = initialState, action) {
             selectedPage
         });
     }
-    else if (action.type === EDIT_COMPANY_OVERVIEW_SUCCESS) {
-        const { updatedCompany, updatedCompanies } = action
 
-        return Object.assign({}, state, {
-            selectedCompany: updatedCompany,
-            companies: updatedCompanies,
-            searchResults: updatedCompanies,
-            showEditModal: false
-        })
-    }
 
     else if (action.type === SET_EDIT_CONTACT_TO_TRUE) {
         const { contactToEdit } = action
@@ -178,9 +167,9 @@ export default function reducer(state = initialState, action) {
         })
     }
 
-    else if (action.type === UPDATE_CONTACT_SUCCESS) {
+    else if (action.type === UPDATE_TARGET_SUCCESS) {
         const { updatedCompanyData, updatedCompanies } = action
-        console.log(updatedCompanyData, updatedCompanies  )
+
         return Object.assign({}, state, {
             companies: updatedCompanies,
             searchResults: updatedCompanies,

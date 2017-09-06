@@ -2,9 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Col, Row, Button } from 'react-bootstrap'
 import {   openEditPageModal } from '../actions'
-import { editContact,
-        getContactDataAndSetEditToTrue,
-        removeContact} from '../actions/ManagementDirectory'
+import { editContact, removeContact } from '../actions/EditTarget'
+import { getContactDataAndSetEditToTrue } from '../actions/ManagementDirectory'
 
 export class CompanyDirectory extends React.Component {
     constructor(props) {

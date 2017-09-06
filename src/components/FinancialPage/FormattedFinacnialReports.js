@@ -1,13 +1,19 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Button } from 'react-bootstrap'
+
+import { editFinancialReport } from '../actions/EditTarget'
 
 import Paragraph from '../CompanyPage/Paragraph'
 import './FinancialPage.css'
 
-export default class FormattedFinacnialReports extends React.Component {
+export class FormattedFinacnialReports extends React.Component {
     constructor (props) {
         super(props)
 
         this.handleClick = this.handleClick.bind(this)
+        this.handleEditClick = this.handleEditClick.bind(this)
+        this.handleDeleteClick = this.handleDeleteClick.bind(this)
     };
     handleClick(e) {
         e.preventDefault()
@@ -16,6 +22,17 @@ export default class FormattedFinacnialReports extends React.Component {
 
 
         this.props.history.push(`/finacialreport/${title}/${typeOfReport}`)
+    };
+
+    handleEditClick(e) {
+        e.preventDefault()
+
+        const name = e.target.value
+        this.props.dispatch(editFinancialReport(name))
+    };
+
+    handleDeleteClick(e) {
+        e.preventDefault()
     };
 
     render() {
@@ -37,6 +54,8 @@ export default class FormattedFinacnialReports extends React.Component {
                                      onClick={this.handleClick} >
                                      {title}
                           </button>
+                          <Button value={title} onClick={this.handleEditClick}>Edit Report</Button>
+                          <Button value={title} onClick={this.handleDeleteClick}>Delete Report</Button>
                       </li>
                   );
               });
@@ -52,3 +71,5 @@ export default class FormattedFinacnialReports extends React.Component {
         );
     };
 };
+
+export default connect()(FormattedFinacnialReports)

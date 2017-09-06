@@ -46,7 +46,6 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
           financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                        {title:'2016 Financial Report', Report: 'Mock Report'},
                                        {title:'2015 Financial Report', Report: 'Mock Report'},
@@ -192,7 +191,6 @@ export const mockData = [
             },
         ],
         totalLiabilities: 'function to calc',
-        summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
         financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                      {title:'2016 Financial Report', Report: 'Mock Report'},
                                      {title:'2015 Financial Report', Report: 'Mock Report'},
@@ -335,7 +333,6 @@ export const mockData = [
               },
            ],
         totalLiabilities: 'function to calc',
-        summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
         financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                      {title:'2016 Financial Report', Report: 'Mock Report'},
                                      {title:'2015 Financial Report', Report: 'Mock Report'},
@@ -476,7 +473,6 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
           financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                        {title:'2016 Financial Report', Report: 'Mock Report'},
                                        {title:'2015 Financial Report', Report: 'Mock Report'},
@@ -617,7 +613,6 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
           financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                        {title:'2016 Financial Report', Report: 'Mock Report'},
                                        {title:'2015 Financial Report', Report: 'Mock Report'},
@@ -758,7 +753,6 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
           financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                        {title:'2016 Financial Report', Report: 'Mock Report'},
                                        {title:'2015 Financial Report', Report: 'Mock Report'},
@@ -899,7 +893,6 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
           financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                        {title:'2016 Financial Report', Report: 'Mock Report'},
                                        {title:'2015 Financial Report', Report: 'Mock Report'},
@@ -1041,7 +1034,6 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
           financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                        {title:'2016 Financial Report', Report: 'Mock Report'},
                                        {title:'2015 Financial Report', Report: 'Mock Report'},
@@ -1182,7 +1174,6 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          summaryOnDebtOwed: 'Overall summary on debt owed by company, who they owe it to and terms in which it must be paid back',
           financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
                                        {title:'2016 Financial Report', Report: 'Mock Report'},
                                        {title:'2015 Financial Report', Report: 'Mock Report'},
