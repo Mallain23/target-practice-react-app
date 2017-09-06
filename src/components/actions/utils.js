@@ -36,8 +36,6 @@ export const formatTypeOfReportText = _typeOfReport  => {
     else if (_typeOfReport === 'Quarterly') {
         return  'financialStatementsQuarterly'
     }
-
-    return 'financialStatementsMonthly'
 };
 
 export const formatCompanyProfileData= data => {
@@ -114,6 +112,49 @@ export const formatFinanceData = (data, selectedCompany) => {
     };
 };
 
+export const formatBenefitsData = data => {
+  const {   patents,
+    trademarks,
+    copyrights,
+    negative,
+    internalAssessmentOfIP,
+    licenses,
+    softwareUse,
+    assessment,
+    services,
+    products,
+    people,
+    revenueEnhancements,
+    miscellaneous,
+    assessmentOfOtherBenefits,
+    internalIPRating,
+    internalTechRating,
+    internalOtherBenefitsRating } = data
+
+    return  [
+        { patents,
+          trademarks,
+          copyrights,
+          negative,
+          internalAssessmentOfIP,
+          internalIPRating},
+        {
+          licenses,
+          softwareUse,
+          assessment,
+          internalTechRating
+        },
+        {
+          products,
+          people,
+          revenueEnhancements,
+          miscellaneous,
+          assessmentOfOtherBenefits,
+          internalOtherBenefitsRating
+        }
+    ]
+};
+
 export const formatDataForEntry = companyName => ({
     companyName,
     costOfAcquisition: 'No Information Provided',
@@ -142,8 +183,24 @@ export const formatDataForEntry = companyName => ({
         totalValueOfAllAssets: 'No Information Provided',
         liabilities: ['No Information Provided'],
         totalLiabilities: 'No Information Provided',
-        financialStatementsAnnual: [],
-        financialStatementsQuarterly: [],
+        financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
+                                     {title:'2016 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
+                                     {title:'2015 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
+                                     {title:'2014 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'}
+
+        ],
+        financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q2 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q3 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q1 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q2 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q3 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q4 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q1 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q2 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q3 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q4 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'}
+        ],
         financesAudited: {
             isAudited: 'No Information Provided',
             whoAudits: 'No Information Provided',
@@ -158,10 +215,10 @@ export const formatDataForEntry = companyName => ({
         internalFinancialRating: 'No Information Provided'
     },
     intellectualProperty: {
-        patents: ['No Information Provided'],
-        trademarks: ['No Information Provided'],
-        copyrights: ['No Information Provided'],
-        litigation: 'No Information Provided',
+        patents: 'No Information Provided',
+        trademarks: 'No Information Provided',
+        copyrights: 'No Information Provided',
+        negative: 'No Information Provided',
         internalAssessmentOfIP: 'No Information Provided',
         internalIPRating: 'No Information Provided'
     },

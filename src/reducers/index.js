@@ -39,6 +39,7 @@ const initialState = {
     showEditModal: false,
     contactName: null,
     editContact: false,
+    editReport: false,
     contactToEdit: null
 };
 
@@ -140,7 +141,8 @@ export default function reducer(state = initialState, action) {
         const { report: selectedFinancialReport } = action
 
         return Object.assign({}, state, {
-            selectedFinancialReport
+            selectedFinancialReport,
+            editReport: true
         });
     }
 
@@ -150,7 +152,6 @@ export default function reducer(state = initialState, action) {
             selectedPage
         });
     }
-
 
     else if (action.type === SET_EDIT_CONTACT_TO_TRUE) {
         const { contactToEdit } = action
@@ -174,7 +175,8 @@ export default function reducer(state = initialState, action) {
             companies: updatedCompanies,
             searchResults: updatedCompanies,
             selectedCompany: updatedCompanyData,
-            showEditModal: false
+            showEditModal: false,
+            editReport: false
         })
     }
 

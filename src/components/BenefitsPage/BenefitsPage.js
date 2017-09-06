@@ -11,7 +11,7 @@ export class BenefitsPage extends React.Component {
         const { patents,
                 trademarks,
                 copyrights,
-                litigation,
+                negative,
                 internalAssessmentOfIP,
                 internalIPRating } = this.props.selectedCompany.intellectualProperty
 
@@ -33,10 +33,10 @@ export class BenefitsPage extends React.Component {
             <Row>
                 <Col xs={12}>
                       <h3>Intellectual Property Benefits</h3>
-                      <FormatIP className='intellectual-property-list' type='Patents' arrayOfIP={patents} />
-                      <FormatIP className='intellectual-property-list' type='Trademarks' arrayOfIP={trademarks} />
-                      <FormatIP className='intellectual-property-list' type='Copyrights' arrayOfIP={copyrights} />
-                      <Paragraph className='company-data' text={`Litigation or Issues Realting to IP: ${litigation}`} />
+                      <Paragraph className='company-data' text={`Information on Patents held by the Target: ${patents}`} />
+                      <Paragraph className='company-data' text={`Information on Trademarks held by the Target: ${trademarks}`} />
+                      <Paragraph className='company-data' text={`Information on Copyrights held by the Target: ${copyrights}`} />
+                      <Paragraph className='company-data' text={`Negative Impacts or Concerns from IP: ${negative}`} />
                       <Paragraph className='company-data' text={`Assessment of IP: ${internalAssessmentOfIP}`} />
                       <Paragraph className='company-data' text={`Rating: ${internalIPRating}`} />
                       <h3>Technology Benefits</h3>

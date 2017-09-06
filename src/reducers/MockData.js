@@ -46,45 +46,23 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                       {title:'2016 Financial Report', Report: 'Mock Report'},
-                                       {title:'2015 Financial Report', Report: 'Mock Report'},
-                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+          financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2016 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2015 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2014 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
           ],
-          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-          ],
-          financialStatementsMonthly: [
-            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
               isAudited: true,
@@ -100,10 +78,10 @@ export const mockData = [
           internalFinancialRating: '8'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '7'
       },
@@ -111,7 +89,7 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
           internalTechRating: '8'
       },
       otherBenefitsProvided: {
@@ -120,7 +98,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '5'
       },
       legal: {
@@ -137,7 +115,7 @@ export const mockData = [
           rating: '8'
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '8',
       status: 'Pending'
     },
@@ -191,45 +169,23 @@ export const mockData = [
             },
         ],
         totalLiabilities: 'function to calc',
-        financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                     {title:'2016 Financial Report', Report: 'Mock Report'},
-                                     {title:'2015 Financial Report', Report: 'Mock Report'},
-                                     {title:'2014 Financial Report', Report: 'Mock Report'}
+        financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                     {title:'2016 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                     {title:'2015 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                     {title:'2014 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
         ],
-        financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                        {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                        {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                        {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                        {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                        {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                        {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                        {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                        {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                        {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                        {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-        ],
-        financialStatementsMonthly: [
-          {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+        financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
         ],
         financesAudited: {
             isAudited: true,
@@ -245,10 +201,10 @@ export const mockData = [
         internalFinancialRating: '5'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName', details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '3'
       },
@@ -256,7 +212,7 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
           internalTechRating: '6'
       },
       otherBenefitsProvided: {
@@ -265,7 +221,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '5'
       },
       legal: {
@@ -282,7 +238,7 @@ export const mockData = [
           rating: '2'
       },
       managementDirectory: [{name: 'Satan', cell: '666-666-6666', work: '666-666-6666', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '4',
       status: 'Declined'
     },
@@ -333,45 +289,23 @@ export const mockData = [
               },
            ],
         totalLiabilities: 'function to calc',
-        financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                     {title:'2016 Financial Report', Report: 'Mock Report'},
-                                     {title:'2015 Financial Report', Report: 'Mock Report'},
-                                     {title:'2014 Financial Report', Report: 'Mock Report'}
+        financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                     {title:'2016 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                     {title:'2015 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                     {title:'2014 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
         ],
-        financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                        {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                        {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                        {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                        {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                        {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                        {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                        {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                        {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                        {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                        {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-        ],
-        financialStatementsMonthly: [
-          {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-          {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+        financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
         ],
         financesAudited: {
             isAudited: true,
@@ -387,10 +321,10 @@ export const mockData = [
         internalFinancialRating: '9'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName', details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '8'
       },
@@ -398,7 +332,7 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
           internalTechRating: '8'
       },
       otherBenefitsProvided: {
@@ -407,7 +341,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '9'
       },
       legal: {
@@ -424,7 +358,7 @@ export const mockData = [
           rating: '10'
       },
       managementDirectory: [{name: 'Tim White', cell: '777-666-0000', work: '123-456-7890', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '9',
       status: 'Approved'
     },
@@ -473,45 +407,23 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                       {title:'2016 Financial Report', Report: 'Mock Report'},
-                                       {title:'2015 Financial Report', Report: 'Mock Report'},
-                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+          financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2016 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2015 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2014 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
           ],
-          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-          ],
-          financialStatementsMonthly: [
-            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q3 Financial Report', Report: 'Mock Re,ort', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
               isAudited: true,
@@ -527,10 +439,10 @@ export const mockData = [
           internalFinancialRating: '4'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '9'
       },
@@ -538,8 +450,8 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
-          internalTechRating: null
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          internalTechRating: "5"
       },
       otherBenefitsProvided: {
           services: 'does target provide servies we dont have',
@@ -547,7 +459,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '7'
       },
       legal: {
@@ -564,7 +476,7 @@ export const mockData = [
           rating: ''
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '5',
       status: 'Researching'
     },
@@ -613,45 +525,23 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                       {title:'2016 Financial Report', Report: 'Mock Report'},
-                                       {title:'2015 Financial Report', Report: 'Mock Report'},
-                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+          financialStatementsAnnual: [ {title:'2017 Annual  Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2016 Annual  Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2015 Annual  Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2014 Annual  Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
           ],
-          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-          ],
-          financialStatementsMonthly: [
-            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
               isAudited: true,
@@ -667,10 +557,10 @@ export const mockData = [
           internalFinancialRating: '3'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '6'
       },
@@ -678,7 +568,7 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
           internalTechRating: '10'
       },
       otherBenefitsProvided: {
@@ -687,7 +577,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '5'
       },
       legal: {
@@ -704,7 +594,7 @@ export const mockData = [
           rating: '4'
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '',
       status: 'Pending'
     },
@@ -753,45 +643,23 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                       {title:'2016 Financial Report', Report: 'Mock Report'},
-                                       {title:'2015 Financial Report', Report: 'Mock Report'},
-                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+          financialStatementsAnnual: [ {title:'2017 Annual  Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2016 Annual  Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2015 Annual  Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2014 Annual  Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
           ],
-          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-          ],
-          financialStatementsMonthly: [
-            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2016 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'},
+                                          {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly', type: 'financialStatementsAnnual'}
           ],
           financesAudited: {
               isAudited: true,
@@ -807,10 +675,10 @@ export const mockData = [
           internalFinancialRating: '3'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '7'
       },
@@ -818,7 +686,7 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
           internalTechRating: '1'
       },
       otherBenefitsProvided: {
@@ -827,7 +695,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '2'
       },
       legal: {
@@ -844,7 +712,7 @@ export const mockData = [
           rating: '3'
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '5',
       status: 'Pending'
     },
@@ -893,45 +761,23 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                       {title:'2016 Financial Report', Report: 'Mock Report'},
-                                       {title:'2015 Financial Report', Report: 'Mock Report'},
-                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+          financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2016 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2015 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2014 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
           ],
-          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-          ],
-          financialStatementsMonthly: [
-            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
               isAudited: true,
@@ -947,10 +793,10 @@ export const mockData = [
           internalFinancialRating: '8'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '9'
       },
@@ -958,7 +804,7 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
           internalTechRating: '8'
       },
       otherBenefitsProvided: {
@@ -967,7 +813,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '10'
       },
       legal: {
@@ -984,7 +830,7 @@ export const mockData = [
           rating: '10'
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '8',
       status: 'Approved'
   },
@@ -1034,45 +880,23 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                       {title:'2016 Financial Report', Report: 'Mock Report'},
-                                       {title:'2015 Financial Report', Report: 'Mock Report'},
-                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+          financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2016 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2015 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2014 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
           ],
-          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-          ],
-          financialStatementsMonthly:[
-            {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-            {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
               isAudited: true,
@@ -1088,10 +912,10 @@ export const mockData = [
           internalFinancialRating: '8'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '10'
       },
@@ -1099,7 +923,7 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
           internalTechRating: '2'
       },
       otherBenefitsProvided: {
@@ -1108,7 +932,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '5'
       },
       legal: {
@@ -1125,7 +949,7 @@ export const mockData = [
           rating: ''
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '8',
       status: 'Researching'
     },
@@ -1174,45 +998,23 @@ export const mockData = [
              }
           ],
           totalLiabilities: 'function to calc',
-          financialStatementsAnnual: [ {title:'2017 Financial Report', Report: 'Mock Report'},
-                                       {title:'2016 Financial Report', Report: 'Mock Report'},
-                                       {title:'2015 Financial Report', Report: 'Mock Report'},
-                                       {title:'2014 Financial Report', Report: 'Mock Report'}
+          financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2016 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2015 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
+                                       {title:'2014 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'}
 
           ],
-          financialStatementsQuarterly: [ {title: '2017Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2017Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2016Q4 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q1 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q2 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q3 Financial Report', Report: 'Mock Report'},
-                                          {title: '2015Q4 Financial Report', Report: 'Mock Report'}
-          ],
-          financialStatementsMonthly: [
-              {title: 'Year2017M1 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2017M2 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2017M3 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2017M4 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2017M5 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2017M6 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2017M7 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2017M8 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M1 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M2 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M3 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M4 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M5 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M6 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M7 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M8 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M9 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M10 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M11 Mock Financial report', Report: 'Mock Report'},
-              {title: 'Year2016M12 Mock Financial report', Report: 'Mock Report'}
+          financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2017 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2016 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q1 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q2 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q3 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'},
+                                          {title: '2015 Q4 Financial Report', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
               isAudited: true,
@@ -1228,10 +1030,10 @@ export const mockData = [
           internalFinancialRating: '1'
       },
       intellectualProperty: {
-          patents: [{name: 'patentName', details: 'info on patent'}],
-          trademarks: [{name: 'trademarkName', details: 'info on tradeMark'}],
-          copyrights: [{name: 'copyrightName',  details: 'info on copyrights'}],
-          litigation: 'Information on litigation involving IP, suing or being sued',
+          patents: 'Information on IP',
+          trademarks: 'Information on IP',
+          copyrights: 'Information on IP',
+          negative: 'Information on litigation involving IP, suing or being sued',
           internalAssessmentOfIP: 'if applicable - what does the IP do for us, any value or any problems',
           internalIPRating: '2'
       },
@@ -1239,7 +1041,7 @@ export const mockData = [
           licenses: 'What tech licenses does company have and how critical',
           softwareUse: 'What software is critical to company operations, and does company have approp licenses for that software',
           benefits: 'does target provide tech we dont have or could benefit from more',
-          assessment: 'assesment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
+          assessment: 'assessment of tech company uses, compared to what we use - compatiable, what will have to change, how does it affect merger',
           internalTechRating: '2'
       },
       otherBenefitsProvided: {
@@ -1248,7 +1050,7 @@ export const mockData = [
           people: 'will company provide people - and liklihood of rentention',
           revenueEnhancements: 'revenue enhancements provided by target',
           miscellaneous: 'any other benefits',
-          assesment: 'internal assessment',
+          assessment: 'internal assessment',
           internalOtherBenefitsRating: '1'
       },
       legal: {
@@ -1265,7 +1067,7 @@ export const mockData = [
           rating: '4'
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
-      finalAssessment: 'final assesment after considering all factors',
+      finalAssessment: 'final assessment after considering all factors',
       overallRating: '2',
       status: 'Declined'
     }

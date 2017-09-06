@@ -1,4 +1,4 @@
-import { formatCompanyProfileData, formatFinanceData } from './utils'
+import { formatCompanyProfileData, formatFinanceData, formatBenefitsData } from './utils'
 
 export const editCompanyOverview = data => (dispatch, getState) => {
     const { companyName, costOfAcquisition } = data
@@ -99,8 +99,42 @@ export const editFinances = data => (dispatch, getState) => {
     dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
 };
 
-export const editFinancialReport = contact => (dispatch, getState) => {
-}
+export const editFinancialReport = (report, selectedReport) => (dispatch, getState) => {
+    const selectedCompany = getState().app.selectedCompany
+    const companies = getState().app.companies
+    const typeOfReport = report.type
+
+    const updatedReports = selectedCompany.financialMatters[typeOfReport].filter(report =>
+          report !== selectedReport).concat(report);
+
+    const financialMatters = Object.assign({}, selectedCompany.financialMatters, {
+        [typeOfReport]: updatedReports,
+    });
+
+    const updatedCompanyData = Object.assign({}, selectedCompany, {
+        financialMatters
+    });
+
+    dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
+};
+
+export const editBenefits = data => (dispatch, getState) => {
+    const companies = getState().app.companies
+    const selectedCompany = getState().app.selectedCompany
+
+    const formattedDataArray = formatBenefitsData(data)
+    const intellectualProperty = formattedDataArray[0]
+    const technology = formattedDataArray[1]
+    const otherBenefitsProvided = formattedDataArray[2]
+
+    const updatedCompanyData = Object.assign({}, selectedCompany, {
+        intellectualProperty,
+        technology,
+        otherBenefitsProvided
+    });
+
+    dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
+};
 
 export const UPDATE_TARGET_SUCCESS = 'UPDATE_TARGET_SUCCESS'
 export const updateTargetSuccess = (updatedCompanyData, companies, selectedCompany) => {

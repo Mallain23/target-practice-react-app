@@ -4,7 +4,7 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
-import { editFinances } from '../actions/EditTarget'
+import { editFinancialReport } from '../actions/EditTarget'
 
 import Input from '../CompanyDataModal/Input'
 import ReportSelect from './ReportSelect'
@@ -18,48 +18,47 @@ export class FinancialReportForm extends React.Component {
 
     componentDidMount() {
 
-    const { selectedCompany } = this.props
-
-     this.handleInitialize(selectedCompany)
-
+        if (this.props.editReport) {
+            const { selectedFinancialReport } = this.props
+            this.handleInitialize(selectedFinancialReport)
+        }
     };
 
-    handleInitialize(selectedCompany) {
+    handleInitialize(selectedFinancialReport) {
 
-        const { name, report } = selectedFinancialReport
+        const { Report } = selectedFinancialReport
 
 
         const initValues = {
-          name,
-          report
+          Report
         };
 
         this.props.initialize(initValues)
     };
 
     onSubmit(values) {
-
-        this.props.dispatch(editFinances(values))
-
+        const { selectedFinancialReport } = this.props
+        values.title = selectedFinancialReport.title
+        values.type = values.title.includes('Annual') ? 'financialStatementsAnnual' : 'financialStatementsQuarterly'
+        console.log(values)
+        this.props.dispatch(editFinancialReport(values, selectedFinancialReport))
     };
 
     handleCancel() {
         this.props.dispatch(closeModal())
+
     };
 
     render() {
-
+        const { title } = this.props.selectedFinancialReport
         return (
             <form className="financial-report-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
-                <label htmlFor="title">Title Of Report</label>
-                <Field component={ReportSelect}
-                        type="select"
-                        name="title" />
-                <label htmlFor="report">Financial Report Data</label>
+                <h2>{title}</h2>
+                <label htmlFor="Report">Financial Report Data</label>
                 <Field component={Input}
-                        placeholder="Enter Rating of Financial Concerns"
+                        placeholder="Enter Report Data"
                         type="textarea"
-                        name="report"
+                        name="Report"
                         componentClass="textarea" />
                 <button
                     type="submit"

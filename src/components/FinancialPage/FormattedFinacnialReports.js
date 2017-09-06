@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button } from 'react-bootstrap'
 
+import { getFinacnialReport, openEditPageModal } from '../actions'
 import { editFinancialReport } from '../actions/EditTarget'
 
 import Paragraph from '../CompanyPage/Paragraph'
@@ -13,7 +14,6 @@ export class FormattedFinacnialReports extends React.Component {
 
         this.handleClick = this.handleClick.bind(this)
         this.handleEditClick = this.handleEditClick.bind(this)
-        this.handleDeleteClick = this.handleDeleteClick.bind(this)
     };
     handleClick(e) {
         e.preventDefault()
@@ -28,38 +28,30 @@ export class FormattedFinacnialReports extends React.Component {
         e.preventDefault()
 
         const name = e.target.value
-        this.props.dispatch(editFinancialReport(name))
-    };
-
-    handleDeleteClick(e) {
-        e.preventDefault()
+        const typeOfReport = this.props.name
+        this.props.dispatch(getFinacnialReport(name, typeOfReport))
+        this.props.dispatch(openEditPageModal())
+        // this.props.dispatch(editFinancialReport())
     };
 
     render() {
 
         const arrayOfFinancialReports = this.props.arrayOfReports
         const typeOfReport = this.props.name
-        let formattedFinacnialReports
 
-        if (arrayOfFinancialReports.length < 1) {
-            formattedFinacnialReports = 'No Reports have been uploaded'
-        }
+        const formattedFinacnialReports = arrayOfFinancialReports.map(({title, report}, index) => {
+            return (
+                <li key={index}>
+                    <button className='financial-report-button'
+                               value={title}
+                               onClick={this.handleClick} >
+                               {title}
+                    </button>
+                    <Button value={title} onClick={this.handleEditClick}>Edit Report</Button>
+                </li>
+            );
+        });
 
-        else {
-            formattedFinacnialReports = arrayOfFinancialReports.map(({title, report}, index) => {
-                  return (
-                      <li key={index}>
-                          <button className='financial-report-button'
-                                     value={title}
-                                     onClick={this.handleClick} >
-                                     {title}
-                          </button>
-                          <Button value={title} onClick={this.handleEditClick}>Edit Report</Button>
-                          <Button value={title} onClick={this.handleDeleteClick}>Delete Report</Button>
-                      </li>
-                  );
-              });
-        }
 
         return (
           <div>

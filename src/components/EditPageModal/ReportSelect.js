@@ -5,19 +5,19 @@ export default function ReportSelect (props) {
 
     return (
             <FormGroup controlId="formControlsSelect">
-                <ControlLabel htmlFor={this.props.label}>
-                    {this.props.label}
+                <ControlLabel htmlFor={props.label}>
+                    {props.label}
                 </ControlLabel>
                 <FormControl componentClass="select"
-                              {...this.props.input}
-                              id={this.props.name}
-                              type={this.props.type}
-                              ref={input => (this.input = input)}>
+                              {...props.input}
+                              id={props.name}
+                              type={props.type}
+                              ref={input => (input = input)}>
                     <option value="" selected disabled hidden>Choose here</option>
-                    <option value="2017 Financial Report">2017 Annual Financial Report</option>
-                    <option value="2016 Financial Report">2016 Annual Financial Report</option>
-                    <option value="2015 Financial Report">2015 Annual Financial Report</option>
-                    <option value="2014 Financial Report">2014 Annual Financial Report</option>
+                    <option value="2017 Annual Financial Report">2017 Annual Financial Report</option>
+                    <option value="2016 Annual Financial Report">2016 Annual Financial Report</option>
+                    <option value="2015 Annual Financial Report">2015 Annual Financial Report</option>
+                    <option value="2014 Annual Financial Report">2014 Annual Financial Report</option>
                     <option value="2017Q1 Financial Report">2017 Quarter 1 Financial Report</option>
                     <option value="2017Q2 Financial Report">2017 Quarter 2 Financial Report</option>
                     <option value="2017Q3 Financial Report">2017 Quarter 3 Financial Report</option>
