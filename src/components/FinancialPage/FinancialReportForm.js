@@ -1,6 +1,6 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
-
+import { connect } from 'react-redux'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
@@ -42,7 +42,7 @@ export class FinancialReportForm extends React.Component {
         values.type = values.title.includes('Annual') ? 'financialStatementsAnnual' : 'financialStatementsQuarterly'
 
         const formattedObj = formatFinanceStatements(values, selectedFinancialReport, selectedCompany)
-        console.log(formattedObj)
+
         this.props.dispatch(updateTarget(formattedObj))
     };
 
@@ -76,6 +76,17 @@ export class FinancialReportForm extends React.Component {
         );
     };
 };
+
+const mapStateToProps = state => {
+    const { selectedFinancialReport, selectedCompany } = state.app
+
+    return {
+        selectedFinancialReport,
+        selectedCompany
+    };
+};
+
+FinancialReportForm= connect(mapStateToProps)(FinancialReportForm)
 
 export default FinancialReportForm = reduxForm({
     form: 'financial-report-form',

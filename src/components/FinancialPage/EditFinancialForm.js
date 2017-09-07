@@ -1,6 +1,6 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
-
+import { connect } from 'react-redux'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
@@ -124,6 +124,16 @@ export class EditFinancialForm extends React.Component {
         );
     };
 };
+
+const mapStateToProps = state => {
+    const { selectedCompany } = state.app
+
+    return {
+        selectedCompany
+    };
+};
+
+EditFinancialForm = connect(mapStateToProps)(EditFinancialForm)
 
 export default EditFinancialForm = reduxForm({
     form: 'financial-data-form',

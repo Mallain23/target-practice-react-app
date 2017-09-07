@@ -1,6 +1,6 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
-
+import { connect } from 'react-redx'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions'
@@ -64,10 +64,8 @@ export class EditCompanyOverviewForm extends React.Component {
 
     render() {
         return (
-            <form
-                className="edit-company-overview-form"
-                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-                >
+            <form className="edit-company-overview-form"
+                  onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="companyName">Company Name</label>
                 <Field component={Input} placeholder='Enter Company Name' type="text" name="companyName" validate={[required, nonEmpty]} />
                 <label htmlFor="costOfAcquisition">Cost of Acquiring Target</label>
@@ -132,7 +130,7 @@ export class EditCompanyOverviewForm extends React.Component {
                     type="textarea"
                     name="goals"
                     placeholder='Enter company goals' />
-                <label htmlFor='backgrondInformation'>Background and History of the Industry</label>
+                <label htmlFor='backgroundInformation'>Background and History of the Industry</label>
                 <Field
                     component={Input}
                     componentClass='textarea'
@@ -160,6 +158,16 @@ export class EditCompanyOverviewForm extends React.Component {
         )
     }
 };
+
+const mapStateToProps = state => {
+    const { selectedCompany } = state.app
+
+    return {
+        selectedCompany
+    };
+};
+
+EditCompanyOverviewForm = connect(mapStateToProps)(EditCompanyOverviewForm)
 
 export default EditCompanyOverviewForm = reduxForm({
     form: 'edit-company-overview-form',

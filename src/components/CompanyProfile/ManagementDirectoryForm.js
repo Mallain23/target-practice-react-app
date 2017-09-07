@@ -2,10 +2,10 @@ import React  from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
+
 import Input from '../CompanyDataModal/Input'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-
 import { closeModal } from '../actions'
 import { updateTarget } from '../actions/EditTarget'
 import { formatContacts } from './Utils'
@@ -52,9 +52,8 @@ export class ManagementDirectoryForm extends React.Component {
 
     render() {
         return (
-          <form
-              className="edit-management-directory-form"
-              onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
+          <form className="edit-management-directory-form"
+                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
               <label htmlFor="name">Contact Name</label>
               <Field component={Input} placeholder='Enter Contact Name' type="text" name="name" validate={[required, nonEmpty]} />
               <label htmlFor="cell">Cell Phone Number</label>
@@ -86,6 +85,18 @@ export class ManagementDirectoryForm extends React.Component {
         );
     };
 };
+
+const mapStateToProps = state => {
+    const { selectedCompany, editContact, contactToEdit } = state.app
+
+    return {
+        selectedCompany,
+        editContact,
+        contactToEdit
+    };
+};
+
+ManagementDirectoryForm = connect(mapStateToProps)(ManagementDirectoryForm)
 
 export default ManagementDirectoryForm = reduxForm({
     form: 'edit-management-directory-form',

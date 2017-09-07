@@ -1,5 +1,6 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
+import { connect } from 'react-redux'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions'
@@ -19,7 +20,6 @@ export class EditLegalForm extends React.Component {
     const { selectedCompany } = this.props
 
      this.handleInitialize(selectedCompany)
-
     };
 
     handleInitialize(selectedCompany) {
@@ -156,6 +156,16 @@ export class EditLegalForm extends React.Component {
         );
     };
 };
+
+const mapStateToProps = state => {
+    const { selectedCompany } = state.app
+
+    return {
+        selectedCompany
+    };
+};
+
+EditLegalForm = connect(mapStateToProps)(EditLegalForm)
 
 export default EditLegalForm = reduxForm({
     form: 'edit-legal-form',

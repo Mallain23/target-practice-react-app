@@ -27,45 +27,53 @@ export class EditPageModal extends React.Component {
     };
 
     renderForm() {
-          const { selectedPage, editReport, showALModal} = this.props
+          const { selectedPage, editReport, showALModal } = this.props
 
           if (editReport) {
-              return <FinancialReportForm {...this.props} />
+              return <FinancialReportForm  />
           }
 
           else if (showALModal) {
-              return <AssetLiabilityForm {...this.props} />
+              return <AssetLiabilityForm  />
           }
 
           else if (selectedPage === 'Company Overview') {
-              return <EditCompanyOverviewForm {...this.props} />
+              return <EditCompanyOverviewForm  />
           }
 
           else if (selectedPage === 'Company Directory') {
-              return <ManagementDirectoryForm {...this.props} />
+              return <ManagementDirectoryForm />
           }
 
           else if (selectedPage === 'Final Assessment') {
-              return <FinalAssessmentForm {...this.props} />
+              return <FinalAssessmentForm  />
           }
 
-          else if (selectedPage === 'Legal Page') {
-              return <EditLegalForm {...this.props} />
+          else if (selectedPage === 'Legal Page' ||
+                   selectedPage === 'Legal Assessment') {
+
+              return <EditLegalForm  />
           }
 
           else if (selectedPage === 'Financial Page') {
-            return <EditFinancialForm {...this.props} />
+            return <EditFinancialForm  />
           }
 
-          else if (selectedPage ===  'Benefits Page') {
-              return <EditBenefitsForm {...this.props} />
+          else if (selectedPage ===  'Intellectual Property' ||
+                   selectedPage === 'Technology' ||
+                   selectedPage === 'Other Benefits') {
+
+              return <EditBenefitsForm />
           }
 
           return ''
     }
 
     render() {
-        const { showEditModal, selectedCompany } = this.props
+        const { showEditModal,
+                selectedPage,
+                companyName } = this.props
+
 
         return (
             <div className="Add-Company-Modal">
@@ -75,7 +83,7 @@ export class EditPageModal extends React.Component {
                        aria-labelledby="edit-page-modal">
 
                     <Modal.Header closeButton>
-                        <Modal.Title id="edit-page-modal">Edit Company Information</Modal.Title>
+                        <Modal.Title id="edit-page-modal">{companyName} </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         {this.renderForm()}
@@ -89,34 +97,13 @@ export class EditPageModal extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const { showEditModal,
-            selectedFinancialReport,
-            companies,
-            selectedCompany,
-            selectedPage,
-            editContact,
-            editReport,
-            contactToEdit,
-            showALModal,
-            editAL,
-            id,
-            propertyToEdit,
-            propertyType } = state.app
-
+    const { showEditModal, selectedPage, showALModal,  } = state.app
+    const { companyName } = state.app.selectedCompany
     return {
         showEditModal,
-        companies,
-        selectedFinancialReport,
-        selectedCompany,
-        selectedPage,
-        editContact,
-        editReport,
-        contactToEdit,
         showALModal,
-        editAL,
-        id,
-        propertyToEdit,
-        propertyType
+        selectedPage,
+        companyName
     };
 };
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
@@ -70,7 +71,7 @@ export class EditBenefitsForm extends React.Component {
 
     onSubmit(values) {
         const formattedObj = formatBenefitsData(values)
-        
+
         this.props.dispatch(updateTarget(formattedObj))
 
     };
@@ -83,6 +84,7 @@ export class EditBenefitsForm extends React.Component {
         const { status } = this.props.selectedCompany
         return (
             <form className="edit-benefits-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
+                <div>Edit Benefits Provided by Target</div>
                 <label htmlFor="patents">Patents Held by the Target</label>
                 <Field component={Input}
                        placeholder="Enter Information on Patents held by the Target"
@@ -197,6 +199,16 @@ export class EditBenefitsForm extends React.Component {
         );
     };
 };
+
+const mapStateToProps = state => {
+    const   { selectedCompany } = state.app
+
+    return {
+        selectedCompany
+    };
+};
+
+EditBenefitsForm = connect(mapStateToProps)(EditBenefitsForm)
 
 export default EditBenefitsForm = reduxForm({
     form: 'edit-benefits-form',

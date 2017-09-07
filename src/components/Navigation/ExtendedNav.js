@@ -41,79 +41,61 @@ export class ExtendedNav extends React.Component {
                               <button className='nav-buttons'
                                       value='Final Assessment'
                                       onClick={this.handleClick}>
-                                      Final Assessment </button>
+                                      Final Assessment of Target</button>
                           </MenuItem>
                 </NavDropdown>
-                <NavDropdown eventKey={4} title='Financial Matters' id='financial-matters'>
+                <NavDropdown eventKey={4} title='Financial Considerations' id='financial-matters'>
                     <MenuItem eventKey={4.1}>
                         <button className='nav-buttons'
-                                value='Financial Page'
+                                value='Assets and Liabilities'
                                 onClick={this.handleClick}>
-                                Company Assets </button>
-                    </MenuItem>
-                    <MenuItem eventKey={4.2}>
-                    <button className='nav-buttons'
-                            value='Financial Page'
-                            onClick={this.handleClick}>
-                            Company Liabilities </button>
+                                Assets and Liabilities </button>
                     </MenuItem>
                     <MenuItem eventKey={4.3}>
                     <button className='nav-buttons'
-                            value='Financial Page'
+                            value='Financial Statements'
                             onClick={this.handleClick}>
-                            Financial Reports </button>
+                            Financial Statements </button>
                     </MenuItem>
                     <MenuItem eventKey={4.4}>
                     <button className='nav-buttons'
                             value='Financial Page'
                             onClick={this.handleClick}>
-                            Business Margins </button>
-                    </MenuItem>
-                    <MenuItem eventKey={4.5}>
-                    <button className='nav-buttons'
-                            value='Financial Page'
-                            onClick={this.handleClick}>
-                            Financial Assessment </button>
+                            Financial Overview and Assessment </button>
                     </MenuItem>
                 </NavDropdown>
-                <NavDropdown eventKey={5} title='Legal Matters' id='legal-matters'>
+                <NavDropdown eventKey={5} title='Legal Considerations' id='legal-matters'>
                     <NavItem eventKey={5.1}>
                         <button className='nav-buttons'
                                 value='Legal Page'
                                 onClick={this.handleClick}>
-                                Legal Concerns</button>
+                                Legal Factors</button>
                     </NavItem>
                     <NavItem eventKey={5.1}>
                         <button className='nav-buttons'
-                                value='Legal Page'
+                                value='Legal Assessment'
                                 onClick={this.handleClick}>
                                 Legal Assessment</button>
                     </NavItem>
                 </NavDropdown>
                 <NavDropdown eventKey={6} title="Benefits" id="display-by-status">
-                    <MenuItem eventKey={6.1}>
+                    <MenuItem eventKey={6.2}>
                         <button className='nav-buttons'
-                                value='Benefits Page'
+                                value='Intellectual Property'
                                 onClick={this.handleClick}>
-                                Intellectual Property</button>
+                                Intellectual Property </button>
                     </MenuItem>
                     <MenuItem eventKey={6.2}>
                         <button className='nav-buttons'
-                                value='Benefits Page'
+                                value='Technology'
                                 onClick={this.handleClick}>
                                 Technology </button>
                     </MenuItem>
-                    <MenuItem eventKey={6.3}>
+                    <MenuItem eventKey={6.2}>
                         <button className='nav-buttons'
-                                value='Benefits Page'
+                                value='Other Benefits'
                                 onClick={this.handleClick}>
-                                Other Benefits</button>
-                    </MenuItem>
-                    <MenuItem eventKey={6.3}>
-                        <button className='nav-buttons'
-                                value='Benefits Page'
-                                onClick={this.handleClick}>
-                                Assessment of Benefits</button>
+                                Other Benefits </button>
                     </MenuItem>
                 </NavDropdown>
             </Nav>

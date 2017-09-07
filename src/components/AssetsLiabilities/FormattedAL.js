@@ -47,21 +47,24 @@ export class FormattedAL extends React.Component  {
     render () {
         const arrayOfAL = this.props.arrayOfAL
         const typeOfProperty = this.props.name
+        const propertyTypeSingular = typeOfProperty === 'Assets' ? 'Asset' : 'Liability'
         let formattedAL
 
 
-        if (arrayOfAL[0] === 'No Information Provided') {
-           formattedAL = arrayOfAL[0]
+        if (arrayOfAL.length < 1) {
+           formattedAL = 'No Information Provided'
         }
 
         else {
            formattedAL = arrayOfAL.map(({name, value, id}, index) => {
                 return (
                     <li key={index}>
-                        <Paragraph className='company-asset'
-                                   text={`Name: ${name}; Value: ${value}`} />
-                        <Button onClick={this.handleEditClick} value={id}>Edit</Button>
-                        <Button onClick={this.handleDeleteClick} value={id}>Delete</Button>
+                        <ul>
+                            <li>Name: {name}</li>
+                            <li>Value/Amount: {value}</li>
+                            <Button onClick={this.handleEditClick} value={id}>Edit</Button>
+                            <Button onClick={this.handleDeleteClick} value={id}>Delete</Button>
+                        </ul>
                     </li>
                 );
             });
@@ -70,10 +73,10 @@ export class FormattedAL extends React.Component  {
         return (
             <div>
                 <h3>{typeOfProperty}</h3>
-                <Button value={typeOfProperty} onClick={this.handleAddClick}>Add New {typeOfProperty}</Button>
-                <ul className={this.props.className}>
+                <Button value={typeOfProperty} onClick={this.handleAddClick}>Add New {propertyTypeSingular}</Button>
+                <ol className={this.props.className}>
                     {formattedAL}
-                </ul>
+                </ol>
             </div>
         );
     };

@@ -3,56 +3,33 @@ import { connect } from 'react-redux'
 import { Grid, Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
-import FormattedAL from '../AssetsLiabilities/FormattedAL'
+
 import FormattedFinacnialReports from './FormattedFinacnialReports'
+import ALPage from '../AssetsLiabilities/ALPage'
+import FinancialOverview from './FinancialOverview'
+import FinancialStatementsContainer from './FinancialStatementsContainer'
 
 export class FinancialPage extends React.Component {
+
+    renderComponent() {
+        const { selectedPage } = this.props
+        console.log(selectedPage)
+        if (selectedPage === 'Assets and Liabilities') {
+            return <ALPage {...this.props} />
+        }
+
+        else if (selectedPage === 'Financial Statements') {
+            return <FinancialStatementsContainer {...this.props} />
+        }
+
+        return <FinancialOverview />
+    };
+
     render() {
-
-        const  { status, companyProjections, areProjectionsReasonable } = this.props.selectedCompany.financialMatters.businessMargins
-        const { statementFromCompany,
-                assets,
-                liabilities,
-                totalValueOfAllAssets,
-                totalLiabilities,
-                financialStatementsAnnual,
-                financialStatementsQuarterly,
-                financesAudited,
-                internalAssessmentOfFinances,
-                internalFinancialRating } = this.props.selectedCompany.financialMatters
-
 
         return (
             <Row>
-                <Col xs={12}>
-                    <Paragraph className='company-data' text={`Statement of Current Finances: ${statementFromCompany}`} />
-                    <h3>Business Margins</h3>
-                    <Paragraph className='company-data' text={`Current Status of Business Margins: ${status}`} />
-                    <Paragraph className='company-data' text={`Company Projections for Business Margins: ${companyProjections}`} />
-                    <Paragraph className='company-data' text={`Are Projections Reasonable: ${areProjectionsReasonable}`} />
-                    <h3>Financial Reports</h3>
-                    <Paragraph className='company-data' text={`Financial Reports Audited: ${financesAudited.isAudited}`} />
-                    <Paragraph className='company-data' text={`Who audits Finances: ${financesAudited.whoAudits}`} />
-                    <FormattedFinacnialReports className='annual-financial-reports'
-                                                arrayOfReports={financialStatementsAnnual}
-                                                name='Annual'
-                                                {...this.props} />
-                    <FormattedFinacnialReports className='quarterly-financial-reports'
-                                                arrayOfReports={financialStatementsQuarterly}
-                                                name='Quarterly'
-                                                {...this.props}  />
-                    <FormattedAL className='asset-list'
-                                 arrayOfAL={assets}
-                                 name='Assets' />
-                    <Paragraph className='company-data' text={`Total Value of All Assets: ${totalValueOfAllAssets}`} />
-                    <FormattedAL className='liability-list'
-                                 arrayOfAL={liabilities}
-                                 name='Liabilities' />
-                    <Paragraph className='company-data' text={`Total Value of All Liabilities: ${totalLiabilities}`} />
-                    <h3>Final Assessment and Rating of Finances</h3>
-                    <Paragraph className='company-data' text={`Internal Assessment: ${internalAssessmentOfFinances}`} />
-                    <Paragraph className='company-data' text={`Rating of Finances: ${internalFinancialRating}`} />
-                </Col>
+                {this.renderComponent()}
             </Row>
 
         );

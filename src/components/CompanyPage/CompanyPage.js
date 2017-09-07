@@ -7,10 +7,13 @@ import { showExtendedNav, fetchCompanyData } from '../actions'
 import CompanyPageButtons from './CompanyPageButtons'
 import CompanyOverview from '../CompanyOverview/CompanyOverview'
 import FinancialPage from '../FinancialPage/FinancialPage'
-import BenefitsPage from '../BenefitsPage/BenefitsPage'
-import LegalPage from '../LegalPage/LegalPage'
+import IntellectualPropertyPage from '../BenefitsPage/IntellectualPropertyPage'
+import TechnologyPage from '../BenefitsPage/TechnologyPage'
+import OtherBenefitsPage from '../BenefitsPage/OtherBenefitsPage'
+import LegalPage from '../Legal/LegalPage'
 import CompanyDirectory from '../CompanyOverview/CompanyDirectory'
 import FinalAssessmentPage from '../CompanyOverview/FinalAssessmentPage'
+
 
 export class CompanyPage extends React.Component {
 
@@ -53,12 +56,23 @@ export class CompanyPage extends React.Component {
               return <FinalAssessmentPage {...this.props} />
           }
 
-          else if (selectedPage === 'Financial Page') {
+          else if (selectedPage === 'Financial Page' ||
+                  selectedPage === 'Assets and Liabilities' ||
+                  selectedPage === 'Financial Statements') {
+
               return <FinancialPage {...this.props} />
           }
 
-          else if (selectedPage === 'Benefits Page') {
-              return <BenefitsPage {...this.props} />
+          else if (selectedPage === 'Intellectual Property') {
+              return <IntellectualPropertyPage {...this.props} />
+          }
+
+          else if (selectedPage === 'Technology') {
+              return <TechnologyPage {...this.props} />
+          }
+
+          else if (selectedPage === 'Other Benefits') {
+              return <OtherBenefitsPage {...this.props} />
           }
 
           return <LegalPage {...this.props} />

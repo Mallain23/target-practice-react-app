@@ -47,11 +47,10 @@ export class FinalAssessmentForm extends React.Component {
 
     render() {
         const { status } = this.props.selectedCompany
+
         return (
-            <form
-                className="edit-final-assessment-form"
-                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-                >
+            <form className="edit-final-assessment-form"
+                  onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="finalAssessment">Final Assessment of Target</label>
                 <Field component={Input}
                        placeholder='Enter Final Assessment Notes'
@@ -81,6 +80,16 @@ export class FinalAssessmentForm extends React.Component {
         );
     };
 };
+
+const mapStateToProps = state => {
+    const { selectedCompany } = state.app
+
+    return {
+        selectedCompany
+    };
+};
+
+FinalAssessmentForm = connect(mapStateToProps)(FinalAssessmentForm)
 
 export default FinalAssessmentForm = reduxForm({
     form: 'edit-final-assessment-form',

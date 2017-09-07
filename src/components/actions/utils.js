@@ -53,20 +53,21 @@ export const formatDataForEntry = companyName => ({
         generalBusinessActivities: 'No Information Provided',
         companyStrategy: {
             vision: 'No Information Provided',
-            goals: 'No Information Provided'
+            coreValues: 'No Information Provided',
+            goals: 'No Information Provided',
         },
         industryInformation: {
-            backgrondInformation: 'No Information Provided',
+            backgroundInformation: 'No Information Provided',
             presentCondition: 'No Information Provided',
             workForce: 'No Information Provided'
         },
     },
     financialMatters: {
         statementFromCompany: 'No Information Provided',
-        assets: ['No Information Provided'],
-        totalValueOfAllAssets: 'No Information Provided',
-        liabilities: ['No Information Provided'],
-        totalLiabilities: 'No Information Provided',
+        assets: [],
+        totalValueOfAllAssets: 'No Data Available Yet',
+        liabilities: [],
+        totalLiabilities: 'No Data Available Yet',
         financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
                                      {title:'2016 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
                                      {title:'2015 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
