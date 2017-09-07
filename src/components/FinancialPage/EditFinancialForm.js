@@ -4,10 +4,11 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
-import { editFinances } from '../actions/EditTarget'
+import { updateTarget } from '../actions/EditTarget'
+import { formatFinanceData } from './utils'
 
 import Input from '../CompanyDataModal/Input'
-import StatusSelect from './StatusSelect'
+
 
 export class EditFinancialForm extends React.Component {
     constructor(props) {
@@ -49,8 +50,10 @@ export class EditFinancialForm extends React.Component {
     };
 
     onSubmit(values) {
+        const { selectedCompany } = this.props
+        const formattedObj = formatFinanceData(values, selectedCompany)
 
-        this.props.dispatch(editFinances(values))
+        this.props.dispatch(updateTarget(formattedObj))
 
     };
 

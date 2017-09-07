@@ -4,10 +4,10 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
-import { editCompanyAssessment } from '../actions/EditTarget'
+import { updateTarget } from '../actions/EditTarget'
 
 import Input from '../CompanyDataModal/Input'
-import StatusSelect from './StatusSelect'
+import StatusSelect from '../EditPageModal/StatusSelect'
 
 export class FinalAssessmentForm extends React.Component {
     constructor(props) {
@@ -28,7 +28,6 @@ export class FinalAssessmentForm extends React.Component {
 
         const { finalAssessment, overallRating } = selectedCompany
         const _overAllRating = parseInt(overallRating)
-        console.log(_overAllRating)
 
         const initValues = {
             finalAssessment,
@@ -39,9 +38,7 @@ export class FinalAssessmentForm extends React.Component {
     };
 
     onSubmit(values) {
-        console.log(values)
-        this.props.dispatch(editCompanyAssessment(values))
-
+        this.props.dispatch(updateTarget(values))
     };
 
     handleCancel() {

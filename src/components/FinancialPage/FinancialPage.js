@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { Grid, Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
-import FormattedAL from './FormattedAL'
+import FormattedAL from '../AssetsLiabilities/FormattedAL'
 import FormattedFinacnialReports from './FormattedFinacnialReports'
 
 export class FinancialPage extends React.Component {
     render() {
-      
+
         const  { status, companyProjections, areProjectionsReasonable } = this.props.selectedCompany.financialMatters.businessMargins
         const { statementFromCompany,
                 assets,

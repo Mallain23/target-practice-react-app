@@ -4,10 +4,10 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
-import { editFinancialReport } from '../actions/EditTarget'
-
+import { updateTarget} from '../actions/EditTarget'
+import { formatFinanceStatements } from './utils'
 import Input from '../CompanyDataModal/Input'
-import ReportSelect from './ReportSelect'
+
 
 export class FinancialReportForm extends React.Component {
     constructor(props) {
@@ -37,11 +37,13 @@ export class FinancialReportForm extends React.Component {
     };
 
     onSubmit(values) {
-        const { selectedFinancialReport } = this.props
+        const { selectedFinancialReport, selectedCompany } = this.props
         values.title = selectedFinancialReport.title
         values.type = values.title.includes('Annual') ? 'financialStatementsAnnual' : 'financialStatementsQuarterly'
-        console.log(values)
-        this.props.dispatch(editFinancialReport(values, selectedFinancialReport))
+
+        const formattedObj = formatFinanceStatements(values, selectedFinancialReport, selectedCompany)
+        console.log(formattedObj)
+        this.props.dispatch(updateTarget(formattedObj))
     };
 
     handleCancel() {

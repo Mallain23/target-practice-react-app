@@ -40,7 +40,7 @@ export class CompanyOverview extends React.Component {
 
 const mapStateToProps = state => {
     const { selectedCompany } = state.app
-    console.log(selectedCompany)
+
     return {
         selectedCompany
     };

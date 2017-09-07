@@ -3,7 +3,7 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions'
-import { editLegalData } from '../actions/EditTarget'
+import { updateTarget } from '../actions/EditTarget'
 
 import Input from '../CompanyDataModal/Input'
 
@@ -56,8 +56,9 @@ export class EditLegalForm extends React.Component {
     };
 
     onSubmit(values) {
-        console.log(values)
-        this.props.dispatch(editLegalData(values))
+        const formattedObj = { legal: values }
+
+        this.props.dispatch(updateTarget(formattedObj))
     };
 
     handleCancel() {

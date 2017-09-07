@@ -3,8 +3,8 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
-import { editBenefits } from '../actions/EditTarget'
-
+import { updateTarget } from '../actions/EditTarget'
+import { formatBenefitsData } from './utils'
 import Input from '../CompanyDataModal/Input'
 
 export class EditBenefitsForm extends React.Component {
@@ -44,7 +44,7 @@ export class EditBenefitsForm extends React.Component {
         const internalIPRating  = parseInt(_interalIPRating)
         const internalTechRating  = parseInt(_internalTechRating)
         const internalOtherBenefitsRating = parseInt(_internalOtherBenefitsRating)
-        
+
         const initValues = {
             patents,
             trademarks,
@@ -69,8 +69,9 @@ export class EditBenefitsForm extends React.Component {
     };
 
     onSubmit(values) {
-
-        this.props.dispatch(editBenefits(values))
+        const formattedObj = formatBenefitsData(values)
+        
+        this.props.dispatch(updateTarget(formattedObj))
 
     };
 

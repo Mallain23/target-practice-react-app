@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Col, Row, Button } from 'react-bootstrap'
 import {   openEditPageModal } from '../actions'
-import { editContact, removeContact } from '../actions/EditTarget'
+import { updateTarget  } from '../actions/EditTarget'
 import { getContactDataAndSetEditToTrue } from '../actions/ManagementDirectory'
+import { removeContact } from './Utils'
 
 export class CompanyDirectory extends React.Component {
     constructor(props) {
@@ -25,7 +26,9 @@ export class CompanyDirectory extends React.Component {
     handleDeleteClick(e) {
       e.preventDefault()
       const name = e.target.value
-      this.props.dispatch(removeContact(name))
+      const { selectedCompany } = this.props
+      const formattedObj = removeContact(name, selectedCompany)
+      this.props.dispatch(updateTarget(formattedObj))
     };
 
     render() {
@@ -63,9 +66,11 @@ export class CompanyDirectory extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const { managementDirectory } = state.app.selectedCompany
+    const { selectedCompany } = state.app
+    const { managementDirectory} = selectedCompany
 
     return {
+        selectedCompany,
         managementDirectory
     };
 };

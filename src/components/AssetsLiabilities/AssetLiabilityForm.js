@@ -4,7 +4,8 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
-import { addNewALToDatabase, editALInDataBase } from '../actions/EditTarget'
+import { updateTarget } from '../actions/EditTarget'
+import { formatAL } from './utils'
 
 import Input from '../CompanyDataModal/Input'
 
@@ -37,14 +38,15 @@ export class AssetLiabilityForm extends React.Component {
     };
 
     onSubmit(values) {
-        const { id, propertyType, editAL } = this.props
+        const { id, propertyType, editAL, selectedCompany } = this.props
 
         values.propertyType = propertyType
         values.id =  values.id ? values.id : id
 
-        return editAL ? this.props.dispatch(editALInDataBase(values)) :
-                          this.props.dispatch(addNewALToDatabase(values))
+        const formattedObj = formatAL(values, selectedCompany, editAL)
+        console.log(formattedObj)
 
+        this.props.dispatch(updateTarget(formattedObj))
     };
 
     handleCancel() {

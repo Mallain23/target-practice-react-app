@@ -4,14 +4,14 @@ import { connect } from 'react-redux'
 
 import { closeModal } from '../actions'
 
-import EditCompanyOverviewForm from './EditCompanyOverview'
-import ManagementDirectoryForm from './ManagementDirectoryForm'
-import FinalAssessmentForm from './FinalAssessmentForm'
-import EditLegalForm from './EditLegalForm'
-import EditFinancialForm from './EditFinancialForm'
-import FinancialReportForm from './FinancialReportForm'
-import EditBenefitsForm from './EditBenefits'
-import AssetLiabilityForm from './AssetLiabilityForm'
+import EditCompanyOverviewForm from '../CompanyOverview/EditCompanyOverview'
+import ManagementDirectoryForm from '../CompanyOverview/ManagementDirectoryForm'
+import FinalAssessmentForm from '../CompanyOverview/FinalAssessmentForm'
+import EditLegalForm from '../Legal/EditLegalForm'
+import EditFinancialForm from '../FinancialPage/EditFinancialForm'
+import FinancialReportForm from '../FinancialPage/FinancialReportForm'
+import EditBenefitsForm from '../BenefitsPage/EditBenefits'
+import AssetLiabilityForm from '../AssetsLiabilities/AssetLiabilityForm'
 // import './Modal.css'
 
 export class EditPageModal extends React.Component {

@@ -7,7 +7,9 @@ import Input from '../CompanyDataModal/Input'
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 
 import { closeModal } from '../actions'
- import { editExistingContact, createNewContact } from '../actions/EditTarget'
+import { updateTarget } from '../actions/EditTarget'
+import { formatContacts } from './Utils'
+
 
 export class ManagementDirectoryForm extends React.Component {
     constructor(props) {
@@ -35,18 +37,17 @@ export class ManagementDirectoryForm extends React.Component {
     };
 
     onSubmit(values) {
-        const { editContact, selectedCompany } = this.props
+        const { editContact, selectedCompany, contactToEdit } = this.props
 
-        if (editContact) {
-            return this.props.dispatch(editExistingContact(values))
-        }
-
-         if (selectedCompany.managementDirectory.some(({name}) => name === values.name)) {
+        if (!editContact && selectedCompany.managementDirectory.some(({name}) => name === values.name)) {
 
             return alert('Contact is already in database')
         }
 
-        this.props.dispatch(createNewContact(values))
+        const formattedObj =  editContact ? formatContacts(values, selectedCompany, editContact, contactToEdit) :
+                                            formatContacts(values, selectedCompany, editContact)
+
+        this.props.dispatch(updateTarget(formattedObj))
     };
 
     render() {

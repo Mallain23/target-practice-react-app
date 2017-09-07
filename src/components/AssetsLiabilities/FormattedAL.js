@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button } from 'react-bootstrap'
 
-
 import {  openALModal, openEditALModal } from '../actions'
-import { deleteALFromDatabase } from '../actions/EditTarget'
+import { updateTarget } from '../actions/EditTarget'
+import { removeAL } from './utils'
 import Paragraph from '../CompanyPage/Paragraph'
 
 export class FormattedAL extends React.Component  {
@@ -24,20 +24,24 @@ export class FormattedAL extends React.Component  {
     };
 
     handleEditClick(e) {
-      e.preventDefault()
+        e.preventDefault()
 
-      const id = e.target.value
-      const type = this.props.name
-      console.log(type)
-      this.props.dispatch(openEditALModal(type, id))
-    }
+        const id = e.target.value
+        const type = this.props.name
+
+        this.props.dispatch(openEditALModal(type, id))
+    };
 
     handleDeleteClick(e) {
         e.preventDefault()
-        const typeOfProperty = this.props.name
         const id = e.target.value
 
-        this.props.dispatch(deleteALFromDatabase(id, typeOfProperty))
+        const { selectedCompany } = this.props
+        const typeOfProperty = this.props.name
+
+
+        const formattedObj = removeAL(id, typeOfProperty, selectedCompany)
+        this.props.dispatch(updateTarget(formattedObj))
     };
 
     render () {
@@ -75,4 +79,12 @@ export class FormattedAL extends React.Component  {
     };
 };
 
-export default connect()(FormattedAL)
+const mapStateToProps = state => {
+    const { selectedCompany } = state.app
+
+    return {
+        selectedCompany
+    };
+};
+
+export default connect(mapStateToProps)(FormattedAL)
