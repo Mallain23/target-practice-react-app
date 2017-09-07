@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Grid, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 import LegalFactors from './LegalFactors'
 import LegalAssessment from './LegalAssessment'

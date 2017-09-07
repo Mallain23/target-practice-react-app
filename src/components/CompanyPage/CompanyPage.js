@@ -5,14 +5,14 @@ import { Grid, Col, Row } from 'react-bootstrap'
 import { showExtendedNav, fetchCompanyData } from '../actions'
 
 import CompanyPageButtons from './CompanyPageButtons'
-import CompanyOverview from '../CompanyOverview/CompanyOverview'
+import CompanyOverview from '../CompanyProfile/CompanyOverview'
 import FinancialPage from '../FinancialPage/FinancialPage'
 import IntellectualPropertyPage from '../BenefitsPage/IntellectualPropertyPage'
 import TechnologyPage from '../BenefitsPage/TechnologyPage'
 import OtherBenefitsPage from '../BenefitsPage/OtherBenefitsPage'
 import LegalPage from '../Legal/LegalPage'
-import CompanyDirectory from '../CompanyOverview/CompanyDirectory'
-import FinalAssessmentPage from '../CompanyOverview/FinalAssessmentPage'
+import CompanyDirectory from '../CompanyProfile/CompanyDirectory'
+import FinalAssessmentPage from '../CompanyProfile/FinalAssessmentPage'
 
 
 export class CompanyPage extends React.Component {

@@ -33,9 +33,8 @@ export class AddCompanyForm extends React.Component {
     render() {
 
           return (
-          <form
-              className="add-company-form"
-              onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+          <form className="add-company-form"
+                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
               <label htmlFor="company-name">Company Name</label>
               <Field component={Input}
                     placeholder='Enter Company Name'

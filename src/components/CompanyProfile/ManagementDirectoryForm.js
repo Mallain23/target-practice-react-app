@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 
-import Input from '../CompanyDataModal/Input'
+import Input from '../AddCompanyModal/Input'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions'
@@ -24,7 +24,6 @@ export class ManagementDirectoryForm extends React.Component {
             const { contactToEdit } = this.props
 
             this.handleInitialize(contactToEdit)
-
         }
     };
 

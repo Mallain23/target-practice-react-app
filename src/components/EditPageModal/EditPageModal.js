@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 
 import { closeModal } from '../actions'
 
-import EditCompanyOverviewForm from '../CompanyOverview/EditCompanyOverview'
-import ManagementDirectoryForm from '../CompanyOverview/ManagementDirectoryForm'
-import FinalAssessmentForm from '../CompanyOverview/FinalAssessmentForm'
+import EditCompanyOverviewForm from '../CompanyProfile/EditCompanyOverview'
+import ManagementDirectoryForm from '../CompanyProfile/ManagementDirectoryForm'
+import FinalAssessmentForm from '../CompanyProfile/FinalAssessmentForm'
 import EditLegalForm from '../Legal/EditLegalForm'
 import EditFinancialForm from '../FinancialPage/EditFinancialForm'
 import FinancialReportForm from '../FinancialPage/FinancialReportForm'

@@ -7,7 +7,7 @@ import { closeModal } from '../actions/'
 import { updateTarget } from '../actions/EditTarget'
 import { formatAL } from './utils'
 
-import Input from '../CompanyDataModal/Input'
+import Input from '../AddCompanyModal/Input'
 
 
 export class AssetLiabilityForm extends React.Component {
@@ -25,7 +25,6 @@ export class AssetLiabilityForm extends React.Component {
 
             this.handleInitialize(name, value, id)
         }
-
     };
 
     handleInitialize(name, value, id) {

@@ -1,12 +1,12 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
-
+import { connect } from 'react-redux'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/'
 import { updateTarget } from '../actions/EditTarget'
 
-import Input from '../CompanyDataModal/Input'
+import Input from '../AddCompanyModal/Input'
 import StatusSelect from '../EditPageModal/StatusSelect'
 
 export class FinalAssessmentForm extends React.Component {

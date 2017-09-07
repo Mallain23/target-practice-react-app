@@ -7,7 +7,7 @@ import { closeModal } from '../actions/'
 import { updateTarget } from '../actions/EditTarget'
 import { formatFinanceData } from './utils'
 
-import Input from '../CompanyDataModal/Input'
+import Input from '../AddCompanyModal/Input'
 
 
 export class EditFinancialForm extends React.Component {

@@ -6,7 +6,7 @@ import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators
 import { closeModal } from '../actions/'
 import { updateTarget} from '../actions/EditTarget'
 import { formatFinanceStatements } from './utils'
-import Input from '../CompanyDataModal/Input'
+import Input from '../AddCompanyModal/Input'
 
 
 export class FinancialReportForm extends React.Component {
