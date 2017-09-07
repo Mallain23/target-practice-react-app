@@ -164,3 +164,27 @@ export const OPEN_CREATE_CONTACT_MODAL = 'OPEN_CREATE_CONTACT_MODAL'
 export const openCreateContactModal = () => ({
     type: OPEN_CREATE_CONTACT_MODAL
 });
+
+export const OPEN_AL_MODAL = 'OPEN_AL_MODAL'
+export const openALModal = propertyType => ({
+    type: OPEN_AL_MODAL,
+    propertyType
+});
+
+export const openEditALModal = (type, id)=> (dispatch, getState) => {
+
+    const selectedCompany = getState().app.selectedCompany
+    const propertyType = type.toLowerCase()
+
+    const propertyToEdit = selectedCompany.financialMatters[propertyType].find(property =>
+        property.id === parseInt(id))
+
+    dispatch(updateStateWithPropertyToEdit(propertyToEdit, type))
+};
+
+export const UPDATE_STATE_WITH_PROPERTY_TO_EDIT = 'UPDATE_STATE_WITH_PROPERTY_TO_EDIT'
+export const updateStateWithPropertyToEdit = (propertyToEdit, propertyType) => ({
+    type: UPDATE_STATE_WITH_PROPERTY_TO_EDIT,
+    propertyToEdit,
+    propertyType
+})

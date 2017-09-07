@@ -40,7 +40,7 @@ export class CompanyPage extends React.Component {
 
     renderPageContent() {
           const { selectedPage } = this.props
-          console.log(selectedPage)
+
           if (selectedPage === 'Company Overview') {
               return <CompanyOverview {...this.props} />
           }

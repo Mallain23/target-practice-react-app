@@ -12,7 +12,9 @@ import { SHOW_EXTENDED_NAV,
          REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
          GET_FINANCIAL_REPORT_SUCCESS,
          UPDATE_CURRENT_SELECTED_PAGE,
-         OPEN_EDIT_PAGE_MODAL} from '../components/actions'
+         OPEN_EDIT_PAGE_MODAL,
+         OPEN_AL_MODAL,
+         UPDATE_STATE_WITH_PROPERTY_TO_EDIT } from '../components/actions'
 import { SET_EDIT_CONTACT_TO_FALSE, SET_EDIT_CONTACT_TO_TRUE} from '../components/actions/ManagementDirectory'
 import { UPDATE_TARGET_SUCCESS} from '../components/actions/EditTarget'
 
@@ -37,10 +39,15 @@ const initialState = {
     selectedFinancialReport: null,
     showModal: false,
     showEditModal: false,
+    showALModal: false,
     contactName: null,
     editContact: false,
     editReport: false,
-    contactToEdit: null
+    editAL: false,
+    propertyType: null,
+    contactToEdit: null,
+    id: 40,
+    propertyToEdit: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -79,7 +86,10 @@ export default function reducer(state = initialState, action) {
     else if (action.type === CLOSE_MODAL) {
         return Object.assign({}, state, {
             showModal: false,
-            showEditModal: false
+            showEditModal: false,
+            showALModal: false,
+            editAL: false
+
         });
     }
 
@@ -89,8 +99,31 @@ export default function reducer(state = initialState, action) {
       });
     }
 
+    else if (action.type === OPEN_AL_MODAL) {
+
+        const { propertyType } = action
+
+        return Object.assign({}, state, {
+            showALModal: true,
+            showEditModal: true,
+            propertyType,
+        });
+    }
+    else if (action.type === UPDATE_STATE_WITH_PROPERTY_TO_EDIT) {
+        const { propertyToEdit, propertyType} = action
+
+        return Object.assign({}, state, {
+            showALModal: true,
+            showEditModal: true,
+            editAL: true,
+            propertyToEdit,
+            propertyType
+        });
+    }
+
     else if (action.type === OPEN_EDIT_PAGE_MODAL) {
         const { name: contactName} = action
+
         return Object.assign({}, state, {
             showEditModal: true,
             contactName
@@ -171,12 +204,17 @@ export default function reducer(state = initialState, action) {
     else if (action.type === UPDATE_TARGET_SUCCESS) {
         const { updatedCompanyData, updatedCompanies } = action
 
+        const id = state.showALModal && !state.editAL ? state.id + 1 : state.id
+
         return Object.assign({}, state, {
             companies: updatedCompanies,
             searchResults: updatedCompanies,
             selectedCompany: updatedCompanyData,
             showEditModal: false,
-            editReport: false
+            editReport: false,
+            showALModal: false,
+            editAL: false,
+            id
         })
     }
 

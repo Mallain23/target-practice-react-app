@@ -86,37 +86,6 @@ export const removeContact = contact => (dispatch, getState) => {
     dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
 };
 
-export const editFinances = data => (dispatch, getState) => {
-    const companies = getState().app.companies
-    const selectedCompany = getState().app.selectedCompany
-
-    const financialMatters = formatFinanceData(data, selectedCompany)
-
-    const updatedCompanyData = Object.assign({}, selectedCompany, {
-        financialMatters
-    });
-
-    dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
-};
-
-export const editFinancialReport = (report, selectedReport) => (dispatch, getState) => {
-    const selectedCompany = getState().app.selectedCompany
-    const companies = getState().app.companies
-    const typeOfReport = report.type
-
-    const updatedReports = selectedCompany.financialMatters[typeOfReport].filter(report =>
-          report !== selectedReport).concat(report);
-
-    const financialMatters = Object.assign({}, selectedCompany.financialMatters, {
-        [typeOfReport]: updatedReports,
-    });
-
-    const updatedCompanyData = Object.assign({}, selectedCompany, {
-        financialMatters
-    });
-
-    dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
-};
 
 export const editBenefits = data => (dispatch, getState) => {
     const companies = getState().app.companies
@@ -135,6 +104,76 @@ export const editBenefits = data => (dispatch, getState) => {
 
     dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
 };
+
+export const editFinances = data => (dispatch, getState) => {
+    const companies = getState().app.companies
+    const selectedCompany = getState().app.selectedCompany
+
+    const financialMatters = formatFinanceData(data, selectedCompany)
+
+    const updatedCompanyData = Object.assign({}, selectedCompany, {
+        financialMatters
+    });
+
+    dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
+};
+
+
+export const editFinancialReport = (report, selectedReport) => (dispatch, getState) => {
+    const selectedCompany = getState().app.selectedCompany
+    const companies = getState().app.companies
+    const typeOfReport = report.type
+
+    const updatedReports = selectedCompany.financialMatters[typeOfReport].filter(report =>
+          report !== selectedReport).concat(report);
+
+    dispatch(updateFinanceObjectWithNewData(updatedReports, typeOfReport, selectedCompany))
+};
+
+
+export const addNewALToDatabase = data => (dispatch, getState) => {
+    const selectedCompany = getState().app.selectedCompany
+    const  propertyType = data.propertyType.toLowerCase()
+
+    const updatedProperty = selectedCompany.financialMatters[propertyType].concat(data)
+
+    dispatch(updateFinanceObjectWithNewData(updatedProperty, propertyType, selectedCompany))
+};
+
+export const deleteALFromDatabase = (id, type) => (dispatch, getState) => {
+    const selectedCompany = getState().app.selectedCompany
+    const  propertyType = type.toLowerCase()
+
+    const updatedProperty = selectedCompany.financialMatters[propertyType].filter(property =>
+        property.id !== parseInt(id))
+
+    dispatch(updateFinanceObjectWithNewData(updatedProperty, propertyType, selectedCompany))
+};
+
+export const editALInDataBase = data => (dispatch, getState) => {
+    const selectedCompany = getState().app.selectedCompany;
+    const  propertyType = data.propertyType.toLowerCase();
+
+    const updatedProperty = selectedCompany.financialMatters[propertyType].filter(({ id} ) =>
+        id !== data.id).concat(data);
+
+    dispatch(updateFinanceObjectWithNewData(updatedProperty, propertyType, selectedCompany));
+};
+
+export const updateFinanceObjectWithNewData = (updatedData, type, selectedCompany) => (dispatch, getState) => {
+  const companies = getState().app.companies
+
+  const financialMatters = Object.assign({}, selectedCompany.financialMatters, {
+      [type]: updatedData
+  });
+
+  const updatedCompanyData = Object.assign({}, selectedCompany, {
+      financialMatters
+  });
+
+  dispatch(updateTargetSuccess(updatedCompanyData, companies, selectedCompany))
+};
+
 
 export const UPDATE_TARGET_SUCCESS = 'UPDATE_TARGET_SUCCESS'
 export const updateTargetSuccess = (updatedCompanyData, companies, selectedCompany) => {

@@ -34,7 +34,9 @@ export class EditLegalForm extends React.Component {
                 arbitration,
                 internalIssues,
                 assessment,
-                rating} = selectedCompany.legal
+                rating: _rating } = selectedCompany.legal
+
+        const rating = parseInt(_rating)
 
         const initValues = {
             futureLitgiation,

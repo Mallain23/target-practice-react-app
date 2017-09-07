@@ -29,20 +29,24 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
               name: 'stock wth xyz',
-              value: '500000.00'
+              value: '500000.00',
+              id: 12
               },
               {
               name: 'parcel of land at abc',
-              value: '600000000.00'
+              value: '600000000.00',
+              id: 13
               },
               {
               name: 'building located at def',
-              value: '12000000.00'
+              value: '12000000.00',
+              id: 14
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
               { name: 'Salaries payable',
-                value: '20000.00'
+                value: '20000.00',
+                id: 15
              }
           ],
           totalLiabilities: 'function to calc',
@@ -147,25 +151,31 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [
               { name: 'stock wth abc',
-                value: '5800000.00'
+                value: '5800000.00',
+                id: 16
               },
                { name: 'office equipment',
-                 value: '600000000.00'
+                 value: '600000000.00',
+                 id: 17
               },
               { name: 'building located at def',
-                value: '12000000.00'
+                value: '12000000.00',
+                id: 18
               }
           ],
         totalValueOfAllAssets: '40000',
         liabilities: [
             { name: 'salaries payable',
-              value: '1000000.00'
+              value: '1000000.00',
+              id: 19
             },
             { name: 'judgment owed to x corp',
-              value: '1000000000.00'
+              value: '1000000000.00',
+              id: 20
             },
             { name: 'accounts payable',
-              value: '30004000.00'
+              value: '30004000.00',
+              id: 21
             },
         ],
         totalLiabilities: 'function to calc',
@@ -270,23 +280,28 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [
               { name: 'bonds with ABC',
-                value: '4000000.00'
+                value: '4000000.00',
+                id: 22
               },
               { name: 'office equipment',
-                value: '600000000.00'
+                value: '600000000.00',
+                id: 23
               },
               { name: 'cash deposits',
-                value: '1200000000.00'
+                value: '1200000000.00',
+                id: 24
               }
           ],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
               { name: 'salaries payable',
-                value: '500000.00'
+                value: '500000.00',
+                id: 25
               },
               { name: 'accounts payable',
-                value: '30000.00'
-              },
+                value: '30000.00',
+                id: 26
+              }
            ],
         totalLiabilities: 'function to calc',
         financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'Mock Report', type: 'financialStatementsAnnual'},
@@ -390,20 +405,24 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
               name: 'stock wth xyz',
-              value: '500000.00'
+              value: '500000.00',
+              id: 27
               },
               {
               name: 'parcel of land at abc',
-              value: '600000000.00'
+              value: '600000000.00',
+              id: 28
               },
               {
               name: 'building located at def',
-              value: '12000000.00'
+              value: '12000000.00',
+              id: 37
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
               { name: 'Salaries payable',
-                value: '20000.00'
+                value: '20000.00',
+                id: 29
              }
           ],
           totalLiabilities: 'function to calc',
@@ -508,20 +527,24 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
               name: 'stock wth xyz',
-              value: '500000.00'
+              value: '500000.00',
+              id: 30
               },
               {
               name: 'parcel of land at abc',
-              value: '600000000.00'
+              value: '600000000.00',
+              id: 31
               },
               {
               name: 'building located at def',
-              value: '12000000.00'
+              value: '12000000.00',
+              id: 38
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
               { name: 'Salaries payable',
-                value: '20000.00'
+                value: '20000.00',
+                id: 32
              }
           ],
           totalLiabilities: 'function to calc',
@@ -626,20 +649,24 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
               name: 'stock wth xyz',
-              value: '500000.00'
+              value: '500000.00',
+              id: 33
               },
               {
               name: 'parcel of land at abc',
-              value: '600000000.00'
+              value: '600000000.00',
+              id: 34
               },
               {
               name: 'building located at def',
-              value: '12000000.00'
+              value: '12000000.00',
+              id: 39
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
               { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00'
+                valueOfLiability: '20000.00',
+                id: 35
              }
           ],
           totalLiabilities: 'function to calc',
@@ -744,20 +771,24 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
               name: 'stock wth xyz',
-              value: '500000.00'
+              value: '500000.00',
+              id: 1
               },
               {
               name: 'parcel of land at abc',
-              value: '600000000.00'
+              value: '600000000.00',
+              id: 2
               },
               {
               name: 'building located at def',
-              value: '12000000.00'
+              value: '12000000.00',
+              id: 3
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
               { name: 'Salaries payable',
-                value: '20000.00'
+                value: '20000.00',
+                id: 4
              }
           ],
           totalLiabilities: 'function to calc',
@@ -863,20 +894,24 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
               name: 'stock wth xyz',
-              value: '500000.00'
+              value: '500000.00',
+              id: 5
               },
               {
               name: 'parcel of land at abc',
-              value: '600000000.00'
+              value: '600000000.00',
+              id: 6
               },
               {
               name: 'building located at def',
-              value: '12000000.00'
+              value: '12000000.00',
+              id: 7
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
               { name: 'Salaries payable',
-                value: '20000.00'
+                value: '20000.00',
+                id: 8
              }
           ],
           totalLiabilities: 'function to calc',
@@ -981,20 +1016,24 @@ export const mockData = [
           statementFromCompany: 'general statement from company summarizing its current financial situation, summary of cash flow',
           assets: [{
               name: 'stock wth xyz',
-              value: '500000.00'
+              value: '500000.00',
+              id: 9
               },
               {
               name: 'parcel of land at abc',
-              value: '600000000.00'
+              value: '600000000.00',
+              id: 10
               },
               {
               name: 'building located at def',
-              value: '12000000.00'
+              value: '12000000.00',
+              id: 11
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
               { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00'
+                valueOfLiability: '20000.00',
+                id: 12
              }
           ],
           totalLiabilities: 'function to calc',

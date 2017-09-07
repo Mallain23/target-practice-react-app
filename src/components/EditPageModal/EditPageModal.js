@@ -11,6 +11,7 @@ import EditLegalForm from './EditLegalForm'
 import EditFinancialForm from './EditFinancialForm'
 import FinancialReportForm from './FinancialReportForm'
 import EditBenefitsForm from './EditBenefits'
+import AssetLiabilityForm from './AssetLiabilityForm'
 // import './Modal.css'
 
 export class EditPageModal extends React.Component {
@@ -26,10 +27,14 @@ export class EditPageModal extends React.Component {
     };
 
     renderForm() {
-          const { selectedPage, editReport } = this.props
+          const { selectedPage, editReport, showALModal} = this.props
 
           if (editReport) {
               return <FinancialReportForm {...this.props} />
+          }
+
+          else if (showALModal) {
+              return <AssetLiabilityForm {...this.props} />
           }
 
           else if (selectedPage === 'Company Overview') {
@@ -43,6 +48,7 @@ export class EditPageModal extends React.Component {
           else if (selectedPage === 'Final Assessment') {
               return <FinalAssessmentForm {...this.props} />
           }
+
           else if (selectedPage === 'Legal Page') {
               return <EditLegalForm {...this.props} />
           }
@@ -90,7 +96,12 @@ const mapStateToProps = state => {
             selectedPage,
             editContact,
             editReport,
-            contactToEdit } = state.app
+            contactToEdit,
+            showALModal,
+            editAL,
+            id,
+            propertyToEdit,
+            propertyType } = state.app
 
     return {
         showEditModal,
@@ -100,7 +111,12 @@ const mapStateToProps = state => {
         selectedPage,
         editContact,
         editReport,
-        contactToEdit
+        contactToEdit,
+        showALModal,
+        editAL,
+        id,
+        propertyToEdit,
+        propertyType
     };
 };
 
