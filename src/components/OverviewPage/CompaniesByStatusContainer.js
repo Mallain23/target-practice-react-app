@@ -14,7 +14,7 @@ export class CompaniesByStatusContainer extends React.Component {
 
         const formattedCompanies = companiesToDisplay.map(({companyName}, index) => {
             return (
-                <li key={index}>
+                <li className='company-by-status' key={index}>
                     <Link to={`/company/${companyName}`} className='company-link'> {companyName}</Link>
                 </li>
             );

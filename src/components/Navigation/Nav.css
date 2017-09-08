@@ -1,10 +1,11 @@
 
-Navbar {
+.nav-margin{
   margin-bottom: none;
 }
 
 .nav-buttons {
   border: none;
   background-color: transparent;
-  display: block;
+
+
 }

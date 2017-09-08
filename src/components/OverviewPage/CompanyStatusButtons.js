@@ -22,7 +22,7 @@ export class ComapnyStatusButtons extends React.Component {
         return (
           <button className='status-buttons'
                   value={status}
-                  className={this.props.className}
+                  className={`${this.props.className} status`}
                   onClick={this.handleClick} >
                     {text} {number}
           </button>

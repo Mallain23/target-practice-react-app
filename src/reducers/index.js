@@ -13,7 +13,8 @@ import { SHOW_EXTENDED_NAV,
          OPEN_MODAL,
          OPEN_EDIT_PAGE_MODAL,
          OPEN_AL_MODAL,
-         UPDATE_STATE_WITH_PROPERTY_TO_EDIT } from '../components/actions/ShowHideActions'
+         UPDATE_STATE_WITH_PROPERTY_TO_EDIT,
+         TOGGLE_VISIBILITY } from '../components/actions/ShowHideActions'
 import { SORT_COMPANIES,
          SORT_COMPANIES_BY_STATUS_SUCCESS,
          VIEW_COMPANIES_BY_STATUS } from '../components/actions/SortActions'
@@ -42,6 +43,7 @@ const initialState = {
     showModal: false,
     showEditModal: false,
     showALModal: false,
+    showSidebar: true,
     contactName: null,
     editContact: false,
     editReport: false,
@@ -81,6 +83,12 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             viewCompaniesByStatus
         });
+    }
+
+    else if (action.type === TOGGLE_VISIBILITY) {
+        return Object.assign({}, state, {
+            showSidebar: !state.showSidebar
+        })
     }
 
     else if (action.type === CLOSE_MODAL) {

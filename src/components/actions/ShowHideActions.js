@@ -1,3 +1,8 @@
+export const TOGGLE_VISIBILITY = 'TOGGLE_VISIBILITY'
+export const toggleVisibility = ( )=> ({
+    type: TOGGLE_VISIBILITY
+});
+
 export const SHOW_EXTENDED_NAV = 'SHOW_EXTENDED_NAV'
 export const showExtendedNav = () => ({
     type: SHOW_EXTENDED_NAV

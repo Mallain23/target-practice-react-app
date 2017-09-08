@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Button, Form} from 'react-bootstrap'
+import { Icon, Input } from 'semantic-ui-react'
 
 import { updateSearchResults } from '../actions'
 import './Sidebar.css'
@@ -22,14 +23,14 @@ export class SearchForm extends React.Component {
     render() {
         return(
             <Form className='search-form'>
-                <label className="col-sm-12 label-margin" htmlFor="search">Company Name</label>
-                <input type="text"
-                       className="form-control user-margin"
+                <label className="col-sm-12 label-margin" htmlFor="search">Search For Target Company</label>
+                <Input type="text"
+                       className="target-input"
 
                        name='company-name'
                        id='company-name'
                        onChange={this.handleChange}
-                       placeholder='Search for a Company'/>
+                       placeholder='Enter Target Name...' ><input className='target'/></Input>
             </Form>
         );
     };

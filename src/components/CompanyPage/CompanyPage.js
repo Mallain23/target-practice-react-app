@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Grid, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 import { fetchCompanyData } from '../actions'
 import { showExtendedNav } from '../actions/ShowHideActions'
 
+import CompanyPageNav from './CompanyPageNav'
 import CompanyPageButtons from './CompanyPageButtons'
 import CompanyOverview from '../CompanyProfile/CompanyOverview'
 import FinancialPage from '../FinancialPage/FinancialPage'
@@ -15,6 +16,7 @@ import LegalPage from '../Legal/LegalPage'
 import CompanyDirectory from '../CompanyProfile/CompanyDirectory'
 import FinalAssessmentPage from '../CompanyProfile/FinalAssessmentPage'
 
+import './CompanyPage.css'
 
 export class CompanyPage extends React.Component {
 
@@ -80,13 +82,18 @@ export class CompanyPage extends React.Component {
     };
 
     render() {
-        const { companyName, selectedPage } = this.props
+        const { selectedPage } = this.props
+        const { companyName } = this.props.selectedCompany
+        console.log(companyName)
 
         return (
               <div>
-                  <Row className='company-page-container'>
+                  <Row >
                       <Col xs={12}>
-                          <h1 className='company-page-header'>{companyName}</h1>
+                        <div className='header'>
+                          <CompanyPageNav />
+                        </div>
+
                       </Col>
                   </Row>
                   <Row>

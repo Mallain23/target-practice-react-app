@@ -56,6 +56,7 @@ export class FormattedAL extends React.Component  {
         }
 
         else {
+            console.log(arrayOfAL)
            formattedAL = arrayOfAL.map(({name, value, id}, index) => {
 
                 return (

@@ -1,13 +1,20 @@
+
 import React from 'react'
-import { Button, Glyphicon } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+import { connect } from 'react-redux'
 import SearchForm from './SearchForm'
 import SearchResults from './SearchResults'
 import './Sidebar.css'
 
-export default function SideBarContainer (props) {
+export function SideBarContainer (props) {
+
+    const { showSidebar } = props
+
+    const styles = showSidebar ? {width: '250px'} : {display: 'none'}
 
     return (
-      <div className="sidebar sidebar-left">
+      <div style={styles} className="sidebar sidebar-left">
+          <div className='side-bar-header'> Target Search Bar</div>
           <div className='search-form-container'>
               <SearchForm />
               <SearchResults />
@@ -15,3 +22,9 @@ export default function SideBarContainer (props) {
       </div>
     );
 };
+
+const mapStateToProps = state => ({
+    showSidebar: state.app.showSidebar
+})
+
+export default connect(mapStateToProps)(SideBarContainer)

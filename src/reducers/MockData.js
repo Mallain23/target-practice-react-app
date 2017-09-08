@@ -1031,8 +1031,8 @@ export const mockData = [
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
-              { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00',
+              { name: 'Salaries payable',
+                value: '20000.00',
                 id: 12
              }
           ],

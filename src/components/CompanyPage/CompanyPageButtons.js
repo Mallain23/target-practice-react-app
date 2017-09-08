@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {  Col, Button } from 'react-bootstrap'
+import {  Col, Button, NavItem } from 'react-bootstrap'
 
-import { removeCompanyFromDatabase} from '../actions'
 import {  openEditPageModal } from '../actions/ShowHideActions'
 import { setEditContactToFalse } from '../actions/ManagementDirectory'
 
@@ -12,7 +11,7 @@ export class CompanyPageButtons extends React.Component {
 
         this.handleEditClick = this.handleEditClick.bind(this)
         this.handleAddContactClick = this.handleAddContactClick.bind(this)
-        this.handleRemoveCompanyClick = this.handleRemoveCompanyClick.bind(this)
+
     };
 
     handleEditClick(e) {
@@ -28,17 +27,12 @@ export class CompanyPageButtons extends React.Component {
         this.props.dispatch(setEditContactToFalse())
     };
 
-    handleRemoveCompanyClick() {
 
-        const { companyName } = this.props.selectedCompany
-        this.props.dispatch(removeCompanyFromDatabase(companyName))
-        this.props.history.push('/')
-    };
 
     renderButton() {
       const { selectedPage } = this.props
       return selectedPage === 'Company Directory' ?  <Button value={selectedPage} onClick={this.handleAddContactClick} > Add New Contact</Button> :
-                              <Button value={selectedPage} onClick={this.handleEditClick} > Edit Information</Button>
+                              <NavItem value={selectedPage} onClick={this.handleEditClick} > Edit Information</NavItem>
     };
 
     render() {
@@ -46,7 +40,6 @@ export class CompanyPageButtons extends React.Component {
         return(
             <Col xs={12} md={4}>
               {this.renderButton()}
-              <Button onClick={this.handleRemoveCompanyClick} > Delete Company </Button>
             </Col>
         );
     };

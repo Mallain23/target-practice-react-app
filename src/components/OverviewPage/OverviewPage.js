@@ -37,37 +37,37 @@ export class OverviewPage extends React.Component {
         const statusResults = view ? <CompaniesByStatusContainer status={statusType} /> : '';
 
         return(
-            <Grid className="overview-page container">
+            <div>
                 <Row>
                     <Col xs={12}>
-                        <h1>{OVERVIEW__PAGE_HEADER}</h1>
+                        <div className='overview-page-header'>{OVERVIEW__PAGE_HEADER}</div>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={12}>
-                        <ul className='company-status-statistics'>
-                            <li><CompanyStatusButtons className='status-headers'
-                                                  text={statusHeaders.total}
-                                                  number={companies.length}
-                                                  status='companies' /></li>
-                            <li><CompanyStatusButtons className='status-headers'
-                                                  text={statusHeaders.researching}
-                                                  number={researching.length}
-                                                  status='researching'/></li>
-                            <li><CompanyStatusButtons className='status-headers'
-                                                  text={statusHeaders.pending}
-                                                  number={pending.length}
-                                                  status='pending'/></li>
-                            <li><CompanyStatusButtons className='status-headers'
-                                                  text={statusHeaders.approved}
-                                                  number={approved.length}
-                                                  status='approved'/></li>
-                            <li><CompanyStatusButtons className='status-headers'
-                                                  text={statusHeaders.declined}
-                                                  number={declined.length}
-                                                  status='declined'/></li>
-                        </ul>
-                    </Col>
+                        <div className='company-stats'>
+                              <CompanyStatusButtons className='status-headers'
+                                                    text={statusHeaders.total}
+                                                    number={companies.length}
+                                                    status='companies' />
+                              <CompanyStatusButtons className='status-headers Researching-Button'
+                                                    text={statusHeaders.researching}
+                                                    number={researching.length}
+                                                    status='researching'/>
+                              <CompanyStatusButtons className='status-headers Pending-Button'
+                                                    text={statusHeaders.pending}
+                                                    number={pending.length}
+                                                    status='pending'/>
+                              <CompanyStatusButtons className='status-headers Approved-Button'
+                                                    text={statusHeaders.approved}
+                                                    number={approved.length}
+                                                    status='approved'/>
+                              <CompanyStatusButtons className='status-headers Declined-Button'
+                                                    text={statusHeaders.declined}
+                                                    number={declined.length}
+                                                    status='declined'/>
+                          </div>
+                  </Col>
                 </Row>
                 <Row>
                     <Col xs={12}>
@@ -76,7 +76,7 @@ export class OverviewPage extends React.Component {
                         </div>
                     </Col>
                 </Row>
-            </Grid>
+          </div>
         );
     };å
 };
