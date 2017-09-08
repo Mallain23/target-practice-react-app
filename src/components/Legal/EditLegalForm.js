@@ -2,7 +2,7 @@ import React from 'react'
 import { Field, reduxForm, focus, initialize} from 'redux-form'
 import { connect } from 'react-redux'
 
-import { closeModal } from '../actions'
+import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 
 import Input from '../AddCompanyModal/Input'

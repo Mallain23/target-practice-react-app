@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 
-import { sortCompanies } from '../actions'
+import { sortCompanies } from '../actions/SortActions'
 import { openModal } from '../actions/ShowHideActions'
 
 import ExtendedNav from './ExtendedNav'

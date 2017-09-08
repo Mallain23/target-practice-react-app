@@ -1,9 +1,4 @@
-import { SubmissionError, focus} from 'redux-form';
-
-import { filterCompanyByStatus,
-         statusObject,
-         sortFunction,
-         formatTypeOfReportText } from './utils'
+import { formatTypeOfReportText, sortFunction } from './utils'
 
 
 export const ADD_COMPANY_TO_DATABASE = 'ADD_COMPANY_TO_DATABASE'
@@ -12,16 +7,19 @@ export const addCompanyToDatabase = companyData => ({
    companyData
 });
 
+export const removeCompanyFromDatabase = companyName => (dispatch, getState) => {
+    const companies = getState().app.companies
+    const remainingCompanies = companies.filter(company  => company.companyName !== companyName)
 
-export const SHOW_EXTENDED_NAV = 'SHOW_EXTENDED_NAV'
-export const showExtendedNav = () => ({
-    type: SHOW_EXTENDED_NAV
-});
+    dispatch(removeCompanyFromDatabaseSuccess(remainingCompanies))
+};
 
-export const HIDE_EXTENDED_NAV = 'HIDE_EXTENDED_NAV'
-export const hideExtendedNav = () => ({
-    type: HIDE_EXTENDED_NAV
-});
+
+export const REMOVE_COMPANY_FROM_DATABASE_SUCCESS = 'REMOVE_COMPANY_FROM_DATABASE_SUCCESS'
+export const removeCompanyFromDatabaseSuccess = remainingCompanies => ({
+    type: REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
+    remainingCompanies
+})
 
 export const UPDATE_SEARCH_RESULTS = 'UPDATE_SEARCH_RESULTS '
 export const updateSearchResults = searchTerm => (dispatch, getState) => {
@@ -42,53 +40,6 @@ export const updateSearchResultsSuccess = searchResults => ({
 });
 
 
-export const VIEW_COMPANIES_BY_STATUS = 'VIEW_COMPANIES_BY_STATUS'
-export const viewCompaniesByStatus = statusType => ({
-    type: VIEW_COMPANIES_BY_STATUS,
-    viewCompaniesByStatus: {
-        view: true,
-        statusType
-    }
-});
-
-
-export const SORT_COMPANIES = 'SORT_COMPANIES'
-export const sortCompanies = sortOption => ({
-    type: SORT_COMPANIES,
-    sortOption
-});
-
-export const sortCompaniesByStatus = () => (dispatch, getState) => {
-    const { companies } = getState().app
-    const statusKeys = Object.keys(statusObject)
-
-    let sortedCompanyObject = {}
-
-     let arrayOfCompaniesSortedByStatus = statusKeys.map(status =>
-        sortedCompanyObject[status] = filterCompanyByStatus(companies, status));
-      dispatch(sortCompaniesByStatusSuccess(sortedCompanyObject));
-};
-
-export const SORT_COMPANIES_BY_STATUS_SUCCESS = 'SORT_COMPANIES_BY_STATUS_SUCCESS'
-export const sortCompaniesByStatusSuccess = companyStatus => ({
-    type: SORT_COMPANIES_BY_STATUS_SUCCESS,
-    companyStatus
-})
-
-export const CLOSE_MODAL = 'CLOSE_MODAL'
-export const closeModal = () => ({
-    type: CLOSE_MODAL
-});
-
-export const OPEN_MODAL = 'OPEN_MODAL'
-export const openModal = () => ({
-    type: OPEN_MODAL
-});
-
-
-
-
-
 export const fetchCompanyData = _companyName => (dispatch, getState) => {
     const selectedCompanyData = getState().app.companies.find(({ companyName }) =>
         companyName === _companyName)
@@ -102,24 +53,12 @@ export const fetchCompanyDataSuccess = companyData => ({
     companyData
 })
 
-export const removeCompanyFromDatabase = companyName => (dispatch, getState) => {
-    const companies = getState().app.companies
-    const remainingCompanies = companies.filter(company  => company.companyName !== companyName)
-
-    dispatch(removeCompanyFromDatabaseSuccess(remainingCompanies))
-};
-
-export const REMOVE_COMPANY_FROM_DATABASE_SUCCESS = 'REMOVE_COMPANY_FROM_DATABASE_SUCCESS'
-export const removeCompanyFromDatabaseSuccess = remainingCompanies => ({
-    type: REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
-    remainingCompanies
-})
 
 export const getFinacnialReport = (title, _typeOfReport) => (dispatch, getState) => {
     let typeOfReport = formatTypeOfReportText(_typeOfReport)
 
-    const report = getState().app.selectedCompany.financialMatters[typeOfReport].find(report => report.title === title)
-
+    const report = getState().app.selectedCompany.financialMatters[typeOfReport].find(report =>
+        report.title === title)
 
     dispatch(getFinacnialReportSuccess(report))
 };
@@ -130,47 +69,9 @@ export const getFinacnialReportSuccess = report => ({
     report
 });
 
+
 export const UPDATE_CURRENT_SELECTED_PAGE = 'UPDATE_CURRENT_SELECTED_PAGE '
 export const updateCurrentSelectedPage = page => ({
     type: UPDATE_CURRENT_SELECTED_PAGE,
     page
 });
-
-export const OPEN_EDIT_PAGE_MODAL = 'OPEN_EDIT_PAGE_MODAL'
-export const openEditPageModal = name => {
-    name = name ? name : '';
-
-    return {
-        type: OPEN_EDIT_PAGE_MODAL,
-        name
-    }
-};
-
-export const OPEN_CREATE_CONTACT_MODAL = 'OPEN_CREATE_CONTACT_MODAL'
-export const openCreateContactModal = () => ({
-    type: OPEN_CREATE_CONTACT_MODAL
-});
-
-export const OPEN_AL_MODAL = 'OPEN_AL_MODAL'
-export const openALModal = propertyType => ({
-    type: OPEN_AL_MODAL,
-    propertyType
-});
-
-export const openEditALModal = (type, id)=> (dispatch, getState) => {
-
-    const selectedCompany = getState().app.selectedCompany
-    const propertyType = type.toLowerCase()
-
-    const propertyToEdit = selectedCompany.financialMatters[propertyType].find(property =>
-        property.id === parseInt(id))
-
-    dispatch(updateStateWithPropertyToEdit(propertyToEdit, type))
-};
-
-export const UPDATE_STATE_WITH_PROPERTY_TO_EDIT = 'UPDATE_STATE_WITH_PROPERTY_TO_EDIT'
-export const updateStateWithPropertyToEdit = (propertyToEdit, propertyType) => ({
-    type: UPDATE_STATE_WITH_PROPERTY_TO_EDIT,
-    propertyToEdit,
-    propertyType
-})
