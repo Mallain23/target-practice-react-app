@@ -84,14 +84,13 @@ export class CompanyPage extends React.Component {
     render() {
         const { selectedPage } = this.props
         const { companyName } = this.props.selectedCompany
-        console.log(companyName)
 
         return (
               <div>
                   <Row >
                       <Col xs={12}>
                         <div className='header'>
-                          <CompanyPageNav />
+                          <CompanyPageNav {...this.props} />
                         </div>
 
                       </Col>

@@ -6,7 +6,6 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 import { sortCompanies } from '../actions/SortActions'
 import { openModal, toggleVisibility } from '../actions/ShowHideActions'
 
-import ExtendedNav from './ExtendedNav'
 import './Nav.css'
 
 export class NavBar extends React.Component {
@@ -40,8 +39,6 @@ export class NavBar extends React.Component {
     }
 
     render() {
-        const { showExtendedNav } = this.props
-        const extendedNavButtons = showExtendedNav ? <ExtendedNav /> : ''
 
         return (
             <Navbar>
@@ -52,26 +49,24 @@ export class NavBar extends React.Component {
                 </Navbar.Header>
                 <Nav>
                     <NavItem onClick={this.openModalClick} eventKey={1}>Add New Target</NavItem>
-                    <NavDropdown eventKey={2} title="Target Display" id="display-by-status">
-                        <MenuItem eventKey={2.1}>
-                            <button className='nav-buttons'
-                                    onClick={this.handleToggle}>
-                            {this.renderText()}</button>
-                        </MenuItem>
-                        <MenuItem eventKey={2.2}>
+                    <NavItem eventKey={2.1}> <button className='nav-buttons'
+                                                      onClick={this.handleToggle}>
+                                                      {this.renderText()}</button>
+                    </NavItem>
+                    <NavDropdown eventKey={3} title="Search Result Display Options" id="display-by-status">
+                        <MenuItem eventKey={3.1}>
                             <button value='companyName'
                                     className='nav-buttons'
                                     onClick={this.handleClick}>
                             Display Alphabetically</button>
                         </MenuItem>
-                        <MenuItem eventKey={2.3}>
+                        <MenuItem eventKey={3.2}>
                             <button value='overallRating'
                                     className='nav-buttons'
                                     onClick={this.handleClick}>
                             Display by Rating: Highest to Lowest</button>
                         </MenuItem>
                     </NavDropdown>
-                    {extendedNavButtons}
               </Nav>
           </Navbar>
         );
@@ -79,7 +74,7 @@ export class NavBar extends React.Component {
 };
 
 const mapStateToProps = state => ({
-    showExtendedNav: state.app.showExtendedNav,
+
     showSidebar: state.app.showSidebar
 
 })

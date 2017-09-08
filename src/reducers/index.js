@@ -173,7 +173,7 @@ export default function reducer(state = initialState, action) {
         const { remainingCompanies: companies } = action
         return Object.assign({}, state, {
             companies,
-            showExtendedNav: false,
+            searchResults: companies,
             selectedCompany: {}
         })
     }

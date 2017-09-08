@@ -38,7 +38,7 @@ export class AddCompanyForm extends React.Component {
 
           return (
               <Form className="add-company-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-                  <label htmlFor="company-name">Company Name</label>
+                  <label htmlFor="company-name">Target Name</label>
                   <Field component={Input}
                         placeholder='Enter Company Name'
                         type="text" name="companyName"
@@ -57,7 +57,4 @@ export class AddCompanyForm extends React.Component {
 };
 
 export default AddCompanyForm = reduxForm({
-  form: 'add-company-form',
-  onSubmitFail: (errors, dispatch) =>
-      dispatch(focus('add-company-form', Object.keys(errors)[0]))
-})(AddCompanyForm);
+  form: 'add-company-form'})(AddCompanyForm);
