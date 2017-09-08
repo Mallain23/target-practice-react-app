@@ -1,6 +1,7 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
+import { Form } from 'react-bootstrap'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/ShowHideActions'
@@ -54,7 +55,7 @@ export class FinancialReportForm extends React.Component {
     render() {
         const { title } = this.props.selectedFinancialReport
         return (
-            <form className="financial-report-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
+            <Form className="financial-report-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <h2>{title}</h2>
                 <label htmlFor="Report">Financial Report Data</label>
                 <Field component={Input}
@@ -72,7 +73,7 @@ export class FinancialReportForm extends React.Component {
                     onClick={this.handleCancel}>
                     Cancel
                 </button>
-            </form>
+            </Form>
         );
     };
 };
@@ -89,7 +90,4 @@ const mapStateToProps = state => {
 FinancialReportForm= connect(mapStateToProps)(FinancialReportForm)
 
 export default FinancialReportForm = reduxForm({
-    form: 'financial-report-form',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('financial-data-form', Object.keys(errors)[0]))
-})(FinancialReportForm);
+    form: 'financial-report-form'})(FinancialReportForm);

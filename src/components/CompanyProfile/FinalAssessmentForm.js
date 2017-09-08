@@ -1,6 +1,7 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
+import { Form } from 'react-bootstrap'
 
 import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
@@ -50,7 +51,7 @@ export class FinalAssessmentForm extends React.Component {
         const { status } = this.props.selectedCompany
 
         return (
-            <form className="edit-final-assessment-form"
+            <Form className="edit-final-assessment-form"
                   onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="finalAssessment">Final Assessment of Target</label>
                 <Field component={Input}
@@ -76,7 +77,7 @@ export class FinalAssessmentForm extends React.Component {
                     onClick={this.handleCancel}>
                     Cancel
                 </button>
-            </form>
+            </Form>
         );
     };
 };

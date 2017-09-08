@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
+import { Form } from 'react-bootstrap'
 
 import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
@@ -84,7 +85,7 @@ export class EditBenefitsForm extends React.Component {
     render() {
         const { status } = this.props.selectedCompany
         return (
-            <form className="edit-benefits-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
+            <Form className="edit-benefits-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <div>Edit Benefits Provided by Target</div>
                 <label htmlFor="patents">Patents Held by the Target</label>
                 <Field component={Input}
@@ -189,7 +190,7 @@ export class EditBenefitsForm extends React.Component {
                     onClick={this.handleCancel}>
                     Cancel
                 </button>
-            </form>
+            </Form>
         );
     };
 };

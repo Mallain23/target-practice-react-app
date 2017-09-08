@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, reduxForm, focus, initialize} from 'redux-form'
 import { connect } from 'react-redux'
+import { Form } from 'react-bootstrap'
 
 import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
@@ -67,7 +68,7 @@ export class EditLegalForm extends React.Component {
 
     render() {
         return (
-            <form className="edit-legal-form"  onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
+            <Form className="edit-legal-form"  onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="futureLitgiation">Future Litigation</label>
                 <Field component={Input} placeholder='Future Litigation'
                        type="textarea"
@@ -141,7 +142,7 @@ export class EditLegalForm extends React.Component {
                     onClick={this.handleCancel}>
                     Cancel
                 </button>
-            </form>
+            </Form>
         );
     };
 };

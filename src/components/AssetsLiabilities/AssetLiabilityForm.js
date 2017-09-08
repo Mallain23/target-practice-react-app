@@ -1,5 +1,6 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
+import { Form } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
@@ -56,7 +57,7 @@ export class AssetLiabilityForm extends React.Component {
         const propertyTypeSingular = propertyType === 'Assets' ? 'Asset' : 'Liability'
 
         return (
-            <form className="asset-liability-form"
+            <Form className="asset-liability-form"
                   onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="name">Name of {propertyTypeSingular} </label>
                 <Field component={Input}
@@ -80,7 +81,7 @@ export class AssetLiabilityForm extends React.Component {
                     onClick={this.handleCancel}>
                     Cancel
                 </button>
-            </form>
+            </Form>
         );
     };
 };

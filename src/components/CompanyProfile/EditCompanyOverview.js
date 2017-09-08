@@ -1,6 +1,7 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
+import { Form } from 'react-bootstrap'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/ShowHideActions'
@@ -64,7 +65,7 @@ export class EditCompanyOverviewForm extends React.Component {
 
     render() {
         return (
-            <form className="edit-company-overview-form"
+            <Form className="edit-company-overview-form"
                   onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="companyName">Company Name</label>
                 <Field component={Input} placeholder='Enter Company Name' type="text" name="companyName" validate={[required, nonEmpty]} />
@@ -154,9 +155,9 @@ export class EditCompanyOverviewForm extends React.Component {
                     onClick={this.handleCancel}>
                     Cancel
                 </button>
-                </form>
-        )
-    }
+            </Form>
+        );
+    };
 };
 
 const mapStateToProps = state => {
@@ -170,7 +171,4 @@ const mapStateToProps = state => {
 EditCompanyOverviewForm = connect(mapStateToProps)(EditCompanyOverviewForm)
 
 export default EditCompanyOverviewForm = reduxForm({
-    form: 'edit-company-overview-form',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('edit-company-overview-form', Object.keys(errors)[0]))
-})(EditCompanyOverviewForm);
+    form: 'edit-company-overview-form'})(EditCompanyOverviewForm);

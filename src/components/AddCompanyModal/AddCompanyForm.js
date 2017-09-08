@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import {Field, reduxForm, focus} from 'redux-form';
 
 import { addCompanyToDatabase } from '../actions'
@@ -37,7 +37,7 @@ export class AddCompanyForm extends React.Component {
     render() {
 
           return (
-              <form className="add-company-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+              <Form className="add-company-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                   <label htmlFor="company-name">Company Name</label>
                   <Field component={Input}
                         placeholder='Enter Company Name'
@@ -51,7 +51,7 @@ export class AddCompanyForm extends React.Component {
                           onClick={this.handleClose} >
                           Close
                   </Button>
-              </form>
+              </Form>
         );
     };
 };
