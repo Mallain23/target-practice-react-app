@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormControl, FormGroup, ControlLabel } from 'react-bootstrap'
 
-export default function StatusRadio (props) {
+export default function RatingSelect (props) {
 
     return (
             <FormGroup controlId="formControlsSelect">
@@ -14,10 +14,16 @@ export default function StatusRadio (props) {
                               type={props.type}
                               ref={input => (input = input)}>
                     <option value="" defaultValue disabled hidden>Choose here</option>
-                    <option value="Researching">Researching</option>
-                    <option value="Pending">Pending Approval</option>
-                    <option value="Approved">Approved</option>
-                    <option value="Declined">Declined</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="9">10</option>
                 </FormControl>
             </FormGroup>
     );

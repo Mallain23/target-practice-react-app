@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Button, Glyphicon } from 'react-bootstrap'
+import { Button} from 'react-bootstrap'
 
 import { updateSearchResults } from '../actions'
 import './Sidebar.css'

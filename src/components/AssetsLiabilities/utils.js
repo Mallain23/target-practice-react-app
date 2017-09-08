@@ -17,14 +17,14 @@ export const calcTotalLiabilityValue = liabilities => {
       return acc - parseInt(liability.value);
     }, 0);
 
-   return `$${value.toLocaleString()}`
+   return `$${value.toLocaleString({minimumFractionDigits: 2})}`
 };
 
 
 export const formatAL = (data, selectedCompany, editAL) => {
     const  propertyType = data.propertyType.toLowerCase()
     const { financialMatters: _financialMatters } = selectedCompany
-  
+
     const updatedProperty = !editAL ? _financialMatters[propertyType].concat(data) :
                                      _financialMatters[propertyType].filter(({ id} ) => id !== data.id).concat(data);
 

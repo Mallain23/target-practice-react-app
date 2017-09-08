@@ -2,10 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 
-import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-import { closeModal } from '../actions/'
+import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 import { formatBenefitsData } from './utils'
+
+import RatingSelect from '../EditPageModal/RatingSelect'
 import Input from '../AddCompanyModal/Input'
 
 export class EditBenefitsForm extends React.Component {
@@ -116,11 +117,8 @@ export class EditBenefitsForm extends React.Component {
                           name="internalAssessmentOfIP"
                           componentClass="textarea" />
                   <label htmlFor="internalIPRating">Rating of IP</label>
-                  <Field component={Input}
-                          placeholder="Enter Overall Rating of Target's IP"
-                          type="textarea"
-                          name="internalIPRating"
-                          componentClass="textarea" />
+                  <Field component={RatingSelect}
+                          name="internalIPRating" />
                   <label htmlFor="licenses">Information on Target Licenses</label>
                   <Field component={Input}
                           placeholder="Enter Information on Target Licenses"
@@ -140,9 +138,7 @@ export class EditBenefitsForm extends React.Component {
                           name="assessment"
                           componentClass="textarea"/>
                   <label htmlFor="assessment">Rating of Target Technology</label>
-                  <Field component={Input}
-                          placeholder="Enter Overall Rating of Target's Technology"
-                          type="number"
+                  <Field component={RatingSelect}
                           name="internalTechRating" />
                   <label htmlFor="services">Services that Target will Provide</label>
                   <Field component={Input}
@@ -181,9 +177,7 @@ export class EditBenefitsForm extends React.Component {
                           name="assessmentOfOtherBenefits"
                           componentClass="textarea"/>
                   <label htmlFor="internalOtherBenefitsRating">Overall Rating of Other Benefits Target will Provide  </label>
-                  <Field component={Input}
-                         placeholder="Enter Overall Rating of other Benefits Target will Provide"
-                         type="number"
+                  <Field component={RatingSelect}
                          name="internalOtherBenefitsRating" />
                   <button
                     type="submit"
@@ -211,7 +205,4 @@ const mapStateToProps = state => {
 EditBenefitsForm = connect(mapStateToProps)(EditBenefitsForm)
 
 export default EditBenefitsForm = reduxForm({
-    form: 'edit-benefits-form',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('edit-benefits-form', Object.keys(errors)[0]))
-})(EditBenefitsForm);
+    form: 'edit-benefits-form'})(EditBenefitsForm);

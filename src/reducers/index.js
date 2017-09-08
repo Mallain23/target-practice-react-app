@@ -1,28 +1,30 @@
 import { mockData, companyArray } from './MockData'
-import { SHOW_EXTENDED_NAV,
-         HIDE_EXTENDED_NAV,
-         UPDATE_SEARCH_RESULTS_SUCCESS,
-         SORT_COMPANIES_SUCCESS,
-         SORT_COMPANIES_BY_STATUS_SUCCESS,
-         VIEW_COMPANIES_BY_STATUS,
-         CLOSE_MODAL,
-         OPEN_MODAL,
-         ADD_COMPANY_TO_DATABASE,
+import { ADD_COMPANY_TO_DATABASE,
          FETCH_COMPANY_DATA_SUCCESS,
          REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
          GET_FINANCIAL_REPORT_SUCCESS,
-         UPDATE_CURRENT_SELECTED_PAGE,
-         OPEN_EDIT_PAGE_MODAL,
-         OPEN_AL_MODAL,
-         UPDATE_STATE_WITH_PROPERTY_TO_EDIT } from '../components/actions'
+         UPDATE_CURRENT_SELECTED_PAGE ,
+         UPDATE_SEARCH_RESULTS_SUCCESS,} from '../components/actions'
 import { SET_EDIT_CONTACT_TO_FALSE, SET_EDIT_CONTACT_TO_TRUE} from '../components/actions/ManagementDirectory'
 import { UPDATE_TARGET_SUCCESS} from '../components/actions/EditTarget'
+import { SHOW_EXTENDED_NAV,
+         HIDE_EXTENDED_NAV,
+         CLOSE_MODAL,
+         OPEN_MODAL,
+         OPEN_EDIT_PAGE_MODAL,
+         OPEN_AL_MODAL,
+         UPDATE_STATE_WITH_PROPERTY_TO_EDIT } from '../components/actions/ShowHideActions'
+import { SORT_COMPANIES,
+         SORT_COMPANIES_BY_STATUS_SUCCESS,
+         VIEW_COMPANIES_BY_STATUS } from '../components/actions/SortActions'
 
+const COMPANY_NAME = 'companyName'
+const COMPANY_OVERVIEW = 'Company Overview'
 
 const initialState = {
     companies: mockData,
-    key: 0,
     showExtendedNav: false,
+    sortOption: COMPANY_NAME,
     searchResults: mockData,
     companyStatus: {
         approved: [],
@@ -52,7 +54,6 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     if (action.type === UPDATE_SEARCH_RESULTS_SUCCESS) {
-
           const { searchResults } = action
 
           return Object.assign({}, state, {
@@ -60,11 +61,10 @@ export default function reducer(state = initialState, action) {
           });
     }
 
-    else if (action.type === SORT_COMPANIES_SUCCESS) {
-        const { sortedCompanies: searchResults } = action
+    else if (action.type === SORT_COMPANIES) {
+        const { sortOption } = action
             return Object.assign({}, state, {
-                searchResults,
-                key: state.key + 1
+                sortOption
             });
     }
 
@@ -72,7 +72,7 @@ export default function reducer(state = initialState, action) {
         const { companyStatus } = action
 
         return Object.assign({}, state, {
-          companyStatus
+            companyStatus
         });
     }
 
@@ -136,7 +136,7 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             companies: [...state.companies, company ],
             searchResults: [...state.companies, company],
-            error: null
+            selectedCompany: company
         });
     }
 
@@ -157,7 +157,7 @@ export default function reducer(state = initialState, action) {
 
           return Object.assign({}, state, {
               selectedCompany,
-              selectedPage: 'Company Overview'
+              selectedPage: COMPANY_OVERVIEW
           });
     }
 

@@ -2,7 +2,7 @@ import React  from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux'
 
-import { closeModal } from '../actions'
+import { closeModal } from '../actions/ShowHideActions'
 
 import EditCompanyOverviewForm from '../CompanyProfile/EditCompanyOverview'
 import ManagementDirectoryForm from '../CompanyProfile/ManagementDirectoryForm'
@@ -12,7 +12,8 @@ import EditFinancialForm from '../FinancialPage/EditFinancialForm'
 import FinancialReportForm from '../FinancialPage/FinancialReportForm'
 import EditBenefitsForm from '../BenefitsPage/EditBenefits'
 import AssetLiabilityForm from '../AssetsLiabilities/AssetLiabilityForm'
-// import './Modal.css'
+
+import './Modal.css'
 
 export class EditPageModal extends React.Component {
 
@@ -71,13 +72,12 @@ export class EditPageModal extends React.Component {
 
     render() {
         const { showEditModal,
-                selectedPage,
                 companyName } = this.props
 
 
         return (
-            <div className="Add-Company-Modal">
-                <Modal show={showEditModal}
+            <div className="edit-modal">
+                <Modal className="edit-data-modal" show={showEditModal}
                        onHide={this.handleClose}
                        container={this}
                        aria-labelledby="edit-page-modal">
@@ -97,10 +97,11 @@ export class EditPageModal extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const { showEditModal, selectedPage, showALModal,  } = state.app
+    const { showEditModal, selectedPage, showALModal, editReport  } = state.app
     const { companyName } = state.app.selectedCompany
     return {
         showEditModal,
+        editReport,
         showALModal,
         selectedPage,
         companyName

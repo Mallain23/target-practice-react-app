@@ -3,8 +3,15 @@ import { SubmissionError, focus} from 'redux-form';
 import { filterCompanyByStatus,
          statusObject,
          sortFunction,
-         formatDataForEntry,
          formatTypeOfReportText } from './utils'
+
+
+export const ADD_COMPANY_TO_DATABASE = 'ADD_COMPANY_TO_DATABASE'
+export const addCompanyToDatabase = companyData => ({
+   type: ADD_COMPANY_TO_DATABASE,
+   companyData
+});
+
 
 export const SHOW_EXTENDED_NAV = 'SHOW_EXTENDED_NAV'
 export const showExtendedNav = () => ({
@@ -44,19 +51,11 @@ export const viewCompaniesByStatus = statusType => ({
     }
 });
 
-export const sortCompanies = sortOption => (dispatch, getState) => {
-    const { companies } = getState().app
-    let sortedCompanies = sortFunction(companies, sortOption)
-    sortedCompanies = sortOption === 'overallRating' ? sortedCompanies.reverse() : sortedCompanies
 
-    dispatch(sortCompaniesSuccess(sortedCompanies))
-};
-
-export const SORT_COMPANIES_SUCCESS = 'SORT_COMPANIES_SUCCESS'
-export const sortCompaniesSuccess = sortedCompanies => ({
-    type: SORT_COMPANIES_SUCCESS,
-    sortedCompanies,
-
+export const SORT_COMPANIES = 'SORT_COMPANIES'
+export const sortCompanies = sortOption => ({
+    type: SORT_COMPANIES,
+    sortOption
 });
 
 export const sortCompaniesByStatus = () => (dispatch, getState) => {
@@ -67,8 +66,7 @@ export const sortCompaniesByStatus = () => (dispatch, getState) => {
 
      let arrayOfCompaniesSortedByStatus = statusKeys.map(status =>
         sortedCompanyObject[status] = filterCompanyByStatus(companies, status));
-
-    dispatch(sortCompaniesByStatusSuccess(sortedCompanyObject));
+      dispatch(sortCompaniesByStatusSuccess(sortedCompanyObject));
 };
 
 export const SORT_COMPANIES_BY_STATUS_SUCCESS = 'SORT_COMPANIES_BY_STATUS_SUCCESS'
@@ -88,19 +86,7 @@ export const openModal = () => ({
 });
 
 
-export const formatDataForDatabaseEntry = company => (dispatch, getState) => {
-    const { companyName } = company
-    const  companies = getState().companies
 
-    const companyData = formatDataForEntry(companyName);
-    dispatch(addCompanyToDatabase(companyData));
-};
-
-export const ADD_COMPANY_TO_DATABASE = 'ADD_COMPANY_TO_DATABASE'
-export const addCompanyToDatabase = companyData => ({
-    type: ADD_COMPANY_TO_DATABASE,
-    companyData
-});
 
 
 export const fetchCompanyData = _companyName => (dispatch, getState) => {

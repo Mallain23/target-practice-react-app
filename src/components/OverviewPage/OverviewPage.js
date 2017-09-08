@@ -6,7 +6,8 @@ import CompanyStatusButtons from './CompanyStatusButtons'
 import CompaniesByStatusContainer from './CompaniesByStatusContainer'
 
 import { OVERVIEW__PAGE_HEADER, statusHeaders } from './OverviewPageConstants'
-import { sortCompaniesByStatus, sortCompanies, hideExtendedNav } from '../actions'
+import { hideExtendedNav } from '../actions/ShowHideActions'
+import { sortCompaniesByStatus, sortCompanies} from '../actions/SortActions'
 
 import './Overview.css'
 
@@ -16,21 +17,21 @@ export class OverviewPage extends React.Component {
         //ask andrew how I should handle this
 
         this.props.dispatch(sortCompaniesByStatus());
-        this.props.dispatch(sortCompanies('companyName'));
         this.props.dispatch(hideExtendedNav());
     };
 
     componentWillReceiveProps(nextProps, nextState) {
         if (nextProps.companies.length !== this.props.companies.length) {
 
+          //  this.props.dispatch(sortCompanies('companyName'));
             this.props.dispatch(sortCompaniesByStatus());
-            this.props.dispatch(sortCompanies('companyName'));
         }
 
     };
 
     render() {
         const { companies, pending, approved, declined, researching  } = this.props;
+
         const { view, statusType } = this.props.viewCompaniesByStatus;
 
         const statusResults = view ? <CompaniesByStatusContainer status={statusType} /> : '';

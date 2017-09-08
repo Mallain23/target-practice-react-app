@@ -35,7 +35,9 @@ export const formatFinanceData = (data, selectedCompany) => {
                 status,
                 companyProjections,
                 areProjectionsReasonable
-            }
+            },
+            internalAssessmentOfFinances,
+            internalFinancialRating
         }
     };
 };
@@ -44,7 +46,7 @@ export const formatFinanceStatements = (report, selectedReport, selectedCompany)
     const { type: typeOfReport, title } = report
     const updatedReports = selectedCompany.financialMatters[typeOfReport].filter(report =>
         report !== selectedReport).concat(report);
-    
+
     const financialMatters = Object.assign({}, selectedCompany.financialMatters, {
         [typeOfReport]: updatedReports
     })

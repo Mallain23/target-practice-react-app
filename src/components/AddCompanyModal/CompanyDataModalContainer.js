@@ -2,7 +2,7 @@ import React  from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux'
 
-import { closeModal } from '../actions'
+import { closeModal } from '../actions/ShowHideActions'
 import AddCompanyForm from './AddCompanyForm'
 
 import './Modal.css'

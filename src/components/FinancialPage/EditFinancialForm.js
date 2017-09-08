@@ -1,13 +1,14 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
+import { Form } from 'react-bootstrap'
 
-import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-import { closeModal } from '../actions/'
+import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 import { formatFinanceData } from './utils'
 
 import Input from '../AddCompanyModal/Input'
+import RatingSelect from '../EditPageModal/RatingSelect'
 
 
 export class EditFinancialForm extends React.Component {
@@ -50,6 +51,7 @@ export class EditFinancialForm extends React.Component {
     };
 
     onSubmit(values) {
+
         const { selectedCompany } = this.props
         const formattedObj = formatFinanceData(values, selectedCompany)
 
@@ -64,7 +66,8 @@ export class EditFinancialForm extends React.Component {
     render() {
         const { status } = this.props.selectedCompany
         return (
-            <form className="financial-data-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
+            <Form className="financial-data-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
+                <h2>Edit Financial Data</h2>
                 <label htmlFor="statementFromCompany">Statement of Finances</label>
                 <Field component={Input}
                        placeholder="Enter Target's Assessment of Finances"
@@ -106,9 +109,8 @@ export class EditFinancialForm extends React.Component {
                         name="internalAssessmentOfFinances"
                         componentClass="textarea" />
                 <label htmlFor="internalFinancialRating">Rating of Financial Concerns</label>
-                <Field component={Input}
+                <Field component={RatingSelect}
                         placeholder="Enter Rating of Financial Concerns"
-                        type="number"
                         name="internalFinancialRating"  />
                 <button
                     type="submit"
@@ -120,7 +122,7 @@ export class EditFinancialForm extends React.Component {
                     onClick={this.handleCancel}>
                     Cancel
                 </button>
-            </form>
+            </Form>
         );
     };
 };
@@ -136,7 +138,4 @@ const mapStateToProps = state => {
 EditFinancialForm = connect(mapStateToProps)(EditFinancialForm)
 
 export default EditFinancialForm = reduxForm({
-    form: 'financial-data-form',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('financial-data-form', Object.keys(errors)[0]))
-})(EditFinancialForm);
+    form: 'financial-data-form'})(EditFinancialForm);

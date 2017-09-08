@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {  Col, Button } from 'react-bootstrap'
 
-import { removeCompanyFromDatabase, openEditPageModal} from '../actions'
+import { removeCompanyFromDatabase} from '../actions'
+import {  openEditPageModal } from '../actions/ShowHideActions'
 import { setEditContactToFalse } from '../actions/ManagementDirectory'
 
 export class CompanyPageButtons extends React.Component {

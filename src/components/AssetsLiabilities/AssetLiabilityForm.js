@@ -3,7 +3,7 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-import { closeModal } from '../actions/'
+import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 import { formatAL } from './utils'
 
@@ -68,6 +68,7 @@ export class AssetLiabilityForm extends React.Component {
                 <Field component={Input}
                       placeholder={`Enter the Value or Amount of ${propertyTypeSingular}`}
                       type='number'
+                      step='0.01'
                       name="value"  />
                 <button
                     type="submit"

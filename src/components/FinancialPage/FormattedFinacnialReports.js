@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button } from 'react-bootstrap'
 
-import { getFinacnialReport, openEditPageModal } from '../actions'
+import { getFinacnialReport } from '../actions'
+import { openEditPageModal } from '../actions/ShowHideActions'
 import { editFinancialReport } from '../actions/EditTarget'
 
 import Paragraph from '../CompanyPage/Paragraph'
@@ -29,6 +30,7 @@ export class FormattedFinacnialReports extends React.Component {
 
         const name = e.target.value
         const typeOfReport = this.props.name
+
         this.props.dispatch(getFinacnialReport(name, typeOfReport))
         this.props.dispatch(openEditPageModal())
         // this.props.dispatch(editFinancialReport())

@@ -2,12 +2,12 @@ import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
 
-import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-import { closeModal } from '../actions/'
+import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 
 import Input from '../AddCompanyModal/Input'
 import StatusSelect from '../EditPageModal/StatusSelect'
+import RatingSelect from '../EditPageModal/RatingSelect'
 
 export class FinalAssessmentForm extends React.Component {
     constructor(props) {
@@ -26,10 +26,11 @@ export class FinalAssessmentForm extends React.Component {
 
     handleInitialize(selectedCompany) {
 
-        const { finalAssessment, overallRating } = selectedCompany
+        const { status, finalAssessment, overallRating} = selectedCompany
         const _overAllRating = parseInt(overallRating)
 
         const initValues = {
+            status,
             finalAssessment,
             overallRating: _overAllRating
         };
@@ -54,12 +55,11 @@ export class FinalAssessmentForm extends React.Component {
                 <label htmlFor="finalAssessment">Final Assessment of Target</label>
                 <Field component={Input}
                        placeholder='Enter Final Assessment Notes'
-                      type="text"
-                      componentClass='textarea'
-                      name="finalAssessment" />
+                       type="textarea"
+                       componentClass='textarea'
+                       name="finalAssessment" />
                 <label htmlFor="rating">Final Rating of Company</label>
-                <Field component={Input}
-                      type="number" name="overallRating" validate={[validValue]} />
+                <Field component={RatingSelect} name="overallRating" />
                 <label htmlFor="status">Company Status</label>
                 <Field
                     component={StatusSelect}
@@ -92,7 +92,4 @@ const mapStateToProps = state => {
 FinalAssessmentForm = connect(mapStateToProps)(FinalAssessmentForm)
 
 export default FinalAssessmentForm = reduxForm({
-    form: 'edit-final-assessment-form',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('edit-final-assessment-form', Object.keys(errors)[0]))
-})(FinalAssessmentForm);
+    form: 'edit-final-assessment-form'})(FinalAssessmentForm);

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button } from 'react-bootstrap'
 
-import {  openALModal, openEditALModal } from '../actions'
+import {  openALModal, openEditALModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 import { removeAL } from './utils'
 import Paragraph from '../CompanyPage/Paragraph'
@@ -57,11 +57,13 @@ export class FormattedAL extends React.Component  {
 
         else {
            formattedAL = arrayOfAL.map(({name, value, id}, index) => {
+
                 return (
+
                     <li key={index}>
                         <ul>
                             <li>Name: {name}</li>
-                            <li>Value/Amount: {value}</li>
+                            <li>Value/Amount: {`$${value.toLocaleString()}`}</li>
                             <Button onClick={this.handleEditClick} value={id}>Edit</Button>
                             <Button onClick={this.handleDeleteClick} value={id}>Delete</Button>
                         </ul>

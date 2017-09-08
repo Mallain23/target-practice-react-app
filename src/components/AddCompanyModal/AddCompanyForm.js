@@ -3,11 +3,12 @@ import { connect } from 'react-redux'
 import { Button } from 'react-bootstrap';
 import {Field, reduxForm, focus} from 'redux-form';
 
-import { closeModal, formatDataForDatabaseEntry } from '../actions'
-import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
+import { addCompanyToDatabase } from '../actions'
+import { closeModal } from '../actions/ShowHideActions'
+import { formatDataForDatabaseEntry } from './utils'
+import { required, nonEmpty } from '../validators'
 
 import Input from './Input'
-import TextArea from './TextArea'
 
 export class AddCompanyForm extends React.Component {
     constructor(props) {
@@ -16,13 +17,16 @@ export class AddCompanyForm extends React.Component {
         this.handleClose = this.handleClose.bind(this)
     };
 
-    onSubmit(company) {
+    onSubmit(newCompany) {
         const { companies } = this.props
-        if (companies.some(({ companyName }) => companyName === company.companyName)) {
+        if (companies.some(({ companyName }) => companyName === newCompany.companyName)) {
           return alert("A Company with the same name already exists in the database!")
         }
 
-        this.props.dispatch(formatDataForDatabaseEntry(company))
+        const companyData = formatDataForDatabaseEntry(newCompany)
+
+        this.props.dispatch(addCompanyToDatabase(companyData))
+
         this.props.dispatch(closeModal())
     };
 
@@ -33,24 +37,23 @@ export class AddCompanyForm extends React.Component {
     render() {
 
           return (
-          <form className="add-company-form"
-                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-              <label htmlFor="company-name">Company Name</label>
-              <Field component={Input}
-                    placeholder='Enter Company Name'
-                    type="text" name="companyName"
-                    validate={[required, nonEmpty]} />
-              <Button type="submit"
-                     disabled={this.props.pristine || this.props.submitting} >
-                     Add Company
-              </Button>
-              <Button disabled={this.props.submitting}
-                      onClick={this.handleClose} >
-                      Close
-              </Button>
-          </form>
-      )
-  }
+              <form className="add-company-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+                  <label htmlFor="company-name">Company Name</label>
+                  <Field component={Input}
+                        placeholder='Enter Company Name'
+                        type="text" name="companyName"
+                        validate={[required, nonEmpty]} />
+                  <Button type="submit"
+                         disabled={this.props.pristine || this.props.submitting} >
+                         Add Company
+                  </Button>
+                  <Button disabled={this.props.submitting}
+                          onClick={this.handleClose} >
+                          Close
+                  </Button>
+              </form>
+        );
+    };
 };
 
 export default AddCompanyForm = reduxForm({

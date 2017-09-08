@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Col, Row, Button } from 'react-bootstrap'
-import {   openEditPageModal } from '../actions'
+import {   openEditPageModal } from '../actions/ShowHideActions'
 import { updateTarget  } from '../actions/EditTarget'
 import { getContactDataAndSetEditToTrue } from '../actions/ManagementDirectory'
 import { removeContact } from './Utils'

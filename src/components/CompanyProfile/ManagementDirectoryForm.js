@@ -5,8 +5,8 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 
 import Input from '../AddCompanyModal/Input'
 
-import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-import { closeModal } from '../actions'
+import {isNumber, required, nonEmpty } from '../validators'
+import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 import { formatContacts } from './Utils'
 

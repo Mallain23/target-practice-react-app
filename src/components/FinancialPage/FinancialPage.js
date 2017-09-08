@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Grid, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
 
@@ -13,7 +13,7 @@ export class FinancialPage extends React.Component {
 
     renderComponent() {
         const { selectedPage } = this.props
-        console.log(selectedPage)
+
         if (selectedPage === 'Assets and Liabilities') {
             return <ALPage {...this.props} />
         }

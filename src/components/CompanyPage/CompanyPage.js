@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Grid, Col, Row } from 'react-bootstrap'
 
-import { showExtendedNav, fetchCompanyData } from '../actions'
+import { fetchCompanyData } from '../actions'
+import { showExtendedNav } from '../actions/ShowHideActions'
 
 import CompanyPageButtons from './CompanyPageButtons'
 import CompanyOverview from '../CompanyProfile/CompanyOverview'

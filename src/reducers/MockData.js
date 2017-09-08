@@ -618,7 +618,7 @@ export const mockData = [
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assessment after considering all factors',
-      overallRating: '',
+      overallRating: '7',
       status: 'Pending'
     },
     { companyName: 'Great LLC',
@@ -885,7 +885,7 @@ export const mockData = [
               goals: 'Regional expansion in the field of property management and develop a strong base of key customers. Increase the assets and investments of the company to support the development of services. To build good reputation in the field of real estate and property management and become a key player in the industry'
           },
           industryInformation: {
-              backgroundInformation: ' What has been going on in the industry (historic trends etc)',
+              backgroundInformation: 'What has been going on in the industry (historic trends etc)',
               presentCondition: 'Current trends, latest developments and furture projections for industry',
               workForce: 'how many people employeed in that industry - will this stay the same or change'
           },

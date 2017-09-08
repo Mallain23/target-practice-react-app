@@ -12,7 +12,7 @@ export default class Input extends React.Component {
                     {this.props.label}
                 </ControlLabel>
                 <FormControl
-                    {...this.props.input}
+                    {...this.props.input} 
                     placeholder={this.props.placeholder}
                     id={this.props.name}
                     type={this.props.type}

@@ -1,7 +1,7 @@
 import React from 'react'
 import {  connect } from 'react-redux'
 
-import { viewCompaniesByStatus } from '../actions'
+import { viewCompaniesByStatus } from '../actions/SortActions'
 
 export class ComapnyStatusButtons extends React.Component {
     constructor (props) {

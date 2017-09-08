@@ -4,16 +4,14 @@ import SearchForm from './SearchForm'
 import SearchResults from './SearchResults'
 import './Sidebar.css'
 
-export default class SideBarContainer extends React.Component {
+export default function SideBarContainer (props) {
 
-    render() {
-        return (
-          <div className="sidebar sidebar-left">
-              <div className='search-form-container'>
-                  <SearchForm />
-                  <SearchResults />
-              </div>
+    return (
+      <div className="sidebar sidebar-left">
+          <div className='search-form-container'>
+              <SearchForm />
+              <SearchResults />
           </div>
-        );
-    };
+      </div>
+    );
 };

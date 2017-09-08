@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 
-import { sortCompanies, openModal } from '../actions'
+import { sortCompanies } from '../actions'
+import { openModal } from '../actions/ShowHideActions'
 
 import ExtendedNav from './ExtendedNav'
 import './Nav.css'
@@ -19,7 +20,7 @@ export class NavBar extends React.Component {
     handleClick(e) {
       e.preventDefault()
       const sortOption = e.target.value
-
+      console.log(sortOption)
       this.props.dispatch(sortCompanies(sortOption))
     };
 
