@@ -10,7 +10,9 @@ import FinalAssessmentForm from '../CompanyProfile/FinalAssessmentForm'
 import EditLegalForm from '../Legal/EditLegalForm'
 import EditFinancialForm from '../FinancialPage/EditFinancialForm'
 import FinancialReportForm from '../FinancialPage/FinancialReportForm'
-import EditBenefitsForm from '../BenefitsPage/EditBenefits'
+import EditOtherBenefitsForm from '../BenefitsPage/EditOtherBenefitsForm'
+import EditIPForm from '../BenefitsPage/EditIPForm'
+import EditTechForm from '../BenefitsPage/EditTechForm'
 import AssetLiabilityForm from '../AssetsLiabilities/AssetLiabilityForm'
 
 import './Modal.css'
@@ -50,7 +52,7 @@ export class EditPageModal extends React.Component {
               return <FinalAssessmentForm  />
           }
 
-          else if (selectedPage === 'Legal Page' ||
+          else if (selectedPage === 'Legal Factors' ||
                    selectedPage === 'Legal Assessment') {
 
               return <EditLegalForm  />
@@ -60,11 +62,19 @@ export class EditPageModal extends React.Component {
             return <EditFinancialForm  />
           }
 
-          else if (selectedPage ===  'Intellectual Property' ||
-                   selectedPage === 'Technology' ||
-                   selectedPage === 'Other Benefits') {
+          else if (selectedPage ===  'Intellectual Property') {
 
-              return <EditBenefitsForm />
+              return <EditIPForm />
+          }
+
+          else if (selectedPage ===  'Technology') {
+
+              return <EditTechForm />
+          }
+
+          else if (selectedPage ===  'Other Benefits') {
+
+              return <EditOtherBenefitsForm />
           }
 
           return ''

@@ -11,7 +11,7 @@ export class LegalPage extends React.Component {
     renderComponent() {
         const { selectedPage } = this.props
 
-        if (selectedPage === 'Legal Page') {
+        if (selectedPage === 'Legal Factors') {
             return <LegalFactors />
         }
 

@@ -44,7 +44,7 @@ export class ComapnyPageNav extends React.Component {
                       {companyName}
                     </Navbar.Brand>
                 </Navbar.Header>
-                
+
                 <Nav>
                     <NavItem onClick={this.handleRemoveCompanyClick} > Delete Target </NavItem>
                     <NavDropdown eventKey={3} title='Target Info' id='target-ifno'>
@@ -90,7 +90,7 @@ export class ComapnyPageNav extends React.Component {
                     <NavDropdown eventKey={5} title='Legal Considerations' id='legal-matters'>
                         <NavItem eventKey={5.1}>
                             <button className='nav-buttons'
-                                    value='Legal Page'
+                                    value='Legal Factors'
                                     onClick={this.handleClick}>
                                     Legal Factors</button>
                         </NavItem>
