@@ -38,26 +38,24 @@ export class FinancialReportForm extends React.Component {
     };
 
     onSubmit(values) {
-        const { selectedFinancialReport, selectedCompany } = this.props
-        values.title = selectedFinancialReport.title
-        values.type = values.title.includes('Annual') ? 'financialStatementsAnnual' : 'financialStatementsQuarterly'
+        const { selectedFinancialReport, selectedCompany } = this.props;
+        values.title = selectedFinancialReport.title;
 
-        const formattedObj = formatFinanceStatements(values, selectedFinancialReport, selectedCompany)
+        values.type = values.title.includes('Annual') ? 'financialStatementsAnnual' : 'financialStatementsQuarterly';
 
-        this.props.dispatch(updateTarget(formattedObj))
+        const formattedObj = formatFinanceStatements(values, selectedFinancialReport, selectedCompany);
+
+        this.props.dispatch(updateTarget(formattedObj));
     };
 
-    handleCancel() {
-        this.props.dispatch(closeModal())
-
-    };
 
     render() {
         const { title } = this.props.selectedFinancialReport
+
         return (
             <Form className="financial-report-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <h2>{title}</h2>
-                <label htmlFor="Report">Financial Report Data</label>
+                <label htmlFor="Report">Financial Statement Data</label>
                 <Field component={Input}
                         placeholder="Enter Report Data"
                         type="textarea"
@@ -66,12 +64,7 @@ export class FinancialReportForm extends React.Component {
                 <button
                     type="submit"
                     disabled={this.props.submitting}>
-                    Submit
-                </button>
-                <button
-                    disabled={this.props.submitting}
-                    onClick={this.handleCancel}>
-                    Cancel
+                    Edit
                 </button>
             </Form>
         );

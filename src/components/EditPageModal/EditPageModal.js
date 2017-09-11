@@ -89,6 +89,11 @@ export class EditPageModal extends React.Component {
                         {this.renderForm()}
                     </Modal.Body>
                     <Modal.Footer>
+                        <button
+                            disabled={this.props.submitting}
+                            onClick={this.handleClose}>
+                            Cancel
+                        </button>
                   </Modal.Footer>
               </Modal>
             </div>

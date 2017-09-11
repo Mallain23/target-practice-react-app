@@ -39,7 +39,7 @@ export class FullFinancialReport extends React.Component {
                 <Row>
                     <Col xs={12} md={1}></Col>
                     <Col xs={12} md={11}>
-                        <div className='data-container'>{selectedFinancialReport.Report} </div>
+                        <div className='statement-container'>{selectedFinancialReport.Report} </div>
                     </Col>
                 </Row>
                 <Row>

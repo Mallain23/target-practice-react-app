@@ -44,7 +44,7 @@
 .back-link {
   font-family: Alegreya,serif;
   color: #88b2cc;
-  font-size: 20px;
+  font-size: 18px;
   padding-left: 5px;
 
 }
@@ -55,4 +55,14 @@
 
 .divider {
   color: #777;
+}
+
+.statement-container {
+  color: #777;
+  font-size: 16px;
+  margin-left: 55px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+
 }
