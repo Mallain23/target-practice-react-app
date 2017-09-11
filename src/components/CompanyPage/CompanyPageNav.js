@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 
-import { removeCompanyFromDatabase} from '../actions'
+import { removeCompanyFromDatabase, updateCurrentSelectedPage } from '../actions'
 import { openModal, toggleVisibility } from '../actions/ShowHideActions'
-import { updateCurrentSelectedPage } from '../actions'
+import { updateTarget } from '../actions/EditTarget'
 
 import CompanyPageButtons from './CompanyPageButtons'
 
+import './CompanyPage.css'
 
 export class ComapnyPageNav extends React.Component {
     constructor(props) {
@@ -41,7 +42,7 @@ export class ComapnyPageNav extends React.Component {
             <Navbar>
                 <Navbar.Header >
                     <Navbar.Brand>
-                      {companyName}
+                        {companyName}
                     </Navbar.Brand>
                 </Navbar.Header>
 

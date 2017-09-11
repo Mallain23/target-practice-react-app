@@ -10,6 +10,8 @@ import { formatTechData } from './utils'
 import RatingSelect from '../EditPageModal/RatingSelect'
 import Input from '../AddCompanyModal/Input'
 
+import '../EditPageModal/Modal.css'
+
 export class EditTechForm extends React.Component {
 
     componentDidMount() {
@@ -63,16 +65,16 @@ export class EditTechForm extends React.Component {
                           componentClass="textarea"/>
                   <label htmlFor="assessment">Overall Assessment of Targets Technology</label>
                   <Field component={Input}
-                          placeholder="Enter Final Assessment of Target's Technology"
+                          placeholder="Enter Final Assessment of Technology"
                           type="text"
                           name="assessment"
                           componentClass="textarea"/>
-                  <label htmlFor="assessment">Rating of Target Technology</label>
+                  <label htmlFor="assessment">Rating of Technology</label>
                   <Field component={RatingSelect}
                           name="internalTechRating" />
-
                 <Button
                     disabled={this.props.submitting}
+                    className='edit-modal-button'
                     type='submit' >
                     Submit
                 </Button>

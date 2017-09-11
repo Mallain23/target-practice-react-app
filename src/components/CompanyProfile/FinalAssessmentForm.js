@@ -1,7 +1,7 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
-import { Form } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
@@ -9,6 +9,8 @@ import { updateTarget } from '../actions/EditTarget'
 import Input from '../AddCompanyModal/Input'
 import StatusSelect from '../EditPageModal/StatusSelect'
 import RatingSelect from '../EditPageModal/RatingSelect'
+
+import '../EditPageModal/Modal.css'
 
 export class FinalAssessmentForm extends React.Component {
 
@@ -57,11 +59,12 @@ export class FinalAssessmentForm extends React.Component {
                     type="text"
                     placeholder={status}
                     name="status" />
-                <button
+                <Button
                     type="submit"
+                    className='moda-button'
                     disabled={this.props.submitting}>
                     Submit
-                </button>
+                </Button>
             </Form>
         );
     };

@@ -10,6 +10,8 @@ import { formatOtherBenefitsData } from './utils'
 import RatingSelect from '../EditPageModal/RatingSelect'
 import Input from '../AddCompanyModal/Input'
 
+import '../EditPageModal/Modal.css'
+
 export class EditOtherBenefitsForm extends React.Component {
 
     componentDidMount() {
@@ -86,17 +88,18 @@ export class EditOtherBenefitsForm extends React.Component {
                           type="text"
                           name="miscellaneous"
                           componentClass="textarea"/>
-                  <label htmlFor="assesmentOfOtherBenefits">Overall Assessment of Other Benefits Target will Provide </label>
+                  <label htmlFor="assesmentOfOtherBenefits">Overall Assessment of Other Benefits </label>
                   <Field component={Input}
                           placeholder="Overall Assessment of the Other Benefits Target will Provide"
                           type="text"
                           name="assessment"
                           componentClass="textarea"/>
-                  <label htmlFor="internalOtherBenefitsRating">Overall Rating of Other Benefits Target will Provide  </label>
+                  <label htmlFor="internalOtherBenefitsRating">Overall Rating of Other Benefit </label>
                   <Field component={RatingSelect}
                          name="internalOtherBenefitsRating" />
                 <Button
                     disabled={this.props.submitting}
+                    className='modal-button'
                     type='submit' >
                     Submit
                 </Button>

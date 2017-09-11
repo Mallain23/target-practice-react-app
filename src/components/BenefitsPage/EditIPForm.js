@@ -10,6 +10,8 @@ import { formatIPData } from './utils'
 import RatingSelect from '../EditPageModal/RatingSelect'
 import Input from '../AddCompanyModal/Input'
 
+import '../EditPageModal/Modal.css'
+
 export class EditIPForm extends React.Component {
 
     componentDidMount() {
@@ -53,31 +55,31 @@ export class EditIPForm extends React.Component {
         const { status } = this.props.selectedCompany
         return (
             <Form className="edit-ip-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
-                <label htmlFor="patents">Patents Held by the Target</label>
+                <label htmlFor="patents">Patents</label>
                 <Field component={Input}
                        placeholder="Enter Information on Patents held by the Target"
                        type="textarea"
                        name="patents"
                        componentClass="textarea" />
-                 <label htmlFor="trademarks">Trademarks held by the Target</label>
+                 <label htmlFor="trademarks">Trademarks</label>
                  <Field component={Input}
                         placeholder="Enter Information on Trademarks held by the Target"
                         type="text"
                         name="trademarks"
                         componentClass="textarea"/>
-                  <label htmlFor="copyrights">Copyrights held by the Target</label>
+                  <label htmlFor="copyrights">Copyrights</label>
                   <Field component={Input}
                          placeholder="Enter Information on Copyrights held by the Target"
                          type="text"
                          name="copyrights"
                          componentClass="textarea" />
-                  <label htmlFor="status">Problems Relating to IP held by Target</label>
+                  <label htmlFor="status">Problems Relating to IP</label>
                   <Field component={Input}
                           placeholder="Enter any Negative Impacts IP Could Cause"
                           type="textarea"
                           name="negative"
                           componentClass="textarea" />
-                  <label htmlFor="internalAssessmentOfIP">Overall Assessment of Targets IP</label>
+                  <label htmlFor="internalAssessmentOfIP">Overall Assessment of IP</label>
                   <Field component={Input}
                           placeholder="Enter Final Assessment of Target's IP"
                           type="textarea"
@@ -88,7 +90,8 @@ export class EditIPForm extends React.Component {
                           name="internalIPRating" />
                 <Button
                     disabled={this.props.submitting}
-                    type='submit' >
+                    type='submit'
+                    className='modal-button'>
                     Submit
                 </Button>
             </Form>

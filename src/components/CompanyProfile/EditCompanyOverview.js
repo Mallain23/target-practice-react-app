@@ -9,6 +9,8 @@ import { updateTarget } from '../actions/EditTarget'
 import { formatCompanyProfileData } from './Utils'
 import Input from '../AddCompanyModal/Input'
 
+import '../EditPageModal/Modal.css'
+
 export class EditCompanyOverviewForm extends React.Component {
 
     componentDidMount() {
@@ -137,6 +139,7 @@ export class EditCompanyOverviewForm extends React.Component {
                       placeholder='Current Industry Information and Industry Projections' />
                 <Button
                     type="submit"
+                    className='modal-button'
                     disabled={this.props.submitting}>
                     Submit
                 </Button>
