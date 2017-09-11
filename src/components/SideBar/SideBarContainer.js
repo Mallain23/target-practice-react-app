@@ -1,6 +1,5 @@
-
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Nav } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import SearchForm from './SearchForm'
 import SearchResults from './SearchResults'

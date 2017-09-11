@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Grid, Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
+import '../CompanyProfile/CompanyProfile.css'
 
 export function LegalAssessment (props) {
 
@@ -12,11 +13,10 @@ export function LegalAssessment (props) {
     const rating = parseInt(_rating)
 
     return (
-      <Col xs={12}>
-          <h3>Assessment and Rating of Legal Considerations</h3>
-          <Paragraph className='company-data' text={`Assessment: ${assessment}`} />
-          <Paragraph className='company-data' text={`Rating: ${rating}`} />
-      </Col>
+      <div className='data-container'>
+          <Paragraph className='target-data' text={[`Assessment of Leagl Factors:  `, assessment]} />
+          <Paragraph className='target-data' text={[`Rating of Legal Factors: `, rating]} />
+      </div>
     );
 };
 

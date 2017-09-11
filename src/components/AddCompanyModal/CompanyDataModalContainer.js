@@ -29,7 +29,7 @@ export class CompanyDataModalContainer extends React.Component {
                        aria-labelledby="contained-modal-title">
 
                     <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title">Add New Targety</Modal.Title>
+                        <Modal.Title id="contained-modal-title">Add New Target</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <AddCompanyForm {...this.props} showModal={showModal}/>

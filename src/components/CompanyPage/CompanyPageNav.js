@@ -34,7 +34,8 @@ export class ComapnyPageNav extends React.Component {
 
     render() {
       const { selectedPage } = this.props
-      const { companyName } = this.props.selectedCompany
+      const { companyName, status } = this.props.selectedCompany
+
         return (
 
             <Navbar>
@@ -43,20 +44,21 @@ export class ComapnyPageNav extends React.Component {
                       {companyName}
                     </Navbar.Brand>
                 </Navbar.Header>
+                
                 <Nav>
                     <NavItem onClick={this.handleRemoveCompanyClick} > Delete Target </NavItem>
-                    <NavDropdown eventKey={3} title='Target Profile' id='target-profoile'>
+                    <NavDropdown eventKey={3} title='Target Info' id='target-ifno'>
                           <MenuItem eventKey={3.1}>
                               <button className='nav-buttons'
-                                      value='Company Overview'
+                                      value='Target Profile'
                                       onClick={this.handleClick}>
-                                      Company Overview </button>
+                                      Target Profile </button>
                             </MenuItem>
                             <MenuItem eventKey={3.2}>
                                 <button className='nav-buttons'
-                                        value='Company Directory'
+                                        value='Target Directory'
                                         onClick={this.handleClick}>
-                                        Company Directory </button>
+                                        Target Directory </button>
                               </MenuItem>
                               <MenuItem eventKey={3.2}>
                                   <button className='nav-buttons'

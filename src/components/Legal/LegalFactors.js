@@ -4,6 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
 
+import '../CompanyProfile/CompanyProfile.css'
+
 export function LegalFactors (props) {
     const { futureLitgiation,
             currentLitigation,
@@ -16,18 +18,17 @@ export function LegalFactors (props) {
             otherRegulatory } = props
 
     return (
-        <Col xs={12}>
-            <h3>Legal Considerations</h3>
-              <Paragraph className='company-data' text={`Future Litigation: ${futureLitgiation}`} />
-              <Paragraph className='company-data' text={`Current Litigation: ${currentLitigation}`} />
-              <Paragraph className='company-data' text={`Past Litigation:  ${otherLitigation}`} />
-              <Paragraph className='company-data' text={`Threatened Litigation: ${threatened}`} />
-              <Paragraph className='company-data' text={`Review of Contracts: ${reviewofContracts}`} />
-              <Paragraph className='company-data' text={`Settlements: ${settlement}`} />
-              <Paragraph className='company-data' text={`Arbitration ${arbitration}`} />
-              <Paragraph className='company-data' text={`Other Regulatory Concerns: ${otherRegulatory}`} />
-              <Paragraph className='company-data' text={`Internal Issues: ${internalIssues}`} />
-          </Col>
+        <div className='data-container'>
+              <Paragraph className='target-data' text={[`Future Litigation:  `, futureLitgiation]} />
+              <Paragraph className='target-data' text={[`Current Litigation:  `, currentLitigation]} />
+              <Paragraph className='target-data' text={[`Past Litigation:  `, otherLitigation]} />
+              <Paragraph className='target-data' text={[`Threatened Litigation: `, threatened]} />
+              <Paragraph className='target-data' text={[`Review of Contracts:  `, reviewofContracts]} />
+              <Paragraph className='target-data' text={[`Settlements:  `, settlement]} />
+              <Paragraph className='target-data' text={[`Arbitration  `, arbitration]} />
+              <Paragraph className='target-data' text={[`Other Regulatory Concerns:  `, otherRegulatory]} />
+              <Paragraph className='target-data' text={[`Internal Issues:  `, internalIssues]} />
+          </div>
     );
 };
 

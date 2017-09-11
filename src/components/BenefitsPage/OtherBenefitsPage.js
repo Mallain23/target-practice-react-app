@@ -4,6 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
 
+import '../CompanyProfile/CompanyProfile.css'
+
 export function OtherBenefitsPage (props) {
 
     const { services,
@@ -15,18 +17,15 @@ export function OtherBenefitsPage (props) {
             internalOtherBenefitsRating} = props.selectedCompany.otherBenefitsProvided
 
     return (
-        <Row>
-            <Col xs={12}>
-                  <h3>Other Benefits</h3>
-                  <Paragraph className='company-data' text={`Services: ${services}`} />
-                  <Paragraph className='company-data' text={`Products: ${products}`} />
-                  <Paragraph className='company-data' text={`People: ${people}`} />
-                  <Paragraph className='company-data' text={`Revenue Enhancements: ${revenueEnhancements}`} />
-                  <Paragraph className='company-data' text={`Miscellaneous: ${miscellaneous}`} />
-                  <Paragraph className='company-data' text={`Assessment: ${otherBenefitsAssessment}`} />
-                  <Paragraph className='company-data' text={`Rating: ${internalOtherBenefitsRating}`} />
-            </Col>
-        </Row>
+        <div className='data-container'>
+            <Paragraph className='target-data' text={[`Services: `, services]} />
+            <Paragraph className='target-data' text={[`Products: `, products]} />
+            <Paragraph className='target-data' text={[`People: `, people]} />
+            <Paragraph className='target-data' text={[`Revenue Enhancements: `, revenueEnhancements]} />
+            <Paragraph className='target-data' text={[`Miscellaneous: `, miscellaneous]} />
+            <Paragraph className='target-data' text={[`Assessment of Other Benefits: `, otherBenefitsAssessment]} />
+            <Paragraph className='target-data' text={[`Rating of Other Benefits: `, internalOtherBenefitsRating]} />
+        </div>
     );
 };
 

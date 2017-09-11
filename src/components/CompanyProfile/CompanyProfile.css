@@ -1,0 +1,22 @@
+
+.data-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+
+}
+
+.target-data {
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  color: #777;
+  line-height: 170%;
+  font-size: 16px;
+  font-weight: 100;
+
+}
+
+.footer {
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: 30px;
+  margin-left: 55px;
+}

@@ -28,9 +28,9 @@ export class FinancialPage extends React.Component {
     render() {
 
         return (
-            <Row>
+            <div>
                 {this.renderComponent()}
-            </Row>
+            </div>
 
         );
     };

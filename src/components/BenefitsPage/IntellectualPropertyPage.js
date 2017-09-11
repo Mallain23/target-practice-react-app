@@ -4,6 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
 
+import '../CompanyProfile/CompanyProfile.css'
+
 export function IntellectualPropertyPage (props) {
 
     const { patents,
@@ -14,17 +16,14 @@ export function IntellectualPropertyPage (props) {
             internalIPRating } = props.selectedCompany.intellectualProperty
 
     return (
-        <Row>
-            <Col xs={12}>
-                  <h3>Intellectual Property Benefits</h3>
-                  <Paragraph className='company-data' text={`Information on Patents held by the Target: ${patents}`} />
-                  <Paragraph className='company-data' text={`Information on Trademarks held by the Target: ${trademarks}`} />
-                  <Paragraph className='company-data' text={`Information on Copyrights held by the Target: ${copyrights}`} />
-                  <Paragraph className='company-data' text={`Negative Impacts or Concerns from IP: ${negative}`} />
-                  <Paragraph className='company-data' text={`Assessment of IP: ${internalAssessmentOfIP}`} />
-                  <Paragraph className='company-data' text={`Rating: ${internalIPRating}`} />
-            </Col>
-        </Row>
+          <div className='data-container'>
+                  <Paragraph className='target-data' text={[`Patents held by the Target:  `, patents]} />
+                  <Paragraph className='target-data' text={[`Trademarks held by the Target:  `, trademarks]} />
+                  <Paragraph className='target-data' text={[`Copyrights held by the Target:  `, copyrights]} />
+                  <Paragraph className='target-data' text={[`Negative Impacts or Concerns from IP:  `, negative]} />
+                  <Paragraph className='target-data' text={[`Assessment of IP:  `, internalAssessmentOfIP]} />
+                  <Paragraph className='target-data' text={[`Rating of IP:  `, internalIPRating]} />
+          </div>
     );
 };
 

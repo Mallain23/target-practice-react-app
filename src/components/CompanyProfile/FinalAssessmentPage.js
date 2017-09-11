@@ -10,14 +10,11 @@ export class FinalAssessmentPage extends React.Component {
         const { finalAssessment, overallRating, status } = this.props.selectedCompany
 
         return (
-            <Row>
-                <Col xs={12}>
-                      <Paragraph className='company-data' text={`Final Assessment: ${finalAssessment}`} />
-                      <Paragraph className='company-data' text={`Overall Rating: ${overallRating}`} />
-                      <Paragraph className='company-data' text={`Status: ${status}`} />
-                </Col>
-            </Row>
-
+            <div className='data-container'>
+                <Paragraph className='target-data' text={['Final Assessment:  ', finalAssessment]} />
+                <Paragraph className='target-data' text={['Overall Rating:  ', overallRating]} />
+                <Paragraph className='target-data' text={['Status: ', status]} />
+           </div>
         );
     };
 };

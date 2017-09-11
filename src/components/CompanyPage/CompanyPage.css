@@ -1,3 +1,54 @@
 .header {
-  margin-left: 100px;
+margin-left: 50px;
+}
+
+.page-container {
+
+}
+.Pending {
+  color: #0000e6;
+}
+
+.Approved {
+  color: 	#32CD32
+}
+
+.Declined {
+  color: #ff0000;
+}
+
+.Researching {
+  color: #ff9900;
+}
+
+.page-name-container {
+  margin-left: 55px;
+  border-bottom: 1px solid #e7e7e7;
+
+}
+
+.edit-button {
+  background-color: transparent;
+  font-family: Alegreya,serif;
+  color: #88b2cc;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.edit-button:hover {
+  color:  #005c99
+}
+.page-name {
+  font-size: 24px;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  color: #777;
+  display: inline-block;
+}
+
+
+.bold {
+  font-weight:900;
+  font-size: 16px;
 }

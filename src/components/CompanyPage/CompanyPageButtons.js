@@ -11,7 +11,6 @@ export class CompanyPageButtons extends React.Component {
 
         this.handleEditClick = this.handleEditClick.bind(this)
         this.handleAddContactClick = this.handleAddContactClick.bind(this)
-
     };
 
     handleEditClick(e) {
@@ -31,16 +30,16 @@ export class CompanyPageButtons extends React.Component {
 
     renderButton() {
       const { selectedPage } = this.props
-      return selectedPage === 'Company Directory' ?  <Button value={selectedPage} onClick={this.handleAddContactClick} > Add New Contact</Button> :
-                              <NavItem value={selectedPage} onClick={this.handleEditClick} > Edit Information</NavItem>
+      return selectedPage === 'Target Directory' ?  <button className='edit-button' value={selectedPage} onClick={this.handleAddContactClick} > Add New Contact</button> :
+                              <button className='edit-button' value={selectedPage} onClick={this.handleEditClick} > Edit Information</button>
     };
 
     render() {
 
         return(
-            <Col xs={12} md={4}>
+            <span>
               {this.renderButton()}
-            </Col>
+            </span>
         );
     };
 };

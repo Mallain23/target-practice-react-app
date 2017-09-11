@@ -47,11 +47,11 @@ export class CompanyPage extends React.Component {
     renderPageContent() {
           const { selectedPage } = this.props
 
-          if (selectedPage === 'Company Overview') {
+          if (selectedPage === 'Target Profile') {
               return <CompanyOverview {...this.props} />
           }
 
-          else if (selectedPage === 'Company Directory') {
+          else if (selectedPage === 'Target Directory') {
               return <CompanyDirectory {...this.props} />
           }
 
@@ -86,9 +86,10 @@ export class CompanyPage extends React.Component {
         const { companyName } = this.props.selectedCompany
 
         return (
-              <div>
+              <div className='page-container'>
                   <Row >
-                      <Col xs={12}>
+                      <Col xs={12} md={1}></Col>
+                      <Col xs={12} md={11}>
                         <div className='header'>
                           <CompanyPageNav {...this.props} />
                         </div>
@@ -96,16 +97,26 @@ export class CompanyPage extends React.Component {
                       </Col>
                   </Row>
                   <Row>
-                      <Col xs={12} >
-                          <h3 className='page-name'>{selectedPage}</h3>
+                      <Col xs={12} md={1}></Col>
+                      <Col xs={12} md={11}>
+                          <div className='page-name-container'>
+                              <h3 className='page-name'>{selectedPage}</h3>
+                               <CompanyPageButtons {...this.props}/>
+                          </div>
                       </Col>
                   </Row>
                   <Row>
-                      <Col xs={12}>
-                          <CompanyPageButtons {...this.props}/>
-                      </Col>
-                      {this.renderPageContent()}
-                  </Row>
+                      <Col xs={12} md={1}></Col>
+                      <Col xs={12} md={10}>
+                    {this.renderPageContent()}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={1}></Col>
+                    <Col xs={12} md={11}>
+                      <div className='footer'></div>
+                    </Col>
+                </Row>
               </div>
 
         );

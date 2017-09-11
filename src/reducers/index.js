@@ -20,7 +20,7 @@ import { SORT_COMPANIES,
          VIEW_COMPANIES_BY_STATUS } from '../components/actions/SortActions'
 
 const COMPANY_NAME = 'companyName'
-const COMPANY_OVERVIEW = 'Company Overview'
+const TARGET_PROFILE = 'Target Profile'
 
 const initialState = {
     companies: mockData,
@@ -165,7 +165,7 @@ export default function reducer(state = initialState, action) {
 
           return Object.assign({}, state, {
               selectedCompany,
-              selectedPage: COMPANY_OVERVIEW
+              selectedPage: TARGET_PROFILE
           });
     }
 

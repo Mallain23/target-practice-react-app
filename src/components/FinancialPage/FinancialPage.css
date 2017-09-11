@@ -6,3 +6,18 @@
 .financial-report-button:hover {
   background-color: grey;
 }
+
+.section-header {
+  font-size: 18px;
+  font-weight: 900;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  color: #777;
+  line-height: 200%;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 5px;
+}
+
+.section {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}

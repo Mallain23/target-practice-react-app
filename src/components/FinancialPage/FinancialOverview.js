@@ -4,6 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
 
+import '../CompanyProfile/CompanyProfile.css'
+import './FinancialPage.css'
 
 export class FinancialOverview extends React.Component {
 
@@ -18,18 +20,22 @@ export class FinancialOverview extends React.Component {
                 internalFinancialRating  } = this.props.selectedCompany.financialMatters
 
         return (
-                <Col xs={12}>
-                    <Paragraph className='company-data' text={`Statement of Current Finances: ${statementFromCompany}`} />
-                    <Paragraph className='company-data' text={`Financial Reports Audited: ${financesAudited.isAudited}`} />
-                    <Paragraph className='company-data' text={`Who audits Finances: ${financesAudited.whoAudits}`} />
-                    <h3>Business Margins</h3>
-                    <Paragraph className='company-data' text={`Current Status of Business Margins: ${status}`} />
-                    <Paragraph className='company-data' text={`Company Projections for Business Margins: ${companyProjections}`} />
-                    <Paragraph className='company-data' text={`Are Projections Reasonable: ${areProjectionsReasonable}`} />
-                    <h3>Final Assessment and Rating of Finances</h3>
-                    <Paragraph className='company-data' text={`Internal Assessment: ${internalAssessmentOfFinances}`} />
-                    <Paragraph className='company-data' text={`Rating of Finances: ${internalFinancialRating}`} />
-                </Col>
+            <div className='data-container'>
+                <span className='section-header'>Financial Factors</span>
+                <div className='section'>
+                    <Paragraph className='target-data' text={[`Statement of Current Finances:  `, statementFromCompany]} />
+                    <Paragraph className='target-data' text={[`Are the Financial Reports Audited:  `, financesAudited.isAudited]} />
+                    <Paragraph className='target-data' text={[`Who audits Finances:  `, financesAudited.whoAudits]} />
+                    <Paragraph className='target-data' text={[`Current Status of Business Margins:  `, status]} />
+                    <Paragraph className='target-data' text={[`Company Projections for Business Margins:  `, companyProjections]} />
+                    <Paragraph className='target-data' text={[`Are Projections Reasonable:  `, areProjectionsReasonable]} />
+                </div>
+                <span className='section-header'>Final Assessment and Rating of Finances</span>
+                <div className='section'>
+                    <Paragraph className='target-data' text={[`Assessment of Finances:  `, internalAssessmentOfFinances]} />
+                    <Paragraph className='target-data' text={[`Rating of Finances:  `, internalFinancialRating]} />
+                </div>
+            </div>
         );
     };
 };

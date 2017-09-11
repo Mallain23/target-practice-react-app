@@ -38,11 +38,11 @@ export class EditPageModal extends React.Component {
               return <AssetLiabilityForm  />
           }
 
-          else if (selectedPage === 'Company Overview') {
+          else if (selectedPage === 'Target Profile') {
               return <EditCompanyOverviewForm  />
           }
 
-          else if (selectedPage === 'Company Directory') {
+          else if (selectedPage === 'Target Directory') {
               return <ManagementDirectoryForm />
           }
 

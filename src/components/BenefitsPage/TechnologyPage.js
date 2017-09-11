@@ -4,6 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
 
+import '../CompanyProfile/CompanyProfile.css'
+
 export function TechnologyPage (props) {
     const { licenses,
             softwareUse,
@@ -12,15 +14,12 @@ export function TechnologyPage (props) {
             internalTechRating } = props.selectedCompany.technology
 
     return (
-        <Row>
-            <Col xs={12}>
-                  <h3>Technology Benefits</h3>
-                  <Paragraph className='company-data' text={`Licenses: ${licenses}`} />
-                  <Paragraph className='company-data' text={`Software: ${softwareUse}`} />
-                  <Paragraph className='company-data' text={`Assessment: ${technologyAssessment}`} />
-                  <Paragraph className='company-data' text={`Rating: ${internalTechRating}`} />
-            </Col>
-        </Row>
+        <div className='data-container'>
+                  <Paragraph className='target-data' text={[`Licenses: `, licenses]} />
+                  <Paragraph className='target-data' text={[`Software: `, softwareUse]} />
+                  <Paragraph className='target-data' text={[`Assessment of Technology: `, technologyAssessment]} />
+                  <Paragraph className='target-data' text={[`Rating of Technology: `, internalTechRating]} />
+        </div>
     );
 };
 
