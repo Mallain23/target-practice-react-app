@@ -10,17 +10,15 @@ import { required, nonEmpty } from '../validators'
 
 import Input from './Input'
 
-export class AddCompanyForm extends React.Component {
-    constructor(props) {
-        super(props)
+import './Modal.css'
 
-        this.handleClose = this.handleClose.bind(this)
-    };
+export class AddCompanyForm extends React.Component {
 
     onSubmit(newCompany) {
         const { companies } = this.props
+
         if (companies.some(({ companyName }) => companyName === newCompany.companyName)) {
-          return alert("A Company with the same name already exists in the database!")
+            return alert("A Company with the same name already exists in the database!")
         }
 
         const companyData = formatDataForDatabaseEntry(newCompany)
@@ -30,26 +28,19 @@ export class AddCompanyForm extends React.Component {
         this.props.dispatch(closeModal())
     };
 
-    handleClose() {
-          this.props.dispatch(closeModal())
-    };
-
     render() {
 
           return (
               <Form className="add-company-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                   <label htmlFor="company-name">Target Name</label>
                   <Field component={Input}
-                        placeholder='Enter Company Name'
+                        placeholder='Enter Target Name'
                         type="text" name="companyName"
                         validate={[required, nonEmpty]} />
                   <Button type="submit"
-                         disabled={this.props.pristine || this.props.submitting} >
-                         Add Company
-                  </Button>
-                  <Button disabled={this.props.submitting}
-                          onClick={this.handleClose} >
-                          Close
+                          className='modal-button'
+                          disabled={this.props.pristine || this.props.submitting} >
+                          Add Target
                   </Button>
               </Form>
         );

@@ -3,8 +3,6 @@ import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { Form } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
-import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 import { formatAL } from './utils'
 
@@ -12,11 +10,6 @@ import Input from '../AddCompanyModal/Input'
 
 
 export class AssetLiabilityForm extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.handleCancel = this.handleCancel.bind(this)
-    };
 
     componentDidMount() {
         const { selectedCompany, editAL } = this.props
@@ -48,10 +41,6 @@ export class AssetLiabilityForm extends React.Component {
         this.props.dispatch(updateTarget(formattedObj))
     };
 
-    handleCancel() {
-        this.props.dispatch(closeModal())
-    };
-
     render() {
         const { propertyType } = this.props
         const propertyTypeSingular = propertyType === 'Assets' ? 'Asset' : 'Liability'
@@ -75,11 +64,6 @@ export class AssetLiabilityForm extends React.Component {
                     type="submit"
                     disabled={this.props.submitting}>
                     Submit
-                </button>
-                <button
-                    disabled={this.props.submitting}
-                    onClick={this.handleCancel}>
-                    Cancel
                 </button>
             </Form>
         );

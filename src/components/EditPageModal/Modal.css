@@ -2,3 +2,23 @@
   max-height: 75%;
   overflow: scroll;
 }
+
+#edit-page-modal {
+    font-size: 20px;
+    color: #777;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+.modal-body {
+  color: #777;
+  font-size: 18px;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+.modal-button {
+    padding: 5px;
+    color: #777;
+    font-size: 16px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+
+}

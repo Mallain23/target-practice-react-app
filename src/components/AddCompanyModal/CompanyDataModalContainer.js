@@ -35,6 +35,12 @@ export class CompanyDataModalContainer extends React.Component {
                         <AddCompanyForm {...this.props} showModal={showModal}/>
                     </Modal.Body>
                     <Modal.Footer>
+                    <Button
+                        disabled={this.props.submitting}
+                        onClick={this.handleClose}
+                        className='modal-button'>
+                        Cancel
+                    </Button>
                   </Modal.Footer>
               </Modal>
             </div>

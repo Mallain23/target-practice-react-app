@@ -18,19 +18,19 @@ export class FinancialOverview extends React.Component {
                 financesAudited,
                 internalAssessmentOfFinances,
                 internalFinancialRating  } = this.props.selectedCompany.financialMatters
-
+        console.log(financesAudited)
         return (
             <div className='data-container'>
-                <span className='section-header'>Financial Factors</span>
+                <div className='section-header'>Financial Factors</div>
                 <div className='section'>
                     <Paragraph className='target-data' text={[`Statement of Current Finances:  `, statementFromCompany]} />
-                    <Paragraph className='target-data' text={[`Are the Financial Reports Audited:  `, financesAudited.isAudited]} />
+                    <Paragraph className='target-data' text={[`Finances Audited:  `,  financesAudited.isAudited]} />
                     <Paragraph className='target-data' text={[`Who audits Finances:  `, financesAudited.whoAudits]} />
                     <Paragraph className='target-data' text={[`Current Status of Business Margins:  `, status]} />
                     <Paragraph className='target-data' text={[`Company Projections for Business Margins:  `, companyProjections]} />
                     <Paragraph className='target-data' text={[`Are Projections Reasonable:  `, areProjectionsReasonable]} />
                 </div>
-                <span className='section-header'>Final Assessment and Rating of Finances</span>
+                <div className='section-header'>Final Assessment and Rating of Finances</div>
                 <div className='section'>
                     <Paragraph className='target-data' text={[`Assessment of Finances:  `, internalAssessmentOfFinances]} />
                     <Paragraph className='target-data' text={[`Rating of Finances:  `, internalFinancialRating]} />

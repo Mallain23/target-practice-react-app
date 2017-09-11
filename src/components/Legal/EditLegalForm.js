@@ -1,20 +1,16 @@
 import React from 'react'
 import { Field, reduxForm, focus, initialize} from 'redux-form'
 import { connect } from 'react-redux'
-import { Form } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
-import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 
 import Input from '../AddCompanyModal/Input'
 import RatingSelect from '../EditPageModal/RatingSelect'
 
-export class EditLegalForm extends React.Component {
-    constructor(props) {
-        super(props)
+import '../EditPageModal/Modal.css'
 
-        this.handleCancel = this.handleCancel.bind(this)
-    };
+export class EditLegalForm extends React.Component {
 
     componentDidMount() {
 
@@ -60,10 +56,6 @@ export class EditLegalForm extends React.Component {
         const formattedObj = { legal: values }
 
         this.props.dispatch(updateTarget(formattedObj))
-    };
-
-    handleCancel() {
-        this.props.dispatch(closeModal())
     };
 
     render() {
@@ -132,16 +124,12 @@ export class EditLegalForm extends React.Component {
                 <Field
                     component={RatingSelect}
                     name="rating"/>
-                <button
+                <Button
                     type="submit"
+                    className='modal-button'
                     disabled={this.props.submitting}>
                     Submit
-                </button>
-                <button
-                    disabled={this.props.submitting}
-                    onClick={this.handleCancel}>
-                    Cancel
-                </button>
+                </Button>
             </Form>
         );
     };

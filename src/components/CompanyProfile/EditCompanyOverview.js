@@ -1,7 +1,7 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
-import { Form } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/ShowHideActions'
@@ -10,17 +10,11 @@ import { formatCompanyProfileData } from './Utils'
 import Input from '../AddCompanyModal/Input'
 
 export class EditCompanyOverviewForm extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.handleCancel = this.handleCancel.bind(this)
-    };
 
     componentDidMount() {
+        const { selectedCompany } = this.props
 
-    const { selectedCompany } = this.props
-
-     this.handleInitialize(selectedCompany)
+        this.handleInitialize(selectedCompany)
 
     };
 
@@ -57,10 +51,6 @@ export class EditCompanyOverviewForm extends React.Component {
         const formattedObj = { companyProfile, companyName, yearFounded, costOfAcquisition}
 
         this.props.dispatch(updateTarget(formattedObj))
-    };
-
-    handleCancel() {
-        this.props.dispatch(closeModal())
     };
 
     render() {
@@ -145,16 +135,11 @@ export class EditCompanyOverviewForm extends React.Component {
                       type="textarea"
                       name='presentCondition'
                       placeholder='Current Industry Information and Industry Projections' />
-                <button
+                <Button
                     type="submit"
                     disabled={this.props.submitting}>
                     Submit
-                </button>
-                <button
-                    disabled={this.props.submitting}
-                    onClick={this.handleCancel}>
-                    Cancel
-                </button>
+                </Button>
             </Form>
         );
     };

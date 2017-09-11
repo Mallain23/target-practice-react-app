@@ -82,18 +82,19 @@ export class EditPageModal extends React.Component {
                        container={this}
                        aria-labelledby="edit-page-modal">
 
-                    <Modal.Header closeButton>
+                    <Modal.Header className='modal-header' closeButton>
                         <Modal.Title id="edit-page-modal">{companyName} </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body className='modal-body'>
                         {this.renderForm()}
                     </Modal.Body>
-                    <Modal.Footer>
-                        <button
+                    <Modal.Footer className='moda-footer'>
+                        <Button
                             disabled={this.props.submitting}
-                            onClick={this.handleClose}>
+                            onClick={this.handleClose}
+                            className='modal-button'>
                             Cancel
-                        </button>
+                        </Button>
                   </Modal.Footer>
               </Modal>
             </div>

@@ -11,17 +11,11 @@ import StatusSelect from '../EditPageModal/StatusSelect'
 import RatingSelect from '../EditPageModal/RatingSelect'
 
 export class FinalAssessmentForm extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.handleCancel = this.handleCancel.bind(this)
-    };
 
     componentDidMount() {
+        const { selectedCompany } = this.props
 
-    const { selectedCompany } = this.props
-
-     this.handleInitialize(selectedCompany)
+        this.handleInitialize(selectedCompany)
 
     };
 
@@ -41,10 +35,6 @@ export class FinalAssessmentForm extends React.Component {
 
     onSubmit(values) {
         this.props.dispatch(updateTarget(values))
-    };
-
-    handleCancel() {
-        this.props.dispatch(closeModal())
     };
 
     render() {
@@ -71,11 +61,6 @@ export class FinalAssessmentForm extends React.Component {
                     type="submit"
                     disabled={this.props.submitting}>
                     Submit
-                </button>
-                <button
-                    disabled={this.props.submitting}
-                    onClick={this.handleCancel}>
-                    Cancel
                 </button>
             </Form>
         );

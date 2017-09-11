@@ -26,16 +26,17 @@ export class CompanyPageButtons extends React.Component {
         this.props.dispatch(setEditContactToFalse())
     };
 
-
-
     renderButton() {
       const { selectedPage } = this.props
+      if (selectedPage === 'Financial Statements' || selectedPage === 'Assets and Liabilities') {
+        return ''
+      }
+
       return selectedPage === 'Target Directory' ?  <button className='edit-button' value={selectedPage} onClick={this.handleAddContactClick} > Add New Contact</button> :
                               <button className='edit-button' value={selectedPage} onClick={this.handleEditClick} > Edit Information</button>
     };
 
     render() {
-
         return(
             <span>
               {this.renderButton()}

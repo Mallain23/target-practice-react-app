@@ -1,7 +1,7 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 import { connect } from 'react-redux'
-import { Form } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
 import { closeModal } from '../actions/ShowHideActions'
@@ -61,11 +61,11 @@ export class FinancialReportForm extends React.Component {
                         type="textarea"
                         name="Report"
                         componentClass="textarea" />
-                <button
+                <Button
                     type="submit"
                     disabled={this.props.submitting}>
                     Edit
-                </button>
+                </Button>
             </Form>
         );
     };

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
-import { Form } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
@@ -11,17 +11,11 @@ import RatingSelect from '../EditPageModal/RatingSelect'
 import Input from '../AddCompanyModal/Input'
 
 export class EditBenefitsForm extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.handleCancel = this.handleCancel.bind(this)
-    };
 
     componentDidMount() {
+        const { selectedCompany } = this.props
 
-    const { selectedCompany } = this.props
-
-     this.handleInitialize(selectedCompany)
+        this.handleInitialize(selectedCompany)
 
     };
 
@@ -76,10 +70,6 @@ export class EditBenefitsForm extends React.Component {
 
         this.props.dispatch(updateTarget(formattedObj))
 
-    };
-
-    handleCancel() {
-        this.props.dispatch(closeModal())
     };
 
     render() {
@@ -180,16 +170,11 @@ export class EditBenefitsForm extends React.Component {
                   <label htmlFor="internalOtherBenefitsRating">Overall Rating of Other Benefits Target will Provide  </label>
                   <Field component={RatingSelect}
                          name="internalOtherBenefitsRating" />
-                  <button
-                    type="submit"
-                    disabled={this.props.submitting} >
-                    Submit
-                </button>
-                <button
+                <Button
                     disabled={this.props.submitting}
-                    onClick={this.handleCancel}>
-                    Cancel
-                </button>
+                    type='submit' >
+                    Submit
+                </Button>
             </Form>
         );
     };
