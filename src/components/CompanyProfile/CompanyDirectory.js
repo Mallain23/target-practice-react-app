@@ -6,6 +6,8 @@ import { updateTarget  } from '../actions/EditTarget'
 import { getContactDataAndSetEditToTrue } from '../actions/ManagementDirectory'
 import { removeContact } from './Utils'
 
+import './CompanyProfile.css'
+
 export class CompanyDirectory extends React.Component {
     constructor(props) {
         super(props)
@@ -34,6 +36,7 @@ export class CompanyDirectory extends React.Component {
     render() {
         const { managementDirectory } = this.props
         let formattedDirectory
+
         if (managementDirectory[0] === 'No Information Provided') {
             formattedDirectory = managementDirectory[0]
         }
@@ -47,20 +50,19 @@ export class CompanyDirectory extends React.Component {
                               <li className='contact-work info'>Work Phone: {work}</li>
                               <li className='contact-email info'>Email: {email}</li>
                           </ul>
-                          <Button onClick={this.handleEditClick} value={name} >Edit Contact</Button>
-                          <Button onClick={this.handleDeleteClick} value={name}>Delete Contact</Button>
+                          <button className='edit-delete-button' onClick={this.handleEditClick} value={name} >Edit Contact</button>
+                          <span className='divider'> | </span>
+                          <button className='edit-delete-button' onClick={this.handleDeleteClick} value={name}>Delete Contact</button>
                     </li>
                 );
             });
         }
 
         return (
-            <Row>
-                <Col xs={12}>
-                    <h3>Management Directory</h3>
+            <div className='data-container'>
                     {formattedDirectory}
-                </Col>
-            </Row>
+            </div>
+
         );
     };
 };

@@ -1,5 +1,5 @@
 import React  from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
 
@@ -9,6 +9,8 @@ import {isNumber, required, nonEmpty } from '../validators'
 import { closeModal } from '../actions/ShowHideActions'
 import { updateTarget } from '../actions/EditTarget'
 import { formatContacts } from './Utils'
+
+import '../EditPageModal/Modal.css'
 
 
 export class ManagementDirectoryForm extends React.Component {
@@ -51,36 +53,32 @@ export class ManagementDirectoryForm extends React.Component {
 
     render() {
         return (
-          <form className="edit-management-directory-form"
-                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
-              <label htmlFor="name">Contact Name</label>
-              <Field component={Input} placeholder='Enter Contact Name' type="text" name="name" validate={[required, nonEmpty]} />
-              <label htmlFor="cell">Cell Phone Number</label>
-              <Field component={Input} type="text" name="cell" placeholder='Enter Contacts Cell Phone Number' validate={[required, nonEmpty]} />
-              <label htmlFor="work">Work Phone Number</label>
-              <Field
-                  component={Input}
-                  type="text"
-                  name="work"
-                  placeholder='Enter Contacts Work Number'
-                  validate={[required, nonEmpty]} />
-              <label htmlFor="email">Email Address</label>
-              <Field
-                  component={Input}
-                  className='text'
-                  name="email"
-                  placeholder='Enter Contacts Email Address' />
-              <button
-                  type="submit"
-                  disabled={this.props.submitting}>
-                  Submit
-              </button>
-              <button
-                  disabled={this.props.submitting}
-                  onClick={this.handleCancel}>
-                  Cancel
-              </button>
-          </form>
+            <Form className="edit-management-directory-form"
+                  onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
+                <label htmlFor="name">Contact Name</label>
+                <Field component={Input} placeholder='Enter Contact Name' type="text" name="name" validate={[required, nonEmpty]} />
+                <label htmlFor="cell">Cell Phone Number</label>
+                <Field component={Input} type="text" name="cell" placeholder='Enter Contacts Cell Phone Number' validate={[required, nonEmpty]} />
+                <label htmlFor="work">Work Phone Number</label>
+                <Field
+                    component={Input}
+                    type="text"
+                    name="work"
+                    placeholder='Enter Contacts Work Number'
+                    validate={[required, nonEmpty]} />
+                <label htmlFor="email">Email Address</label>
+                <Field
+                    component={Input}
+                    className='text'
+                    name="email"
+                    placeholder='Enter Contacts Email Address' />
+                <Button
+                    type="submit"
+                    className='modal-button'
+                    disabled={this.props.submitting}>
+                    Submit
+                </Button>
+            </Form>
         );
     };
 };
