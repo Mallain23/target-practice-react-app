@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button } from 'react-bootstrap'
 
 import { getFinacnialReport } from '../actions'
 import { openEditPageModal } from '../actions/ShowHideActions'
@@ -33,7 +32,6 @@ export class FormattedFinacnialReports extends React.Component {
 
         this.props.dispatch(getFinacnialReport(name, typeOfReport))
         this.props.dispatch(openEditPageModal())
-        // this.props.dispatch(editFinancialReport())
     };
 
     render() {
@@ -43,13 +41,14 @@ export class FormattedFinacnialReports extends React.Component {
 
         const formattedFinacnialReports = arrayOfFinancialReports.map(({title, report}, index) => {
             return (
-                <li key={index}>
+                <li className='financial-statements-list-item' key={index}>
                     <button className='financial-report-button'
                                value={title}
                                onClick={this.handleClick} >
                                {title}
                     </button>
-                    <Button value={title} onClick={this.handleEditClick}>Edit Report</Button>
+                    <span className='divider'> | </span>
+                    <button className='financial-report-button' value={title} onClick={this.handleEditClick}>Edit Statement</button>
                 </li>
             );
         });
@@ -57,7 +56,7 @@ export class FormattedFinacnialReports extends React.Component {
 
         return (
           <div>
-              <h3>{typeOfReport} Financial Reports</h3>
+              <div className='section-header'>{typeOfReport} Financial Statements</div>
               <ul className={this.props.className}>
                   {formattedFinacnialReports}
               </ul>

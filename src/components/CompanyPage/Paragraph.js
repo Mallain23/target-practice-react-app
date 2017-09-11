@@ -2,11 +2,12 @@ import React from 'react'
 
 import './CompanyPage.css'
 
-export default class Paragraph extends React.Component {
+export default function Paragraph (props) {
 
-    render() {
-        return (
-            <p className={this.props.className}><span className='bold'>{this.props.text[0]}</span>{this.props.text[1]} </p>
-        );
-    };
+    return (
+        <p className={props.className}>
+            <span className='bold'>{props.text[0]}</span>
+            {props.text[1]} 
+        </p>
+    );
 };

@@ -27,23 +27,23 @@ export const formatDataForDatabaseEntry = ({companyName}) => ({
         totalValueOfAllAssets: 'No Data Available Yet',
         liabilities: [],
         totalLiabilities: 'No Data Available Yet',
-        financialStatementsAnnual: [ {title:'2017 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
-                                     {title:'2016 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
-                                     {title:'2015 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
-                                     {title:'2014 Annual Financial Report', Report: 'No Information Provided', type: 'financialStatementsAnnual'}
+        financialStatementsAnnual: [ {title:'2017 Annual Financial Statement', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
+                                     {title:'2016 Annual Financial Statement', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
+                                     {title:'2015 Annual Financial Statement', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
+                                     {title:'2014 Annual Financial Statement', Report: 'No Information Provided', type: 'financialStatementsAnnual'}
 
         ],
-        financialStatementsQuarterly: [ {title: '2017 Q1 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2017 Q2 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2017 Q3 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2016 Q1 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2016 Q2 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2016 Q3 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2016 Q4 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2015 Q1 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2015 Q2 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2015 Q3 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2015 Q4 Financial Report', Report: 'No Information Provided', type: 'financialStatementsQuarterly'}
+        financialStatementsQuarterly: [ {title: '2017 Q1 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q2 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q3 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q1 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q2 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q3 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q4 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q1 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q2 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q3 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q4 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'}
         ],
         financesAudited: {
             isAudited: 'No Information Provided',

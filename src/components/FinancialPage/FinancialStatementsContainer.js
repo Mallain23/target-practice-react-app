@@ -3,30 +3,27 @@ import { connect } from 'react-redux'
 import { Col, Row } from 'react-bootstrap'
 
 import Paragraph from '../CompanyPage/Paragraph'
-
 import FormattedFinacnialReports from './FormattedFinacnialReports'
 
+import '../CompanyProfile/CompanyProfile.css'
 
-export class FinancialStatementsContainer extends React.Component {
 
-    render() {
+export function FinancialStatementsContainer (props) {
 
-        const { financialStatementsAnnual, financialStatementsQuarterly } = this.props.selectedCompany.financialMatters
+    const { financialStatementsAnnual, financialStatementsQuarterly } = props.selectedCompany.financialMatters
 
-        return (
-            <Col xs={12}>
-                <h3>Financial Reports</h3>
-                    <FormattedFinacnialReports className='annual-financial-reports'
-                                                arrayOfReports={financialStatementsAnnual}
-                                                name='Annual'
-                                                {...this.props} />
-                    <FormattedFinacnialReports className='quarterly-financial-reports'
-                                                arrayOfReports={financialStatementsQuarterly}
-                                                name='Quarterly'
-                                                {...this.props}  />
-            </Col>
-        );
-    };
+    return (
+        <div className='data-container'>
+                <FormattedFinacnialReports className='annual-financial-reports'
+                                            arrayOfReports={financialStatementsAnnual}
+                                            name='Annual'
+                                            {...props} />
+                <FormattedFinacnialReports className='quarterly-financial-reports'
+                                            arrayOfReports={financialStatementsQuarterly}
+                                            name='Quarterly'
+                                            {...props}  />
+        </div>
+    );
 };
 
 export const mapStateToProps = state => {

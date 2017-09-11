@@ -1,10 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button, Col, Row } from 'react-bootstrap'
+import { Button, Col, Row, Grid } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import { getFinacnialReport } from '../actions'
 
+import SideBarContainer from '../SideBar/SideBarContainer'
+
+import './FinancialPage.css'
 
 export class FullFinancialReport extends React.Component {
 
@@ -20,15 +23,32 @@ export class FullFinancialReport extends React.Component {
         const { selectedCompany, selectedFinancialReport } = this.props
 
         return (
-          <Row>
-              <Col xs={12} md={3}>
-              </Col>
-              <Col xs={12} md={9}>
-                  <h1>{selectedFinancialReport.title}</h1>
-                  <p>{selectedFinancialReport.Report}</p>
-                  <Link to={`/company/${selectedCompany.companyName}`}>Back </Link>
-              </Col>
-          </Row>
+            <Grid>
+                <Row>
+                    <Col xs={12} md={1}></Col>
+                    <Col xs={12} md={11}>
+                        <div className='statement-title-header'>
+                            <h3 className='statement-title'>
+                                {selectedFinancialReport.title}
+                                <span className='divider'> | </span>
+                                <Link className='back-link' to={`/company/${selectedCompany.companyName}`}>Back </Link>
+                            </h3>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={1}></Col>
+                    <Col xs={12} md={11}>
+                        <div className='data-container'>{selectedFinancialReport.Report} </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={1}></Col>
+                    <Col xs={12} md={11}>
+                        <div className='footer'></div>
+                    </Col>
+                </Row>
+           </Grid>
         );
     };
 };
