@@ -17,6 +17,7 @@ export const formatCompanyProfileData = data => {
           } = data
 
     return  {
+        yearFounded,
         location: {
             headQaurters,
             principlePlaceOfBusiness,

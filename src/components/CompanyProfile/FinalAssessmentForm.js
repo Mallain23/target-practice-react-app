@@ -61,7 +61,7 @@ export class FinalAssessmentForm extends React.Component {
                     name="status" />
                 <Button
                     type="submit"
-                    className='moda-button'
+                    className='modal-button'
                     disabled={this.props.submitting}>
                     Submit
                 </Button>

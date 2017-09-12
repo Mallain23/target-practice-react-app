@@ -11,24 +11,17 @@ import Input from '../AddCompanyModal/Input'
 
 
 export class FinancialReportForm extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.handleCancel = this.handleCancel.bind(this)
-    };
 
     componentDidMount() {
+        const { selectedFinancialReport } = this.props
 
-        if (this.props.editReport) {
-            const { selectedFinancialReport } = this.props
-            this.handleInitialize(selectedFinancialReport)
-        }
+        this.handleInitialize(selectedFinancialReport)
+
     };
 
     handleInitialize(selectedFinancialReport) {
 
         const { Report } = selectedFinancialReport
-
 
         const initValues = {
           Report

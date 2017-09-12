@@ -42,9 +42,9 @@ export const updateSearchResultsSuccess = searchResults => ({
 
 export const fetchCompanyData = _companyName => (dispatch, getState) => {
     const selectedCompanyData = getState().app.companies.find(({ companyName }) =>
-        companyName === _companyName)
+        companyName === _companyName);
 
-    dispatch(fetchCompanyDataSuccess(selectedCompanyData))
+    dispatch(fetchCompanyDataSuccess(selectedCompanyData));
 };
 
 export const FETCH_COMPANY_DATA_SUCCESS = 'FETCH_COMPANY_DATA_SUCCESS'

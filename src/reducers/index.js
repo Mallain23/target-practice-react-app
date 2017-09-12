@@ -97,7 +97,6 @@ export default function reducer(state = initialState, action) {
             showEditModal: false,
             showALModal: false,
             editAL: false
-
         });
     }
 
@@ -144,7 +143,8 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             companies: [...state.companies, company ],
             searchResults: [...state.companies, company],
-            selectedCompany: company
+            selectedCompany: company,
+            selectedPage: TARGET_PROFILE
         });
     }
 

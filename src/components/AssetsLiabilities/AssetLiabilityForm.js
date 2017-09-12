@@ -1,6 +1,6 @@
 import React from 'react'
 import {Field, reduxForm, focus, initialize} from 'redux-form';
-import { Form } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 import { updateTarget } from '../actions/EditTarget'
@@ -8,6 +8,7 @@ import { formatAL } from './utils'
 
 import Input from '../AddCompanyModal/Input'
 
+import '../EditPageModal/Modal.css'
 
 export class AssetLiabilityForm extends React.Component {
 
@@ -60,11 +61,12 @@ export class AssetLiabilityForm extends React.Component {
                       type='number'
                       step='0.01'
                       name="value"  />
-                <button
+                <Button
                     type="submit"
+                    className='modal-button'
                     disabled={this.props.submitting}>
                     Submit
-                </button>
+                </Button>
             </Form>
         );
     };

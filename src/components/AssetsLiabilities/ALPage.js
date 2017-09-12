@@ -21,10 +21,12 @@ export function ALPage (props){
     return (
             <div className='data-container'>
                 <FormattedAL className='asset-list'
+                             typeOfProperty='Assets'
                              arrayOfAL={assets}
                              name='Assets' />
                 <Paragraph className='target-data' text={[`Total Value of All Assets:  `, calcTotalAssetValue(assets)]} />
                 <FormattedAL className='liability-list'
+                            typeOfProperty='Liabilities'
                              arrayOfAL={liabilities}
                              name='Liabilities' />
                 <Paragraph className='target-data' text={[`Total Amount of All Liabilities:  `, calcTotalLiabilityValue(liabilities)]} />

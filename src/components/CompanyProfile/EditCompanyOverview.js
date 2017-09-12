@@ -50,7 +50,7 @@ export class EditCompanyOverviewForm extends React.Component {
     onSubmit(values) {
         const companyProfile = formatCompanyProfileData(values)
         const { companyName, yearFounded, costOfAcquisition } = values
-        const formattedObj = { companyProfile, companyName, yearFounded, costOfAcquisition}
+        const formattedObj = { companyProfile, companyName, costOfAcquisition}
 
         this.props.dispatch(updateTarget(formattedObj))
     };

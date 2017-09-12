@@ -47,13 +47,13 @@ export class FormattedAL extends React.Component  {
 
     render () {
         const arrayOfAL = this.props.arrayOfAL
-        const typeOfProperty = this.props.name
+        const typeOfProperty = this.props.typeOfProperty
+        
         const propertyTypeSingular = typeOfProperty === 'Assets' ? 'Asset' : 'Liability'
         let formattedAL
 
-
         if (arrayOfAL.length < 1) {
-           return formattedAL = 'No Information Provided'
+           formattedAL = <li className='prop-list'>No Information Provided</li>
         }
 
         else {

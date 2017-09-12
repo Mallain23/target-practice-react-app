@@ -95,7 +95,7 @@ export const formatDataForDatabaseEntry = ({companyName}) => ({
         internalIssues: 'No Information Provided',
         rating: 'No Information Provided'
     },
-    managementDirectory: ['No Information Provided'],
+    managementDirectory: [],
     finalAssessment: 'No Information Provided',
     overallRating: '0',
     status: 'Researching'

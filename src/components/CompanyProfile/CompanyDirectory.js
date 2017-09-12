@@ -37,8 +37,8 @@ export class CompanyDirectory extends React.Component {
         const { managementDirectory } = this.props
         let formattedDirectory
 
-        if (managementDirectory[0] === 'No Information Provided') {
-            formattedDirectory = managementDirectory[0]
+        if (managementDirectory.length < 1) {
+            formattedDirectory = ['No Information Provided']
         }
 
         else {
