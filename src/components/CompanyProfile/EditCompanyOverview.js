@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 
 import {required, nonEmpty } from '../validators';
-import { closeModal } from '../actions/ShowHideActions';
 import { updateTarget } from '../actions/EditTarget';
 import { formatCompanyProfileData } from './Utils';
 
@@ -50,7 +49,7 @@ export class EditCompanyOverviewForm extends React.Component {
 
     onSubmit(values) {
         const companyProfile = formatCompanyProfileData(values);
-        const { companyName, yearFounded, costOfAcquisition } = values;
+        const { companyName, costOfAcquisition } = values;
         const formattedObj = { companyProfile, companyName, costOfAcquisition};
 
         this.props.dispatch(updateTarget(formattedObj));

@@ -1,23 +1,22 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import {Field, reduxForm, focus, initialize} from 'redux-form';
-import { Form, Button } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import { Form, Button } from 'react-bootstrap';
 
-import { closeModal } from '../actions/ShowHideActions'
-import { updateTarget } from '../actions/EditTarget'
-import { formatOtherBenefitsData } from './utils'
+import { updateTarget } from '../actions/EditTarget';
+import { formatOtherBenefitsData } from './utils';
 
-import RatingSelect from '../EditPageModal/RatingSelect'
-import Input from '../AddCompanyModal/Input'
+import RatingSelect from '../EditPageModal/RatingSelect';
+import Input from '../AddCompanyModal/Input';
 
-import '../EditPageModal/Modal.css'
+import '../EditPageModal/Modal.css';
 
 export class EditOtherBenefitsForm extends React.Component {
 
     componentDidMount() {
-        const { selectedCompany } = this.props
+        const { selectedCompany } = this.props;
 
-        this.handleInitialize(selectedCompany)
+        this.handleInitialize(selectedCompany);
 
     };
 
@@ -29,10 +28,10 @@ export class EditOtherBenefitsForm extends React.Component {
                 revenueEnhancements,
                 miscellaneous,
                 assessment,
-                internalOtherBenefitsRating: _internalOtherBenefitsRating } = selectedCompany.otherBenefitsProvided
+                internalOtherBenefitsRating: _internalOtherBenefitsRating } = selectedCompany.otherBenefitsProvided;
 
 
-        const internalOtherBenefitsRating = parseInt(_internalOtherBenefitsRating)
+        const internalOtherBenefitsRating = parseInt(_internalOtherBenefitsRating);
 
         const initValues = {
             services,
@@ -55,7 +54,7 @@ export class EditOtherBenefitsForm extends React.Component {
     };
 
     render() {
-        const { status } = this.props.selectedCompany
+
         return (
             <Form className="edit--other-benefits-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                   <label htmlFor="services">Services that Target will Provide</label>
@@ -109,7 +108,7 @@ export class EditOtherBenefitsForm extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const   { selectedCompany } = state.app
+    const   { selectedCompany } = state.app;
 
     return {
         selectedCompany

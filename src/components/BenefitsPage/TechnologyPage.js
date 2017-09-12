@@ -1,17 +1,15 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Col, Row } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import Paragraph from '../CompanyPage/Paragraph'
+import Paragraph from '../CompanyPage/Paragraph';
 
-import '../CompanyProfile/CompanyProfile.css'
+import '../CompanyProfile/CompanyProfile.css';
 
 export function TechnologyPage (props) {
     const { licenses,
             softwareUse,
-            benefits,
             assessment: technologyAssessment,
-            internalTechRating } = props.selectedCompany.technology
+            internalTechRating } = props.selectedCompany.technology;
 
     return (
         <div className='data-container'>
@@ -24,11 +22,11 @@ export function TechnologyPage (props) {
 };
 
 export const mapStateToProps = state => {
-    const { selectedCompany } = state.app
+    const { selectedCompany } = state.app;
 
     return {
         selectedCompany
     };
 };
 
-export default connect(mapStateToProps)(TechnologyPage)
+export default connect(mapStateToProps)(TechnologyPage);

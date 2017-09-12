@@ -1,13 +1,9 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Col, Row } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import Paragraph from '../CompanyPage/Paragraph'
-
-import FormattedFinacnialReports from './FormattedFinacnialReports'
-import ALPage from '../AssetsLiabilities/ALPage'
-import FinancialOverview from './FinancialOverview'
-import FinancialStatementsContainer from './FinancialStatementsContainer'
+import ALPage from '../AssetsLiabilities/ALPage';
+import FinancialOverview from './FinancialOverview';
+import FinancialStatementsContainer from './FinancialStatementsContainer';
 
 export class FinancialPage extends React.Component {
 
@@ -44,4 +40,4 @@ export const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(FinancialPage)
+export default connect(mapStateToProps)(FinancialPage);

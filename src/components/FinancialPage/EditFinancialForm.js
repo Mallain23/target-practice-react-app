@@ -1,23 +1,22 @@
-import React from 'react'
-import {Field, reduxForm, focus, initialize} from 'redux-form';
-import { connect } from 'react-redux'
-import { Form, Button } from 'react-bootstrap'
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { Form, Button } from 'react-bootstrap';
 
-import { updateTarget } from '../actions/EditTarget'
-import { formatFinanceData } from './utils'
+import { updateTarget } from '../actions/EditTarget';
+import { formatFinanceData } from './utils';
 
-import Input from '../AddCompanyModal/Input'
-import RatingSelect from '../EditPageModal/RatingSelect'
+import Input from '../AddCompanyModal/Input';
+import RatingSelect from '../EditPageModal/RatingSelect';
 
-import '../EditPageModal/Modal.css'
-
+import '../EditPageModal/Modal.css';
 
 export class EditFinancialForm extends React.Component {
 
     componentDidMount() {
-        const { selectedCompany } = this.props
+        const { selectedCompany } = this.props;
 
-        this.handleInitialize(selectedCompany)
+        this.handleInitialize(selectedCompany);
 
     };
 
@@ -25,11 +24,11 @@ export class EditFinancialForm extends React.Component {
 
         const { statementFromCompany,
                 internalFinancialRating,
-                internalAssessmentOfFinances } = selectedCompany.financialMatters
-        const { isAudited, whoAudits} = selectedCompany.financialMatters.financesAudited
-        const { companyProjections, status, areProjectionsReasonable } = selectedCompany.financialMatters.businessMargins
+                internalAssessmentOfFinances } = selectedCompany.financialMatters;
+        const { isAudited, whoAudits} = selectedCompany.financialMatters.financesAudited;
+        const { companyProjections, status, areProjectionsReasonable } = selectedCompany.financialMatters.businessMargins;
 
-        const _internalFinancialRating = parseInt(internalFinancialRating)
+        const _internalFinancialRating = parseInt(internalFinancialRating);
 
         const initValues = {
             status,
@@ -42,26 +41,26 @@ export class EditFinancialForm extends React.Component {
             whoAudits
         };
 
-        this.props.initialize(initValues)
+        this.props.initialize(initValues);
     };
 
     onSubmit(values) {
 
-        const { selectedCompany } = this.props
-        const formattedObj = formatFinanceData(values, selectedCompany)
+        const { selectedCompany } = this.props;
+        const formattedObj = formatFinanceData(values, selectedCompany);
 
-        this.props.dispatch(updateTarget(formattedObj))
+        this.props.dispatch(updateTarget(formattedObj));
 
     };
 
     render() {
-        const { status } = this.props.selectedCompany
+
         return (
             <Form className="financial-data-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <h2>Edit Financial Data</h2>
                 <label htmlFor="statementFromCompany">Statement of Finances</label>
                 <Field component={Input}
-                       placeholder="Enter Target's Assessment of Finances"
+                       placeholder="Enter Target'Statement of Finances"
                        type="textarea"
                        name="statementFromCompany"
                        componentClass="textarea" />

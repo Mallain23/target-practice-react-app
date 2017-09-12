@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {   openEditPageModal } from '../actions/ShowHideActions';
-import { updateTarget  } from '../actions/EditTarget';
+import { openEditPageModal } from '../actions/ShowHideActions';
+import { updateTarget } from '../actions/EditTarget';
 import { getContactDataAndSetEditToTrue } from '../actions/ManagementDirectory';
+import { sortFunction } from '../actions/utils'
 import { removeContact } from './Utils';
 
 import './CompanyProfile.css';
@@ -44,7 +45,9 @@ export class CompanyDirectory extends React.Component {
         }
 
         else {
-            formattedDirectory = managementDirectory.map(({ name, cell, work, email }, index) => {
+            const sortedDirectory = sortFunction(managementDirectory, 'name')
+
+            formattedDirectory = sortedDirectory.map(({ name, cell, work, email }, index) => {
                 return (
                       <li key={index} className='directory-contact'><strong>{name}</strong>
                           <ul className='contact-information'>
@@ -70,8 +73,8 @@ export class CompanyDirectory extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const { selectedCompany } = state.app
-    const { managementDirectory} = selectedCompany
+    const { selectedCompany } = state.app;
+    const { managementDirectory} = selectedCompany;
 
     return {
         selectedCompany,

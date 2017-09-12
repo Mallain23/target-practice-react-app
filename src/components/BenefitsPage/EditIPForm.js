@@ -1,23 +1,22 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import {Field, reduxForm, focus, initialize} from 'redux-form';
-import { Form, Button } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import { Form, Button } from 'react-bootstrap';
 
-import { closeModal } from '../actions/ShowHideActions'
-import { updateTarget } from '../actions/EditTarget'
-import { formatIPData } from './utils'
+import { updateTarget } from '../actions/EditTarget';
+import { formatIPData } from './utils';
 
-import RatingSelect from '../EditPageModal/RatingSelect'
-import Input from '../AddCompanyModal/Input'
+import RatingSelect from '../EditPageModal/RatingSelect';
+import Input from '../AddCompanyModal/Input';
 
-import '../EditPageModal/Modal.css'
+import '../EditPageModal/Modal.css';
 
 export class EditIPForm extends React.Component {
 
     componentDidMount() {
-        const { selectedCompany } = this.props
+        const { selectedCompany } = this.props;
 
-        this.handleInitialize(selectedCompany)
+        this.handleInitialize(selectedCompany);
 
     };
 
@@ -28,9 +27,9 @@ export class EditIPForm extends React.Component {
                 copyrights,
                 negative,
                 internalAssessmentOfIP,
-                internalIPRating: _interalIPRating } = selectedCompany.intellectualProperty
+                internalIPRating: _interalIPRating } = selectedCompany.intellectualProperty;
 
-        const internalIPRating  = parseInt(_interalIPRating)
+        const internalIPRating  = parseInt(_interalIPRating);
 
         const initValues = {
             patents,
@@ -45,14 +44,13 @@ export class EditIPForm extends React.Component {
     };
 
     onSubmit(values) {
-        const formattedObj = formatIPData(values)
+        const formattedObj = formatIPData(values);
 
-        this.props.dispatch(updateTarget(formattedObj))
+        this.props.dispatch(updateTarget(formattedObj));
 
     };
 
     render() {
-        const { status } = this.props.selectedCompany
         return (
             <Form className="edit-ip-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="patents">Patents</label>

@@ -1,10 +1,9 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Col, Row } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import Paragraph from '../CompanyPage/Paragraph'
+import Paragraph from '../CompanyPage/Paragraph';
 
-import '../CompanyProfile/CompanyProfile.css'
+import '../CompanyProfile/CompanyProfile.css';
 
 export function OtherBenefitsPage (props) {
 
@@ -14,7 +13,7 @@ export function OtherBenefitsPage (props) {
             revenueEnhancements,
             miscellaneous,
             assessment: otherBenefitsAssessment,
-            internalOtherBenefitsRating} = props.selectedCompany.otherBenefitsProvided
+            internalOtherBenefitsRating} = props.selectedCompany.otherBenefitsProvided;
 
     return (
         <div className='data-container'>
@@ -30,7 +29,7 @@ export function OtherBenefitsPage (props) {
 };
 
 export const mapStateToProps = state => {
-  const { selectedCompany } = state.app
+  const { selectedCompany } = state.app;
 
   return {
       selectedCompany

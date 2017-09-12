@@ -18,12 +18,12 @@ export class ComapnyStatusButtons extends React.Component {
     };
 
     render() {
-        const { status, text, number } = this.props;
+        const { status, text, number, className } = this.props;
 
         return (
             <button className='status-buttons'
                     value={status}
-                    className={`${this.props.className} status`}
+                    className={`${className} ${status}`}
                     onClick={this.handleClick} >
                       {text} {number}
             </button>

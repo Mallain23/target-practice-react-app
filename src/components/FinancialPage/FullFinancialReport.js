@@ -1,24 +1,25 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Col, Row, Grid } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Col, Row, Grid } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-import { getFinacnialReport } from '../actions'
+import { getFinacnialReport } from '../actions';
 
-import './FinancialPage.css'
+import './FinancialPage.css';
 
 export class FullFinancialReport extends React.Component {
 
     componentWillMount() {
 
-        const title = this.props.match.params.title
-        const typeOfReport = this.props.match.params.typeOfReport
-        this.props.dispatch(getFinacnialReport(title, typeOfReport))
+        const title = this.props.match.params.title;
+        const typeOfReport = this.props.match.params.typeOfReport;
+
+        this.props.dispatch(getFinacnialReport(title, typeOfReport));
     }
 
     render() {
 
-        const { selectedCompany, selectedFinancialReport } = this.props
+        const { selectedCompany, selectedFinancialReport } = this.props;
 
         return (
             <Grid>
@@ -60,4 +61,4 @@ export const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(FullFinancialReport)
+export default connect(mapStateToProps)(FullFinancialReport);

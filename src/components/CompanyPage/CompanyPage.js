@@ -1,27 +1,27 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Col, Row } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Col, Row } from 'react-bootstrap';
 
-import { fetchTargetData } from '../actions'
+import { fetchTargetData } from '../actions';
 
-import CompanyPageNav from './CompanyPageNav'
-import CompanyPageButtons from './CompanyPageButtons'
-import CompanyOverview from '../CompanyProfile/CompanyOverview'
-import FinancialPage from '../FinancialPage/FinancialPage'
-import IntellectualPropertyPage from '../BenefitsPage/IntellectualPropertyPage'
-import TechnologyPage from '../BenefitsPage/TechnologyPage'
-import OtherBenefitsPage from '../BenefitsPage/OtherBenefitsPage'
-import LegalPage from '../Legal/LegalPage'
-import CompanyDirectory from '../CompanyProfile/CompanyDirectory'
-import FinalAssessmentPage from '../CompanyProfile/FinalAssessmentPage'
+import CompanyPageNav from './CompanyPageNav';
+import CompanyPageButtons from './CompanyPageButtons';
+import CompanyOverview from '../CompanyProfile/CompanyOverview';
+import FinancialPage from '../FinancialPage/FinancialPage';
+import IntellectualPropertyPage from '../BenefitsPage/IntellectualPropertyPage';
+import TechnologyPage from '../BenefitsPage/TechnologyPage';
+import OtherBenefitsPage from '../BenefitsPage/OtherBenefitsPage';
+import LegalPage from '../Legal/LegalPage';
+import CompanyDirectory from '../CompanyProfile/CompanyDirectory';
+import FinalAssessmentPage from '../CompanyProfile/FinalAssessmentPage';
 
-import './CompanyPage.css'
+import './CompanyPage.css';
 
 export class CompanyPage extends React.Component {
 
     componentWillMount() {
         const companyName = this.props.match.params.companyName;
-        const selectedCompany = this.props.selectedCompany
+        const selectedCompany = this.props.selectedCompany;
 
         if (selectedCompany.companyName === companyName) {
           return
@@ -33,9 +33,9 @@ export class CompanyPage extends React.Component {
     componentWillReceiveProps(nextProps, nextState) {
         if (nextProps.match.params.companyName !== this.props.match.params.companyName) {
 
-            const companyName = nextProps.match.params.companyName
+            const companyName = nextProps.match.params.companyName;
 
-            this.props.dispatch(fetchTargetData(companyName))
+            this.props.dispatch(fetchTargetData(companyName));
         }
     };
 
@@ -77,7 +77,7 @@ export class CompanyPage extends React.Component {
     };
 
     render() {
-        const { selectedPage } = this.props
+        const { selectedPage } = this.props;
 
         return (
               <div className='page-container'>
@@ -111,13 +111,12 @@ export class CompanyPage extends React.Component {
                     </Col>
                 </Row>
               </div>
-
         );
     };
 };
 
 const mapStateToProps = state => {
-    const { selectedCompany, selectedPage } = state.app
+    const { selectedCompany, selectedPage } = state.app;
 
     return {
         selectedCompany,
@@ -125,4 +124,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(CompanyPage)
+export default connect(mapStateToProps)(CompanyPage);

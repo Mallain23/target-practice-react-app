@@ -1,36 +1,36 @@
 import React  from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-import { closeModal } from '../actions/ShowHideActions'
+import { closeModal } from '../actions/ShowHideActions';
 
-import EditCompanyOverviewForm from '../CompanyProfile/EditCompanyOverview'
-import ManagementDirectoryForm from '../CompanyProfile/ManagementDirectoryForm'
-import FinalAssessmentForm from '../CompanyProfile/FinalAssessmentForm'
-import EditLegalForm from '../Legal/EditLegalForm'
-import EditFinancialForm from '../FinancialPage/EditFinancialForm'
-import FinancialReportForm from '../FinancialPage/FinancialReportForm'
-import EditOtherBenefitsForm from '../BenefitsPage/EditOtherBenefitsForm'
-import EditIPForm from '../BenefitsPage/EditIPForm'
-import EditTechForm from '../BenefitsPage/EditTechForm'
-import AssetLiabilityForm from '../AssetsLiabilities/AssetLiabilityForm'
+import EditCompanyOverviewForm from '../CompanyProfile/EditCompanyOverview';
+import ManagementDirectoryForm from '../CompanyProfile/ManagementDirectoryForm';
+import FinalAssessmentForm from '../CompanyProfile/FinalAssessmentForm';
+import EditLegalForm from '../Legal/EditLegalForm';
+import EditFinancialForm from '../FinancialPage/EditFinancialForm';
+import FinancialReportForm from '../FinancialPage/FinancialReportForm';
+import EditOtherBenefitsForm from '../BenefitsPage/EditOtherBenefitsForm';
+import EditIPForm from '../BenefitsPage/EditIPForm';
+import EditTechForm from '../BenefitsPage/EditTechForm';
+import AssetLiabilityForm from '../AssetsLiabilities/AssetLiabilityForm';
 
-import './Modal.css'
+import './Modal.css';
 
 export class EditPageModal extends React.Component {
 
     constructor(props) {
         super(props)
 
-        this.handleClose = this.handleClose.bind(this)
+        this.handleClose = this.handleClose.bind(this);
     };
 
     handleClose() {
-          this.props.dispatch(closeModal())
+          this.props.dispatch(closeModal());
     };
 
     renderForm() {
-          const { selectedPage, editReport, showALModal } = this.props
+          const { selectedPage, editReport, showALModal } = this.props;
 
           if (editReport) {
               return <FinancialReportForm  />
@@ -84,7 +84,6 @@ export class EditPageModal extends React.Component {
         const { showEditModal,
                 companyName } = this.props
 
-
         return (
             <div className="edit-modal">
                 <Modal className="edit-data-modal" show={showEditModal}
@@ -113,8 +112,9 @@ export class EditPageModal extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const { showEditModal, selectedPage, showALModal, editReport  } = state.app
-    const { companyName } = state.app.selectedCompany
+    const { showEditModal, selectedPage, showALModal, editReport  } = state.app;
+    const { companyName } = state.app.selectedCompany;
+
     return {
         showEditModal,
         editReport,
@@ -124,4 +124,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(EditPageModal)
+export default connect(mapStateToProps)(EditPageModal);

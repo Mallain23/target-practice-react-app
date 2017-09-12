@@ -1,13 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 import { removeTargetFromDatabase, updateCurrentSelectedPage } from '../actions';
-import { openModal, toggleVisibility } from '../actions/ShowHideActions';
-import { updateTarget } from '../actions/EditTarget';
-
-import CompanyPageButtons from './CompanyPageButtons';
 
 import './CompanyPage.css';
 
@@ -34,8 +30,8 @@ export class ComapnyPageNav extends React.Component {
     };
 
     render() {
-      const { selectedPage } = this.props;
-      const { companyName, status } = this.props.selectedCompany;
+
+      const { companyName } = this.props.selectedCompany;
 
         return (
             <Navbar>

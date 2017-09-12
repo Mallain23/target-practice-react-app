@@ -1,39 +1,39 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { getFinacnialReport } from '../actions'
-import { openEditPageModal } from '../actions/ShowHideActions'
-import { editFinancialReport } from '../actions/EditTarget'
-import { sortFunction } from '../actions/utils'
+import { getFinacnialReport } from '../actions';
+import { openEditPageModal } from '../actions/ShowHideActions';
+import { editFinancialReport } from '../actions/EditTarget';
+import { sortFunction } from '../actions/utils';
 
-import Paragraph from '../CompanyPage/Paragraph'
-import './FinancialPage.css'
+import Paragraph from '../CompanyPage/Paragraph';
+import './FinancialPage.css';
 
 export class FormattedFinacnialReports extends React.Component {
     constructor (props) {
         super(props)
 
-        this.handleClick = this.handleClick.bind(this)
-        this.handleEditClick = this.handleEditClick.bind(this)
+        this.handleClick = this.handleClick.bind(this);
+        this.handleEditClick = this.handleEditClick.bind(this);
     };
 
     handleClick(e) {
         e.preventDefault()
-        const title = e.target.value
-        const typeOfReport = this.props.name
 
+        const title = e.target.value;
+        const typeOfReport = this.props.name;
 
-        this.props.history.push(`/finacialreport/${title}/${typeOfReport}`)
+        this.props.history.push(`/finacialreport/${title}/${typeOfReport}`);
     };
 
     handleEditClick(e) {
-        e.preventDefault()
+        e.preventDefault();
 
-        const name = e.target.value
-        const typeOfReport = this.props.name
+        const name = e.target.value;
+        const typeOfReport = this.props.name;
 
-        this.props.dispatch(getFinacnialReport(name, typeOfReport))
-        this.props.dispatch(openEditPageModal())
+        this.props.dispatch(getFinacnialReport(name, typeOfReport));
+        this.props.dispatch(openEditPageModal());
     };
 
     render() {

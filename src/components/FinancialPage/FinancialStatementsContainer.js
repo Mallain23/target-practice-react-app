@@ -1,12 +1,9 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Col, Row } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import Paragraph from '../CompanyPage/Paragraph'
-import FormattedFinacnialReports from './FormattedFinacnialReports'
+import FormattedFinacnialReports from './FormattedFinacnialReports';
 
-import '../CompanyProfile/CompanyProfile.css'
-
+import '../CompanyProfile/CompanyProfile.css';
 
 export function FinancialStatementsContainer (props) {
 
@@ -14,14 +11,14 @@ export function FinancialStatementsContainer (props) {
 
     return (
         <div className='data-container'>
-                <FormattedFinacnialReports className='annual-financial-reports'
-                                            arrayOfReports={financialStatementsAnnual}
-                                            name='Annual'
-                                            {...props} />
-                <FormattedFinacnialReports className='quarterly-financial-reports'
-                                            arrayOfReports={financialStatementsQuarterly}
-                                            name='Quarterly'
-                                            {...props}  />
+            <FormattedFinacnialReports className='annual-financial-reports'
+                                        arrayOfReports={financialStatementsAnnual}
+                                        name='Annual'
+                                        {...props} />
+            <FormattedFinacnialReports className='quarterly-financial-reports'
+                                        arrayOfReports={financialStatementsQuarterly}
+                                        name='Quarterly'
+                                        {...props}  />
         </div>
     );
 };
@@ -34,4 +31,4 @@ export const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(FinancialStatementsContainer)
+export default connect(mapStateToProps)(FinancialStatementsContainer);

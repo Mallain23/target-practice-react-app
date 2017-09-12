@@ -3,7 +3,6 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 
-import { closeModal } from '../actions/ShowHideActions';
 import { updateTarget } from '../actions/EditTarget';
 
 import Input from '../AddCompanyModal/Input';
