@@ -1,16 +1,16 @@
 import React  from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { connect } from 'react-redux'
-import {Field, reduxForm, focus, initialize} from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 
-import Input from '../AddCompanyModal/Input'
+import Input from '../AddCompanyModal/Input';
 
-import {isNumber, required, nonEmpty } from '../validators'
-import { closeModal } from '../actions/ShowHideActions'
-import { updateTarget } from '../actions/EditTarget'
-import { formatContacts } from './Utils'
+import { required, nonEmpty } from '../validators';
+import { closeModal } from '../actions/ShowHideActions';
+import { updateTarget } from '../actions/EditTarget';
+import { formatContacts } from './Utils';
 
-import '../EditPageModal/Modal.css'
+import '../EditPageModal/Modal.css';
 
 
 export class ManagementDirectoryForm extends React.Component {
@@ -23,14 +23,14 @@ export class ManagementDirectoryForm extends React.Component {
     componentWillMount() {
 
         if (this.props.editContact) {
-            const { contactToEdit } = this.props
+            const { contactToEdit } = this.props;
 
-            this.handleInitialize(contactToEdit)
+            this.handleInitialize(contactToEdit);
         }
     };
 
     handleInitialize(contactToEdit) {
-        this.props.initialize(contactToEdit)
+        this.props.initialize(contactToEdit);
     };
 
     handleCancel(){
@@ -38,7 +38,7 @@ export class ManagementDirectoryForm extends React.Component {
     };
 
     onSubmit(values) {
-        const { editContact, selectedCompany, contactToEdit } = this.props
+        const { editContact, selectedCompany, contactToEdit } = this.props;
 
         if (!editContact && selectedCompany.managementDirectory.some(({name}) => name === values.name)) {
 
@@ -56,9 +56,15 @@ export class ManagementDirectoryForm extends React.Component {
             <Form className="edit-management-directory-form"
                   onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="name">Contact Name</label>
-                <Field component={Input} placeholder='Enter Contact Name' type="text" name="name" validate={[required, nonEmpty]} />
+                <Field component={Input}
+                       placeholder='Enter Contact Name'
+                       type="text" name="name"
+                       validate={[required, nonEmpty]} />
                 <label htmlFor="cell">Cell Phone Number</label>
-                <Field component={Input} type="text" name="cell" placeholder='Enter Contacts Cell Phone Number' validate={[required, nonEmpty]} />
+                <Field component={Input} type="text"
+                       name="cell"
+                       placeholder='Enter Contacts Cell Phone Number'
+                       validate={[required, nonEmpty]} />
                 <label htmlFor="work">Work Phone Number</label>
                 <Field
                     component={Input}
@@ -69,7 +75,7 @@ export class ManagementDirectoryForm extends React.Component {
                 <label htmlFor="email">Email Address</label>
                 <Field
                     component={Input}
-                    className='text'
+                    type='email'
                     name="email"
                     placeholder='Enter Contacts Email Address' />
                 <Button
@@ -96,7 +102,4 @@ const mapStateToProps = state => {
 ManagementDirectoryForm = connect(mapStateToProps)(ManagementDirectoryForm)
 
 export default ManagementDirectoryForm = reduxForm({
-    form: 'edit-management-directory-form',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('edit-management-directory-form', Object.keys(errors)[0]))
-})(ManagementDirectoryForm);
+    form: 'edit-management-directory-form'})(ManagementDirectoryForm);

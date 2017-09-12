@@ -1,32 +1,33 @@
-import React from 'react'
-import {Field, reduxForm, focus, initialize} from 'redux-form';
-import { connect } from 'react-redux'
-import { Form, Button } from 'react-bootstrap'
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { Form, Button } from 'react-bootstrap';
 
-import {isNumber, isTrimmed, required, nonEmpty, validValue} from '../validators'
-import { closeModal } from '../actions/ShowHideActions'
-import { updateTarget } from '../actions/EditTarget'
-import { formatCompanyProfileData } from './Utils'
-import Input from '../AddCompanyModal/Input'
+import {required, nonEmpty } from '../validators';
+import { closeModal } from '../actions/ShowHideActions';
+import { updateTarget } from '../actions/EditTarget';
+import { formatCompanyProfileData } from './Utils';
 
-import '../EditPageModal/Modal.css'
+import Input from '../AddCompanyModal/Input';
+
+import '../EditPageModal/Modal.css';
 
 export class EditCompanyOverviewForm extends React.Component {
 
     componentDidMount() {
-        const { selectedCompany } = this.props
+        const { selectedCompany } = this.props;
 
-        this.handleInitialize(selectedCompany)
+        this.handleInitialize(selectedCompany);
 
     };
 
     handleInitialize(selectedCompany) {
 
-        const { companyName, costOfAcquisition} = selectedCompany
-        const { generalBusinessActivities,  numberOfEmployees, yearFounded  } = selectedCompany.companyProfile
-        const { headQaurters, principlePlaceOfBusiness, numberOfOffices } = selectedCompany.companyProfile.location
-        const { vision, goals, coreValues } = selectedCompany.companyProfile.companyStrategy
-        const { backgroundInformation, presentCondition } = selectedCompany.companyProfile.industryInformation
+        const { companyName, costOfAcquisition} = selectedCompany;
+        const { generalBusinessActivities,  numberOfEmployees, yearFounded  } = selectedCompany.companyProfile;
+        const { headQaurters, principlePlaceOfBusiness, numberOfOffices } = selectedCompany.companyProfile.location;
+        const { vision, goals, coreValues } = selectedCompany.companyProfile.companyStrategy;
+        const { backgroundInformation, presentCondition } = selectedCompany.companyProfile.industryInformation;
 
         const initValues = {
             companyName,
@@ -48,11 +49,11 @@ export class EditCompanyOverviewForm extends React.Component {
     };
 
     onSubmit(values) {
-        const companyProfile = formatCompanyProfileData(values)
-        const { companyName, yearFounded, costOfAcquisition } = values
-        const formattedObj = { companyProfile, companyName, costOfAcquisition}
+        const companyProfile = formatCompanyProfileData(values);
+        const { companyName, yearFounded, costOfAcquisition } = values;
+        const formattedObj = { companyProfile, companyName, costOfAcquisition};
 
-        this.props.dispatch(updateTarget(formattedObj))
+        this.props.dispatch(updateTarget(formattedObj));
     };
 
     render() {
@@ -60,16 +61,18 @@ export class EditCompanyOverviewForm extends React.Component {
             <Form className="edit-company-overview-form"
                   onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="companyName">Company Name</label>
-                <Field component={Input} placeholder='Enter Company Name' type="text" name="companyName" validate={[required, nonEmpty]} />
+                <Field component={Input}
+                        placeholder='Enter Company Name'
+                        type="text" name="companyName"
+                        validate={[required, nonEmpty]} />
                 <label htmlFor="costOfAcquisition">Cost of Acquiring Target</label>
-                <Field component={Input} type="text" name="costOfAcquisition" validate={[required, nonEmpty]} />
+                <Field component={Input} type="text" name="costOfAcquisition" />
                 <label htmlFor="yearFounded">Year Founded</label>
                 <Field
                     component={Input}
-                    type="text"
+                    type="number"
                     name="yearFounded"
-                    placeholder='Enter year compnay was founded'
-                    validate={[required, nonEmpty]} />
+                    placeholder='Enter year compnay was founded' />
                 <label htmlFor="headQaurters">Corporate Headquarters</label>
                 <Field
                     component={Input}

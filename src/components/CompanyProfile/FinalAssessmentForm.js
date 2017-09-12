@@ -1,30 +1,30 @@
-import React from 'react'
-import {Field, reduxForm, focus, initialize} from 'redux-form';
-import { connect } from 'react-redux'
-import { Form, Button } from 'react-bootstrap'
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { Form, Button } from 'react-bootstrap';
 
-import { closeModal } from '../actions/ShowHideActions'
-import { updateTarget } from '../actions/EditTarget'
+import { closeModal } from '../actions/ShowHideActions';
+import { updateTarget } from '../actions/EditTarget';
 
-import Input from '../AddCompanyModal/Input'
-import StatusSelect from '../EditPageModal/StatusSelect'
-import RatingSelect from '../EditPageModal/RatingSelect'
+import Input from '../AddCompanyModal/Input';
+import StatusSelect from '../EditPageModal/StatusSelect';
+import RatingSelect from '../EditPageModal/RatingSelect';
 
-import '../EditPageModal/Modal.css'
+import '../EditPageModal/Modal.css';
 
 export class FinalAssessmentForm extends React.Component {
 
     componentDidMount() {
-        const { selectedCompany } = this.props
+        const { selectedCompany } = this.props;
 
-        this.handleInitialize(selectedCompany)
+        this.handleInitialize(selectedCompany);
 
     };
 
     handleInitialize(selectedCompany) {
 
-        const { status, finalAssessment, overallRating} = selectedCompany
-        const _overAllRating = parseInt(overallRating)
+        const { status, finalAssessment, overallRating} = selectedCompany;
+        const _overAllRating = parseInt(overallRating);
 
         const initValues = {
             status,
@@ -40,7 +40,7 @@ export class FinalAssessmentForm extends React.Component {
     };
 
     render() {
-        const { status } = this.props.selectedCompany
+        const { status } = this.props.selectedCompany;
 
         return (
             <Form className="edit-final-assessment-form"
