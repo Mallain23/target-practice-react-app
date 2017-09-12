@@ -48,7 +48,7 @@ export class FormattedAL extends React.Component  {
     render () {
         const arrayOfAL = this.props.arrayOfAL
         const typeOfProperty = this.props.typeOfProperty
-        
+
         const propertyTypeSingular = typeOfProperty === 'Assets' ? 'Asset' : 'Liability'
         let formattedAL
 
@@ -57,7 +57,7 @@ export class FormattedAL extends React.Component  {
         }
 
         else {
-
+           console.log(arrayOfAL)
            formattedAL = arrayOfAL.map(({name, value, id}, index) => {
 
                 return (

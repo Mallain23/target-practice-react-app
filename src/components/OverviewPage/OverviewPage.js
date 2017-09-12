@@ -1,20 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Grid, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 
 import CompanyStatusButtons from './CompanyStatusButtons'
 import CompaniesByStatusContainer from './CompaniesByStatusContainer'
 
 import { OVERVIEW__PAGE_HEADER, statusHeaders } from './OverviewPageConstants'
 import { hideExtendedNav } from '../actions/ShowHideActions'
-import { sortCompaniesByStatus, sortCompanies} from '../actions/SortActions'
+import { sortCompaniesByStatus } from '../actions/SortActions'
 
 import './Overview.css'
 
 export class OverviewPage extends React.Component {
 
     componentWillMount() {
-        //ask andrew how I should handle this
 
         this.props.dispatch(sortCompaniesByStatus());
         this.props.dispatch(hideExtendedNav());
@@ -23,7 +22,6 @@ export class OverviewPage extends React.Component {
     componentWillReceiveProps(nextProps, nextState) {
         if (nextProps.companies.length !== this.props.companies.length) {
 
-          //  this.props.dispatch(sortCompanies('companyName'));
             this.props.dispatch(sortCompaniesByStatus());
         }
 

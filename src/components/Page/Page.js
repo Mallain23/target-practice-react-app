@@ -12,14 +12,14 @@ export class Page extends React.Component {
     renderCol() {
         const { showSidebar } = this.props
         return showSidebar ?   <Col xs={12} md={1}></Col> : ''
-    }
+    };
+
     renderSize() {
       const { showSidebar } = this.props
       return showSidebar ? 11 : 12
-    }
+    };
 
-    render() {
-        const { companySelected } = this.props
+    render(){
         const pageComponent = this.props.match.params.companyName ?  <CompanyPage {...this.props}/> : <OverviewPage />
 
         return (

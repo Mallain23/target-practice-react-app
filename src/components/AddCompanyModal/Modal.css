@@ -20,3 +20,7 @@
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 
 }
+
+.form-warning, .form-error {
+    color: #FF8E7E;
+}

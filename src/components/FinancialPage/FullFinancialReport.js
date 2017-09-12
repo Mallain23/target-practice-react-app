@@ -1,11 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button, Col, Row, Grid } from 'react-bootstrap'
+import { Col, Row, Grid } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import { getFinacnialReport } from '../actions'
-
-import SideBarContainer from '../SideBar/SideBarContainer'
 
 import './FinancialPage.css'
 

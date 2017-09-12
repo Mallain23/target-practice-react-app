@@ -1,6 +1,5 @@
 import { filterCompanyByStatus,
-         statusObject,
-         formatTypeOfReportText } from './utils'
+         statusObject } from './utils'
 
 export const SORT_COMPANIES = 'SORT_COMPANIES'
 export const sortCompanies = sortOption => ({
@@ -18,6 +17,7 @@ export const sortCompaniesByStatus = () => (dispatch, getState) => {
         sortedCompanyObject[status] = filterCompanyByStatus(companies, status));
       dispatch(sortCompaniesByStatusSuccess(sortedCompanyObject));
 };
+
 
 export const SORT_COMPANIES_BY_STATUS_SUCCESS = 'SORT_COMPANIES_BY_STATUS_SUCCESS'
 export const sortCompaniesByStatusSuccess = companyStatus => ({

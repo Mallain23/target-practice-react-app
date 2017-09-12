@@ -64,14 +64,14 @@ export const formatDataForDatabaseEntry = ({companyName}) => ({
         copyrights: 'No Information Provided',
         negative: 'No Information Provided',
         internalAssessmentOfIP: 'No Information Provided',
-        internalIPRating: 'No Information Provided'
+        internalIPRating: '0'
     },
     technology: {
         licenses: 'No Information Provided',
         softwareUse: 'No Information Provided',
         benefits: 'No Information Provided',
         assessment: 'No Information Provided',
-        internalTechRating: 'No Information Provided'
+        internalTechRating: '0'
     },
     otherBenefitsProvided: {
         services: 'No Information Provided',
@@ -80,7 +80,7 @@ export const formatDataForDatabaseEntry = ({companyName}) => ({
         revenueEnhancements: 'No Information Provided',
         miscellaneous: 'No Information Provided',
         assesment: 'No Information Provided',
-        internalOtherBenefitsRating: 'No Information Provided'
+        internalOtherBenefitsRating: 'No Info0'
     },
     legal: {
         futureLitgiation: 'No Information Provided',
@@ -93,7 +93,7 @@ export const formatDataForDatabaseEntry = ({companyName}) => ({
         otherRegulatory: 'No Information Provided',
         assessment: 'No Information Provided',
         internalIssues: 'No Information Provided',
-        rating: 'No Information Provided'
+        rating: '0'
     },
     managementDirectory: [],
     finalAssessment: 'No Information Provided',

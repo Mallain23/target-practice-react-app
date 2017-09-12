@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import { updateTarget } from '../actions/EditTarget'
 import { formatAL } from './utils'
+import { required, nonEmpty, isNumber } from '../validators'
 
 import Input from '../AddCompanyModal/Input'
 
@@ -43,23 +44,25 @@ export class AssetLiabilityForm extends React.Component {
     };
 
     render() {
+
         const { propertyType } = this.props
         const propertyTypeSingular = propertyType === 'Assets' ? 'Asset' : 'Liability'
 
         return (
-            <Form className="asset-liability-form"
+            <form className="asset-liability-form"
                   onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="name">Name of {propertyTypeSingular} </label>
                 <Field component={Input}
                        placeholder={`Enter the Name and Description of ${propertyTypeSingular}`}
                        type="textarea"
+                       validate={[required, nonEmpty]}
                        name="name"
                        componentClass="textarea"/>
-                <label htmlFor="value"> Monetrary Value or Amount of {propertyTypeSingular}</label>
+                <label htmlFor="value"> Monetrary Value or Amount of {propertyTypeSingular} </label>
                 <Field component={Input}
                       placeholder={`Enter the Value or Amount of ${propertyTypeSingular}`}
-                      type='number'
-                      step='0.01'
+                      validate={[required, nonEmpty]}
+                      type="number"
                       name="value"  />
                 <Button
                     type="submit"
@@ -67,7 +70,7 @@ export class AssetLiabilityForm extends React.Component {
                     disabled={this.props.submitting}>
                     Submit
                 </Button>
-            </Form>
+            </form>
         );
     };
 };

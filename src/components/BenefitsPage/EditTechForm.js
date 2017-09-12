@@ -51,13 +51,13 @@ export class EditTechForm extends React.Component {
         const { status } = this.props.selectedCompany
         return (
             <Form className="edit-tech-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
-                  <label htmlFor="licenses">Information on Target Licenses</label>
+                  <label htmlFor="licenses">Licenses</label>
                   <Field component={Input}
                           placeholder="Enter Information on Target Licenses"
                           type="textarea"
                           name="licenses"
                           componentClass="textarea" />
-                  <label htmlFor="softwareUse">Information on Target Software</label>
+                  <label htmlFor="softwareUse">Software</label>
                   <Field component={Input}
                           placeholder="Enter Information on Target Software"
                           type="text"
@@ -74,7 +74,7 @@ export class EditTechForm extends React.Component {
                           name="internalTechRating" />
                 <Button
                     disabled={this.props.submitting}
-                    className='edit-modal-button'
+                    className='modal-button'
                     type='submit' >
                     Submit
                 </Button>

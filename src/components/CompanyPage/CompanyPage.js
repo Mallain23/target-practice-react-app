@@ -83,7 +83,6 @@ export class CompanyPage extends React.Component {
 
     render() {
         const { selectedPage } = this.props
-        const { companyName } = this.props.selectedCompany
 
         return (
               <div className='page-container'>
@@ -93,7 +92,6 @@ export class CompanyPage extends React.Component {
                         <div className='header'>
                           <CompanyPageNav {...this.props} />
                         </div>
-
                       </Col>
                   </Row>
                   <Row>
@@ -108,7 +106,7 @@ export class CompanyPage extends React.Component {
                   <Row>
                       <Col xs={12} md={1}></Col>
                       <Col xs={12} md={10}>
-                    {this.renderPageContent()}
+                     {this.renderPageContent()}
                     </Col>
                 </Row>
                 <Row>

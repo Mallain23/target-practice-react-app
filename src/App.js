@@ -4,9 +4,7 @@ import {Route, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux'
 
 import NavBar from './components/Navigation/NavBar';
-import SideBarContainer from './components/SideBar/SideBarContainer';
 import Page from './components/Page/Page';
-import CompanyPage from './components/CompanyPage/CompanyPage';
 import CompanyDataModalContainer from './components/AddCompanyModal/CompanyDataModalContainer';
 import FullFinancialReport from './components/FinancialPage/FullFinancialReport';
 import EditPageModal from './components/EditPageModal/EditPageModal';

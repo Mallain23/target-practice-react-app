@@ -1,4 +1,4 @@
-import { mockData, companyArray } from './MockData'
+import { mockData } from './MockData'
 import { ADD_COMPANY_TO_DATABASE,
          FETCH_COMPANY_DATA_SUCCESS,
          REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
