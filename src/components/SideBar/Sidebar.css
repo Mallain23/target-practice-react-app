@@ -5,9 +5,12 @@
     background-color: #f8f8f8;
     background-image: linear-gradient(to right, #fff 0%, #f8f8f8 100%);
     position: absolute;
-    margin-left: 10px;
     z-index: 1;
     border-radius: 5px;
+    left: -35px;
+    height: 550px;
+    margin-bottom: 30px;
+
 }
 
 .sidebar:hover {
@@ -24,12 +27,17 @@
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
     padding: 10px;
+    font-family: Lato,'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
+
 .target-input {
+    font-family: Lato,'Helvetica Neue', Arial, Helvetica, sans-serif;
     padding: 5px;
     width: 85%;
     margin-left: 10px;
+
 }
+
 .sidebar-left {
     border-right: 1px solid #e7e7e7;
     border-left: 1px solid #e7e7e7;
@@ -39,26 +47,29 @@
 }
 
 .company-list {
-  list-style: none;
-  line-height: 200%;
+    list-style: none;
+    line-height: 200%;
+}
 
-}
 ul {
-  padding-left: 30px;
+    padding-left: 30px;
 }
+
 .search-result-item:hover {
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
 .search-form {
-  border: none;
-  margin-bottom: 7px;
+    border: none;
+    margin-bottom: 7px;
+    text-align: center;
+    padding: 7px;
 }
 
 .search-form-container {
-  text-align: center;
+    text-align: center;
 }
 
 .search-results-container {
@@ -67,32 +78,47 @@ ul {
     text-align: left;
     margin-top: 15px;
     width: 100%;
-    border: 1px solid #e7e7e7
+    border: 1px solid #e7e7e7;
+    height: 300px;
+    overflow: scroll;
 }
 
 .label-margin {
-  color: #777
+    color: #777;
+    margin-bottom: 10px;
+    font-family: Lato,'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
+
 .search-result-item {
-  font-size: 16px;
+    font-size: 16px;
 }
 .Pending {
-  color: #0000e6;
+    color: #0074D9;
 }
 
 .Approved {
-  color: 	#32CD32
+    color: 	#2ECC40;
 }
 
 .Declined {
-  color: #ff0000;
+    color: #FF4136;
 }
 
 .Researching {
-  color: #ff9900;
+    color: #ff9900;
 }
 
 @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar {font-size: 18px;}
+    .sidebar {
+        padding-top: 15px;
+        font-size: 18px;
+
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar{
+    position: static;
+
+  }
 }

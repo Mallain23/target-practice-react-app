@@ -1,31 +1,31 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { sortFunction } from '../actions/utils'
+import { sortFunction } from '../actions/utils';
 
-export class CompaniesByStatusContainer extends React.Component {
+import './Overview.css'
 
-    render() {
-        const { status, companies, companyStatus } = this.props
+export function CompaniesByStatusContainer (props) {
 
-        const companiesToDisplay = status === 'companies' ? companies :  companyStatus[status]
-        const sortedCompaniesToDisplay = sortFunction(companiesToDisplay, 'companyName')
+    const { status, companies, companyStatus } = props;
 
-        const formattedCompanies = companiesToDisplay.map(({companyName}, index) => {
-            return (
-                <li className='company-by-status' key={index}>
-                    <Link to={`/company/${companyName}`} className='company-link'> {companyName}</Link>
-                </li>
-            );
-        });
+    const companiesToDisplay = status === 'companies' ? companies : companyStatus[status]
+    const sortedCompaniesToDisplay = sortFunction(companiesToDisplay, 'companyName');
 
+    const formattedCompanies = companiesToDisplay.map(({companyName}, index) => {
         return (
-            <ul className='company-list-by-status'>
-                {formattedCompanies}
-            </ul>
+            <li className={`company-by-status`} key={index}>
+                <Link to={`/company/${companyName}`} className={`${status} company-link`}> {companyName}</Link>
+            </li>
         );
-    };
+    });
+
+    return (
+        <ul className='company-list-by-status'>
+            {formattedCompanies}
+        </ul>
+    );
 };
 
 const mapStateToProps = state => {

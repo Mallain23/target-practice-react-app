@@ -1,23 +1,23 @@
 import { formatTypeOfReportText, sortFunction } from './utils'
 
 
-export const ADD_COMPANY_TO_DATABASE = 'ADD_COMPANY_TO_DATABASE'
-export const addCompanyToDatabase = companyData => ({
-   type: ADD_COMPANY_TO_DATABASE,
+export const ADD_TARGET_TO_DATABASE = 'ADD_TARGET_TO_DATABASE'
+export const addTargetToDatabase = companyData => ({
+   type: ADD_TARGET_TO_DATABASE,
    companyData
 });
 
-export const removeCompanyFromDatabase = companyName => (dispatch, getState) => {
+export const removeTargetFromDatabase = companyName => (dispatch, getState) => {
     const companies = getState().app.companies
     const remainingCompanies = companies.filter(company  => company.companyName !== companyName)
 
-    dispatch(removeCompanyFromDatabaseSuccess(remainingCompanies))
+    dispatch(removeTargetFromDatabaseSuccess(remainingCompanies))
 };
 
 
-export const REMOVE_COMPANY_FROM_DATABASE_SUCCESS = 'REMOVE_COMPANY_FROM_DATABASE_SUCCESS'
-export const removeCompanyFromDatabaseSuccess = remainingCompanies => ({
-    type: REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
+export const REMOVE_TARGET_FROM_DATABASE_SUCCESS = 'REMOVE_TARGET_FROM_DATABASE_SUCCESS'
+export const removeTargetFromDatabaseSuccess = remainingCompanies => ({
+    type: REMOVE_TARGET_FROM_DATABASE_SUCCESS,
     remainingCompanies
 })
 
@@ -40,16 +40,16 @@ export const updateSearchResultsSuccess = searchResults => ({
 });
 
 
-export const fetchCompanyData = _companyName => (dispatch, getState) => {
+export const fetchTargetData = _companyName => (dispatch, getState) => {
     const selectedCompanyData = getState().app.companies.find(({ companyName }) =>
         companyName === _companyName);
 
-    dispatch(fetchCompanyDataSuccess(selectedCompanyData));
+    dispatch(fetchTargetDataSuccess(selectedCompanyData));
 };
 
-export const FETCH_COMPANY_DATA_SUCCESS = 'FETCH_COMPANY_DATA_SUCCESS'
-export const fetchCompanyDataSuccess = companyData => ({
-    type: FETCH_COMPANY_DATA_SUCCESS,
+export const FETCH_TARGET_DATA_SUCCESS = 'FETCH_TARGET_DATA_SUCCESS'
+export const fetchTargetDataSuccess = companyData => ({
+    type: FETCH_TARGET_DATA_SUCCESS,
     companyData
 })
 

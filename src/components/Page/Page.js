@@ -6,13 +6,7 @@ import OverviewPage from '../OverviewPage/OverviewPage'
 import CompanyPage from '../CompanyPage/CompanyPage'
 import SideBarContainer from '../SideBar/SideBarContainer'
 
-import './Page.css'
-
 export class Page extends React.Component {
-    renderCol() {
-        const { showSidebar } = this.props
-        return showSidebar ?   <Col xs={12} md={1}></Col> : ''
-    };
 
     renderSize() {
       const { showSidebar } = this.props
@@ -23,19 +17,16 @@ export class Page extends React.Component {
         const pageComponent = this.props.match.params.companyName ?  <CompanyPage {...this.props}/> : <OverviewPage />
 
         return (
-          <div>
-              <SideBarContainer />
-              <Grid>
-                  <Row>
-                      {this.renderCol()}
-                      <Col xs={12} md={this.renderSize()}>
-                          <div className='page-container'>
+            <Grid>
+                <Row>
+                    <SideBarContainer />
+                    <Col xs={12} md={this.renderSize()}>
+                        <div className='page-container'>
                             {pageComponent}
-                          </div>
-                      </Col>
-                  </Row>
-               </Grid>
-           </div>
+                        </div>
+                    </Col>
+                </Row>
+            </Grid>
         );
     };
 };

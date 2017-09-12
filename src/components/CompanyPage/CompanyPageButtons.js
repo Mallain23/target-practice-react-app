@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {  Col, Button, NavItem } from 'react-bootstrap'
 
 import {  openEditPageModal } from '../actions/ShowHideActions'
 import { setEditContactToFalse } from '../actions/ManagementDirectory'
@@ -9,8 +8,8 @@ export class CompanyPageButtons extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleEditClick = this.handleEditClick.bind(this)
-        this.handleAddContactClick = this.handleAddContactClick.bind(this)
+        this.handleEditClick = this.handleEditClick.bind(this);
+        this.handleAddContactClick = this.handleAddContactClick.bind(this);
     };
 
     handleEditClick(e) {
@@ -27,7 +26,8 @@ export class CompanyPageButtons extends React.Component {
     };
 
     renderButton() {
-      const { selectedPage } = this.props
+      const { selectedPage } = this.props;
+
       if (selectedPage === 'Financial Statements' || selectedPage === 'Assets and Liabilities') {
         return ''
       }

@@ -1,51 +1,49 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
-import { removeCompanyFromDatabase, updateCurrentSelectedPage } from '../actions'
-import { openModal, toggleVisibility } from '../actions/ShowHideActions'
-import { updateTarget } from '../actions/EditTarget'
+import { removeTargetFromDatabase, updateCurrentSelectedPage } from '../actions';
+import { openModal, toggleVisibility } from '../actions/ShowHideActions';
+import { updateTarget } from '../actions/EditTarget';
 
-import CompanyPageButtons from './CompanyPageButtons'
+import CompanyPageButtons from './CompanyPageButtons';
 
-import './CompanyPage.css'
+import './CompanyPage.css';
 
 export class ComapnyPageNav extends React.Component {
     constructor(props) {
         super(props)
 
-    this.handleRemoveCompanyClick = this.handleRemoveCompanyClick.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.handleRemoveCompanyClick = this.handleRemoveCompanyClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   };
 
   handleClick(e) {
-      e.preventDefault(e)
+      e.preventDefault(e);
 
-      const selectedPage = e.target.value
-      this.props.dispatch(updateCurrentSelectedPage(selectedPage))
+      const selectedPage = e.target.value;
+      this.props.dispatch(updateCurrentSelectedPage(selectedPage));
   };
 
     handleRemoveCompanyClick() {
 
-        const { companyName } = this.props.selectedCompany
-        this.props.dispatch(removeCompanyFromDatabase(companyName))
-        this.props.history.push('/')
+        const { companyName } = this.props.selectedCompany;
+        this.props.dispatch(removeTargetFromDatabase(companyName));
+        this.props.history.push('/');
     };
 
     render() {
-      const { selectedPage } = this.props
-      const { companyName, status } = this.props.selectedCompany
+      const { selectedPage } = this.props;
+      const { companyName, status } = this.props.selectedCompany;
 
         return (
-
             <Navbar>
                 <Navbar.Header >
                     <Navbar.Brand>
                         {companyName}
                     </Navbar.Brand>
                 </Navbar.Header>
-
                 <Nav>
                     <NavItem onClick={this.handleRemoveCompanyClick} > Delete Target </NavItem>
                     <NavDropdown eventKey={3} title='Target Info' id='target-ifno'>

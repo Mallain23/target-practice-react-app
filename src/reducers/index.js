@@ -1,15 +1,13 @@
 import { mockData } from './MockData'
-import { ADD_COMPANY_TO_DATABASE,
-         FETCH_COMPANY_DATA_SUCCESS,
-         REMOVE_COMPANY_FROM_DATABASE_SUCCESS,
+import { ADD_TARGET_TO_DATABASE,
+         FETCH_TARGET_DATA_SUCCESS,
+         REMOVE_TARGET_FROM_DATABASE_SUCCESS,
          GET_FINANCIAL_REPORT_SUCCESS,
          UPDATE_CURRENT_SELECTED_PAGE ,
          UPDATE_SEARCH_RESULTS_SUCCESS,} from '../components/actions'
 import { SET_EDIT_CONTACT_TO_FALSE, SET_EDIT_CONTACT_TO_TRUE} from '../components/actions/ManagementDirectory'
 import { UPDATE_TARGET_SUCCESS} from '../components/actions/EditTarget'
-import { SHOW_EXTENDED_NAV,
-         HIDE_EXTENDED_NAV,
-         CLOSE_MODAL,
+import { CLOSE_MODAL,
          OPEN_MODAL,
          OPEN_EDIT_PAGE_MODAL,
          OPEN_AL_MODAL,
@@ -24,7 +22,6 @@ const TARGET_PROFILE = 'Target Profile'
 
 const initialState = {
     companies: mockData,
-    showExtendedNav: false,
     sortOption: COMPANY_NAME,
     searchResults: mockData,
     companyStatus: {
@@ -137,7 +134,7 @@ export default function reducer(state = initialState, action) {
         });
     }
 
-    else if (action.type === ADD_COMPANY_TO_DATABASE) {
+    else if (action.type === ADD_TARGET_TO_DATABASE) {
         const { companyData: company } = action
 
         return Object.assign({}, state, {
@@ -148,19 +145,7 @@ export default function reducer(state = initialState, action) {
         });
     }
 
-    else if (action.type === SHOW_EXTENDED_NAV) {
-        return Object.assign({}, state, {
-            showExtendedNav: true
-        });
-    }
-
-    else if (action.type === HIDE_EXTENDED_NAV) {
-        return Object.assign({}, state, {
-            showExtendedNav: false
-        });
-    }
-
-    else if (action.type === FETCH_COMPANY_DATA_SUCCESS) {
+    else if (action.type === FETCH_TARGET_DATA_SUCCESS) {
           const { companyData: selectedCompany } = action
 
           return Object.assign({}, state, {
@@ -169,7 +154,7 @@ export default function reducer(state = initialState, action) {
           });
     }
 
-    else if(action.type === REMOVE_COMPANY_FROM_DATABASE_SUCCESS) {
+    else if(action.type === REMOVE_TARGET_FROM_DATABASE_SUCCESS) {
         const { remainingCompanies: companies } = action
         return Object.assign({}, state, {
             companies,

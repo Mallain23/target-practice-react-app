@@ -3,11 +3,11 @@ import { Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux'
 
 import { closeModal } from '../actions/ShowHideActions'
-import AddCompanyForm from './AddCompanyForm'
+import AddTargetForm from './AddTargetForm'
 
 import './Modal.css'
 
-export class CompanyDataModalContainer extends React.Component {
+export class AddTargetModalContainer extends React.Component {
     constructor(props) {
         super(props)
 
@@ -32,7 +32,7 @@ export class CompanyDataModalContainer extends React.Component {
                         <Modal.Title id="contained-modal-title">Add New Target</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <AddCompanyForm {...this.props} showModal={showModal}/>
+                        <AddTargetForm {...this.props} showModal={showModal}/>
                     </Modal.Body>
                     <Modal.Footer>
                     <Button
@@ -53,4 +53,4 @@ const mapStateToProps = state => ({
     companies: state.app.companies
 })
 
-export default connect(mapStateToProps)(CompanyDataModalContainer)
+export default connect(mapStateToProps)(AddTargetModalContainer)

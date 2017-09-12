@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Button, Form } from 'react-bootstrap';
 import {Field, reduxForm, focus} from 'redux-form';
 
-import { addCompanyToDatabase } from '../actions'
+import { addTargetToDatabase } from '../actions'
 import { closeModal } from '../actions/ShowHideActions'
 import { formatDataForDatabaseEntry } from './utils'
 import { required, nonEmpty } from '../validators'
@@ -12,7 +12,7 @@ import Input from './Input'
 
 import './Modal.css'
 
-export class AddCompanyForm extends React.Component {
+export class AddTargetForm extends React.Component {
 
     onSubmit(newCompany) {
         const { companies } = this.props
@@ -23,7 +23,7 @@ export class AddCompanyForm extends React.Component {
 
         const companyData = formatDataForDatabaseEntry(newCompany)
 
-        this.props.dispatch(addCompanyToDatabase(companyData))
+        this.props.dispatch(addTargetToDatabase(companyData))
 
         this.props.dispatch(closeModal())
     };
@@ -31,7 +31,7 @@ export class AddCompanyForm extends React.Component {
     render() {
 
           return (
-              <Form className="add-company-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+              <Form className="add-target-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                   <label htmlFor="company-name">Target Name</label>
                   <Field component={Input}
                         placeholder='Enter Target Name'
@@ -47,5 +47,5 @@ export class AddCompanyForm extends React.Component {
     };
 };
 
-export default AddCompanyForm = reduxForm({
-  form: 'add-company-form'})(AddCompanyForm);
+export default AddTargetForm = reduxForm({
+  form: 'add-target-form'})(AddTargetForm);

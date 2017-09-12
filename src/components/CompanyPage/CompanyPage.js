@@ -2,8 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Col, Row } from 'react-bootstrap'
 
-import { fetchCompanyData } from '../actions'
-import { showExtendedNav } from '../actions/ShowHideActions'
+import { fetchTargetData } from '../actions'
 
 import CompanyPageNav from './CompanyPageNav'
 import CompanyPageButtons from './CompanyPageButtons'
@@ -28,11 +27,7 @@ export class CompanyPage extends React.Component {
           return
         }
 
-        this.props.dispatch(fetchCompanyData(companyName));
-    };
-
-    componentDidMount() {
-        this.props.dispatch(showExtendedNav());
+        this.props.dispatch(fetchTargetData(companyName));
     };
 
     componentWillReceiveProps(nextProps, nextState) {
@@ -40,7 +35,7 @@ export class CompanyPage extends React.Component {
 
             const companyName = nextProps.match.params.companyName
 
-            this.props.dispatch(fetchCompanyData(companyName))
+            this.props.dispatch(fetchTargetData(companyName))
         }
     };
 

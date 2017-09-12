@@ -1,7 +1,9 @@
 import React from 'react';
 import { FormControl, FormGroup, ControlLabel } from 'react-bootstrap'
 import { focus } from 'redux-form';
+
 import './Modal.css'
+import '../SideBar/Sidebar.css'
 
 export default class Input extends React.Component {
 

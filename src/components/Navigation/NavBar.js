@@ -1,7 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 import { sortCompanies } from '../actions/SortActions'
 import { openModal, toggleVisibility } from '../actions/ShowHideActions'
@@ -12,31 +12,32 @@ export class NavBar extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleClick = this.handleClick.bind(this)
-        this.openModalClick = this.openModalClick.bind(this)
-        this.handleToggle = this.handleToggle.bind(this)
+        this.handleClick = this.handleClick.bind(this);
+        this.openModalClick = this.openModalClick.bind(this);
+        this.handleToggle = this.handleToggle.bind(this);
     };
 
     handleClick(e) {
-      e.preventDefault()
-      const sortOption = e.target.value
+      e.preventDefault();
+      const sortOption = e.target.value;
 
-      this.props.dispatch(sortCompanies(sortOption))
+      this.props.dispatch(sortCompanies(sortOption));
     };
 
     openModalClick(e) {
-      e.preventDefault()
+      e.preventDefault();
 
-      this.props.dispatch(openModal())
+      this.props.dispatch(openModal());
     };
 
     handleToggle() {
-        this.props.dispatch(toggleVisibility())
-    }
+        this.props.dispatch(toggleVisibility());
+    };
+
     renderText() {
-        const { showSidebar } = this.props
+        const { showSidebar } = this.props;
         return showSidebar ? 'Hide Search Bar' : 'Show Search Bar';
-    }
+    };
 
     render() {
 
@@ -67,8 +68,8 @@ export class NavBar extends React.Component {
                             Display by Rating: Highest to Lowest</button>
                         </MenuItem>
                     </NavDropdown>
-              </Nav>
-          </Navbar>
+                </Nav>
+            </Navbar>
         );
     };
 };
@@ -76,7 +77,6 @@ export class NavBar extends React.Component {
 const mapStateToProps = state => ({
 
     showSidebar: state.app.showSidebar
+});
 
-})
-
-export default connect(mapStateToProps)(NavBar)
+export default connect(mapStateToProps)(NavBar);

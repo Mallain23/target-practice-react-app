@@ -3,16 +3,6 @@ export const toggleVisibility = ( )=> ({
     type: TOGGLE_VISIBILITY
 });
 
-export const SHOW_EXTENDED_NAV = 'SHOW_EXTENDED_NAV'
-export const showExtendedNav = () => ({
-    type: SHOW_EXTENDED_NAV
-});
-
-export const HIDE_EXTENDED_NAV = 'HIDE_EXTENDED_NAV'
-export const hideExtendedNav = () => ({
-    type: HIDE_EXTENDED_NAV
-});
-
 export const CLOSE_MODAL = 'CLOSE_MODAL'
 export const closeModal = () => ({
     type: CLOSE_MODAL

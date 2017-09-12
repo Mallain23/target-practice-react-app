@@ -1,15 +1,15 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { sortFunction } from '../actions/utils'
+import { sortFunction } from '../actions/utils';
 
-import './Sidebar.css'
+import './Sidebar.css';
 
 export function SearchResults (props) {
 
-    const {  searchResults, sortOption } = props
-    const sortedResults = sortFunction(searchResults, sortOption)
+    const {  searchResults, sortOption } = props;
+    const sortedResults = sortFunction(searchResults, sortOption);
 
     const formatedSearchResults = sortedResults.map(({ companyName, status }, index) => {
         return (
@@ -19,7 +19,7 @@ export function SearchResults (props) {
                       <strong>{companyName}</strong>
                 </Link>
             </li>
-       );
+        );
     });
 
     return (
