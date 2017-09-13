@@ -92,6 +92,11 @@ ul {
 .search-result-item {
     font-size: 16px;
 }
+
+.search-result-item:hover {
+  color: #777;
+}
+
 .Pending {
     color: #0074D9;
 }

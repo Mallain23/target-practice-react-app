@@ -1,10 +1,10 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Grid, Col, Row } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Grid, Col, Row } from 'react-bootstrap';
 
-import OverviewPage from '../OverviewPage/OverviewPage'
-import CompanyPage from '../CompanyPage/CompanyPage'
-import SideBarContainer from '../SideBar/SideBarContainer'
+import OverviewPage from '../OverviewPage/OverviewPage';
+import CompanyPage from '../CompanyPage/CompanyPage';
+import SideBarContainer from '../SideBar/SideBarContainer';
 
 export class Page extends React.Component {
 
@@ -14,7 +14,7 @@ export class Page extends React.Component {
     };
 
     render(){
-        const pageComponent = this.props.match.params.companyName ?  <CompanyPage {...this.props}/> : <OverviewPage />
+        const pageComponent = this.props.match.params.companyName ?  <CompanyPage {...this.props}/> : <OverviewPage />;
 
         return (
             <Grid>
@@ -36,4 +36,4 @@ const mapStateToProps = state => ({
     showSidebar: state.app.showSidebar
 });
 
-export default connect(mapStateToProps)(Page)
+export default connect(mapStateToProps)(Page);

@@ -30,4 +30,4 @@ const mapStateToProps = state => ({
     showSidebar: state.app.showSidebar
 });
 
-export default connect(mapStateToProps)(SideBarContainer)
+export default connect(mapStateToProps)(SideBarContainer);

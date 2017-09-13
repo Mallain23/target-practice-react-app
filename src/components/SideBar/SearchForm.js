@@ -1,16 +1,16 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Form} from 'react-bootstrap'
-import { Input } from 'semantic-ui-react'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Form} from 'react-bootstrap';
+import { Input } from 'semantic-ui-react';
 
-import { updateSearchResults } from '../actions'
-import './Sidebar.css'
+import { updateSearchResults } from '../actions';
+import './Sidebar.css';
 
 export class SearchForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
     };
 
     handleChange(e) {
@@ -36,4 +36,4 @@ export class SearchForm extends React.Component {
     };
 };
 
-export default connect()(SearchForm)
+export default connect()(SearchForm);
