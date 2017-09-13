@@ -16,7 +16,8 @@ export const calcTotalLiabilityValue = liabilities => {
     }
 
     const value =  liabilities.reduce((acc, liability) => {
-      return acc - parseInt(liability.value, 10);
+      let value = isNaN(liability.value) ? 0 : liability.value;
+      return acc - parseInt(value, 10);
     }, 0);
 
    return `$${value.toLocaleString({minimumFractionDigits: 2})}`

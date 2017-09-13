@@ -60,6 +60,7 @@ export class FormattedAL extends React.Component  {
             const sortedAL = sortFunction(arrayOfAL, NAME)
 
             formattedAL = sortedAL.map(({name, value, id}, index) => {
+                value = value ? parseInt(value) : 'No Data Provided';
 
                 return (
                     <li className='prop-list' key={index}>
