@@ -77,6 +77,7 @@ export class ManagementDirectoryForm extends React.Component {
                     component={Input}
                     type='email'
                     name="email"
+                    validate={[required, nonEmpty]} 
                     placeholder='Enter Contacts Email Address' />
                 <Button
                     type="submit"

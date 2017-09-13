@@ -69,7 +69,7 @@ export const mockData = [
                                           {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
-              isAudited: true,
+              isAudited: 'yes',
               whoAudits: 'example',
               forHowLong: 'x years'
           },
@@ -198,7 +198,7 @@ export const mockData = [
                                         {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
         ],
         financesAudited: {
-            isAudited: true,
+            isAudited: 'yes',
             whoAudits: 'example',
             forHowLong: 'z years'
         },
@@ -323,7 +323,7 @@ export const mockData = [
                                         {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
         ],
         financesAudited: {
-            isAudited: true,
+            isAudited: 'yes',
             whoAudits: 'example',
             forHowLong: 'z years'
         },
@@ -445,7 +445,7 @@ export const mockData = [
                                           {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
-              isAudited: true,
+              isAudited: 'yes',
               whoAudits: 'example',
               forHowLong: 'x years'
           },
@@ -567,7 +567,7 @@ export const mockData = [
                                           {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
-              isAudited: true,
+              isAudited: 'yes',
               whoAudits: 'example',
               forHowLong: 'x years'
           },
@@ -689,7 +689,7 @@ export const mockData = [
                                           {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
-              isAudited: true,
+              isAudited: 'yes',
               whoAudits: 'example',
               forHowLong: 'x years'
           },
@@ -811,7 +811,7 @@ export const mockData = [
                                           {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
-              isAudited: true,
+              isAudited: 'yes',
               whoAudits: 'example',
               forHowLong: 'x years'
           },
@@ -934,7 +934,7 @@ export const mockData = [
                                           {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
-              isAudited: true,
+              isAudited: 'yes',
               whoAudits: 'example',
               forHowLong: 'x years'
           },
@@ -1056,7 +1056,7 @@ export const mockData = [
                                           {title: '2015 Q4 Financial Statement', Report: 'Mock Report', type: 'financialStatementsQuarterly'}
           ],
           financesAudited: {
-              isAudited: true,
+              isAudited: 'yes',
               whoAudits: 'example',
               forHowLong: 'x years'
           },
