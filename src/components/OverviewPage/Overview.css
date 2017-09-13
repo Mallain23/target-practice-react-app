@@ -50,6 +50,27 @@
   margin-top: 50px;
 }
 
+.Pending-Button {
+  border: 1px solid #0074D9;
+  color: #0074D9;
+}
+
+.Approved-Button {
+  border: 1px solid	#2ECC40;
+  color: #2ECC40;
+}
+
+.Declined-Button {
+  border: 1px solid #FF4136;
+  color: #FF4136;
+}
+
+.Researching-Button {
+  border: 1px solid #ff9900;
+  color: #ff9900;
+
+}
+
 .company-by-status {
   font-size: 24px;
   list-style: none;
@@ -57,27 +78,26 @@
   color: black;
 }
 
+
+
 .company-link {
   color: black;
   font-family: Lato,'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+
 .pending {
     color: #0074D9;
-    border: 1px solid #0074D9;
 }
 
 .approved {
     color: 	#2ECC40;
-    border: 1px solid	#2ECC40;
 }
 
 .declined {
     color: #FF4136;
-    border: 1px solid #FF4136;
 }
 
 .researching {
     color: #ff9900;
-    border: 1px solid #ff9900;
 }
