@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { sortFunction } from '../actions/utils';
 
-import './Overview.css'
+import './Overview.css';
 
 export function CompaniesByStatusContainer (props) {
 
@@ -42,4 +42,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(CompaniesByStatusContainer)
+export default connect(mapStateToProps)(CompaniesByStatusContainer);

@@ -8,13 +8,18 @@ import './FinancialPage.css';
 
 export function FinancialOverview (props) {
 
-    const  { status ,
-            companyProjections,
-            areProjectionsReasonable } = props.selectedCompany.financialMatters.businessMargins;
-    const { statementFromCompany,
-            financesAudited,
-            internalAssessmentOfFinances,
-            internalFinancialRating  } = props.selectedCompany.financialMatters;
+    const  {
+        status,
+        companyProjections,
+        areProjectionsReasonable
+    } = props.selectedCompany.financialMatters.businessMargins;
+
+    const {
+        statementFromCompany,
+        financesAudited,
+        internalAssessmentOfFinances,
+        internalFinancialRating
+    } = props.selectedCompany.financialMatters;
 
     return (
         <div className='data-container'>
@@ -37,11 +42,11 @@ export function FinancialOverview (props) {
 };
 
 export const mapStateToProps = state => {
-  const { selectedCompany } = state.app
+  const { selectedCompany } = state.app;
 
   return {
       selectedCompany
   };
 };
 
-export default connect(mapStateToProps)(FinancialOverview)
+export default connect(mapStateToProps)(FinancialOverview);

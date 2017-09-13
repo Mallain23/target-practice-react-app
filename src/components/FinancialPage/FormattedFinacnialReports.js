@@ -37,9 +37,9 @@ export class FormattedFinacnialReports extends React.Component {
 
     render() {
 
-        const arrayOfFinancialReports = this.props.arrayOfReports
-        const typeOfReport = this.props.name
-        const sortedReports = sortFunction(arrayOfFinancialReports, TITLE)
+        const arrayOfFinancialReports = this.props.arrayOfReports;
+        const typeOfReport = this.props.name;
+        const sortedReports = sortFunction(arrayOfFinancialReports, TITLE);
 
         const formattedFinacnialReports = sortedReports.map(({title, report}, index) => {
             return (

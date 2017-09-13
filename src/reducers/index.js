@@ -93,7 +93,8 @@ export default function reducer(state = initialState, action) {
             showModal: false,
             showEditModal: false,
             showALModal: false,
-            editAL: false
+            editAL: false,
+            editReport: false
         });
     }
 
@@ -167,8 +168,7 @@ export default function reducer(state = initialState, action) {
         const { report: selectedFinancialReport } = action
 
         return Object.assign({}, state, {
-            selectedFinancialReport,
-            editReport: true
+            selectedFinancialReport
         });
     }
 

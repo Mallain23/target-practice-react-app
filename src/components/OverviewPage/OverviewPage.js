@@ -26,11 +26,14 @@ export class OverviewPage extends React.Component {
     };
 
     render() {
-        const { companies,
-                pending,
-                approved,
-                declined,
-                researching  } = this.props;
+
+        const {
+            companies,
+            pending,
+            approved,
+            declined,
+            researching
+        } = this.props;
 
         const { view, statusType } = this.props.viewCompaniesByStatus;
 
@@ -55,30 +58,35 @@ export class OverviewPage extends React.Component {
                 <Row>
                     <Col xs={12}>
                         <div className='company-stats'>
-                              <CompanyStatusButtons className='status-headers'
-                                                    text={statusHeaders.total}
-                                                    number={companies.length}
-                                                    status='companies' />
-                              <CompanyStatusButtons className='status-headers Researching-Button'
-                                                    text={statusHeaders.researching}
-                                                    number={researching.length}
-                                                    status='researching'/>
-                              <CompanyStatusButtons className='status-headers Pending-Button'
-                                                    text={statusHeaders.pending}
-                                                    number={pending.length}
-                                                    status='pending'/>
-                              <CompanyStatusButtons className='status-headers Approved-Button'
-                                                    text={statusHeaders.approved}
-                                                    number={approved.length}
-                                                    status='approved'/>
-                              <CompanyStatusButtons className='status-headers Declined-Button'
-                                                    text={statusHeaders.declined}
-                                                    number={declined.length}
-                                                    status='declined'/>
+                              <CompanyStatusButtons
+                                  className='status-headers'
+                                  text={statusHeaders.total}
+                                  number={companies.length}
+                                  status='companies' />
+                              <CompanyStatusButtons
+                                  className='status-headers Researching-Button'
+                                  text={statusHeaders.researching}
+                                  number={researching.length}
+                                  status='researching'/>
+                              <CompanyStatusButtons
+                                  className='status-headers Pending-Button'
+                                  text={statusHeaders.pending}
+                                  number={pending.length}
+                                  status='pending'/>
+                              <CompanyStatusButtons
+                                  className='status-headers Approved-Button'
+                                  text={statusHeaders.approved}
+                                  number={approved.length}
+                                  status='approved'/>
+                              <CompanyStatusButtons
+                                  className='status-headers Declined-Button'
+                                  text={statusHeaders.declined}
+                                  number={declined.length}
+                                  status='declined'/>
                           </div>
-                  </Col>
-                </Row>
-                <Row>
+                      </Col>
+                  </Row>
+                  <Row>
                     <Col xs={12}>
                         <div className='list-of-company-by-status-box'>
                             {statusResults}

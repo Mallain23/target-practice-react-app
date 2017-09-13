@@ -12,13 +12,13 @@ import EditTechForm from '../BenefitsPage/EditTechForm';
 import AssetLiabilityForm from '../AssetsLiabilities/AssetLiabilityForm';
 
 
-export const getRelevantForm = (selectedPage, editReport, showALModal) => {
+export const getRelevantForm = (selectedPage) => {
 
-    if (editReport) {
+    if (selectedPage === 'Financial Statements') {
         return <FinancialReportForm   />
     }
 
-    else if (showALModal) {
+    else if (selectedPage === 'Assets and Liabilities') {
         return <AssetLiabilityForm  />
     }
 

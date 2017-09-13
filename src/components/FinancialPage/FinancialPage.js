@@ -8,6 +8,7 @@ import FinancialStatementsContainer from './FinancialStatementsContainer';
 export class FinancialPage extends React.Component {
 
     renderComponent() {
+
         const { selectedPage } = this.props
 
         if (selectedPage === 'Assets and Liabilities') {

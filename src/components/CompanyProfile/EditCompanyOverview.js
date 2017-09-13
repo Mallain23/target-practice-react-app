@@ -85,7 +85,7 @@ export class EditCompanyOverviewForm extends React.Component {
                     type="text"
                     name="principlePlaceOfBusiness"
                     placeholder='Where is the principle place of business located?' />
-                <label htmlFor='numberOfOffices'>Number of offices</label>
+                <label htmlFor='numberOfOffices'>Number of Offices</label>
                 <Field
                     component={Input}
                     type='text'

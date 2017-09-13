@@ -21,7 +21,7 @@ export class EditPageModal extends React.Component {
 
     renderForm() {
 
-          return this.props.childForm
+          return this.props.childForm;
     };
 
     render() {
@@ -58,7 +58,7 @@ export class EditPageModal extends React.Component {
 const mapStateToProps = state => {
     const { showEditModal, selectedPage, showALModal, editReport  } = state.app;
     const { companyName } = state.app.selectedCompany;
-    const childForm = getRelevantForm(selectedPage, editReport, showALModal);
+    const childForm = getRelevantForm(selectedPage);
 
     return {
         showEditModal,

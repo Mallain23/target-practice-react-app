@@ -3,17 +3,10 @@ import { connect } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 
 import { fetchTargetData } from '../actions';
+import { getRelevantPage } from './utils';
 
 import CompanyPageNav from './CompanyPageNav';
 import CompanyPageButtons from './CompanyPageButtons';
-import CompanyOverview from '../CompanyProfile/CompanyOverview';
-import FinancialPage from '../FinancialPage/FinancialPage';
-import IntellectualPropertyPage from '../BenefitsPage/IntellectualPropertyPage';
-import TechnologyPage from '../BenefitsPage/TechnologyPage';
-import OtherBenefitsPage from '../BenefitsPage/OtherBenefitsPage';
-import LegalPage from '../Legal/LegalPage';
-import CompanyDirectory from '../CompanyProfile/CompanyDirectory';
-import FinalAssessmentPage from '../CompanyProfile/FinalAssessmentPage';
 
 import './CompanyPage.css';
 
@@ -40,88 +33,63 @@ export class CompanyPage extends React.Component {
     };
 
     renderPageContent() {
-
-          const { selectedPage } = this.props
-
-          if (selectedPage === 'Target Profile') {
-              return <CompanyOverview {...this.props} />
-          }
-
-          else if (selectedPage === 'Target Directory') {
-              return <CompanyDirectory {...this.props} />
-          }
-
-          else if (selectedPage === 'Final Assessment') {
-              return <FinalAssessmentPage {...this.props} />
-          }
-
-          else if (selectedPage === 'Financial Page' ||
-                  selectedPage === 'Assets and Liabilities' ||
-                  selectedPage === 'Financial Statements') {
-
-              return <FinancialPage {...this.props} />
-          }
-
-          else if (selectedPage === 'Intellectual Property') {
-              return <IntellectualPropertyPage {...this.props} />
-          }
-
-          else if (selectedPage === 'Technology') {
-              return <TechnologyPage {...this.props} />
-          }
-
-          else if (selectedPage === 'Other Benefits') {
-              return <OtherBenefitsPage {...this.props} />
-          }
-
-          return <LegalPage {...this.props} />
+        return this.props.childPage;
     };
 
     render() {
+
         const { selectedPage } = this.props;
 
         return (
-              <div className='page-container'>
-                  <Row >
-                      <Col xs={12} md={1}></Col>
-                      <Col xs={12} md={11}>
-                        <div className='header'>
-                          <CompanyPageNav {...this.props} />
-                        </div>
-                      </Col>
-                  </Row>
-                  <Row>
-                      <Col xs={12} md={1}></Col>
-                      <Col xs={12} md={11}>
-                          <div className='page-name-container'>
-                              <h3 className='page-name'>{selectedPage}</h3>
-                               <CompanyPageButtons {...this.props}/>
-                          </div>
-                      </Col>
-                  </Row>
-                  <Row>
-                      <Col xs={12} md={1}></Col>
-                      <Col xs={12} md={10}>
-                     {this.renderPageContent()}
+            <div className='page-container'>
+                <Row >
+                    <Col xs={12} md={1}></Col>
+                    <Col xs={12} md={11}>
+                      <div className='header'>
+                        <CompanyPageNav {...this.props} />
+                      </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={12} md={1}></Col>
                     <Col xs={12} md={11}>
-                      <div className='footer'></div>
+                        <div className='page-name-container'>
+                            <h3 className='page-name'>{selectedPage}</h3>
+                             <CompanyPageButtons {...this.props}/>
+                        </div>
                     </Col>
                 </Row>
-              </div>
+                <Row>
+                    <Col xs={12} md={1}></Col>
+                    <Col xs={12} md={10}>
+                   {this.renderPageContent()}
+                  </Col>
+              </Row>
+              <Row>
+                  <Col xs={12} md={1}></Col>
+                  <Col xs={12} md={11}>
+                    <div className='footer'></div>
+                  </Col>
+              </Row>
+            </div>
         );
     };
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, props) => {
     const { selectedCompany, selectedPage } = state.app;
+    const newPropObj = Object.assign({}, props, {
+          selectedPage,
+          selectedCompany
+    });
+
+    const childPage = getRelevantPage(selectedPage, newPropObj);
+
 
     return {
         selectedCompany,
-        selectedPage
+        selectedPage,
+        childPage
     };
 };
 

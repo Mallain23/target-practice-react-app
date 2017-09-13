@@ -26,7 +26,7 @@ export function FinancialStatementsContainer (props) {
 };
 
 export const mapStateToProps = state => {
-  const { selectedCompany } = state.app
+  const { selectedCompany } = state.app;
 
   return {
       selectedCompany
