@@ -3,17 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 import { closeModal } from '../actions/ShowHideActions';
-
-import EditCompanyOverviewForm from '../CompanyProfile/EditCompanyOverview';
-import ManagementDirectoryForm from '../CompanyProfile/ManagementDirectoryForm';
-import FinalAssessmentForm from '../CompanyProfile/FinalAssessmentForm';
-import EditLegalForm from '../Legal/EditLegalForm';
-import EditFinancialForm from '../FinancialPage/EditFinancialForm';
-import FinancialReportForm from '../FinancialPage/FinancialReportForm';
-import EditOtherBenefitsForm from '../BenefitsPage/EditOtherBenefitsForm';
-import EditIPForm from '../BenefitsPage/EditIPForm';
-import EditTechForm from '../BenefitsPage/EditTechForm';
-import AssetLiabilityForm from '../AssetsLiabilities/AssetLiabilityForm';
+import { getRelevantForm } from './utils'
 
 import './Modal.css';
 
@@ -30,55 +20,9 @@ export class EditPageModal extends React.Component {
     };
 
     renderForm() {
-          const { selectedPage, editReport, showALModal } = this.props;
 
-          if (editReport) {
-              return <FinancialReportForm  />
-          }
-
-          else if (showALModal) {
-              return <AssetLiabilityForm  />
-          }
-
-          else if (selectedPage === 'Target Profile') {
-              return <EditCompanyOverviewForm  />
-          }
-
-          else if (selectedPage === 'Target Directory') {
-              return <ManagementDirectoryForm />
-          }
-
-          else if (selectedPage === 'Final Assessment') {
-              return <FinalAssessmentForm  />
-          }
-
-          else if (selectedPage === 'Legal Factors' ||
-                   selectedPage === 'Legal Assessment') {
-
-              return <EditLegalForm  />
-          }
-
-          else if (selectedPage === 'Financial Page') {
-            return <EditFinancialForm  />
-          }
-
-          else if (selectedPage ===  'Intellectual Property') {
-
-              return <EditIPForm />
-          }
-
-          else if (selectedPage ===  'Technology') {
-
-              return <EditTechForm />
-          }
-
-          else if (selectedPage ===  'Other Benefits') {
-
-              return <EditOtherBenefitsForm />
-          }
-
-          return ''
-    }
+          return this.props.childForm
+    };
 
     render() {
         const { showEditModal,
@@ -114,13 +58,15 @@ export class EditPageModal extends React.Component {
 const mapStateToProps = state => {
     const { showEditModal, selectedPage, showALModal, editReport  } = state.app;
     const { companyName } = state.app.selectedCompany;
+    const childForm = getRelevantForm(selectedPage, editReport, showALModal);
 
     return {
         showEditModal,
         editReport,
         showALModal,
         selectedPage,
-        companyName
+        companyName,
+        childForm
     };
 };
 

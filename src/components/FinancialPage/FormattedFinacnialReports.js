@@ -45,27 +45,32 @@ export class FormattedFinacnialReports extends React.Component {
         const formattedFinacnialReports = sortedReports.map(({title, report}, index) => {
             return (
                 <li className='financial-statements-list-item' key={index}>
-                    <button className='financial-report-button'
-                               value={title}
-                               onClick={this.handleClick} >
-                               {title}
+                    <button
+                         className='financial-report-button'
+                         value={title}
+                         onClick={this.handleClick} >
+                         {title}
                     </button>
                     <span className='divider'> | </span>
-                    <button className='financial-report-button' value={title} onClick={this.handleEditClick}>Edit Statement</button>
+                    <button
+                        className='financial-report-button'
+                        value={title}
+                        onClick={this.handleEditClick}>
+                        Edit Statement
+                    </button>
                 </li>
             );
         });
 
-
         return (
-          <div>
-              <div className='section-header'>{typeOfReport} Financial Statements</div>
-              <ul className={this.props.className}>
-                  {formattedFinacnialReports}
-              </ul>
-          </div>
+            <div>
+                <div className='section-header'>{typeOfReport} Financial Statements</div>
+                <ul className={this.props.className}>
+                    {formattedFinacnialReports}
+                </ul>
+            </div>
         );
     };
 };
 
-export default connect()(FormattedFinacnialReports)
+export default connect()(FormattedFinacnialReports);

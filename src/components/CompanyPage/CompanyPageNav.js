@@ -129,7 +129,6 @@ const mapStateToProps = state => {
         selectedCompany,
         selectedPage
     };
-
 };
 
 export default connect(mapStateToProps)(ComapnyPageNav)

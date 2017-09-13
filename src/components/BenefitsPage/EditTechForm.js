@@ -17,15 +17,16 @@ export class EditTechForm extends React.Component {
         const { selectedCompany } = this.props;
 
         this.handleInitialize(selectedCompany);
-
     };
 
     handleInitialize(selectedCompany) {
 
-        const { licenses,
-                softwareUse,
-                assessment,
-                internalTechRating: _internalTechRating } = selectedCompany.technology;
+        const {
+            licenses,
+            softwareUse,
+            assessment,
+            internalTechRating: _internalTechRating
+        } = selectedCompany.technology;
 
         const internalTechRating  = parseInt(_internalTechRating);
 
@@ -43,31 +44,33 @@ export class EditTechForm extends React.Component {
         const formattedObj = formatTechData(values);
 
         this.props.dispatch(updateTarget(formattedObj));
-
     };
 
     render() {
-        
+
         return (
             <Form className="edit-tech-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                   <label htmlFor="licenses">Licenses</label>
-                  <Field component={Input}
-                          placeholder="Enter Information on Target Licenses"
-                          type="textarea"
-                          name="licenses"
-                          componentClass="textarea" />
+                  <Field
+                      component={Input}
+                      placeholder="Enter Information on Target Licenses"
+                      type="textarea"
+                      name="licenses"
+                      componentClass="textarea" />
                   <label htmlFor="softwareUse">Software</label>
-                  <Field component={Input}
-                          placeholder="Enter Information on Target Software"
-                          type="text"
-                          name="softwareUse"
-                          componentClass="textarea"/>
+                  <Field
+                      component={Input}
+                      placeholder="Enter Information on Target Software"
+                      type="text"
+                      name="softwareUse"
+                      componentClass="textarea"/>
                   <label htmlFor="assessment">Overall Assessment of Targets Technology</label>
-                  <Field component={Input}
-                          placeholder="Enter Final Assessment of Technology"
-                          type="text"
-                          name="assessment"
-                          componentClass="textarea"/>
+                  <Field
+                      component={Input}
+                      placeholder="Enter Final Assessment of Technology"
+                      type="text"
+                      name="assessment"
+                      componentClass="textarea"/>
                   <label htmlFor="assessment">Rating of Technology</label>
                   <Field component={RatingSelect}
                           name="internalTechRating" />
@@ -83,7 +86,7 @@ export class EditTechForm extends React.Component {
 };
 
 const mapStateToProps = state => {
-    const   { selectedCompany } = state.app
+    const   { selectedCompany } = state.app;
 
     return {
         selectedCompany

@@ -11,14 +11,16 @@ export function FinancialStatementsContainer (props) {
 
     return (
         <div className='data-container'>
-            <FormattedFinacnialReports className='annual-financial-reports'
-                                        arrayOfReports={financialStatementsAnnual}
-                                        name='Annual'
-                                        {...props} />
-            <FormattedFinacnialReports className='quarterly-financial-reports'
-                                        arrayOfReports={financialStatementsQuarterly}
-                                        name='Quarterly'
-                                        {...props}  />
+            <FormattedFinacnialReports
+                className='annual-financial-reports'
+                arrayOfReports={financialStatementsAnnual}
+                name='Annual'
+                {...props} />
+            <FormattedFinacnialReports
+                className='quarterly-financial-reports'
+                arrayOfReports={financialStatementsQuarterly}
+                name='Quarterly'
+                {...props}  />
         </div>
     );
 };

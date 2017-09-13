@@ -6,10 +6,12 @@ import Paragraph from '../CompanyPage/Paragraph';
 import '../CompanyProfile/CompanyProfile.css';
 
 export function TechnologyPage (props) {
-    const { licenses,
-            softwareUse,
-            assessment: technologyAssessment,
-            internalTechRating } = props.selectedCompany.technology;
+    const {
+        licenses,
+        softwareUse,
+        assessment: technologyAssessment,
+        internalTechRating
+    } = props.selectedCompany.technology;
 
     return (
         <div className='data-container'>

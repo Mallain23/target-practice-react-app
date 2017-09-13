@@ -67,7 +67,6 @@ export class CompanyDirectory extends React.Component {
             <div className='data-container'>
                     {formattedDirectory}
             </div>
-
         );
     };
 };

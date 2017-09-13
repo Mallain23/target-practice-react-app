@@ -21,7 +21,7 @@ export function LegalAssessment (props) {
 };
 
 const mapStateToProps = state => {
-    console.log(state)
+  
     const { assessment,
             rating  } = state.app.selectedCompany.legal
 

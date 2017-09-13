@@ -40,6 +40,7 @@ export class CompanyPage extends React.Component {
     };
 
     renderPageContent() {
+
           const { selectedPage } = this.props
 
           if (selectedPage === 'Target Profile') {

@@ -90,7 +90,4 @@ const mapStateToProps = state => {
 AssetLiabilityForm = connect(mapStateToProps)(AssetLiabilityForm)
 
 export default AssetLiabilityForm = reduxForm({
-    form: 'asset-liability-form',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('asset-liability-form', Object.keys(errors)[0]))
-})(AssetLiabilityForm);
+    form: 'asset-liability-form'})(AssetLiabilityForm);

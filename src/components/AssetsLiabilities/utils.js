@@ -48,3 +48,5 @@ export const removeAL = (id, type, selectedCompany)  => {
 
     return { financialMatters }
 };
+
+export const NAME = 'name'

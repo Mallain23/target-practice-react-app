@@ -1,21 +1,20 @@
 export const formatCompanyProfileData = data => {
-
-         const {
-                 yearFounded,
-                 companyName,
-                 costOfAcquisition,
-                 generalBusinessActivities,
-                 numberOfEmployees,
-                 headQaurters,
-                 principlePlaceOfBusiness,
-                 numberOfOffices,
-                 vision,
-                 coreValues,
-                 goals,
-                 backgroundInformation,
-                 presentCondition
-          } = data
-
+   const {
+       yearFounded,
+       companyName,
+       costOfAcquisition,
+       generalBusinessActivities,
+       numberOfEmployees,
+       headQaurters,
+       principlePlaceOfBusiness,
+       numberOfOffices,
+       vision,
+       coreValues,
+       goals,
+       backgroundInformation,
+       presentCondition
+    } = data
+    
     return  {
         yearFounded,
         location: {

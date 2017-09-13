@@ -1,12 +1,12 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import Paragraph from '../CompanyPage/Paragraph'
-import FormattedAL from './FormattedAL'
+import Paragraph from '../CompanyPage/Paragraph';
+import FormattedAL from './FormattedAL';
 
-import { calcTotalAssetValue, calcTotalLiabilityValue } from './utils'
+import { calcTotalAssetValue, calcTotalLiabilityValue } from './utils';
 
-import '../CompanyProfile/CompanyProfile.css'
+import '../CompanyProfile/CompanyProfile.css';
 
 
 export function ALPage (props){
@@ -15,8 +15,11 @@ export function ALPage (props){
             assets,
             liabilities,
             totalValueOfAllAssets,
-            totalLiabilities } = props.selectedCompany.financialMatters
+            totalLiabilities
+          } = props.selectedCompany.financialMatters;
 
+    const totalAssetValue = calcTotalAssetValue(assets);
+    const totalLiabilityValue =  calcTotalLiabilityValue(liabilities);
 
     return (
             <div className='data-container'>
@@ -24,12 +27,12 @@ export function ALPage (props){
                              typeOfProperty='Assets'
                              arrayOfAL={assets}
                              name='Assets' />
-                <Paragraph className='target-data' text={[`Total Value of All Assets:  `, calcTotalAssetValue(assets)]} />
+                <Paragraph className='target-data' text={[`Total Value of All Assets:  `, totalAssetValue]} />
                 <FormattedAL className='liability-list'
-                            typeOfProperty='Liabilities'
+                             typeOfProperty='Liabilities'
                              arrayOfAL={liabilities}
                              name='Liabilities' />
-                <Paragraph className='target-data' text={[`Total Amount of All Liabilities:  `, calcTotalLiabilityValue(liabilities)]} />
+                <Paragraph className='target-data' text={[`Total Amount of All Liabilities:  `, totalLiabilityValue]} />
             </div>
     );
 };

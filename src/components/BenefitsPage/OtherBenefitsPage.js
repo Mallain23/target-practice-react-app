@@ -7,13 +7,15 @@ import '../CompanyProfile/CompanyProfile.css';
 
 export function OtherBenefitsPage (props) {
 
-    const { services,
-            products,
-            people,
-            revenueEnhancements,
-            miscellaneous,
-            assessment: otherBenefitsAssessment,
-            internalOtherBenefitsRating} = props.selectedCompany.otherBenefitsProvided;
+    const {
+        services,
+        products,
+        people,
+        revenueEnhancements,
+        miscellaneous,
+        assessment: otherBenefitsAssessment,
+        internalOtherBenefitsRating
+    } = props.selectedCompany.otherBenefitsProvided;
 
     return (
         <div className='data-container'>
@@ -36,4 +38,4 @@ export const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(OtherBenefitsPage)
+export default connect(mapStateToProps)(OtherBenefitsPage);

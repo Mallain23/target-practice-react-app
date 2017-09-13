@@ -1,7 +1,6 @@
 export const filterCompanyByStatus = (companyArray, _status) => {
-      console.log(companyArray, _status)
       return companyArray.filter(({status}) => status.toLowerCase() === _status)
-}
+};
 
 export const sortFunction = (array, sortOption) => {
 
@@ -28,7 +27,8 @@ export const statusObject = {
     pending: 'Pending',
     declined: 'Declined',
     researching: 'Researching'
-}
+};
+
 export const formatTypeOfReportText = _typeOfReport  => {
     if (_typeOfReport === 'Annual') {
         return 'financialStatementsAnnual'

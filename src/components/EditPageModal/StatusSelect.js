@@ -1,24 +1,39 @@
 import React from 'react';
 import { FormControl, FormGroup, ControlLabel } from 'react-bootstrap'
 
-export default function StatusRadio (props) {
+import { statusObject } from './utils'
 
-    return (
-            <FormGroup controlId="formControlsSelect">
-                <ControlLabel htmlFor={props.label}>
-                    {props.label}
-                </ControlLabel>
-                <FormControl componentClass="select"
-                              {...props.input}
-                              id={props.name}
-                              type={props.type}
-                              ref={input => (input = input)}>
-                    <option value="" defaultValue disabled hidden>Choose here</option>
-                    <option value="Researching">Researching</option>
-                    <option value="Pending">Pending Approval</option>
-                    <option value="Approved">Approved</option>
-                    <option value="Declined">Declined</option>
-                </FormControl>
-            </FormGroup>
-    );
+export default class StatusRadio extends React.Component {
+    renderOptions() {
+        const objectArray = Object.keys(statusObject)
+
+        return objectArray.map((key, index) => {
+            if (!key) {
+                return   <option key={index} value="" defaultValue disabled hidden>Choose here</option>
+            }
+
+            return   <option key={index} value={key}>{key}</option>
+        });
+    };
+
+    render() {
+
+        const options = this.renderOptions();
+
+        return (
+                <FormGroup controlId="formControlsSelect">
+                    <ControlLabel htmlFor={this.props.label}>
+                        {this.props.label}
+                    </ControlLabel>
+                    <FormControl
+                        componentClass="select"
+                        {...this.props.input}
+                        id={this.props.name}
+                        type={this.props.type}
+                        ref={input => (input = input)}>
+                        {options}
+                    </FormControl>
+                </FormGroup>
+        );
+    };
 };

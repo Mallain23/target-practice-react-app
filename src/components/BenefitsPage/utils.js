@@ -37,13 +37,14 @@ export const formatTechData = data => {
 
 export const formatOtherBenefitsData = data => {
     const {
-      services,
-      products,
-      people,
-      revenueEnhancements,
-      miscellaneous,
-      assessment,
-      internalOtherBenefitsRating } = data
+        services,
+        products,
+        people,
+        revenueEnhancements,
+        miscellaneous,
+        assessment,
+        internalOtherBenefitsRating 
+    } = data
 
     return {
         otherBenefitsProvided: {

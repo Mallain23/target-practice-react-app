@@ -22,12 +22,14 @@ export class EditIPForm extends React.Component {
 
     handleInitialize(selectedCompany) {
 
-        const { patents,
-                trademarks,
-                copyrights,
-                negative,
-                internalAssessmentOfIP,
-                internalIPRating: _interalIPRating } = selectedCompany.intellectualProperty;
+        const {
+            patents,
+            trademarks,
+            copyrights,
+            negative,
+            internalAssessmentOfIP,
+            internalIPRating: _interalIPRating
+        } = selectedCompany.intellectualProperty;
 
         const internalIPRating  = parseInt(_interalIPRating);
 
@@ -54,38 +56,42 @@ export class EditIPForm extends React.Component {
         return (
             <Form className="edit-ip-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="patents">Patents</label>
-                <Field component={Input}
-                       placeholder="Enter Information on Patents held by the Target"
-                       type="textarea"
-                       name="patents"
-                       componentClass="textarea" />
+                <Field
+                    component={Input}
+                     placeholder="Enter Information on Patents held by the Target"
+                     type="textarea"
+                     name="patents"
+                     componentClass="textarea" />
                  <label htmlFor="trademarks">Trademarks</label>
-                 <Field component={Input}
-                        placeholder="Enter Information on Trademarks held by the Target"
-                        type="text"
-                        name="trademarks"
-                        componentClass="textarea"/>
+                 <Field
+                    component={Input}
+                    placeholder="Enter Information on Trademarks held by the Target"
+                    type="text"
+                    name="trademarks"
+                    componentClass="textarea"/>
                   <label htmlFor="copyrights">Copyrights</label>
-                  <Field component={Input}
-                         placeholder="Enter Information on Copyrights held by the Target"
-                         type="text"
-                         name="copyrights"
-                         componentClass="textarea" />
+                  <Field
+                      component={Input}
+                       placeholder="Enter Information on Copyrights held by the Target"
+                       type="text"
+                       name="copyrights"
+                       componentClass="textarea" />
                   <label htmlFor="status">Problems Relating to IP</label>
-                  <Field component={Input}
-                          placeholder="Enter any Negative Impacts IP Could Cause"
-                          type="textarea"
-                          name="negative"
-                          componentClass="textarea" />
+                  <Field
+                      component={Input}
+                      placeholder="Enter any Negative Impacts IP Could Cause"
+                      type="textarea"
+                      name="negative"
+                      componentClass="textarea" />
                   <label htmlFor="internalAssessmentOfIP">Overall Assessment of IP</label>
-                  <Field component={Input}
-                          placeholder="Enter Final Assessment of Target's IP"
-                          type="textarea"
-                          name="internalAssessmentOfIP"
-                          componentClass="textarea" />
+                  <Field
+                      component={Input}
+                      placeholder="Enter Final Assessment of Target's IP"
+                      type="textarea"
+                      name="internalAssessmentOfIP"
+                      componentClass="textarea" />
                   <label htmlFor="internalIPRating">Rating of IP</label>
-                  <Field component={RatingSelect}
-                          name="internalIPRating" />
+                  <Field component={RatingSelect} name="internalIPRating" />
                 <Button
                     disabled={this.props.submitting}
                     type='submit'

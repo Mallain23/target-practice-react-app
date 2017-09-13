@@ -1,102 +1,107 @@
+const NO_INFORMATION_PROVIDED = 'No Information Provided'
+const NO_DATA_AVAILABLE_YET = 'No Data Available Yet'
+
 export const formatDataForDatabaseEntry = ({companyName}) => ({
     companyName,
-    costOfAcquisition: 'No Information Provided',
+    costOfAcquisition: NO_INFORMATION_PROVIDED,
     companyProfile: {
-        yearFounded: 'No Information Provided',
+        yearFounded: NO_INFORMATION_PROVIDED,
         location: {
-            headQaurters: 'No Information Provided',
-            principlePlaceOfBusiness: 'No Information Provided',
-            numberOfOffices: 'No Information Provided'
+            headQaurters: NO_INFORMATION_PROVIDED,
+            principlePlaceOfBusiness: NO_INFORMATION_PROVIDED,
+            numberOfOffices: NO_INFORMATION_PROVIDED
         },
-        numberOfEmployees: 'No Information Provided',
-        generalBusinessActivities: 'No Information Provided',
+        numberOfEmployees: NO_INFORMATION_PROVIDED,
+        generalBusinessActivities: NO_INFORMATION_PROVIDED,
         companyStrategy: {
-            vision: 'No Information Provided',
-            coreValues: 'No Information Provided',
-            goals: 'No Information Provided',
+            vision: NO_INFORMATION_PROVIDED,
+            coreValues: NO_INFORMATION_PROVIDED,
+            goals: NO_INFORMATION_PROVIDED,
         },
         industryInformation: {
-            backgroundInformation: 'No Information Provided',
-            presentCondition: 'No Information Provided',
-            workForce: 'No Information Provided'
+            backgroundInformation: NO_INFORMATION_PROVIDED,
+            presentCondition: NO_INFORMATION_PROVIDED,
+            workForce: NO_INFORMATION_PROVIDED
         },
     },
     financialMatters: {
-        statementFromCompany: 'No Information Provided',
+        statementFromCompany: NO_INFORMATION_PROVIDED,
         assets: [],
-        totalValueOfAllAssets: 'No Data Available Yet',
+        totalValueOfAllAssets: NO_DATA_AVAILABLE_YET,
         liabilities: [],
-        totalLiabilities: 'No Data Available Yet',
-        financialStatementsAnnual: [ {title:'2017 Annual Financial Statement', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
-                                     {title:'2016 Annual Financial Statement', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
-                                     {title:'2015 Annual Financial Statement', Report: 'No Information Provided', type: 'financialStatementsAnnual'},
-                                     {title:'2014 Annual Financial Statement', Report: 'No Information Provided', type: 'financialStatementsAnnual'}
+        totalLiabilities: NO_DATA_AVAILABLE_YET,
+        financialStatementsAnnual: [ {title:'2017 Annual Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsAnnual'},
+                                     {title:'2016 Annual Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsAnnual'},
+                                     {title:'2015 Annual Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsAnnual'},
+                                     {title:'2014 Annual Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsAnnual'}
 
         ],
-        financialStatementsQuarterly: [ {title: '2017 Q1 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2017 Q2 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2017 Q3 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2016 Q1 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2016 Q2 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2016 Q3 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2016 Q4 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2015 Q1 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2015 Q2 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2015 Q3 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'},
-                                        {title: '2015 Q4 Financial Statement', Report: 'No Information Provided', type: 'financialStatementsQuarterly'}
+        financialStatementsQuarterly: [ {title: '2017 Q1 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q2 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2017 Q3 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q1 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q2 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q3 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2016 Q4 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q1 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q2 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q3 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'},
+                                        {title: '2015 Q4 Financial Statement', Report: NO_INFORMATION_PROVIDED, type: 'financialStatementsQuarterly'}
         ],
         financesAudited: {
-            isAudited: 'No Information Provided',
-            whoAudits: 'No Information Provided',
-            forHowLong: 'No Information Provided'
+            isAudited: NO_INFORMATION_PROVIDED,
+            whoAudits: NO_INFORMATION_PROVIDED,
+            forHowLong: NO_INFORMATION_PROVIDED
         },
         businessMargins: {
-            status: 'No Information Provided',
-            companyProjections: 'No Information Provided',
-            areProjectionsReasonable:  'No Information Provided'
+            status: NO_INFORMATION_PROVIDED,
+            companyProjections: NO_INFORMATION_PROVIDED,
+            areProjectionsReasonable:  NO_INFORMATION_PROVIDED
         },
-        internalAssessmentOfFinances: 'No Information Provided',
-        internalFinancialRating: 'No Information Provided'
+        internalAssessmentOfFinances: NO_INFORMATION_PROVIDED,
+        internalFinancialRating: NO_INFORMATION_PROVIDED
     },
     intellectualProperty: {
-        patents: 'No Information Provided',
-        trademarks: 'No Information Provided',
-        copyrights: 'No Information Provided',
-        negative: 'No Information Provided',
-        internalAssessmentOfIP: 'No Information Provided',
+        patents: NO_INFORMATION_PROVIDED,
+        trademarks: NO_INFORMATION_PROVIDED,
+        copyrights: NO_INFORMATION_PROVIDED,
+        negative: NO_INFORMATION_PROVIDED,
+        internalAssessmentOfIP: NO_INFORMATION_PROVIDED,
         internalIPRating: '0'
     },
     technology: {
-        licenses: 'No Information Provided',
-        softwareUse: 'No Information Provided',
-        benefits: 'No Information Provided',
-        assessment: 'No Information Provided',
+        licenses: NO_INFORMATION_PROVIDED,
+        softwareUse: NO_INFORMATION_PROVIDED,
+        benefits: NO_INFORMATION_PROVIDED,
+        assessment: NO_INFORMATION_PROVIDED,
         internalTechRating: '0'
     },
     otherBenefitsProvided: {
-        services: 'No Information Provided',
-        products: 'No Information Provided',
-        people: 'No Information Provided',
-        revenueEnhancements: 'No Information Provided',
-        miscellaneous: 'No Information Provided',
-        assesment: 'No Information Provided',
-        internalOtherBenefitsRating: 'No Info0'
+        services: NO_INFORMATION_PROVIDED,
+        products: NO_INFORMATION_PROVIDED,
+        people: NO_INFORMATION_PROVIDED,
+        revenueEnhancements: NO_INFORMATION_PROVIDED,
+        miscellaneous: NO_INFORMATION_PROVIDED,
+        assesment: NO_INFORMATION_PROVIDED,
+        internalOtherBenefitsRating: '0'
     },
     legal: {
-        futureLitgiation: 'No Information Provided',
-        currentLitigation: 'No Information Provided',
-        otherLitigation: 'No Information Provided',
-        reviewofContracts: 'No Information Provided',
-        threatened: 'No Information Provided',
-        settlement: 'No Information Provided',
-        arbitration: 'No Information Provided',
-        otherRegulatory: 'No Information Provided',
-        assessment: 'No Information Provided',
-        internalIssues: 'No Information Provided',
+        futureLitgiation: NO_INFORMATION_PROVIDED,
+        currentLitigation: NO_INFORMATION_PROVIDED,
+        otherLitigation: NO_INFORMATION_PROVIDED,
+        reviewofContracts: NO_INFORMATION_PROVIDED,
+        threatened: NO_INFORMATION_PROVIDED,
+        settlement: NO_INFORMATION_PROVIDED,
+        arbitration: NO_INFORMATION_PROVIDED,
+        otherRegulatory: NO_INFORMATION_PROVIDED,
+        assessment: NO_INFORMATION_PROVIDED,
+        internalIssues: NO_INFORMATION_PROVIDED,
         rating: '0'
     },
     managementDirectory: [],
-    finalAssessment: 'No Information Provided',
+    finalAssessment: NO_INFORMATION_PROVIDED,
     overallRating: '0',
     status: 'Researching'
 })
+
+export const DUPLICATE_COMPANY_STRING = "A Company with the same name already exists in the database!"

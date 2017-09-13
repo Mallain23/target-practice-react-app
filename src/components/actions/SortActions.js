@@ -15,6 +15,7 @@ export const sortCompaniesByStatus = () => (dispatch, getState) => {
 
      let arrayOfCompaniesSortedByStatus = statusKeys.map(status =>
         sortedCompanyObject[status] = filterCompanyByStatus(companies, status));
+        
       dispatch(sortCompaniesByStatusSuccess(sortedCompanyObject));
 };
 
