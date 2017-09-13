@@ -1,22 +1,24 @@
 export const formatFinanceData = (data, selectedCompany) => {
 
-    const { status,
-            statementFromCompany,
-            companyProjections,
-            areProjectionsReasonable,
-            internalFinancialRating,
-            internalAssessmentOfFinances,
-            isAudited,
-            whoAudits
+    const {
+        status,
+        statementFromCompany,
+        companyProjections,
+        areProjectionsReasonable,
+        internalFinancialRating,
+        internalAssessmentOfFinances,
+        isAudited,
+        whoAudits
+    } = data;
 
-    } = data
-    const { assets,
-            liabilities,
-            totalLiabilities,
-            totalValueOfAllAssets,
-            financialStatementsAnnual,
-            financialStatementsQuarterly,
-    } = selectedCompany.financialMatters
+    const {
+        assets,
+        liabilities,
+        totalLiabilities,
+        totalValueOfAllAssets,
+        financialStatementsAnnual,
+        financialStatementsQuarterly,
+    } = selectedCompany.financialMatters;
 
     return {
         financialMatters: {
@@ -43,13 +45,15 @@ export const formatFinanceData = (data, selectedCompany) => {
 };
 
 export const formatFinanceStatements = (report, selectedReport, selectedCompany) => {
-    const { type: typeOfReport, title } = report
+    const { type: typeOfReport} = report
     const updatedReports = selectedCompany.financialMatters[typeOfReport].filter(report =>
         report !== selectedReport).concat(report);
 
     const financialMatters = Object.assign({}, selectedCompany.financialMatters, {
         [typeOfReport]: updatedReports
-    })
+    });
 
     return { financialMatters }
 };
+
+export const TITLE = 'title'

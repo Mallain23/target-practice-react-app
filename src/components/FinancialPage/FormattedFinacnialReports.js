@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 
 import { getFinacnialReport } from '../actions';
 import { openEditPageModal } from '../actions/ShowHideActions';
-import { editFinancialReport } from '../actions/EditTarget';
 import { sortFunction } from '../actions/utils';
+import { TITLE } from './utils'
 
-import Paragraph from '../CompanyPage/Paragraph';
 import './FinancialPage.css';
 
 export class FormattedFinacnialReports extends React.Component {
@@ -40,7 +39,7 @@ export class FormattedFinacnialReports extends React.Component {
 
         const arrayOfFinancialReports = this.props.arrayOfReports
         const typeOfReport = this.props.name
-        const sortedReports = sortFunction(arrayOfFinancialReports, 'title')
+        const sortedReports = sortFunction(arrayOfFinancialReports, TITLE)
 
         const formattedFinacnialReports = sortedReports.map(({title, report}, index) => {
             return (

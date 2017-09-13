@@ -1,6 +1,5 @@
 import React from 'react';
-import { FormControl, FormGroup, ControlLabel } from 'react-bootstrap';
-import { focus } from 'redux-form';
+import { FormControl, ControlLabel } from 'react-bootstrap';
 
 import './Modal.css';
 import '../SideBar/Sidebar.css';

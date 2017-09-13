@@ -1,14 +1,14 @@
-import React from 'react'
-import { Field, reduxForm, focus, initialize} from 'redux-form'
-import { connect } from 'react-redux'
-import { Form, Button } from 'react-bootstrap'
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { Form, Button } from 'react-bootstrap';
 
-import { updateTarget } from '../actions/EditTarget'
+import { updateTarget } from '../actions/EditTarget';
 
-import Input from '../AddCompanyModal/Input'
-import RatingSelect from '../EditPageModal/RatingSelect'
+import Input from '../AddCompanyModal/Input';
+import RatingSelect from '../EditPageModal/RatingSelect';
 
-import '../EditPageModal/Modal.css'
+import '../EditPageModal/Modal.css';
 
 export class EditLegalForm extends React.Component {
 

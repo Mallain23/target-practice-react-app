@@ -13,7 +13,7 @@ export function CompaniesByStatusContainer (props) {
     const companiesToDisplay = status === 'companies' ? companies : companyStatus[status]
     const sortedCompaniesToDisplay = sortFunction(companiesToDisplay, 'companyName');
 
-    const formattedCompanies = companiesToDisplay.map(({companyName}, index) => {
+    const formattedCompanies = sortedCompaniesToDisplay.map(({companyName}, index) => {
         return (
             <li className={`company-by-status`} key={index}>
                 <Link to={`/company/${companyName}`} className={`${status} company-link`}> {companyName}</Link>

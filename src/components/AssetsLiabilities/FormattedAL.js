@@ -6,8 +6,6 @@ import { sortFunction } from '../actions/utils'
 import { updateTarget } from '../actions/EditTarget';
 import { removeAL, NAME } from './utils';
 
-import Paragraph from '../CompanyPage/Paragraph';
-
 import './AL.css';
 
 export class FormattedAL extends React.Component  {

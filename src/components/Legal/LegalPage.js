@@ -1,15 +1,13 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Col, Row } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Col, Row } from 'react-bootstrap';
 
-import LegalFactors from './LegalFactors'
-import LegalAssessment from './LegalAssessment'
-
-import Paragraph from '../CompanyPage/Paragraph'
+import LegalFactors from './LegalFactors';
+import LegalAssessment from './LegalAssessment';
 
 export class LegalPage extends React.Component {
     renderComponent() {
-        const { selectedPage } = this.props
+        const { selectedPage } = this.props;
 
         if (selectedPage === 'Legal Factors') {
             return <LegalFactors />
@@ -31,11 +29,11 @@ export class LegalPage extends React.Component {
 
 export const mapStateToProps = state => {
 
-    const { selectedCompany } = state.app
+    const { selectedCompany } = state.app;
 
     return {
         selectedCompany
     };
 };
 
-export default connect(mapStateToProps)(LegalPage)
+export default connect(mapStateToProps)(LegalPage);

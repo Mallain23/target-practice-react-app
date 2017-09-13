@@ -11,12 +11,7 @@ import '../CompanyProfile/CompanyProfile.css';
 
 export function ALPage (props){
 
-    const {
-            assets,
-            liabilities,
-            totalValueOfAllAssets,
-            totalLiabilities
-          } = props.selectedCompany.financialMatters;
+    const { assets, liabilities } = props.selectedCompany.financialMatters;
 
     const totalAssetValue = calcTotalAssetValue(assets);
     const totalLiabilityValue =  calcTotalLiabilityValue(liabilities);

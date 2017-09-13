@@ -1,8 +1,6 @@
 export const formatCompanyProfileData = data => {
    const {
        yearFounded,
-       companyName,
-       costOfAcquisition,
        generalBusinessActivities,
        numberOfEmployees,
        headQaurters,
@@ -14,7 +12,7 @@ export const formatCompanyProfileData = data => {
        backgroundInformation,
        presentCondition
     } = data
-    
+
     return  {
         yearFounded,
         location: {
@@ -45,8 +43,8 @@ export const formatContacts = (contact, selectedCompany, editContact, contactToE
 };
 
 export const removeContact = (contact, selectedCompany) => {
-    const listOfContacts = selectedCompany.managementDirectory
-    const managementDirectory = listOfContacts.filter(({name}) => name !== contact)
+    const listOfContacts = selectedCompany.managementDirectory;
+    const managementDirectory = listOfContacts.filter(({name}) => name !== contact);
 
     return {managementDirectory}
-}
+};
