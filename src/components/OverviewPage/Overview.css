@@ -85,6 +85,9 @@
   font-family: Lato,'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+.company-link:hover {
+  color: #777;
+}
 
 .pending {
     color: #0074D9;

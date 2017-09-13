@@ -1,7 +1,7 @@
 .sidebar {
     float: left;
     min-height: 500px;
-    border: 1px solid #e7e7e7;
+    border: 1px solid #C0C0C0;
     background-color: #f8f8f8;
     background-image: linear-gradient(to right, #fff 0%, #f8f8f8 100%);
     position: absolute;
@@ -78,7 +78,7 @@ ul {
     text-align: left;
     margin-top: 15px;
     width: 100%;
-    border: 1px solid #e7e7e7;
+    border: 1px solid #D8D8D8 ;
     height: 300px;
     overflow: scroll;
 }
@@ -116,9 +116,10 @@ ul {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1025px) {
   .sidebar{
-    position: static;
+    max-height: 150px;
+    max-width: 200px;
 
   }
 }

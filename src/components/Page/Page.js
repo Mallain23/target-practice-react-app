@@ -9,7 +9,7 @@ import SideBarContainer from '../SideBar/SideBarContainer'
 export class Page extends React.Component {
 
     renderSize() {
-      const { showSidebar } = this.props
+      const { showSidebar } = this.props;
       return showSidebar ? 11 : 12
     };
 
@@ -20,7 +20,7 @@ export class Page extends React.Component {
             <Grid>
                 <Row>
                     <SideBarContainer />
-                    <Col xs={12} md={this.renderSize()}>
+                    <Col xs={12}  lg={this.renderSize()}>
                         <div className='page-container'>
                             {pageComponent}
                         </div>
@@ -34,6 +34,6 @@ export class Page extends React.Component {
 const mapStateToProps = state => ({
     companySelected: state.app.companySelected,
     showSidebar: state.app.showSidebar
-})
+});
 
 export default connect(mapStateToProps)(Page)

@@ -14,7 +14,7 @@ export function SideBarContainer (props) {
     const styles = showSidebar ? {width: '250px'} : {display: 'none'};
 
     return (
-        <Col xs={12} md={1}>
+        <Col xs={12}  md={1}>
             <div style={styles} className="sidebar sidebar-left">
                 <div className='side-bar-header'>Target Search Bar</div>
                 <div className='search-form-container'>
