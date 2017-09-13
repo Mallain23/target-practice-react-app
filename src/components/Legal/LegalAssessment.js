@@ -8,7 +8,7 @@ export function LegalAssessment (props) {
 
     const { assessment, rating: _rating  } = props;
 
-    const rating = parseInt(_rating);
+    const rating = parseInt(_rating, 10);
 
     return (
         <div className='data-container'>

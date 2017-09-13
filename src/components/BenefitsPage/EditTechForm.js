@@ -28,7 +28,7 @@ export class EditTechForm extends React.Component {
             internalTechRating: _internalTechRating
         } = selectedCompany.technology;
 
-        const internalTechRating  = parseInt(_internalTechRating);
+        const internalTechRating  = parseInt(_internalTechRating, 10);
 
         const initValues = {
             licenses,

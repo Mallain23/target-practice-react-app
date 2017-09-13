@@ -31,7 +31,7 @@ export class EditOtherBenefitsForm extends React.Component {
             internalOtherBenefitsRating: _internalOtherBenefitsRating
         } = selectedCompany.otherBenefitsProvided;
 
-        const internalOtherBenefitsRating = parseInt(_internalOtherBenefitsRating);
+        const internalOtherBenefitsRating = parseInt(_internalOtherBenefitsRating, 10);
 
         const initValues = {
             services,

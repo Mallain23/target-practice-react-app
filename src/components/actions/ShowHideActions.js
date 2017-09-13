@@ -36,7 +36,7 @@ export const openEditALModal = (type, id)=> (dispatch, getState) => {
     const propertyType = type.toLowerCase()
 
     const propertyToEdit = selectedCompany.financialMatters[propertyType].find(property =>
-        property.id === parseInt(id))
+        property.id === parseInt(id, 10))
 
     dispatch(updateStateWithPropertyToEdit(propertyToEdit, type))
 };

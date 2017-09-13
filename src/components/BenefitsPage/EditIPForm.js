@@ -31,7 +31,7 @@ export class EditIPForm extends React.Component {
             internalIPRating: _interalIPRating
         } = selectedCompany.intellectualProperty;
 
-        const internalIPRating  = parseInt(_interalIPRating);
+        const internalIPRating  = parseInt(_interalIPRating, 10);
 
         const initValues = {
             patents,

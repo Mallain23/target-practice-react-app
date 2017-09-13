@@ -36,7 +36,7 @@ export class EditFinancialForm extends React.Component {
             areProjectionsReasonable
         } = selectedCompany.financialMatters.businessMargins;
 
-        const _internalFinancialRating = parseInt(internalFinancialRating);
+        const _internalFinancialRating = parseInt(internalFinancialRating, 10);
 
         const initValues = {
             status,

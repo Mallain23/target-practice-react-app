@@ -18,13 +18,13 @@ export class ComapnyStatusButtons extends React.Component {
     };
 
     render() {
-        const { status, text, number, className } = this.props;
+        const { status, text, number } = this.props;
 
         return (
             <button
                 className='status-buttons'
                 value={status}
-                className={`${className} ${status}`}
+                className={`status-headers ${status}`}
                 onClick={this.handleClick} >
                 {text} {number}
             </button>

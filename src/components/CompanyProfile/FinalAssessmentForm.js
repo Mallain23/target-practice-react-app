@@ -23,7 +23,7 @@ export class FinalAssessmentForm extends React.Component {
     handleInitialize(selectedCompany) {
 
         const { status, finalAssessment, overallRating} = selectedCompany;
-        const _overAllRating = parseInt(overallRating);
+        const _overAllRating = parseInt(overallRating, 10);
 
         const initValues = {
             status,

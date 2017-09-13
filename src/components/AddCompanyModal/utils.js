@@ -59,7 +59,7 @@ export const formatDataForDatabaseEntry = ({companyName}) => ({
             areProjectionsReasonable:  NO_INFORMATION_PROVIDED
         },
         internalAssessmentOfFinances: NO_INFORMATION_PROVIDED,
-        internalFinancialRating: NO_INFORMATION_PROVIDED
+        internalFinancialRating: '0'
     },
     intellectualProperty: {
         patents: NO_INFORMATION_PROVIDED,

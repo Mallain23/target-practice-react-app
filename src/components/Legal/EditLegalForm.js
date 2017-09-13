@@ -14,26 +14,28 @@ export class EditLegalForm extends React.Component {
 
     componentDidMount() {
 
-    const { selectedCompany } = this.props
+    const { selectedCompany } = this.props;
 
      this.handleInitialize(selectedCompany)
     };
 
     handleInitialize(selectedCompany) {
 
-        const { futureLitgiation,
-                currentLitigation,
-                otherLitigation,
-                threatened,
-                reviewofContracts,
-                otherRegulatory,
-                settlement,
-                arbitration,
-                internalIssues,
-                assessment,
-                rating: _rating } = selectedCompany.legal
+        const {
+            futureLitgiation,
+            currentLitigation,
+            otherLitigation,
+            threatened,
+            reviewofContracts,
+            otherRegulatory,
+            settlement,
+            arbitration,
+            internalIssues,
+            assessment,
+            rating: _rating
+        } = selectedCompany.legal;
 
-        const rating = parseInt(_rating)
+        const rating = parseInt(_rating, 10);
 
         const initValues = {
             futureLitgiation,
@@ -53,24 +55,26 @@ export class EditLegalForm extends React.Component {
     };
 
     onSubmit(values) {
-        const formattedObj = { legal: values }
+        const formattedObj = { legal: values };
 
-        this.props.dispatch(updateTarget(formattedObj))
+        this.props.dispatch(updateTarget(formattedObj));
     };
 
     render() {
         return (
             <Form className="edit-legal-form"  onSubmit={this.props.handleSubmit(values => this.onSubmit(values))} >
                 <label htmlFor="futureLitgiation">Future Litigation</label>
-                <Field component={Input} placeholder='Future Litigation'
-                       type="textarea"
-                       name="futureLitgiation"
-                       componentClass="textarea" />
+                <Field
+                    component={Input} placeholder='Future Litigation'
+                    type="textarea"
+                    name="futureLitgiation"
+                    componentClass="textarea" />
                 <label htmlFor="currentLitigation">Current Litigation</label>
-                <Field component={Input}
-                       type="textarea"
-                       name="currentLitigation"
-                        componentClass="textarea" />
+                <Field
+                    component={Input}
+                    type="textarea"
+                    name="currentLitigation"
+                    componentClass="textarea" />
                 <label htmlFor="otherLitigation">Prior Litigation</label>
                 <Field
                     component={Input}

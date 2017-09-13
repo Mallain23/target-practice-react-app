@@ -2,8 +2,9 @@ export const calcTotalAssetValue = assets => {
     if (assets.length < 1 ) {
         return 'No Data Available Yet'
     }
+
     const value =  assets.reduce((acc, asset) => {
-      return acc + parseInt(asset.value);
+      return acc + parseInt(asset.value, 10);
     }, 0);
 
     return `$${value.toLocaleString()}`
@@ -13,8 +14,9 @@ export const calcTotalLiabilityValue = liabilities => {
     if (liabilities.length < 1 ) {
         return 'No Data Available Yet'
     }
+
     const value =  liabilities.reduce((acc, liability) => {
-      return acc - parseInt(liability.value);
+      return acc - parseInt(liability.value, 10);
     }, 0);
 
    return `$${value.toLocaleString({minimumFractionDigits: 2})}`
@@ -37,10 +39,11 @@ export const formatAL = (data, selectedCompany, editAL) => {
 
 
 export const removeAL = (id, type, selectedCompany)  => {
-    const  propertyType = type.toLowerCase()
-    const { financialMatters: _financialMatters } = selectedCompany
+    const  propertyType = type.toLowerCase();
+    const { financialMatters: _financialMatters } = selectedCompany;
+
     const updatedProperty = _financialMatters[propertyType].filter(property =>
-        property.id !== parseInt(id))
+        property.id !== parseInt(id, 10))
 
     const financialMatters = Object.assign({}, _financialMatters, {
         [propertyType]: updatedProperty
@@ -49,4 +52,4 @@ export const removeAL = (id, type, selectedCompany)  => {
     return { financialMatters }
 };
 
-export const NAME = 'name'
+export const NAME = 'name';
