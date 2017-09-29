@@ -16,10 +16,6 @@ export class CompanyPage extends React.Component {
         const companyName = this.props.match.params.companyName;
         const selectedCompany = this.props.selectedCompany;
 
-        if (selectedCompany.companyName === companyName) {
-          return
-        }
-
         this.props.dispatch(fetchTargetData(companyName));
     };
 

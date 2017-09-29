@@ -492,7 +492,7 @@ export const mockData = [
           otherRegulatory: 'any other regulatory issues, antiTrust laws, trade commsion etc',
           assessment: 'assessment of legal matters',
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
-          rating: ''
+          rating: '3'
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assessment after considering all factors',
@@ -664,8 +664,8 @@ export const mockData = [
           }],
           totalValueOfAllAssets: 'xyz',
           liabilities: [
-              { nameOfLiability: 'Salaries payable',
-                valueOfLiability: '20000.00',
+              { name: 'Salaries payable',
+                value: '20000.00',
                 id: 35
              }
           ],
@@ -981,7 +981,7 @@ export const mockData = [
           otherRegulatory: 'any other regulatory issues, antiTrust laws, trade commsion etc',
           assessment: 'assessment of legal matters',
           internalIssues: 'any internal issues at target - such as employee/mangament labor disputes',
-          rating: ''
+          rating: '7'
       },
       managementDirectory: [{name: 'Bill Manager', cell: '123-456-7890', work: '222-333-4444', email: 'sample@gmail.com'}],
       finalAssessment: 'final assessment after considering all factors',
